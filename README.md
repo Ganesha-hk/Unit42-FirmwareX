@@ -25,6 +25,8 @@ Users are responsible for obtaining permission, complying with applicable laws a
 
 Findings are candidates for investigation. Missing protections or a matching string do not prove exploitation. A completed selected check does not mean every program in an image has been verified.
 
+For a fresh client machine, follow [Client setup](docs/CLIENT_SETUP.md). It lists what is included, host prerequisites, first login, sample input, tests and updates.
+
 ## Quick start
 
 ### Requirements

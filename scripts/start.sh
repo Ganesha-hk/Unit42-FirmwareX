@@ -3,14 +3,8 @@
 set -eu
 cd "$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)"
 case "${1:-}" in ''|--no-build) ;; *) echo 'Usage: sh scripts/start.sh [--no-build]' >&2; exit 2;; esac
-command -v docker >/dev/null
 command -v python3 >/dev/null
-docker compose version >/dev/null
-docker info >/dev/null
-if [ "$(id -u)" = 0 ]; then
-    echo 'Run as your normal Docker-enabled user; analysis containers must not use root.' >&2
-    exit 1
-fi
+python3 scripts/check-setup.py
 if [ ! -f .env ]; then python3 scripts/bootstrap.py; fi
 if [ "${1:-}" != --no-build ]; then
     docker build -f infra/images/extract/Dockerfile -t firmwarex-native:day1 .
