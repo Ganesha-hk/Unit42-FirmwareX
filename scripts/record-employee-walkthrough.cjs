@@ -1,6 +1,6 @@
 const fs=require('fs'),crypto=require('crypto'),assert=require('assert');
-const {chromium}=require('/home/ubuntu/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright');
-const root='/home/ubuntu/projects/firmwarex',out=root+'/evidence/employee-firmware-walkthrough-2026-11-10';
+const {chromium}=require(process.env.FWX_PLAYWRIGHT_MODULE || 'playwright');
+const root=require('path').resolve(__dirname,'..'),out=root+'/evidence/employee-firmware-walkthrough-2026-11-10';
 (async()=>{
 const env=Object.fromEntries(fs.readFileSync(root+'/work/submission-instance/.env','utf8').trim().split('\n').map(x=>{const i=x.indexOf('=');return [x.slice(0,i),x.slice(i+1)];}));
 const manifest=JSON.parse(fs.readFileSync(root+'/fixtures/manifests/openwrt-24.10.4.json'));
