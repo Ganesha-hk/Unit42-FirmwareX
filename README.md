@@ -4,6 +4,16 @@ FirmwareX is a self-hosted workspace for inspecting embedded Linux firmware imag
 
 It analyzes **firmware files**, not live routers or third-party networks. The current deployment is intended for a trusted internal team on a dedicated Linux host. It is not yet a complete multi-tenant production service.
 
+## Authorized testing only
+
+FirmwareX is intended only for educational testing, security research and **authorized firmware analysis**. Use it only with public open-source firmware whose licence permits your intended use, or controlled test fixtures you own or are authorized to analyze. Public availability alone does not grant permission for every use.
+
+Do not use this project to damage devices, modify third-party systems, access networks without permission, or conduct malicious activity. The documented workflow analyzes image files in isolated containers; it does not flash a device or intentionally alter the original source image. This is a design intention, not a guarantee that running the software is risk-free. Keep backups and use an isolated test environment.
+
+The OpenWrt images referenced in this repository are test inputs obtained from their official source. Firmware binaries are not included in the current repository, and their licences and ownership remain with their respective authors. References to OpenWrt do not imply endorsement or affiliation.
+
+Users are responsible for obtaining permission, complying with applicable laws and licences, and the consequences of their use. The project is provided **as is**, without warranties. To the extent permitted by applicable law and the Apache-2.0 licence, the authors and contributors accept no liability for misuse, damage, data loss or other consequences arising from its use. See [LICENSE](LICENSE) for the governing terms.
+
 ## What you can use it for
 
 - Review the contents and attack surface of a firmware release before deeper manual analysis.
