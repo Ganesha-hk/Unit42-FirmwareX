@@ -25,3 +25,12 @@ AGENTS.md
 **/AGENTS.md
 .codex/
 .agents/
+
+# Generated assessments, recordings and submission documents
+evidence/
+output/
+outputs/
+reports/
+*.pdf
+*.docx
+backups/

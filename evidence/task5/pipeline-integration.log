@@ -1,5 +1,0 @@
-Traceback (most recent call last):
-  File "/home/ubunt/projects/firmwarex/scripts/verify-pipeline.py", line 21, in <module>
-    assert job['status'] in {'complete','partial'},job
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-AssertionError: {'job_id': 'f70e339b-deb3-4fe6-9cd8-76ea4b23d7e3', 'firmware_id': 'f9cad18a-463d-463a-aa88-7605313224e9', 'status': 'failed', 'stage': 'finished', 'error_code': 'pipeline_failed', 'result': {'schema_version': 1, 'error_code': 'pipeline_failed', 'error_type': 'TimeoutError', 'status': 'incomplete', 'sandbox': {'network_mode': 'none', 'read_only': True, 'reason': None, 'profile': {'NetworkMode': 'none', 'ReadonlyRootfs': True, 'CapDrop': ['ALL'], 'SecurityOpt': ['no-new-privileges:true'], 'Privileged': False, 'Memory': 805306368, 'MemorySwap': 805306368, 'NanoCpus': 1000000000, 'PidsLimit': 64}, 'image_id': 'sha256:684ba9e058dbc85de335ba4dcd6447efb0b65ae13c4b7fecc0b66bf224050b29', 'user': '1000:1000', 'wall_seconds': 0.63, 'cpu_seconds': 0.46, 'exit_code': 0}}, 'created_at': '2026-10-19T15:03:58.795218+00:00', 'updated_at': '2026-10-19T15:04:00.277330+00:00'}

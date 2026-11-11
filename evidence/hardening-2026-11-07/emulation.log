@@ -1,3 +1,0 @@
- Container firmwarex-dispatcher-run-2a482e08f458 Creating 
- Container firmwarex-dispatcher-run-2a482e08f458 Created 
-{"passed": 36, "architectures": 5, "repeat_runs": 10, "service_probes": 15, "guest_containment": 5, "quota_breaches": 3, "system_fallback": 1, "controlled_boot": 1, "nvram_stub": 1}

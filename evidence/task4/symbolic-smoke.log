@@ -1,9 +1,0 @@
- Container firmwarex-dispatcher-run-700cb1416bdb Creating 
- Container firmwarex-dispatcher-run-700cb1416bdb Created 
-Traceback (most recent call last):
-  File "/scripts/verify-analysis.py", line 20, in <module>
-    result=case('source0-sink0');print(json.dumps(result));assert len(result['findings'])==1,result
-                                                                      ~~~~~~^^^^^^^^^^^^
-KeyError: 'findings'
-{"error_code": "sandbox_exit"}
-

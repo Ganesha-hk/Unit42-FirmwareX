@@ -1,8 +1,0 @@
-{
-  "firmware_id": "b32e825f-eb90-438d-9016-4f1b86542350",
-  "job_id": "dac488e5-2248-4757-ae1a-c925566e4b9e",
-  "sha256": "8c88c338afad0535ab295a62e9555dc91f3bf5c8f4fc3bc67008adb2619f60e6",
-  "status": "partial",
-  "scope": "Real OpenWrt upload, static/scanner report and loopback HTTP harness; bounded symbolic sampling remains incomplete.",
-  "video": "page@fae69104392b25dfe86dfbddd1851a2e.webm"
-}

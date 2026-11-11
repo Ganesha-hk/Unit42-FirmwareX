@@ -1,8 +1,0 @@
- Container firmwarex-dispatcher-run-448ae3f71e1e Creating 
- Container firmwarex-dispatcher-run-448ae3f71e1e Created 
-Traceback (most recent call last):
-  File "/scripts/verify-snapshots.py", line 21, in <module>
-    assert result.get('status') == 'completed', result
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-AssertionError: {'schema_version': 1, 'status': 'incomplete', 'reason': 'snapshot_error'}
-

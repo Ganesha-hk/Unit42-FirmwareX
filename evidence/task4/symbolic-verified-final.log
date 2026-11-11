@@ -1,8 +1,0 @@
- Container firmwarex-dispatcher-run-b6acc049d8c5 Creating 
- Container firmwarex-dispatcher-run-b6acc049d8c5 Created 
-Traceback (most recent call last):
-  File "/scripts/verify-analysis.py", line 37, in <module>
-    result=case(name);assert len(result['findings'])==1 and result['findings'][0]['cwe']==cwe,(name,result)
-                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-AssertionError: ('fault', {'status': 'incomplete', 'reasons': ['engine_error_SimSegfaultException'], 'budgets': {'seconds': 20, 'states': 32, 'paths': 256, 'depth': 200, 'steps': 500, 'memory_mb': 512, 'source_bytes': 32, 'merge': True}, 'telemetry': {'steps': 1, 'paths': 1, 'pruned': 0, 'merged': 0, 'peak_states': 1, 'wall_seconds': 0.026}, 'findings': [], 'evidence': {}, 'limitations': ['Source models use bounded printable bytes, not exhaustive inputs.', 'Exploration stops at candidate sink violations; bounded safe copies preserve taint.', 'Stack bounds require supported DWARF x86_64 frame-pointer ABI.', 'No concrete command or exploit input is generated.'], 'schema_version': 1})
-

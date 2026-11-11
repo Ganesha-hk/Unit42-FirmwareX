@@ -1,9 +1,0 @@
-{
-  "resolved_attempt_failures": [
-    "API connection reset during asynchronous service startup; bounded readiness polling added",
-    "Output policy imported database-only module inside analysis image; shared vocabulary split into dependency-free module and isolated-import regression added",
-    "Historical maintenance attempted protected evidence update; changed to privileged metadata-only maintenance, existing evidence validated without modification"
-  ],
-  "final_regression": "PASS",
-  "blocked_by_safety_policy": []
-}

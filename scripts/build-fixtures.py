@@ -31,5 +31,5 @@ unsupported.write_bytes(b"controlled unsupported format\n")
 manifest = {"kind": "controlled_fixture", "license_id": "MIT", "executed": False, "images": [
     {"name": p.name, "sha256": hashlib.sha256(p.read_bytes()).hexdigest(), "size": p.stat().st_size}
     for p in [image, nested, unsupported]]}
-(root / "evidence/day1/fixture-manifest.json").write_text(json.dumps(manifest, indent=2) + "\n")
+(out / "fixture-manifest.json").write_text(json.dumps(manifest, indent=2) + "\n")
 print("Built controlled ELF and image fixtures; no firmware executed.")

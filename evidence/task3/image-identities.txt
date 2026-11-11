@@ -1,2 +1,0 @@
-[firmwarex-qemu:task3] sha256:17e7933089cb187608f4a7fd04994aae9a426dfc197ffdc252e5b49eb2f195af
-[firmwarex-emulation-fixtures:task3] sha256:346edea4dd4d1a966fe2b164689ec26c6ad30dfaf1198f9c5508095b61e349ab

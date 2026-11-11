@@ -1,0 +1,40 @@
+# Single-host operational settings. TLS proxy and backups are operator-managed.
+# Use together with compose.yaml; never use this file alone.
+services:
+  postgres:
+    restart: unless-stopped
+  redis:
+    restart: unless-stopped
+  api:
+    restart: unless-stopped
+    environment:
+      FWX_SESSION_COOKIE_SECURE: "true"
+    command:
+      - uvicorn
+      - firmwarex.api:app
+      - --host
+      - 0.0.0.0
+      - --port
+      - "8000"
+      - --proxy-headers
+      - --forwarded-allow-ips
+      - ${FWX_TRUSTED_PROXY_IPS:?Set the exact trusted proxy peer address before HTTPS deployment}
+    logging:
+      driver: json-file
+      options:
+        max-size: 10m
+        max-file: "3"
+  dispatcher:
+    restart: unless-stopped
+    logging:
+      driver: json-file
+      options:
+        max-size: 10m
+        max-file: "3"
+  scheduler:
+    restart: unless-stopped
+    logging:
+      driver: json-file
+      options:
+        max-size: 10m
+        max-file: "3"
