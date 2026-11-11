@@ -5,4 +5,3 @@ WORDS.update({'controlled_protocol_null_write', 'http', 'upnp', 'mqtt'})
 WORDS.add('symbolic_null_write')
 KEYS.update({'protocol', 'seed', 'seed_index', 'retained_indices', 'original_length',
              'minimization_attempts', 'replay_verified', 'replays'})
-

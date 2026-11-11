@@ -1,2 +1,8 @@
 # Preserve raw command transcripts, including terminal CR and trailing spaces.
 evidence/**/*.log -whitespace
+
+# Documents/images are binary; preserve extracted reference transcripts.
+*.pdf binary
+*.docx binary
+*.png binary
+evidence/planning/*.txt -whitespace
