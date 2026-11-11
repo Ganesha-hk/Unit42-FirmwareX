@@ -26,9 +26,12 @@ def graph_for(path,tainted_paths):
         if not project.loader.main_object.contains_addr(function.addr):continue
         nodes=[{'id':hex(n.addr),'tainted':hex(n.addr) in tainted} for n in function.graph.nodes()]
         edges=[{'source':hex(a.addr),'target':hex(b.addr)} for a,b in function.graph.edges()]
-        functions.append({'address':hex(function.addr),'name':function.name if function.name in {'main','_start'} else 'function_'+hex(function.addr),'nodes':nodes[:256],'edges':edges[:512],'incomplete':len(nodes)>256 or len(edges)>512})
+        retained={node['id'] for node in nodes[:256]}
+        visible_edges=[edge for edge in edges if edge['source'] in retained and edge['target'] in retained]
+        functions.append({'address':hex(function.addr),'name':function.name if function.name in {'main','_start'} else 'function_'+hex(function.addr),'nodes':nodes[:256],'edges':visible_edges[:512],'incomplete':len(nodes)>256 or len(edges)>512})
         if len(functions)>=128:break
-    return {'functions':functions,'method':'angr CFGFast','limits':{'functions':128,'nodes_per_function':256}}
+    truncated=len(functions)>=128 or any(f['incomplete'] for f in functions)
+    return {'status':'completed' if functions and not truncated else 'incomplete','incomplete':truncated,'functions':functions,'method':'angr CFGFast','limits':{'functions':128,'nodes_per_function':256}}
 
 def run(observer=None):
     ctx=json.loads(Path('/input/context.json').read_text());salt=Path('/input/fingerprint-salt').read_bytes();image=Path('/input/firmware.bin');digest=hashlib.sha256(image.read_bytes()).hexdigest()
@@ -59,6 +62,7 @@ def run(observer=None):
             with observer.stage('vendor_analysis'):
                 vendor=attempt(lambda: run_vendor(root,binaries,ctx['firmware_id'],salt,image_sha256=digest))
             result['findings']+=vendor.get('findings',[]);result['evidence'].update(vendor.get('evidence',{}))
+            result['graphs'].update(vendor.get('graphs',{}))
         with observer.stage('emulation') as span:
             if approved:
                 from firmwarex.emulation.runner import execute

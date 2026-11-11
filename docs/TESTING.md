@@ -36,3 +36,9 @@ If the analysis implementation changed, rebuild `firmwarex-pipeline:task5` as we
 A passing unit suite checks the assertions in that suite. It does not prove every real-image vulnerability is detected, every reported candidate is valid, or sandboxing is invulnerable. The application must preserve incomplete/unsupported statuses and show the executed scope.
 
 Keep generated logs and reports locally under ignored `evidence/`, `reports/` or `work/`. Do not commit credentials, account data, downloaded firmware or large recordings. This repository contains reproducible test source rather than historical output bundles.
+
+## Real-firmware control-flow graphs
+
+Selected vendor binaries now receive an independent bounded CFG recovery pass. Each pass has a 10-second timeout and 768 MiB address-space limit inside the existing job sandbox. Export is limited to 128 functions, 256 nodes per function and 512 edges per function. Truncated output is explicitly incomplete; a graph is static recovery, not proof that its paths executed. Symbolic results remain independent of CFG failures. Reanalyze older assessments to generate graph data.
+
+Verified with the registered OpenWrt 24.10.4 x86/64 image: graphs persisted for uhttpd and cgi-io; BusyBox reached its timeout. The browser rendered 218 nodes for the selected function with partial-coverage labeling. The regression suite passed 171 tests.

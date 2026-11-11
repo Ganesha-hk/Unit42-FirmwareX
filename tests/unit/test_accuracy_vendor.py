@@ -106,6 +106,8 @@ def test_generic_firmware_keeps_startup_probe(tmp_path,monkeypatch):
         return {'status':'completed','returncode':0,'reason':'help_mode_only'} if output is None else {'status':'incomplete','findings':[],'evidence':{}}
     monkeypatch.setattr(vendor,'bounded',bounded)
     result=vendor.run(root,[{'path':'/program','architecture':'x86_64','elf_type':'ET_EXEC','pie':False}],str(uuid4()),b'synthetic-environment-test-salt-32-bytes')
-    assert calls[0][-1]=='--help'
+    assert any(command[-1]=='--help' for command in calls)
+    assert len(result['graphs'])==1
+    assert next(iter(result['graphs'].values()))['status']=='incomplete'
     row=result['emulation']['executions'][0]
     assert row['status']=='incomplete' and row['reason']=='help_mode_only'

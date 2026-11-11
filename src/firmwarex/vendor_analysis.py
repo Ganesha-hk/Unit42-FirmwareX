@@ -205,13 +205,18 @@ def run(root,binaries,firmware_id,salt,image_sha256=None):
         item['sha256']==image_sha256 for item in json.loads(registry.read_text())['images'])
     if openwrt: selected,total=openwrt_targets(root,binaries)
     profile_ready=not openwrt or len(selected)==len(OPENWRT_PROFILES)
-    emulation=[];symbolic=[];findings=[];evidence={}
+    emulation=[];symbolic=[];findings=[];evidence={};graphs={}
     guest=None
     if selected:
         try:guest=stage_root(root,Path('/guest/vendor'))
         except (ValueError,OSError):pass
     for index,target in enumerate(selected):
         name=target['path'];safe=safe_path(name,salt)
+        graph_request={'root':str(root),'binary':name.lstrip('/'),'sha256':target['sha256'],'mode':'cfg'}
+        graph_input=Path('/scratch')/f'vendor-graph-request-{index}.json'
+        graph_output=Path('/scratch')/f'vendor-graph-result-{index}.json'
+        graph_input.write_text(json.dumps(graph_request))
+        graphs[safe]=bounded([sys.executable,'-m','firmwarex.vendor_analysis',str(graph_input),str(graph_output)],10,graph_output)
         if guest is None:execution={'status':'incomplete','reason':'execution_root_budget'}
         else:
             binary=guest/name.lstrip('/')
@@ -253,7 +258,7 @@ def run(root,binaries,firmware_id,salt,image_sha256=None):
                          'reason':'selected_profiles_complete' if emulation_complete else ('profile_binary_mismatch' if not profile_ready else 'sampled_profiles' if openwrt else 'sampled_help_mode'),'executions':emulation},
             'symbolic':{**common,'status':'completed' if symbolic_complete else 'incomplete',
                         'reason':'selected_profiles_complete' if symbolic_complete else ('profile_binary_mismatch' if not profile_ready else 'bounded_sample'),'analyses':symbolic},
-            'findings':findings,'evidence':evidence}
+            'findings':findings,'evidence':evidence,'graphs':graphs}
 
 
 def main():
@@ -264,14 +269,19 @@ def main():
     target=(root/request['binary']).resolve()
     result={'status':'incomplete','reason':'analysis_error','findings':[],'evidence':{}}
     try:
-        if set(request)-{'root','binary','sha256','architecture','firmware_id','entry','entry_evidence','start_context'}:raise ValueError('request fields')
+        if set(request)-{'root','binary','sha256','architecture','firmware_id','entry','entry_evidence','start_context','mode'}:raise ValueError('request fields')
         if not target.is_relative_to(root) or hashlib.sha256(target.read_bytes()).hexdigest()!=request['sha256']:raise ValueError('target')
-        from firmwarex.analysis.engine import analyze
-        salt=Path('/input/fingerprint-salt').read_bytes()
-        result=analyze(target,request['firmware_id'],safe_path('/'+request['binary'],salt),request['architecture'],salt,
-                       budgets={'seconds':20,'memory_mb':512,'steps':1000},entry=request.get('entry','program_entry'),
-                       start_context=request.get('start_context'))
-        if request.get('entry_evidence'): result['entry_evidence']=request['entry_evidence']
+        if request.get('mode') == 'cfg':
+            resource.setrlimit(resource.RLIMIT_AS,(768*1024*1024,768*1024*1024))
+            from firmwarex.pipeline import graph_for
+            result=graph_for(target,[])
+        else:
+            from firmwarex.analysis.engine import analyze
+            salt=Path('/input/fingerprint-salt').read_bytes()
+            result=analyze(target,request['firmware_id'],safe_path('/'+request['binary'],salt),request['architecture'],salt,
+                           budgets={'seconds':20,'memory_mb':512,'steps':1000},entry=request.get('entry','program_entry'),
+                           start_context=request.get('start_context'))
+            if request.get('entry_evidence'): result['entry_evidence']=request['entry_evidence']
     except Exception as error:result['error_type']=type(error).__name__
     from firmwarex.output_policy import sanitize_output
     Path(sys.argv[2]).write_text(json.dumps(sanitize_output(result,Path('/input/fingerprint-salt').read_bytes())))
