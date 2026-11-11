@@ -1,0 +1,301 @@
+{
+  "angr": {
+    "version": "10.0.4.post1",
+    "requires_python": ">=3.12",
+    "classifiers": [
+      "Programming Language :: Python :: 3.12",
+      "Programming Language :: Python :: 3.13",
+      "Programming Language :: Python :: 3.14"
+    ],
+    "requires_dist": [
+      "cxxheaderparser~=2.0",
+      "GitPython",
+      "angr-data~=0.2.0",
+      "archinfo==10.0.4",
+      "cachetools<8.0,>=7.0",
+      "capstone==5.0.9",
+      "cffi>=1.14.0",
+      "cle==10.0.4",
+      "lmdb==3.0.0",
+      "msgspec; implementation_name == \"cpython\"",
+      "mulpyplexer",
+      "networkx!=2.8.1,>=2.5",
+      "protobuf>=6.33.0",
+      "psutil<8.0,>=7.0",
+      "pycparser~=3.0",
+      "platformdirs<5.0,>=4.0",
+      "pydemumble~=0.1.3",
+      "pypcode<=4.0.1,~=4.0",
+      "pyvex==10.0.4",
+      "rich>=13.1.0",
+      "sortedcontainers",
+      "sympy~=1.14",
+      "typing-extensions",
+      "z3-solver==5.1.0.0",
+      "colorama; platform_system == \"Windows\"",
+      "sqlalchemy; extra == \"angrdb\"",
+      "keystone-engine; (sys_platform != \"linux\" or platform_machine != \"aarch64\") and extra == \"keystone\"",
+      "opentelemetry-api; extra == \"telemetry\"",
+      "pydantic-ai>=2.12.0; extra == \"llm\"",
+      "mcp>=1.0.0; extra == \"llm\"",
+      "fastmcp>=2.3.0; extra == \"llm\"",
+      "unicorn==2.1.4; extra == \"unicorn\""
+    ],
+    "files": [
+      {
+        "filename": "angr-10.0.4.post1-cp312-abi3-macosx_11_0_arm64.whl",
+        "sha256": "70197c60be7e34aa0a1a2b02a9af653b8564380e02b86ce8dff2b0d1df6c694a"
+      },
+      {
+        "filename": "angr-10.0.4.post1-cp312-abi3-manylinux_2_28_aarch64.whl",
+        "sha256": "6e1c3e030bded2b05b1652060341aaa9d0b980217baa2617efae433725b65cd1"
+      },
+      {
+        "filename": "angr-10.0.4.post1-cp312-abi3-manylinux_2_28_x86_64.whl",
+        "sha256": "ac30fa5e1bd753abdfc86c2ed801656c57e554a22e248a7ff155316e9f5092ee"
+      },
+      {
+        "filename": "angr-10.0.4.post1-cp312-abi3-musllinux_1_2_aarch64.whl",
+        "sha256": "b1be40b548728f9c9fca07d3fc65c2cd7c450442761aba3ec300d91ef23bbd37"
+      },
+      {
+        "filename": "angr-10.0.4.post1-cp312-abi3-musllinux_1_2_x86_64.whl",
+        "sha256": "ea078455ee6632240831dce349279b418918ccbb9d3372f42957ea58389fdda4"
+      },
+      {
+        "filename": "angr-10.0.4.post1-cp312-abi3-win_amd64.whl",
+        "sha256": "1232f2ca66df874554bd25b14df302e6bf0309dfed074ee49f18cf37fd41a0ec"
+      },
+      {
+        "filename": "angr-10.0.4.post1.tar.gz",
+        "sha256": "2d35de328e7ed00223687bad812b0395d36a782b034e600b750a1cd35922c1ca"
+      }
+    ]
+  },
+  "claripy": {
+    "version": "9.3.7",
+    "requires_python": ">=3.12",
+    "classifiers": [
+      "Programming Language :: Python :: 3.12",
+      "Programming Language :: Python :: 3.13",
+      "Programming Language :: Python :: 3.14"
+    ],
+    "requires_dist": [
+      "cachetools",
+      "z3-solver==4.13.0.0"
+    ],
+    "files": [
+      {
+        "filename": "claripy-9.3.7-py3-none-any.whl",
+        "sha256": "75c3e2ba16cdcbd5d664b8e8802460595cd06c49d56f30e8b53de8c3eb99f7bf"
+      },
+      {
+        "filename": "claripy-9.3.7.tar.gz",
+        "sha256": "3c5b8575a2ba634afe9574f3e2bffc03e50c9fdf808e4216da04e3ede4299280"
+      }
+    ]
+  },
+  "cle": {
+    "version": "10.0.4",
+    "requires_python": ">=3.12",
+    "classifiers": [
+      "Programming Language :: Python :: 3.12",
+      "Programming Language :: Python :: 3.13",
+      "Programming Language :: Python :: 3.14"
+    ],
+    "requires_dist": [
+      "archinfo==10.0.4",
+      "arpy==1.1.1",
+      "cart",
+      "minidump>=0.0.10",
+      "pefile==2024.8.26",
+      "pyelftools>=0.29",
+      "pyvex==10.0.4",
+      "pyxbe~=1.0.3",
+      "pyxdia~=0.1; sys_platform != \"emscripten\"",
+      "sortedcontainers>=2.0",
+      "uefi-firmware~=1.16; sys_platform != \"emscripten\"",
+      "pypcode>=1.1; extra == \"pcode\""
+    ],
+    "files": [
+      {
+        "filename": "cle-10.0.4-py3-none-any.whl",
+        "sha256": "b6866f563a1220964682da0a75cfa41f4a0c933e12cf4ea3ed647d7e47571c92"
+      },
+      {
+        "filename": "cle-10.0.4.tar.gz",
+        "sha256": "9bce21b84d77ca12b1a9ce9ca7af9a6cb5abc2f5568a660fa937187aafaa821d"
+      }
+    ]
+  },
+  "pyvex": {
+    "version": "10.0.4",
+    "requires_python": ">=3.12",
+    "classifiers": [
+      "Programming Language :: Python :: 3.12",
+      "Programming Language :: Python :: 3.13",
+      "Programming Language :: Python :: 3.14"
+    ],
+    "requires_dist": [
+      "bitstring<5",
+      "cffi>=1.0.3; implementation_name == \"cpython\"",
+      "atheris>=2.3.0; extra == \"fuzzing\""
+    ],
+    "files": [
+      {
+        "filename": "pyvex-10.0.4-cp312-abi3-macosx_11_0_arm64.whl",
+        "sha256": "db6789ca5135e1770e7c2754b793e7cdc27971c331fdd6075023e2b55422ccbd"
+      },
+      {
+        "filename": "pyvex-10.0.4-cp312-abi3-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl",
+        "sha256": "edd7ef8ad9573d34aeef73f0f9cf60e798d7288a0d359fffb1bfd2c80b6bd8d8"
+      },
+      {
+        "filename": "pyvex-10.0.4-cp312-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+        "sha256": "bcf106b0723e746de0684df209790ca1ee9271250f0d088172042d5ee1a5083b"
+      },
+      {
+        "filename": "pyvex-10.0.4-cp312-abi3-musllinux_1_2_aarch64.whl",
+        "sha256": "d1327544e66ede1533594af6cefc1e58dfcae149690b998a8c4ec4bb3549138a"
+      },
+      {
+        "filename": "pyvex-10.0.4-cp312-abi3-musllinux_1_2_x86_64.whl",
+        "sha256": "56159af3279b42bbcc1af60486e1bbce2b4b8f778a421607fe41c859adb1ee83"
+      },
+      {
+        "filename": "pyvex-10.0.4-cp312-abi3-win_amd64.whl",
+        "sha256": "70e5fc0ebdac579b3ec3a9046d1d42b12bcda2c0c5abdd46b1f7c7069e8d9bb0"
+      },
+      {
+        "filename": "pyvex-10.0.4.tar.gz",
+        "sha256": "0823f9580dea1ad1e057675b0101634a25b8459e37df5ac5788774bc7052f15a"
+      }
+    ]
+  },
+  "archinfo": {
+    "version": "10.0.4",
+    "requires_python": ">=3.12",
+    "classifiers": [
+      "Programming Language :: Python :: 3.12",
+      "Programming Language :: Python :: 3.13",
+      "Programming Language :: Python :: 3.14"
+    ],
+    "requires_dist": [
+      "pypcode~=4.0; extra == \"pcode\""
+    ],
+    "files": [
+      {
+        "filename": "archinfo-10.0.4-py3-none-any.whl",
+        "sha256": "91e748f4cad993ea87ea3aa036576ad801328467fe8133a291edd6dc59fe2efd"
+      },
+      {
+        "filename": "archinfo-10.0.4.tar.gz",
+        "sha256": "6675b14b4d1c59fee02da0c010ef8aedfabe5c0b0db7e137dec9e8b8a8266c7e"
+      }
+    ]
+  },
+  "unicorn": {
+    "version": "2.1.4",
+    "requires_python": "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,!=3.5.*,!=3.6.*,>=2.7",
+    "classifiers": [
+      "Programming Language :: Python :: 3.10",
+      "Programming Language :: Python :: 3.11",
+      "Programming Language :: Python :: 3.12",
+      "Programming Language :: Python :: 3.13",
+      "Programming Language :: Python :: 3.7",
+      "Programming Language :: Python :: 3.8",
+      "Programming Language :: Python :: 3.9"
+    ],
+    "requires_dist": [
+      "importlib-resources; python_version < \"3.9\"",
+      "capstone==5.0.1; python_version <= \"3.7\" and extra == \"test\"",
+      "capstone==6.0.0a2; python_version > \"3.7\" and extra == \"test\""
+    ],
+    "files": [
+      {
+        "filename": "unicorn-2.1.4-cp37-abi3-macosx_10_9_x86_64.whl",
+        "sha256": "2a6f738fab5fabffa56af1e7bbf16ea1e91466c342f8dc64f125bd70f36c6b80"
+      },
+      {
+        "filename": "unicorn-2.1.4-cp37-abi3-macosx_11_0_arm64.whl",
+        "sha256": "d6c93e0f60328d8f4a1792af3f834137a28050fcc2305f2ec01efe8558a9844e"
+      },
+      {
+        "filename": "unicorn-2.1.4-cp37-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl",
+        "sha256": "bd1fb0c9af5f57e356d8a96928b4fe045b2e18f308ef23b481d5f970008aa722"
+      },
+      {
+        "filename": "unicorn-2.1.4-cp37-abi3-manylinux_2_17_i686.manylinux2014_i686.whl",
+        "sha256": "8f4e63b76ac4faa7cd32a4c436e96eabc24b91d52e73bde7699ec886bddf9277"
+      },
+      {
+        "filename": "unicorn-2.1.4-cp37-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "sha256": "9d6e6dea140560de4ebd8446661f7ef84a357d428c14a3ef09dacd306ec8c239"
+      },
+      {
+        "filename": "unicorn-2.1.4-cp37-abi3-musllinux_1_2_aarch64.whl",
+        "sha256": "01d744ba01c5cc68f1d7afe3d183f1868720fd440ec4eaedc4d1d5d9bf54b84c"
+      },
+      {
+        "filename": "unicorn-2.1.4-cp37-abi3-musllinux_1_2_i686.whl",
+        "sha256": "ce5c3bfd05f2a5749a0d8a960e1dfc26519a2d09377dc01cfa1378b936a953f8"
+      },
+      {
+        "filename": "unicorn-2.1.4-cp37-abi3-musllinux_1_2_x86_64.whl",
+        "sha256": "d348a90ee90219d141cb115ef8ed7e3fd1af42afaee105f7580761d775b25e32"
+      },
+      {
+        "filename": "unicorn-2.1.4-cp37-abi3-win32.whl",
+        "sha256": "9be89e69be5e2631299f39a7fb8e47b8d3bfaa70ae746e9c4c5f9476a2df9778"
+      },
+      {
+        "filename": "unicorn-2.1.4-cp37-abi3-win_amd64.whl",
+        "sha256": "d7107500c64ce5c168fbff6bef9485b5db1350050036f4cea568650cf8bdbdf5"
+      },
+      {
+        "filename": "unicorn-2.1.4-py2-none-macosx_10_9_x86_64.whl",
+        "sha256": "8687ec8f83cd40201ac7de3c52f7538754e61b5245c651a019711c7289ee26a4"
+      },
+      {
+        "filename": "unicorn-2.1.4-py2-none-macosx_11_0_arm64.whl",
+        "sha256": "8a7a94e67ce277c63112afa06640862b6c7395b8d42aec38f7a61a96c4b1658e"
+      },
+      {
+        "filename": "unicorn-2.1.4-py2-none-manylinux2014_aarch64.manylinux_2_17_aarch64.whl",
+        "sha256": "02630b1693f265d53cb6463334f81f23d96f5f58dd0602334e891302af738159"
+      },
+      {
+        "filename": "unicorn-2.1.4-py2-none-manylinux2014_i686.manylinux_2_17_i686.whl",
+        "sha256": "cec2b7d3c407140ca9816e050c881b3fde7bf553e38169b7c52a2ce6719c9f43"
+      },
+      {
+        "filename": "unicorn-2.1.4-py2-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+        "sha256": "a445476fff91e636b812d35ff1b0fb07f39ceaec0b3a86d246f7d431ff7766b3"
+      },
+      {
+        "filename": "unicorn-2.1.4-py2-none-musllinux_1_2_aarch64.whl",
+        "sha256": "35ac021ead8c992b15a511be73bf703429e5d346136ae38e6307c3d852655341"
+      },
+      {
+        "filename": "unicorn-2.1.4-py2-none-musllinux_1_2_i686.whl",
+        "sha256": "7eed9406a0503e91a2fecb250937aeb55291b2a3b9b51d23a39e7fc0be9a30d7"
+      },
+      {
+        "filename": "unicorn-2.1.4-py2-none-musllinux_1_2_x86_64.whl",
+        "sha256": "73d2eb557cc0255f18c55b15951c46dff1c07f996588df4cea1b1bdc5d69b184"
+      },
+      {
+        "filename": "unicorn-2.1.4-py2-none-win32.whl",
+        "sha256": "6c9fffa46935bbd2d30db7f7ac6c5c809d3b512bcbdb53ced9796e27b27d6157"
+      },
+      {
+        "filename": "unicorn-2.1.4-py2-none-win_amd64.whl",
+        "sha256": "c1d53d2416d270cf8a6a6e38c2530ca436494d6c7f4377a03d5eb07b25d8dc27"
+      },
+      {
+        "filename": "unicorn-2.1.4.tar.gz",
+        "sha256": "00567a70e323f749b419cd86bee4f9115beab7ebba32194581c090cbb7c59cff"
+      }
+    ]
+  }
+}

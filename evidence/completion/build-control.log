@@ -1,0 +1,54 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 DONE 0.0s
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 549B done
+#1 DONE 0.1s
+
+#2 [internal] load metadata for docker.io/library/python@sha256:34386ef0cb081344d7ec1c103ba398e6e9f64e9ab3a1509accc92a4e24a07258
+#2 DONE 0.1s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 117B done
+#3 DONE 0.1s
+
+#4 [internal] load build context
+#4 transferring context: 100.40kB 0.0s done
+#4 DONE 0.1s
+
+#5 [1/7] FROM docker.io/library/python@sha256:34386ef0cb081344d7ec1c103ba398e6e9f64e9ab3a1509accc92a4e24a07258
+#5 resolve docker.io/library/python@sha256:34386ef0cb081344d7ec1c103ba398e6e9f64e9ab3a1509accc92a4e24a07258 0.1s done
+#5 DONE 0.2s
+
+#6 [2/7] WORKDIR /app
+#6 CACHED
+
+#7 [3/7] COPY locks/control.txt locks/otel-linux-x86_64.txt /app/locks/
+#7 CACHED
+
+#8 [4/7] RUN pip install --no-cache-dir --require-hashes -r locks/control.txt -r locks/otel-linux-x86_64.txt && pip check
+#8 CACHED
+
+#9 [5/7] COPY src /app/src
+#9 DONE 0.2s
+
+#10 [6/7] COPY pyproject.toml alembic.ini /app/
+#10 DONE 0.2s
+
+#11 [7/7] COPY migrations /app/migrations
+#11 DONE 0.2s
+
+#12 exporting to image
+#12 exporting layers
+#12 exporting layers 0.9s done
+#12 exporting manifest sha256:bddf6507f891e1864b954ca67ab0927a6e8e0c50a5f8cc15423a8751bb47c0d3 0.1s done
+#12 exporting config sha256:00ea7ed210259f064cf08b50ca0e8904b4ac983a06e81e44513b4e2f5f57dd6b 0.1s done
+#12 exporting attestation manifest sha256:ee977bf02ac3605dc192f66494ec5645345905dac0cb6f61730a7a6a2e05ff68 0.1s done
+#12 exporting manifest list sha256:1bcb6797454d5e41a150798c4a288f71d482397bcb0cec0fa2271b3aff14e598
+#12 exporting manifest list sha256:1bcb6797454d5e41a150798c4a288f71d482397bcb0cec0fa2271b3aff14e598 0.1s done
+#12 naming to docker.io/library/firmwarex-control:day1 0.0s done
+#12 unpacking to docker.io/library/firmwarex-control:day1
+#12 unpacking to docker.io/library/firmwarex-control:day1 0.3s done
+#12 DONE 1.6s

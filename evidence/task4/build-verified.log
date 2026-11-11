@@ -1,0 +1,37 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from runner.Dockerfile
+#1 transferring dockerfile: 207B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/firmwarex-analysis-runtime:day1
+#2 DONE 0.1s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 117B done
+#3 DONE 0.0s
+
+#4 [internal] load build context
+#4 transferring context: 15.27kB done
+#4 DONE 0.1s
+
+#5 [1/2] FROM docker.io/library/firmwarex-analysis-runtime:day1@sha256:5a94cbe538c8862eaaff2742da27d06589f2b22edfcd2ad62173396751288460
+#5 resolve docker.io/library/firmwarex-analysis-runtime:day1@sha256:5a94cbe538c8862eaaff2742da27d06589f2b22edfcd2ad62173396751288460
+#5 resolve docker.io/library/firmwarex-analysis-runtime:day1@sha256:5a94cbe538c8862eaaff2742da27d06589f2b22edfcd2ad62173396751288460 0.1s done
+#5 CACHED
+
+#6 [2/2] COPY src /app/src
+#6 DONE 0.1s
+
+#7 exporting to image
+#7 exporting layers
+#7 exporting layers 0.4s done
+#7 exporting manifest sha256:48e0d944035c65bcf0a6693e15f8b5e23645724a71d906e4df6aebf0e988b8dd 0.1s done
+#7 exporting config sha256:013970ba481c8190770c6bcdf48e405033a8c85ba42f07248a4619e5506f8bd7 0.1s done
+#7 exporting attestation manifest sha256:aef0d8af395738a4551e9f16061a5641401180d8febb48f8a25c8c60ad2e243a 0.1s done
+#7 exporting manifest list sha256:8da2dce383dfa0f29fda1c049b3a4ecfd20b087089a50d4a28688ef470e57864
+#7 exporting manifest list sha256:8da2dce383dfa0f29fda1c049b3a4ecfd20b087089a50d4a28688ef470e57864 0.1s done
+#7 naming to docker.io/library/firmwarex-analysis:task4 0.0s done
+#7 unpacking to docker.io/library/firmwarex-analysis:task4
+#7 unpacking to docker.io/library/firmwarex-analysis:task4 0.1s done
+#7 DONE 1.0s

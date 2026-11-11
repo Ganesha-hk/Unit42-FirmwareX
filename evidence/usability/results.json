@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "checks": [
+    "friendly labels",
+    "rename saved across reload",
+    "technical details collapsed",
+    "upload name required",
+    "mobile width"
+  ]
+}

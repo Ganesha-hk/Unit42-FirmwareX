@@ -1,0 +1,8 @@
+ Container firmwarex-dispatcher-run-51c0e9311425 Creating 
+ Container firmwarex-dispatcher-run-51c0e9311425 Created 
+Traceback (most recent call last):
+  File "/scripts/verify-fuzz.py", line 17, in <module>
+    assert result.get('status')=='completed',result
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'schema_version': 1, 'status': 'incomplete', 'runs': [{'protocol': 'http', 'seed_index': 0, 'status': 'incomplete'}, {'protocol': 'http', 'seed_index': 1, 'status': 'incomplete'}, {'protocol': 'http', 'seed_index': 2, 'status': 'incomplete'}, {'protocol': 'http', 'seed_index': 3, 'status': 'incomplete'}, {'protocol': 'upnp', 'seed_index': 0, 'status': 'incomplete'}, {'protocol': 'upnp', 'seed_index': 1, 'status': 'incomplete'}, {'protocol': 'upnp', 'seed_index': 2, 'status': 'incomplete'}, {'protocol': 'upnp', 'seed_index': 3, 'status': 'incomplete'}, {'protocol': 'mqtt', 'seed_index': 0, 'status': 'incomplete'}, {'protocol': 'mqtt', 'seed_index': 1, 'status': 'incomplete'}, {'protocol': 'mqtt', 'seed_index': 2, 'status': 'incomplete'}, {'protocol': 'mqtt', 'seed_index': 3, 'status': 'incomplete'}], 'findings': [], 'evidence': {}, 'wall_seconds': 37.332}
+

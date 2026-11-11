@@ -1,0 +1,27 @@
+[
+  {
+    "architecture": "ARM32",
+    "pages": 3,
+    "checked": true
+  },
+  {
+    "architecture": "ARM64",
+    "pages": 3,
+    "checked": true
+  },
+  {
+    "architecture": "x86_64",
+    "pages": 18,
+    "checked": true
+  },
+  {
+    "architecture": "MIPSEL",
+    "pages": 3,
+    "checked": true
+  },
+  {
+    "architecture": "MIPS",
+    "pages": 3,
+    "checked": true
+  }
+]

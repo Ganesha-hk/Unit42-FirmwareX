@@ -1,0 +1,14 @@
+[
+  {
+    "job_id": "923f5f44-7704-472a-9f1f-5c3e227ffe41",
+    "persisted_findings": 17,
+    "audit_events": 10,
+    "plaintext_sentinels": 0
+  },
+  {
+    "job_id": "c315ab5c-56e5-43d1-bb0c-13f1218343ca",
+    "persisted_findings": 3,
+    "audit_events": 10,
+    "plaintext_sentinels": 0
+  }
+]

@@ -1,0 +1,75 @@
+{
+  "status": "passed",
+  "schema_id": "urn:firmwarex:finding:1.0.0",
+  "schema_sha256": "d8e7941da7c016943799bbcf2925d169a4f54e43ff176cc25ef0f1437643fa0f",
+  "reports": [
+    {
+      "report": "evidence/mentor-accuracy-2026-11-07/regression/controlled-report.json",
+      "sha256": "ff88526e9a1d837eca4152929af819b04dfa9a0e69e3d4d042f51d86ac69e032",
+      "firmware_id": "e9a1a254-c063-44e7-81f9-daa8d5ad8454",
+      "findings": 9
+    },
+    {
+      "report": "evidence/mentor-accuracy-2026-11-07/extended-fuzz.json",
+      "sha256": "8a2688665b6979e9451d74699ac8dad0f2690f14da9adf8152318e24817010a0",
+      "firmware_id": "e071d4be-5e32-4632-8b10-0c10152ace72",
+      "findings": 11
+    },
+    {
+      "report": "evidence/mentor-accuracy-2026-11-07/extended-snapshots.json",
+      "sha256": "f389842a6d5f3ec74f03e71fd05195594ad955b1415debc2925f9942ecbd3fbb",
+      "firmware_id": "c253e141-13d4-44ef-88c4-7e88e6e20a0e",
+      "findings": 8
+    },
+    {
+      "report": "evidence/mentor-accuracy-2026-11-07/openwrt-demo/report.json",
+      "sha256": "a6c2c799940bae5b3341202046e25d69f42373fbd66ff137501f66e8132cac9f",
+      "firmware_id": "b32e825f-eb90-438d-9016-4f1b86542350",
+      "findings": 20
+    },
+    {
+      "report": "evidence/mentor-accuracy-2026-11-07/corpus/real-image-0.json",
+      "sha256": "5d41b7fe4723005ac64bc62790f649accd64dbab09eec984f0db78b5dd3b2c6f",
+      "firmware_id": "f398da82-779d-4b5c-a1f4-da4cb6bfdfba",
+      "findings": 20
+    },
+    {
+      "report": "evidence/mentor-accuracy-2026-11-07/corpus/real-image-1.json",
+      "sha256": "443cbea87e83239b18c01c518420f3ce4ba5f75b3f3e5cf84ad329ddfb2c88d7",
+      "firmware_id": "4af0e57f-f99d-42ab-a344-f26009e7b5e6",
+      "findings": 20
+    },
+    {
+      "report": "evidence/mentor-accuracy-2026-11-07/corpus/real-image-2.json",
+      "sha256": "0f8ce44a01ed7cca4d86bc6aa44e24c2d124b073dbbeade83abd9926dd9ac767",
+      "firmware_id": "4b47a6fa-ccb4-4f17-9b7f-0962af997782",
+      "findings": 22
+    },
+    {
+      "report": "evidence/mentor-accuracy-2026-11-07/corpus/real-image-3.json",
+      "sha256": "497c8cc70c903edc94b4e324c07d547e829547db7815a0727da21ad7e6972a10",
+      "firmware_id": "95e8a385-b67a-4a0b-9f69-e98dfedddd18",
+      "findings": 31
+    },
+    {
+      "report": "evidence/mentor-accuracy-2026-11-07/corpus/real-image-4.json",
+      "sha256": "f9b9cfaa0f6f863eb69ab328c10f2d76fbc2963aa4f48b530505cba6ab072bb0",
+      "firmware_id": "4b3e0b7e-93f5-40dc-945c-6668a574ea10",
+      "findings": 19
+    },
+    {
+      "report": "evidence/mentor-accuracy-2026-11-07/corpus/real-image-5.json",
+      "sha256": "047c2c1a2a06ead57c1184ad47f431b957df9b3955875a3a56c1da73ba646c54",
+      "firmware_id": "f9147785-60da-481d-a666-576d7b444dcc",
+      "findings": 19
+    }
+  ],
+  "findings_checked": 179,
+  "categories": [
+    "command_injection",
+    "hardcoded_secret",
+    "memory_corruption",
+    "weak_crypto"
+  ],
+  "scope": "Recorded report schema, runtime validator, identity, unique IDs and evidence-reference integrity; not classification calibration."
+}

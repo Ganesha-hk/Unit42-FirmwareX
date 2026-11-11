@@ -1,0 +1,14 @@
+ Container firmwarex-dispatcher-run-24fb2c909feb Creating 
+ Container firmwarex-dispatcher-run-24fb2c909feb Created 
+Traceback (most recent call last):
+  File "/scripts/verify-analysis.py", line 35, in <module>
+    result=case(name);assert not result['findings'] and result['status']=='completed',(name,result)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scripts/verify-analysis.py", line 16, in case
+    out=run(job,base.model_copy(update={'job_wall_seconds':90,'job_cpu_seconds':60,'job_memory_bytes':1024*1024*1024}),'/registry/analysis-controlled.json')
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/src/firmwarex/analysis/controller.py", line 50, in run
+    audit('analysis_denied',{'reason':'controlled_fixture_gate'});raise PermissionError('mentor gate: valid registered fixture required') from None
+                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: mentor gate: valid registered fixture required
+

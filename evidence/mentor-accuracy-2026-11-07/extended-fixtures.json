@@ -1,0 +1,24 @@
+[
+  {
+    "feature": "fuzz",
+    "image": "controlled-extended-fuzz.bin",
+    "sha256": "711b68470fd64f3b3b69412679c57faef0d16cbc82260fc597a9368841d6f8ed",
+    "repeat_sha256": "711b68470fd64f3b3b69412679c57faef0d16cbc82260fc597a9368841d6f8ed",
+    "target": {
+      "binary": "bin/protocol-fuzz",
+      "architecture": "x86_64",
+      "sha256": "800c864d7d334da8a5be7f8a6fbc725845dbb17cf4781ef49efa170a161832f0"
+    }
+  },
+  {
+    "feature": "snapshots",
+    "image": "controlled-extended-snapshots.bin",
+    "sha256": "7d255bf5cbc9e03e697b67f471c11d0df955ae6ac5d2a364277960e9b8b7dd49",
+    "repeat_sha256": "7d255bf5cbc9e03e697b67f471c11d0df955ae6ac5d2a364277960e9b8b7dd49",
+    "target": {
+      "binary": "bin/snapshot-arm.elf",
+      "architecture": "ARM32",
+      "sha256": "3643f733b504d80b674ea35ca3c9322411eea74b5fb7e85f31b44db873fa7df0"
+    }
+  }
+]

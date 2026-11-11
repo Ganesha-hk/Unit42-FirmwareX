@@ -1,0 +1,55 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.15, pytest-9.1.1, pluggy-1.7.0
+rootdir: /tests/unit
+plugins: anyio-4.15.1, cov-7.1.0
+collected 85 items
+
+../tests/unit/test_emulation.py ................                         [ 18%]
+../tests/unit/test_findings_scanners.py ................................ [ 56%]
+..........                                                               [ 68%]
+../tests/unit/test_observability.py ..                                   [ 70%]
+../tests/unit/test_output_contract.py ..                                 [ 72%]
+../tests/unit/test_output_policy.py ......                               [ 80%]
+../tests/unit/test_static.py .............                               [ 95%]
+../tests/unit/test_static_findings.py ..                                 [ 97%]
+../tests/unit/test_static_leads.py ..                                    [100%]
+
+----------------- generated xml file: /evidence/unit-tests.xml -----------------
+================================ tests coverage ================================
+_______________ coverage: platform linux, python 3.12.15-final-0 _______________
+
+Name                                     Stmts   Miss  Cover
+------------------------------------------------------------
+src/firmwarex/__init__.py                    0      0   100%
+src/firmwarex/analysis/__init__.py           0      0   100%
+src/firmwarex/analysis/bounds.py            51     51     0%
+src/firmwarex/analysis/controller.py        61     61     0%
+src/firmwarex/analysis/engine.py           181    181     0%
+src/firmwarex/analysis/runner.py            29     29     0%
+src/firmwarex/api.py                       169    169     0%
+src/firmwarex/config.py                     23      1    96%
+src/firmwarex/database.py                   10      3    70%
+src/firmwarex/diagnostic_vocabulary.py       2      0   100%
+src/firmwarex/emulation/__init__.py          0      0   100%
+src/firmwarex/emulation/controller.py       60     21    65%
+src/firmwarex/emulation/runner.py           95     69    27%
+src/firmwarex/extract.py                   135    105    22%
+src/firmwarex/findings.py                   36      0   100%
+src/firmwarex/inventory.py                  37      0   100%
+src/firmwarex/models.py                     51      1    98%
+src/firmwarex/observability.py              65      0   100%
+src/firmwarex/output_policy.py              36      0   100%
+src/firmwarex/persistence.py                36     17    53%
+src/firmwarex/pipeline.py                   95     95     0%
+src/firmwarex/redaction.py                  16      7    56%
+src/firmwarex/runner.py                     33     33     0%
+src/firmwarex/sandbox.py                    64     56    12%
+src/firmwarex/scanners/__init__.py           0      0   100%
+src/firmwarex/scanners/secrets.py           34      0   100%
+src/firmwarex/static.py                     47      1    98%
+src/firmwarex/static_findings.py            14      0   100%
+src/firmwarex/tasks.py                      83     83     0%
+------------------------------------------------------------
+TOTAL                                     1463    983    33%
+Coverage XML written to file /evidence/coverage.xml
+============================== 85 passed in 1.76s ==============================

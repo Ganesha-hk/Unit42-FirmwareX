@@ -1,0 +1,58 @@
+ Image firmwarex-control:day1 Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 974B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile:
+#2 transferring dockerfile: 488B done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/python@sha256:34386ef0cb081344d7ec1c103ba398e6e9f64e9ab3a1509accc92a4e24a07258
+#3 DONE 0.1s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 117B done
+#4 DONE 0.1s
+
+#5 [internal] load build context
+#5 transferring context: 822B done
+#5 DONE 0.1s
+
+#6 [1/7] FROM docker.io/library/python@sha256:34386ef0cb081344d7ec1c103ba398e6e9f64e9ab3a1509accc92a4e24a07258
+#6 resolve docker.io/library/python@sha256:34386ef0cb081344d7ec1c103ba398e6e9f64e9ab3a1509accc92a4e24a07258 0.1s done
+#6 DONE 0.1s
+
+#7 [2/7] WORKDIR /app
+#7 CACHED
+
+#8 [3/7] COPY locks/control.txt /app/locks/control.txt
+#8 CACHED
+
+#9 [5/7] COPY src /app/src
+#9 CACHED
+
+#10 [6/7] COPY pyproject.toml alembic.ini /app/
+#10 CACHED
+
+#11 [4/7] RUN pip install --no-cache-dir --require-hashes -r locks/control.txt
+#11 CACHED
+
+#12 [7/7] COPY migrations /app/migrations
+#12 CACHED
+
+#13 exporting to image
+#13 exporting layers
+#13 exporting layers 4.6s done
+#13 exporting manifest sha256:b7b20c692128bfd9aa65b14ec3d35551eb1f0b8e877eb173fe55a61c8bb86e45 0.1s done
+#13 exporting config sha256:44d4b149bbe1102ad340071405f86c51c7dcfe6163dcfa78d3d9265b6984a814 0.1s done
+#13 exporting attestation manifest sha256:65ceaefa1a18d6e7cae40bdde142fb5d7314232b4e795cc4cb73d22dae3f7c67 0.1s done
+#13 exporting manifest list sha256:4a0f40e0a38b692fd8d3d3228da3e802e7e783f176a53118a5b90688d28eff17 0.1s done
+#13 naming to docker.io/library/firmwarex-control:day1 0.0s done
+#13 unpacking to docker.io/library/firmwarex-control:day1
+#13 unpacking to docker.io/library/firmwarex-control:day1 1.3s done
+#13 DONE 6.4s
+
+#14 resolving provenance for metadata file
+#14 DONE 0.0s
+ Image firmwarex-control:day1 Built 

@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/home/ubunt/projects/firmwarex/scripts/verify-api.py", line 40, in <module>
+    assert job["status"] == expected, job
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'job_id': '00fad556-8ece-4571-af59-b49fad162345', 'firmware_id': '54f3bd34-8f8e-40ca-871b-d6b741ed4a2b', 'status': 'unsupported', 'stage': 'static', 'error_code': None, 'result': {'schema_version': 1, 'extraction': {'status': 'unsupported', 'attempts': [], 'filesystems': []}, 'entropy': [{'offset': 0, 'size': 5983, 'bits_per_byte': 7.959426}], 'errors': [], 'analysis_scope': 'static_only', 'sandbox': {'network_mode': 'none', 'read_only': True, 'reason': None, 'wall_seconds': 0.001, 'cpu_seconds': 0.0, 'exit_code': 0}}, 'created_at': '2026-10-19T09:41:55.878164+00:00', 'updated_at': '2026-10-19T09:41:57.672787+00:00'}

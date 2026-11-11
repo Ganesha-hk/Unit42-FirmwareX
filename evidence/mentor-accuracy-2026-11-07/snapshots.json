@@ -1,0 +1,44 @@
+{
+  "result": {
+    "schema_version": 1,
+    "status": "completed",
+    "architecture": "ARM32",
+    "restores": [
+      {
+        "advanced": true,
+        "restored": true
+      },
+      {
+        "advanced": true,
+        "restored": true
+      }
+    ],
+    "state_sha256": "27bdfd752cc79e377509a8fd82972eb9600370b580a97474c767970826b4d3a7"
+  },
+  "sandbox": {
+    "network_mode": "none",
+    "read_only": true,
+    "reason": null,
+    "profile": {
+      "NetworkMode": "none",
+      "ReadonlyRootfs": true,
+      "CapDrop": [
+        "ALL"
+      ],
+      "SecurityOpt": [
+        "no-new-privileges:true"
+      ],
+      "Privileged": false,
+      "Memory": 805306368,
+      "MemorySwap": 805306368,
+      "NanoCpus": 1000000000,
+      "PidsLimit": 64
+    },
+    "image_id": "sha256:43e1b506bf388f77140c8ff8b9295f9ac9c5cd2487c016e5299da3c45b896140",
+    "user": "1001:1001",
+    "wall_seconds": 0.866,
+    "cpu_seconds": 0.592,
+    "exit_code": 0,
+    "output_limit_bytes": 41943040
+  }
+}

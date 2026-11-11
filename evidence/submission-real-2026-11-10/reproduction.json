@@ -1,0 +1,10 @@
+{
+  "result": "PASS",
+  "initially_empty": true,
+  "retained_after_teardown_restart": true,
+  "firmware_records": 1,
+  "report_sha256": "68eb9d1a2521e8f12e0534bf7e832e5afa81e288cc22bc9a77b70cb9670960e8",
+  "limitation": "Same-host fresh database/queue/storage using existing Docker images. Not an independent clean-machine build.",
+  "comparison": "All fields compared; numbers normalized to browser IEEE-754 precision. server-report.json preserves exact server integers.",
+  "private_configuration_absent_from_text_exports": true
+}

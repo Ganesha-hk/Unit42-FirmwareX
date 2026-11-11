@@ -1,0 +1,22 @@
+{
+  "kind": "controlled_fixture",
+  "license_id": "MIT",
+  "executed": false,
+  "images": [
+    {
+      "name": "controlled-squashfs.bin",
+      "sha256": "1a09968fe300a72aa161d00f833bf65135ee8a7c6dbb2814eafbc2fded23b9c5",
+      "size": 8192
+    },
+    {
+      "name": "controlled-nested.bin",
+      "sha256": "9aa99432bb1f89d1c43b4dc46d027ce34869502b7ff7dd5307c51fa4be50acfe",
+      "size": 5983
+    },
+    {
+      "name": "unsupported.bin",
+      "sha256": "41481a6ae632effa6eb72c38903166094975331fff5d688252ae5cf41cae0ea9",
+      "size": 30
+    }
+  ]
+}

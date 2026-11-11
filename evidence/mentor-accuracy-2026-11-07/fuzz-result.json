@@ -1,0 +1,226 @@
+{
+  "result": {
+    "schema_version": 1,
+    "status": "completed",
+    "runs": [
+      {
+        "protocol": "http",
+        "seed_index": 0,
+        "status": "completed"
+      },
+      {
+        "protocol": "http",
+        "seed_index": 1,
+        "status": "crash"
+      },
+      {
+        "protocol": "http",
+        "seed_index": 2,
+        "status": "completed"
+      },
+      {
+        "protocol": "http",
+        "seed_index": 3,
+        "status": "completed"
+      },
+      {
+        "protocol": "upnp",
+        "seed_index": 0,
+        "status": "completed"
+      },
+      {
+        "protocol": "upnp",
+        "seed_index": 1,
+        "status": "crash"
+      },
+      {
+        "protocol": "upnp",
+        "seed_index": 2,
+        "status": "completed"
+      },
+      {
+        "protocol": "upnp",
+        "seed_index": 3,
+        "status": "completed"
+      },
+      {
+        "protocol": "mqtt",
+        "seed_index": 0,
+        "status": "completed"
+      },
+      {
+        "protocol": "mqtt",
+        "seed_index": 1,
+        "status": "crash"
+      },
+      {
+        "protocol": "mqtt",
+        "seed_index": 2,
+        "status": "completed"
+      },
+      {
+        "protocol": "mqtt",
+        "seed_index": 3,
+        "status": "completed"
+      }
+    ],
+    "findings": [
+      {
+        "vulnerability_id": "0ea43cc5-d9bf-5276-b717-0f3b1062f07d",
+        "firmware_id": "2c79a2ea-e6bd-4f61-ba4e-d3a3d9f7155d",
+        "binary": "/redacted-24543964dbb2305c",
+        "architecture": "x86_64",
+        "category": "memory_corruption",
+        "cwe": "CWE-476",
+        "address": "0x40161e",
+        "sink": null,
+        "source": null,
+        "tainted_path": [],
+        "crash_state": {
+          "fault_address": "0x0",
+          "registers": {
+            "pc": "0x40161e",
+            "sp": "0x40008009d0"
+          },
+          "overflow_offset": null,
+          "stack_hash": "b4ce316b36333cb4723a39495639861ab4d0fca89f340e512cc242b34a938f56"
+        },
+        "risk_rating": "medium",
+        "confidence": "probable",
+        "evidence_ref": "evidence:8def6e9fc9e6b8423e7eb62d70ab82bbbed5227544042dc8ff929768b1e69f6c",
+        "redacted": true,
+        "status": "new",
+        "detected_at": "2026-11-07T14:56:51.886164Z"
+      }
+    ],
+    "evidence": {
+      "evidence:8def6e9fc9e6b8423e7eb62d70ab82bbbed5227544042dc8ff929768b1e69f6c": {
+        "rule": "controlled_protocol_null_write",
+        "replays": [
+          {
+            "rule": "controlled_protocol_null_write",
+            "protocol": "http",
+            "seed": 42,
+            "seed_index": 1,
+            "retained_indices": [
+              13,
+              14,
+              15,
+              16,
+              17,
+              18,
+              19,
+              20,
+              21,
+              22,
+              23,
+              24,
+              25,
+              26,
+              27,
+              28,
+              29,
+              30,
+              31,
+              32,
+              33,
+              34,
+              35
+            ],
+            "fingerprint": "375d0907230288b3d6784169a8e280d8eff16fc77e9f79f15acd45c575eeb93c",
+            "byte_length": 23,
+            "original_length": 38,
+            "minimization_attempts": 12,
+            "replay_verified": true,
+            "call_path": [
+              "0x40161e",
+              "0x00000000004018b5"
+            ],
+            "redacted": true,
+            "heuristic": false
+          },
+          {
+            "rule": "controlled_protocol_null_write",
+            "protocol": "upnp",
+            "seed": 42,
+            "seed_index": 1,
+            "retained_indices": [
+              0,
+              22,
+              23,
+              24,
+              25,
+              26,
+              27,
+              28
+            ],
+            "fingerprint": "5e1a859ee6fd572280b967805357f8ee54ac1e2cacc1780e85515552689216d1",
+            "byte_length": 8,
+            "original_length": 31,
+            "minimization_attempts": 12,
+            "replay_verified": true,
+            "call_path": [
+              "0x40161e",
+              "0x00000000004018b5"
+            ],
+            "redacted": true,
+            "heuristic": false
+          },
+          {
+            "rule": "controlled_protocol_null_write",
+            "protocol": "mqtt",
+            "seed": 42,
+            "seed_index": 1,
+            "retained_indices": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "fingerprint": "8930bd6839f53247d338a08b8417dcbddfa753f064b521f0d2d1059d7258976e",
+            "byte_length": 6,
+            "original_length": 6,
+            "minimization_attempts": 8,
+            "replay_verified": true,
+            "call_path": [
+              "0x40161e",
+              "0x00000000004018b5"
+            ],
+            "redacted": true,
+            "heuristic": false
+          }
+        ],
+        "redacted": true
+      }
+    },
+    "wall_seconds": 4.271
+  },
+  "sandbox": {
+    "network_mode": "none",
+    "read_only": true,
+    "reason": null,
+    "profile": {
+      "NetworkMode": "none",
+      "ReadonlyRootfs": true,
+      "CapDrop": [
+        "ALL"
+      ],
+      "SecurityOpt": [
+        "no-new-privileges:true"
+      ],
+      "Privileged": false,
+      "Memory": 805306368,
+      "MemorySwap": 805306368,
+      "NanoCpus": 1000000000,
+      "PidsLimit": 64
+    },
+    "image_id": "sha256:1c26e8b9f915e79716120e3a54df9b8e971b120f275429d3841981fac767bdbb",
+    "user": "1001:1001",
+    "wall_seconds": 4.61,
+    "cpu_seconds": 3.58,
+    "exit_code": 0,
+    "output_limit_bytes": 41943040
+  }
+}

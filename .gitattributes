@@ -1,0 +1,2 @@
+# Preserve raw command transcripts, including terminal CR and trailing spaces.
+evidence/**/*.log -whitespace

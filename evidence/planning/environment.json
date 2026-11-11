@@ -1,0 +1,128 @@
+{
+  "os": {
+    "command": [
+      "cat",
+      "/etc/os-release"
+    ],
+    "exit_code": 0,
+    "stdout": "PRETTY_NAME=\"Ubuntu 26.04.1 LTS\"\nNAME=\"Ubuntu\"\nVERSION_ID=\"26.04\"\nVERSION=\"26.04.1 LTS (Resolute Raccoon)\"\nVERSION_CODENAME=resolute\nID=ubuntu\nID_LIKE=debian\nHOME_URL=\"https://www.ubuntu.com/\"\nSUPPORT_URL=\"https://help.ubuntu.com/\"\nBUG_REPORT_URL=\"https://bugs.launchpad.net/ubuntu/\"\nPRIVACY_POLICY_URL=\"https://www.ubuntu.com/legal/terms-and-policies/privacy-policy\"\nUBUNTU_CODENAME=resolute\nLOGO=ubuntu-logo\n",
+    "stderr": ""
+  },
+  "architecture": {
+    "command": [
+      "uname",
+      "-m"
+    ],
+    "exit_code": 0,
+    "stdout": "x86_64\n",
+    "stderr": ""
+  },
+  "cpu": {
+    "command": [
+      "lscpu"
+    ],
+    "exit_code": 0,
+    "stdout": "Architecture:                            x86_64\nCPU op-mode(s):                          32-bit, 64-bit\nAddress sizes:                           39 bits physical, 48 bits virtual\nByte Order:                              Little Endian\nCPU(s):                                  8\nOn-line CPU(s) list:                     0-7\nVendor ID:                               GenuineIntel\nModel name:                              13th Gen Intel(R) Core(TM) i5-13450HX\nCPU family:                              6\nModel:                                   183\nThread(s) per core:                      1\nCore(s) per socket:                      8\nSocket(s):                               1\nStepping:                                1\nBogoMIPS:                                5222.40\nFlags:                                   fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx rdtscp lm constant_tsc rep_good nopl xtopology nonstop_tsc cpuid tsc_known_freq pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch fsgsbase bmi1 avx2 bmi2 invpcid rdseed adx clflushopt sha_ni arat md_clear flush_l1d arch_capabilities\nHypervisor vendor:                       KVM\nVirtualization type:                     full\nL1d cache:                               384 KiB (8 instances)\nL1i cache:                               256 KiB (8 instances)\nL2 cache:                                10 MiB (8 instances)\nL3 cache:                                160 MiB (8 instances)\nNUMA node(s):                            1\nNUMA node0 CPU(s):                       0-7\nVulnerability Gather data sampling:      Not affected\nVulnerability Ghostwrite:                Not affected\nVulnerability Indirect target selection: Mitigation; Aligned branch/return thunks\nVulnerability Itlb multihit:             Not affected\nVulnerability L1tf:                      Not affected\nVulnerability Mds:                       Not affected\nVulnerability Meltdown:                  Not affected\nVulnerability Mmio stale data:           Not affected\nVulnerability Old microcode:             Not affected\nVulnerability Reg file data sampling:    Mitigation; Clear Register File\nVulnerability Retbleed:                  Not affected\nVulnerability Spec rstack overflow:      Not affected\nVulnerability Spec store bypass:         Vulnerable\nVulnerability Spectre v1:                Mitigation; usercopy/swapgs barriers and __user pointer sanitization\nVulnerability Spectre v2:                Mitigation; Retpolines; STIBP disabled; RSB filling; PBRSB-eIBRS Not affected; BHI SW loop, KVM SW loop\nVulnerability Srbds:                     Not affected\nVulnerability Tsa:                       Not affected\nVulnerability Tsx async abort:           Not affected\nVulnerability Vmscape:                   Not affected\n",
+    "stderr": ""
+  },
+  "memory": {
+    "command": [
+      "free",
+      "-h"
+    ],
+    "exit_code": 0,
+    "stdout": "               total        used        free      shared  buff/cache   available\nMem:           7.2Gi       2.7Gi       1.7Gi       159Mi       3.3Gi       4.6Gi\nSwap:          4.0Gi          0B       4.0Gi\n",
+    "stderr": ""
+  },
+  "disk": {
+    "command": [
+      "df",
+      "-h",
+      "."
+    ],
+    "exit_code": 0,
+    "stdout": "Filesystem      Size  Used Avail Use% Mounted on\n/dev/sda2        87G   16G   68G  19% /\n",
+    "stderr": ""
+  },
+  "docker": {
+    "command": [
+      "docker",
+      "--version"
+    ],
+    "exit_code": 0,
+    "stdout": "Docker version 29.9.1, build dfc520d\n",
+    "stderr": ""
+  },
+  "compose": {
+    "command": [
+      "docker",
+      "compose",
+      "version"
+    ],
+    "exit_code": 0,
+    "stdout": "Docker Compose version v5.6.0\n",
+    "stderr": ""
+  },
+  "docker_info": {
+    "command": [
+      "docker",
+      "info",
+      "--format",
+      "{{json .ServerVersion}} {{json .CgroupVersion}} {{json .SecurityOptions}}"
+    ],
+    "exit_code": 0,
+    "stdout": "\"29.9.1\" \"2\" [\"name=apparmor,profile=default\",\"name=seccomp,profile=builtin\",\"name=cgroupns\"]\n",
+    "stderr": ""
+  },
+  "git": {
+    "command": [
+      "git",
+      "--version"
+    ],
+    "exit_code": 0,
+    "stdout": "git version 2.53.0\n",
+    "stderr": ""
+  },
+  "python": {
+    "command": [
+      "/usr/bin/python3",
+      "--version"
+    ],
+    "exit_code": 0,
+    "stdout": "Python 3.14.4\n",
+    "stderr": ""
+  },
+  "virtualization": {
+    "command": [
+      "systemd-detect-virt"
+    ],
+    "exit_code": 0,
+    "stdout": "oracle\n",
+    "stderr": ""
+  },
+  "kvm": {
+    "command": [
+      "ls",
+      "-l",
+      "/dev/kvm"
+    ],
+    "exit_code": 2,
+    "stdout": "",
+    "stderr": "ls: cannot access '/dev/kvm': No such file or directory\n"
+  },
+  "modules": {
+    "command": [
+      "lsmod"
+    ],
+    "exit_code": 0,
+    "stdout": "Module                  Size  Used by\nnf_conntrack_netlink    61440  0\nveth                   45056  0\nisofs                  61440  1\nsnd_seq_dummy          12288  0\nsnd_hrtimer            12288  1\nxt_conntrack           12288  1\nxt_MASQUERADE          16384  1\nbridge                425984  0\nstp                    12288  1 bridge\nllc                    16384  2 bridge,stp\nxfrm_user              69632  1\nxfrm_algo              16384  1 xfrm_user\nxt_set                 20480  0\nip_set                 61440  1 xt_set\nnft_chain_nat          12288  5\nnf_nat                 61440  2 nft_chain_nat,xt_MASQUERADE\nnf_conntrack          196608  4 xt_conntrack,nf_nat,nf_conntrack_netlink,xt_MASQUERADE\nnf_defrag_ipv6         24576  1 nf_conntrack\nnf_defrag_ipv4         12288  1 nf_conntrack\nxt_addrtype            12288  4\nnft_compat             20480  6\nx_tables               65536  5 xt_conntrack,nft_compat,xt_addrtype,xt_set,xt_MASQUERADE\nnf_tables             401408  57 nft_compat,nft_chain_nat\nnfnetlink              20480  5 nft_compat,nf_conntrack_netlink,nf_tables,ip_set\noverlay               233472  0\nqrtr                   53248  2\nbinfmt_misc            24576  1\nnls_iso8859_1          12288  1\nintel_rapl_msr         20480  0\nintel_rapl_common      57344  1 intel_rapl_msr\nsnd_intel8x0           57344  1\nintel_uncore_frequency_common    20480  0\nintel_pmc_core        151552  0\nsnd_ac97_codec        200704  1 snd_intel8x0\npmt_telemetry          16384  1 intel_pmc_core\npmt_discovery          24576  1 pmt_telemetry\npmt_class              20480  2 pmt_telemetry,pmt_discovery\nac97_bus               12288  1 snd_ac97_codec\nsnd_pcm               208896  2 snd_intel8x0,snd_ac97_codec\nintel_pmc_ssram_telemetry    16384  1 intel_pmc_core\nsnd_seq_midi           24576  0\nintel_vsec             24576  2 intel_pmc_ssram_telemetry,pmt_telemetry\nsnd_seq_midi_event     16384  1 snd_seq_midi\nsnd_rawmidi            57344  1 snd_seq_midi\nsnd_seq               126976  9 snd_seq_midi,snd_seq_midi_event,snd_seq_dummy\nrapl                   20480  0\nsnd_seq_device         16384  3 snd_seq,snd_seq_midi,snd_rawmidi\nsnd_timer              53248  3 snd_seq,snd_hrtimer,snd_pcm\ni2c_piix4              36864  0\ni2c_smbus              20480  1 i2c_piix4\nvmwgfx                479232  4\nsnd                   147456  11 snd_seq,snd_seq_device,snd_intel8x0,snd_timer,snd_ac97_codec,snd_pcm,snd_rawmidi\ndrm_ttm_helper         20480  1 vmwgfx\nttm                   139264  2 vmwgfx,drm_ttm_helper\ne1000                 188416  0\nsoundcore              16384  1 snd\ninput_leds             12288  0\njoydev                 32768  0\nmac_hid                12288  0\nsch_fq_codel           28672  2\nefi_pstore             12288  0\nghash_clmulni_intel    12288  0\nahci                   53248  2\nvideo                  77824  0\npsmouse               225280  0\nwmi                    36864  1 video\nlibahci                57344  1 ahci\nvboxguest             532480  4\nserio_raw              20480  0\npata_acpi              12288  0\nhid_generic            12288  0\nusbhid                 86016  0\nhid                   282624  2 usbhid,hid_generic\nlp                     32768  0\nppdev                  24576  0\nparport                81920  2 lp,ppdev\nmsr                    12288  0\ndmi_sysfs              28672  0\nautofs4                61440  2\naesni_intel            98304  0\n",
+    "stderr": ""
+  },
+  "prd_sha256": "03451782008d39e8003efc4ec1ba8a650ec9206a8d5aa1f99ac314467c31fd14",
+  "python_executables": [
+    "/usr/bin/python3.14",
+    "/usr/bin/python3-config",
+    "/usr/bin/python3",
+    "/usr/bin/python3.14-config"
+  ]
+}

@@ -1,0 +1,23 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.15, pytest-9.1.1, pluggy-1.7.0
+rootdir: /tests/unit
+plugins: anyio-4.15.1, cov-7.1.0
+collected 111 items
+
+../tests/unit/test_emulation.py ................                         [ 14%]
+../tests/unit/test_findings_scanners.py ................................ [ 43%]
+..........                                                               [ 52%]
+../tests/unit/test_hardening_regressions.py ..........................   [ 75%]
+../tests/unit/test_observability.py ..                                   [ 77%]
+../tests/unit/test_output_contract.py ..                                 [ 79%]
+../tests/unit/test_output_policy.py ......                               [ 84%]
+../tests/unit/test_static.py .............                               [ 96%]
+../tests/unit/test_static_findings.py ..                                 [ 98%]
+../tests/unit/test_static_leads.py ..                                    [100%]
+
+----------------- generated xml file: /evidence/unit-tests.xml -----------------
+================================ tests coverage ================================
+_______________ coverage: platform linux, python 3.12.15-final-0 _______________
+
+Coverage XML written to file /evidence/coverage.xml
+============================= 111 passed in 7.00s ==============================

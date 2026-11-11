@@ -1,0 +1,3439 @@
+{
+  "schema_version": "1.0.0",
+  "firmware_id": "16122d04-01f5-4376-a271-49d243b68d8f",
+  "display_name": "ARM32 controlled E2E firmware",
+  "sha256": "974c196dd678242ab3b6e1ad0a79e48225b9e83244cc122eebe4e86332e67bd3",
+  "size": 282624,
+  "redacted": true,
+  "files": [
+    {
+      "path": "/bin",
+      "type": "directory",
+      "size": 80,
+      "hash": null
+    },
+    {
+      "path": "/bin/service-probe",
+      "type": "file",
+      "size": 593916,
+      "hash": "c4fd7b7a6d32a1ec7524d991bca37035156e19acb1c93b82e7033877491de711"
+    },
+    {
+      "path": "/bin/taint-demo",
+      "type": "file",
+      "size": 9512,
+      "hash": "e11e9fa1d22edd7bd3dc8c15f5638cdeb017a40164b20a032ea2470169174d82"
+    },
+    {
+      "path": "/etc",
+      "type": "directory",
+      "size": 80,
+      "hash": null
+    },
+    {
+      "path": "/etc/controlled.conf",
+      "type": "file",
+      "size": 289,
+      "hash": "65a8329b7126f67013c132cde9f03511a5abbda553670c0fbf80b60c274af234"
+    },
+    {
+      "path": "/etc/redacted-018cde065dc02e82",
+      "type": "file",
+      "size": 64,
+      "hash": "aa750e0c59add1192be1c4f8add725728d1380d93aff50c3fe11e4ec05ded8fc"
+    }
+  ],
+  "binaries": [
+    {
+      "path": "/bin/service-probe",
+      "architecture": "ARM32",
+      "endianness": "little",
+      "bits": 32,
+      "elf_type": "ET_EXEC",
+      "nx": true,
+      "pie": false,
+      "relro": "partial",
+      "stack_canary": true,
+      "fortify": false,
+      "stripped": false,
+      "wx_segments": [],
+      "banned_functions": [
+        "strcpy"
+      ],
+      "limitations": [
+        "Missing symbols may conceal canary/FORTIFY use; PIE does not prove runtime ASLR."
+      ]
+    },
+    {
+      "path": "/bin/taint-demo",
+      "architecture": "ARM32",
+      "endianness": "little",
+      "bits": 32,
+      "elf_type": "ET_EXEC",
+      "nx": true,
+      "pie": false,
+      "relro": "partial",
+      "stack_canary": false,
+      "fortify": false,
+      "stripped": false,
+      "wx_segments": [],
+      "banned_functions": [],
+      "limitations": [
+        "Missing symbols may conceal canary/FORTIFY use; PIE does not prove runtime ASLR."
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "vulnerability_id": "f7e01e7e-a54e-594e-9c62-4a3eb7fe40dd",
+      "firmware_id": "16122d04-01f5-4376-a271-49d243b68d8f",
+      "binary": "/bin/service-probe",
+      "architecture": "ARM32",
+      "category": "memory_corruption",
+      "cwe": "CWE-676",
+      "address": null,
+      "sink": "strcpy",
+      "source": null,
+      "tainted_path": [],
+      "crash_state": {
+        "fault_address": null,
+        "registers": null,
+        "overflow_offset": null,
+        "stack_hash": null
+      },
+      "risk_rating": "low",
+      "confidence": "heuristic",
+      "evidence_ref": "evidence:9f26cf77847cb0f150b93bf6a32de0fe421d1fc84e000f539293d7be970a4c71",
+      "redacted": true,
+      "status": "new",
+      "detected_at": "2026-10-20T05:30:29.354511Z"
+    },
+    {
+      "vulnerability_id": "a2c49e10-3d53-5156-bff7-17dd121369e6",
+      "firmware_id": "16122d04-01f5-4376-a271-49d243b68d8f",
+      "binary": "/bin/taint-demo",
+      "architecture": "ARM32",
+      "category": "command_injection",
+      "cwe": "CWE-78",
+      "address": "0x100004",
+      "sink": "system",
+      "source": "fwx_network_0",
+      "tainted_path": [
+        "0x10450",
+        "0x1034c",
+        "0x10000c",
+        "0x10478",
+        "0x10490",
+        "0x10328",
+        "0x100004"
+      ],
+      "crash_state": {
+        "fault_address": null,
+        "registers": {
+          "pc": "0x100004",
+          "sp": "0x7ffeff88",
+          "r0": {
+            "fingerprint": "16b0b885d3537ba51ada2f03fec9b220d7fe025c04c6f4876afe3361bc3eaffb"
+          },
+          "r1": {
+            "fingerprint": "16b0b885d3537ba51ada2f03fec9b220d7fe025c04c6f4876afe3361bc3eaffb"
+          }
+        },
+        "overflow_offset": null,
+        "stack_hash": "e360df36f4e1c32877e7587a1d348a8ffb66754f4e78a34b88a5ec61a38c98af"
+      },
+      "risk_rating": "high",
+      "confidence": "probable",
+      "evidence_ref": "evidence:20dc32c1dcd9e15242505c4aadd403bc395939faaf25e20445f1c2337350fa23",
+      "redacted": true,
+      "status": "new",
+      "detected_at": "2026-10-20T05:30:32.833586Z"
+    },
+    {
+      "vulnerability_id": "9891c806-d620-5629-b0ff-0a6aaed52256",
+      "firmware_id": "16122d04-01f5-4376-a271-49d243b68d8f",
+      "binary": "/bin/service-probe",
+      "architecture": "ARM32",
+      "category": "hardcoded_secret",
+      "cwe": "CWE-798",
+      "address": null,
+      "sink": null,
+      "source": null,
+      "tainted_path": [],
+      "crash_state": {
+        "fault_address": null,
+        "registers": null,
+        "overflow_offset": null,
+        "stack_hash": null
+      },
+      "risk_rating": "low",
+      "confidence": "heuristic",
+      "evidence_ref": "evidence:cc5718a143d38c65922c5cac3c663bfe6fce2d478e40cd6aad88387b1c648e6c",
+      "redacted": true,
+      "status": "new",
+      "detected_at": "2026-10-20T05:30:32.922093Z"
+    },
+    {
+      "vulnerability_id": "3279062f-8ede-5d99-b487-166019f6b253",
+      "firmware_id": "16122d04-01f5-4376-a271-49d243b68d8f",
+      "binary": "/bin/service-probe",
+      "architecture": "ARM32",
+      "category": "hardcoded_secret",
+      "cwe": "CWE-798",
+      "address": null,
+      "sink": null,
+      "source": null,
+      "tainted_path": [],
+      "crash_state": {
+        "fault_address": null,
+        "registers": null,
+        "overflow_offset": null,
+        "stack_hash": null
+      },
+      "risk_rating": "low",
+      "confidence": "heuristic",
+      "evidence_ref": "evidence:1adf43e1d8b1a792265cdaf351d7649fcdfbe62d3c533a52d311dc9218ffa349",
+      "redacted": true,
+      "status": "new",
+      "detected_at": "2026-10-20T05:30:32.922162Z"
+    },
+    {
+      "vulnerability_id": "bc92e6bd-bd58-5fb7-aa0e-df0fa5204490",
+      "firmware_id": "16122d04-01f5-4376-a271-49d243b68d8f",
+      "binary": "/bin/service-probe",
+      "architecture": "ARM32",
+      "category": "hardcoded_secret",
+      "cwe": "CWE-798",
+      "address": null,
+      "sink": null,
+      "source": null,
+      "tainted_path": [],
+      "crash_state": {
+        "fault_address": null,
+        "registers": null,
+        "overflow_offset": null,
+        "stack_hash": null
+      },
+      "risk_rating": "low",
+      "confidence": "heuristic",
+      "evidence_ref": "evidence:09468f586c7155c5ad553f75d2dc6be31859bd6e94829a5a547ee3a144416f67",
+      "redacted": true,
+      "status": "new",
+      "detected_at": "2026-10-20T05:30:32.922188Z"
+    },
+    {
+      "vulnerability_id": "4afe81b1-f90e-51cf-aa8c-ec3698ee2ba6",
+      "firmware_id": "16122d04-01f5-4376-a271-49d243b68d8f",
+      "binary": "/bin/service-probe",
+      "architecture": "ARM32",
+      "category": "hardcoded_secret",
+      "cwe": "CWE-798",
+      "address": null,
+      "sink": null,
+      "source": null,
+      "tainted_path": [],
+      "crash_state": {
+        "fault_address": null,
+        "registers": null,
+        "overflow_offset": null,
+        "stack_hash": null
+      },
+      "risk_rating": "low",
+      "confidence": "heuristic",
+      "evidence_ref": "evidence:ea51de8148001897ac331ef3dbd5b8c8b97d49ca4218a90fca94079e275904e1",
+      "redacted": true,
+      "status": "new",
+      "detected_at": "2026-10-20T05:30:32.922209Z"
+    },
+    {
+      "vulnerability_id": "848b785e-760a-5203-9a29-24924d3b5bb8",
+      "firmware_id": "16122d04-01f5-4376-a271-49d243b68d8f",
+      "binary": "/bin/service-probe",
+      "architecture": "ARM32",
+      "category": "hardcoded_secret",
+      "cwe": "CWE-798",
+      "address": null,
+      "sink": null,
+      "source": null,
+      "tainted_path": [],
+      "crash_state": {
+        "fault_address": null,
+        "registers": null,
+        "overflow_offset": null,
+        "stack_hash": null
+      },
+      "risk_rating": "low",
+      "confidence": "heuristic",
+      "evidence_ref": "evidence:d074987671124b5dd484c92a8834a80ebfd60b3064e0e87fe898e8e178f0dd26",
+      "redacted": true,
+      "status": "new",
+      "detected_at": "2026-10-20T05:30:32.922229Z"
+    },
+    {
+      "vulnerability_id": "03b0890c-5f98-571c-86ea-962ea1116bd1",
+      "firmware_id": "16122d04-01f5-4376-a271-49d243b68d8f",
+      "binary": "/etc/controlled.conf",
+      "architecture": "ARM32",
+      "category": "hardcoded_secret",
+      "cwe": "CWE-259",
+      "address": null,
+      "sink": null,
+      "source": null,
+      "tainted_path": [],
+      "crash_state": {
+        "fault_address": null,
+        "registers": null,
+        "overflow_offset": null,
+        "stack_hash": null
+      },
+      "risk_rating": "medium",
+      "confidence": "probable",
+      "evidence_ref": "evidence:9f690ee6358a7dfc78ca5899c219eed1266b76f97ebac9e0a8685775bb3ee918",
+      "redacted": true,
+      "status": "new",
+      "detected_at": "2026-10-20T05:30:32.923002Z"
+    },
+    {
+      "vulnerability_id": "6749092d-1d36-5be5-a8a6-70d2b05c0297",
+      "firmware_id": "16122d04-01f5-4376-a271-49d243b68d8f",
+      "binary": "/etc/controlled.conf",
+      "architecture": "ARM32",
+      "category": "hardcoded_secret",
+      "cwe": "CWE-798",
+      "address": null,
+      "sink": null,
+      "source": null,
+      "tainted_path": [],
+      "crash_state": {
+        "fault_address": null,
+        "registers": null,
+        "overflow_offset": null,
+        "stack_hash": null
+      },
+      "risk_rating": "medium",
+      "confidence": "probable",
+      "evidence_ref": "evidence:390f4cc992505f9a0f2a72ab809d9f26977ccc8b5bd25ba942ba49fc4649800d",
+      "redacted": true,
+      "status": "new",
+      "detected_at": "2026-10-20T05:30:32.923038Z"
+    },
+    {
+      "vulnerability_id": "13a8f276-347c-5bf6-ab4e-59cbee310933",
+      "firmware_id": "16122d04-01f5-4376-a271-49d243b68d8f",
+      "binary": "/etc/controlled.conf",
+      "architecture": "ARM32",
+      "category": "hardcoded_secret",
+      "cwe": "CWE-321",
+      "address": null,
+      "sink": null,
+      "source": null,
+      "tainted_path": [],
+      "crash_state": {
+        "fault_address": null,
+        "registers": null,
+        "overflow_offset": null,
+        "stack_hash": null
+      },
+      "risk_rating": "medium",
+      "confidence": "probable",
+      "evidence_ref": "evidence:41c922c65889f91cd9e60792d7a9f2fcc288a15488fd8106c7ebf3d00f076afb",
+      "redacted": true,
+      "status": "new",
+      "detected_at": "2026-10-20T05:30:32.923059Z"
+    },
+    {
+      "vulnerability_id": "1d92fbba-57b8-54d3-a98d-81a235f08826",
+      "firmware_id": "16122d04-01f5-4376-a271-49d243b68d8f",
+      "binary": "/etc/controlled.conf",
+      "architecture": "ARM32",
+      "category": "hardcoded_secret",
+      "cwe": "CWE-321",
+      "address": null,
+      "sink": null,
+      "source": null,
+      "tainted_path": [],
+      "crash_state": {
+        "fault_address": null,
+        "registers": null,
+        "overflow_offset": null,
+        "stack_hash": null
+      },
+      "risk_rating": "low",
+      "confidence": "heuristic",
+      "evidence_ref": "evidence:83bde4f932592497fbe8d65e8446f9973921c2a8cc65c4b76aae1fb460912171",
+      "redacted": true,
+      "status": "new",
+      "detected_at": "2026-10-20T05:30:32.923084Z"
+    },
+    {
+      "vulnerability_id": "748bf4bf-bf7d-59f8-9d83-884e11f5db8f",
+      "firmware_id": "16122d04-01f5-4376-a271-49d243b68d8f",
+      "binary": "/etc/controlled.conf",
+      "architecture": "ARM32",
+      "category": "hardcoded_secret",
+      "cwe": "CWE-798",
+      "address": null,
+      "sink": null,
+      "source": null,
+      "tainted_path": [],
+      "crash_state": {
+        "fault_address": null,
+        "registers": null,
+        "overflow_offset": null,
+        "stack_hash": null
+      },
+      "risk_rating": "low",
+      "confidence": "heuristic",
+      "evidence_ref": "evidence:db9c25d2d97a11590842ad2e76b90aed366c9bc071637b9d1371cf1dd069f8e1",
+      "redacted": true,
+      "status": "new",
+      "detected_at": "2026-10-20T05:30:32.923103Z"
+    },
+    {
+      "vulnerability_id": "e5572b6c-5838-53fa-928c-694f23663b94",
+      "firmware_id": "16122d04-01f5-4376-a271-49d243b68d8f",
+      "binary": "/etc/controlled.conf",
+      "architecture": "ARM32",
+      "category": "hardcoded_secret",
+      "cwe": "CWE-798",
+      "address": null,
+      "sink": null,
+      "source": null,
+      "tainted_path": [],
+      "crash_state": {
+        "fault_address": null,
+        "registers": null,
+        "overflow_offset": null,
+        "stack_hash": null
+      },
+      "risk_rating": "low",
+      "confidence": "heuristic",
+      "evidence_ref": "evidence:011d813cd7deb5304d08b430d7e3acbd03e4d1c61b46d54cf5c554fd9e192afa",
+      "redacted": true,
+      "status": "new",
+      "detected_at": "2026-10-20T05:30:32.923121Z"
+    },
+    {
+      "vulnerability_id": "693a1ff9-1aaf-5443-977a-f7f081cab734",
+      "firmware_id": "16122d04-01f5-4376-a271-49d243b68d8f",
+      "binary": "/etc/controlled.conf",
+      "architecture": "ARM32",
+      "category": "weak_crypto",
+      "cwe": "CWE-328",
+      "address": null,
+      "sink": null,
+      "source": null,
+      "tainted_path": [],
+      "crash_state": {
+        "fault_address": null,
+        "registers": null,
+        "overflow_offset": null,
+        "stack_hash": null
+      },
+      "risk_rating": "medium",
+      "confidence": "heuristic",
+      "evidence_ref": "evidence:0540884f422315d82c17696782c5e1e059f93d5a6a57e5c81bfd48d1e62970f7",
+      "redacted": true,
+      "status": "new",
+      "detected_at": "2026-10-20T05:30:32.923139Z"
+    },
+    {
+      "vulnerability_id": "a61fdb33-e027-592e-9e68-43334f75f784",
+      "firmware_id": "16122d04-01f5-4376-a271-49d243b68d8f",
+      "binary": "/etc/controlled.conf",
+      "architecture": "ARM32",
+      "category": "weak_crypto",
+      "cwe": "CWE-327",
+      "address": null,
+      "sink": null,
+      "source": null,
+      "tainted_path": [],
+      "crash_state": {
+        "fault_address": null,
+        "registers": null,
+        "overflow_offset": null,
+        "stack_hash": null
+      },
+      "risk_rating": "medium",
+      "confidence": "heuristic",
+      "evidence_ref": "evidence:a2fa2dffc217b2e8eaa8274bdf430ecbcc181a0acbbdc4fef2025a254d0b47d7",
+      "redacted": true,
+      "status": "new",
+      "detected_at": "2026-10-20T05:30:32.923156Z"
+    },
+    {
+      "vulnerability_id": "746dca45-8043-5c6b-8856-9708bbf4d45d",
+      "firmware_id": "16122d04-01f5-4376-a271-49d243b68d8f",
+      "binary": "/etc/redacted-018cde065dc02e82",
+      "architecture": "ARM32",
+      "category": "hardcoded_secret",
+      "cwe": "CWE-259",
+      "address": null,
+      "sink": null,
+      "source": null,
+      "tainted_path": [],
+      "crash_state": {
+        "fault_address": null,
+        "registers": null,
+        "overflow_offset": null,
+        "stack_hash": null
+      },
+      "risk_rating": "medium",
+      "confidence": "probable",
+      "evidence_ref": "evidence:6c53145cf9f1185a68540c8db1dad4c0776c5de4e4d8b40f4e66b39062d3ffd4",
+      "redacted": true,
+      "status": "new",
+      "detected_at": "2026-10-20T05:30:32.923421Z"
+    }
+  ],
+  "evidence": {
+    "evidence:9f26cf77847cb0f150b93bf6a32de0fe421d1fc84e000f539293d7be970a4c71": {
+      "rule": "potentially_dangerous_function_symbol",
+      "redacted": true,
+      "heuristic": true,
+      "function": "strcpy",
+      "invocation_proven": false,
+      "overflow_proven": false
+    },
+    "evidence:cc5718a143d38c65922c5cac3c663bfe6fce2d478e40cd6aad88387b1c648e6c": {
+      "rule": "high_entropy",
+      "byte_offset": 400862,
+      "byte_length": 50,
+      "fingerprint": "44ac217b6ead19c5d317843783f5c164b8b2d0ae6978430016b9b2580bb014cf",
+      "redacted": true,
+      "heuristic": true
+    },
+    "evidence:9f690ee6358a7dfc78ca5899c219eed1266b76f97ebac9e0a8685775bb3ee918": {
+      "rule": "credential",
+      "byte_offset": 9,
+      "byte_length": 19,
+      "fingerprint": "15e3f926eb962a1b96856d42ceb0d97bcc8e35061c586cdef9562889dfe76689",
+      "redacted": true,
+      "heuristic": false
+    },
+    "evidence:41c922c65889f91cd9e60792d7a9f2fcc288a15488fd8106c7ebf3d00f076afb": {
+      "rule": "private_key",
+      "byte_offset": 62,
+      "byte_length": 78,
+      "fingerprint": "04812bdf821a8ed85428211740fde078b847a80b827a642400004020c41053fa",
+      "redacted": true,
+      "heuristic": false
+    },
+    "evidence:011d813cd7deb5304d08b430d7e3acbd03e4d1c61b46d54cf5c554fd9e192afa": {
+      "rule": "high_entropy",
+      "byte_offset": 259,
+      "byte_length": 29,
+      "fingerprint": "46a4dbc599bd270174b3f23a0ee7cf52f58ee4e3922b270459fc4e1549403c86",
+      "redacted": true,
+      "heuristic": true
+    },
+    "evidence:83bde4f932592497fbe8d65e8446f9973921c2a8cc65c4b76aae1fb460912171": {
+      "rule": "certificate",
+      "byte_offset": 141,
+      "byte_length": 75,
+      "fingerprint": "aa57c6402ff7ac03b3cf1be0fbd3d0105de83a03fa0049c38850d529cb8bf501",
+      "redacted": true,
+      "heuristic": true
+    },
+    "evidence:1adf43e1d8b1a792265cdaf351d7649fcdfbe62d3c533a52d311dc9218ffa349": {
+      "rule": "high_entropy",
+      "byte_offset": 476053,
+      "byte_length": 26,
+      "fingerprint": "8e8d132acecaf5c8eafeeaaa92fdc1bc08ce9108b99e55e8006ccc229a6ef98c",
+      "redacted": true,
+      "heuristic": true
+    },
+    "evidence:0540884f422315d82c17696782c5e1e059f93d5a6a57e5c81bfd48d1e62970f7": {
+      "rule": "security_weak_crypto",
+      "byte_offset": 237,
+      "byte_length": 3,
+      "fingerprint": "0e19ab164d2e94ffe6a19747b35916a5f7d6f8f312ec4bf4880dcbda29972499",
+      "redacted": true,
+      "heuristic": true
+    },
+    "evidence:db9c25d2d97a11590842ad2e76b90aed366c9bc071637b9d1371cf1dd069f8e1": {
+      "rule": "high_entropy",
+      "byte_offset": 29,
+      "byte_length": 32,
+      "fingerprint": "68aeb441a2c166969840c5887147daa30a56a1c921ab0a9ab2cf80a43616bae9",
+      "redacted": true,
+      "heuristic": true
+    },
+    "evidence:a2fa2dffc217b2e8eaa8274bdf430ecbcc181a0acbbdc4fef2025a254d0b47d7": {
+      "rule": "security_weak_crypto",
+      "byte_offset": 255,
+      "byte_length": 3,
+      "fingerprint": "61521ee44a5153b011e595e6480a6eae2a7c9c3f396f1e7e06dacf0121828b3c",
+      "redacted": true,
+      "heuristic": true
+    },
+    "evidence:ea51de8148001897ac331ef3dbd5b8c8b97d49ca4218a90fca94079e275904e1": {
+      "rule": "high_entropy",
+      "byte_offset": 476944,
+      "byte_length": 36,
+      "fingerprint": "d5f3101d59502441ea21d9d88dda55e51b978bb230ec02e03c3cf80c0c3dca14",
+      "redacted": true,
+      "heuristic": true
+    },
+    "evidence:390f4cc992505f9a0f2a72ab809d9f26977ccc8b5bd25ba942ba49fc4649800d": {
+      "rule": "credential",
+      "byte_offset": 37,
+      "byte_length": 24,
+      "fingerprint": "f266d519df16fdc2fe4b518529a288cf101fa9474ea44aa8fadea13df6206f39",
+      "redacted": true,
+      "heuristic": false
+    },
+    "evidence:6c53145cf9f1185a68540c8db1dad4c0776c5de4e4d8b40f4e66b39062d3ffd4": {
+      "rule": "credential",
+      "byte_offset": 38,
+      "byte_length": 25,
+      "fingerprint": "2d227a8956bb025a8155aff58e9570273f367d65b4c7e85795b6a34ccc0afbfb",
+      "redacted": true,
+      "heuristic": false
+    },
+    "evidence:20dc32c1dcd9e15242505c4aadd403bc395939faaf25e20445f1c2337350fa23": {
+      "kind": "tainted_command_sink",
+      "sources": [
+        "fwx_network_0"
+      ],
+      "condition": [
+        {
+          "op": "UGE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                247,
+                240,
+                {
+                  "symbol": "fwx_network_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 32,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "ULE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                247,
+                240,
+                {
+                  "symbol": "fwx_network_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 126,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "UGE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                239,
+                232,
+                {
+                  "symbol": "fwx_network_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 32,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "ULE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                239,
+                232,
+                {
+                  "symbol": "fwx_network_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 126,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "UGE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                231,
+                224,
+                {
+                  "symbol": "fwx_network_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 32,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "ULE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                231,
+                224,
+                {
+                  "symbol": "fwx_network_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 126,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "UGE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                223,
+                216,
+                {
+                  "symbol": "fwx_network_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 32,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "ULE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                223,
+                216,
+                {
+                  "symbol": "fwx_network_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 126,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "UGE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                215,
+                208,
+                {
+                  "symbol": "fwx_network_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 32,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "ULE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                215,
+                208,
+                {
+                  "symbol": "fwx_network_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 126,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "UGE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                207,
+                200,
+                {
+                  "symbol": "fwx_network_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 32,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "ULE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                207,
+                200,
+                {
+                  "symbol": "fwx_network_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 126,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "UGE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                199,
+                192,
+                {
+                  "symbol": "fwx_network_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 32,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "ULE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                199,
+                192,
+                {
+                  "symbol": "fwx_network_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 126,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "UGE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                191,
+                184,
+                {
+                  "symbol": "fwx_network_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 32,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "ULE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                191,
+                184,
+                {
+                  "symbol": "fwx_network_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 126,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "UGE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                183,
+                176,
+                {
+                  "symbol": "fwx_network_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 32,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "ULE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                183,
+                176,
+                {
+                  "symbol": "fwx_network_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 126,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "UGE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                175,
+                168,
+                {
+                  "symbol": "fwx_network_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 32,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "ULE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                175,
+                168,
+                {
+                  "symbol": "fwx_network_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 126,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "UGE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                167,
+                160,
+                {
+                  "symbol": "fwx_network_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 32,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "ULE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                167,
+                160,
+                {
+                  "symbol": "fwx_network_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 126,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "UGE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                159,
+                152,
+                {
+                  "symbol": "fwx_network_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 32,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "ULE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                159,
+                152,
+                {
+                  "symbol": "fwx_network_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 126,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "UGE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                151,
+                144,
+                {
+                  "symbol": "fwx_network_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 32,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "ULE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                151,
+                144,
+                {
+                  "symbol": "fwx_network_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 126,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "UGE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                143,
+                136,
+                {
+                  "symbol": "fwx_network_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 32,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "ULE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                143,
+                136,
+                {
+                  "symbol": "fwx_network_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 126,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "UGE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                135,
+                128,
+                {
+                  "symbol": "fwx_network_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 32,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "ULE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                135,
+                128,
+                {
+                  "symbol": "fwx_network_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 126,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "UGE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                127,
+                120,
+                {
+                  "symbol": "fwx_network_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 32,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "ULE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                127,
+                120,
+                {
+                  "symbol": "fwx_network_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 126,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "UGE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                119,
+                112,
+                {
+                  "symbol": "fwx_network_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 32,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "ULE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                119,
+                112,
+                {
+                  "symbol": "fwx_network_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 126,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "UGE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                111,
+                104,
+                {
+                  "symbol": "fwx_network_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 32,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "ULE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                111,
+                104,
+                {
+                  "symbol": "fwx_network_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 126,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "UGE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                103,
+                96,
+                {
+                  "symbol": "fwx_network_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 32,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "ULE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                103,
+                96,
+                {
+                  "symbol": "fwx_network_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 126,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "UGE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                95,
+                88,
+                {
+                  "symbol": "fwx_network_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 32,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "ULE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                95,
+                88,
+                {
+                  "symbol": "fwx_network_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 126,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "UGE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                87,
+                80,
+                {
+                  "symbol": "fwx_network_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 32,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "ULE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                87,
+                80,
+                {
+                  "symbol": "fwx_network_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 126,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "UGE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                79,
+                72,
+                {
+                  "symbol": "fwx_network_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 32,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "ULE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                79,
+                72,
+                {
+                  "symbol": "fwx_network_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 126,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "UGE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                71,
+                64,
+                {
+                  "symbol": "fwx_network_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 32,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "ULE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                71,
+                64,
+                {
+                  "symbol": "fwx_network_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 126,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "UGE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                63,
+                56,
+                {
+                  "symbol": "fwx_network_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 32,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "ULE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                63,
+                56,
+                {
+                  "symbol": "fwx_network_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 126,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "UGE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                55,
+                48,
+                {
+                  "symbol": "fwx_network_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 32,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "ULE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                55,
+                48,
+                {
+                  "symbol": "fwx_network_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 126,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "UGE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                47,
+                40,
+                {
+                  "symbol": "fwx_network_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 32,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "ULE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                47,
+                40,
+                {
+                  "symbol": "fwx_network_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 126,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "UGE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                39,
+                32,
+                {
+                  "symbol": "fwx_network_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 32,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "ULE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                39,
+                32,
+                {
+                  "symbol": "fwx_network_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 126,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "UGE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                31,
+                24,
+                {
+                  "symbol": "fwx_network_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 32,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "ULE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                31,
+                24,
+                {
+                  "symbol": "fwx_network_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 126,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "UGE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                23,
+                16,
+                {
+                  "symbol": "fwx_network_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 32,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "ULE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                23,
+                16,
+                {
+                  "symbol": "fwx_network_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 126,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "UGE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                15,
+                8,
+                {
+                  "symbol": "fwx_network_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 32,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "ULE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                15,
+                8,
+                {
+                  "symbol": "fwx_network_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 126,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "UGE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                7,
+                0,
+                {
+                  "symbol": "fwx_network_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 32,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "ULE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                7,
+                0,
+                {
+                  "symbol": "fwx_network_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 126,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "__eq__",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                247,
+                240,
+                {
+                  "symbol": "fwx_network_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 65,
+              "bits": 8
+            }
+          ]
+        }
+      ],
+      "condition_satisfiable": true,
+      "call_path": [
+        "0x10490"
+      ],
+      "alternative_paths": [],
+      "redacted": true
+    },
+    "evidence:09468f586c7155c5ad553f75d2dc6be31859bd6e94829a5a547ee3a144416f67": {
+      "rule": "high_entropy",
+      "byte_offset": 476085,
+      "byte_length": 26,
+      "fingerprint": "2714542c978317661bffeecf83b47b07a077f0bcfbda8da2b71fc57f7f6c4ce8",
+      "redacted": true,
+      "heuristic": true
+    },
+    "evidence:d074987671124b5dd484c92a8834a80ebfd60b3064e0e87fe898e8e178f0dd26": {
+      "rule": "high_entropy",
+      "byte_offset": 476984,
+      "byte_length": 36,
+      "fingerprint": "9acbbc3f1279843ddb13b529e63776d2600d8d17d4db8c95d46ae0d05093b757",
+      "redacted": true,
+      "heuristic": true
+    }
+  },
+  "jobs": [
+    {
+      "job_id": "841bca18-4e8a-4f9c-9c3e-91ddefb7e21d",
+      "status": "complete",
+      "stage": "finished",
+      "result": {
+        "schema_version": 1,
+        "errors": [],
+        "graphs": {
+          "/bin/taint-demo": {
+            "functions": [
+              {
+                "address": "0x102fc",
+                "name": "function_0x102fc",
+                "nodes": [
+                  {
+                    "id": "0x102fc",
+                    "tainted": false
+                  },
+                  {
+                    "id": "0x10304",
+                    "tainted": false
+                  }
+                ],
+                "edges": [
+                  {
+                    "source": "0x102fc",
+                    "target": "0x10304"
+                  }
+                ],
+                "incomplete": false
+              },
+              {
+                "address": "0x10308",
+                "name": "function_0x10308",
+                "nodes": [
+                  {
+                    "id": "0x10308",
+                    "tainted": false
+                  }
+                ],
+                "edges": [],
+                "incomplete": false
+              },
+              {
+                "address": "0x1031c",
+                "name": "function_0x1031c",
+                "nodes": [
+                  {
+                    "id": "0x1031c",
+                    "tainted": false
+                  }
+                ],
+                "edges": [],
+                "incomplete": false
+              },
+              {
+                "address": "0x10328",
+                "name": "function_0x10328",
+                "nodes": [
+                  {
+                    "id": "0x10328",
+                    "tainted": true
+                  }
+                ],
+                "edges": [],
+                "incomplete": false
+              },
+              {
+                "address": "0x10334",
+                "name": "function_0x10334",
+                "nodes": [
+                  {
+                    "id": "0x10334",
+                    "tainted": false
+                  }
+                ],
+                "edges": [],
+                "incomplete": false
+              },
+              {
+                "address": "0x10340",
+                "name": "function_0x10340",
+                "nodes": [
+                  {
+                    "id": "0x10340",
+                    "tainted": false
+                  }
+                ],
+                "edges": [],
+                "incomplete": false
+              },
+              {
+                "address": "0x1034c",
+                "name": "function_0x1034c",
+                "nodes": [
+                  {
+                    "id": "0x1034c",
+                    "tainted": true
+                  }
+                ],
+                "edges": [],
+                "incomplete": false
+              },
+              {
+                "address": "0x10358",
+                "name": "_start",
+                "nodes": [
+                  {
+                    "id": "0x10358",
+                    "tainted": false
+                  }
+                ],
+                "edges": [],
+                "incomplete": false
+              },
+              {
+                "address": "0x10390",
+                "name": "function_0x10390",
+                "nodes": [
+                  {
+                    "id": "0x10390",
+                    "tainted": false
+                  }
+                ],
+                "edges": [],
+                "incomplete": false
+              },
+              {
+                "address": "0x1039c",
+                "name": "function_0x1039c",
+                "nodes": [
+                  {
+                    "id": "0x1039c",
+                    "tainted": false
+                  },
+                  {
+                    "id": "0x103b4",
+                    "tainted": false
+                  }
+                ],
+                "edges": [
+                  {
+                    "source": "0x1039c",
+                    "target": "0x103b4"
+                  }
+                ],
+                "incomplete": false
+              },
+              {
+                "address": "0x103c0",
+                "name": "function_0x103c0",
+                "nodes": [
+                  {
+                    "id": "0x103c0",
+                    "tainted": false
+                  },
+                  {
+                    "id": "0x103d0",
+                    "tainted": false
+                  },
+                  {
+                    "id": "0x103dc",
+                    "tainted": false
+                  }
+                ],
+                "edges": [
+                  {
+                    "source": "0x103c0",
+                    "target": "0x103d0"
+                  },
+                  {
+                    "source": "0x103d0",
+                    "target": "0x103dc"
+                  }
+                ],
+                "incomplete": false
+              },
+              {
+                "address": "0x103ec",
+                "name": "function_0x103ec",
+                "nodes": [
+                  {
+                    "id": "0x103ec",
+                    "tainted": false
+                  },
+                  {
+                    "id": "0x10408",
+                    "tainted": false
+                  },
+                  {
+                    "id": "0x10414",
+                    "tainted": false
+                  }
+                ],
+                "edges": [
+                  {
+                    "source": "0x103ec",
+                    "target": "0x10408"
+                  },
+                  {
+                    "source": "0x10408",
+                    "target": "0x10414"
+                  }
+                ],
+                "incomplete": false
+              },
+              {
+                "address": "0x10424",
+                "name": "function_0x10424",
+                "nodes": [
+                  {
+                    "id": "0x10424",
+                    "tainted": false
+                  },
+                  {
+                    "id": "0x10438",
+                    "tainted": false
+                  },
+                  {
+                    "id": "0x1043c",
+                    "tainted": false
+                  }
+                ],
+                "edges": [
+                  {
+                    "source": "0x10424",
+                    "target": "0x10438"
+                  },
+                  {
+                    "source": "0x10438",
+                    "target": "0x1043c"
+                  }
+                ],
+                "incomplete": false
+              },
+              {
+                "address": "0x1044c",
+                "name": "function_0x1044c",
+                "nodes": [
+                  {
+                    "id": "0x1044c",
+                    "tainted": false
+                  }
+                ],
+                "edges": [],
+                "incomplete": false
+              },
+              {
+                "address": "0x10450",
+                "name": "main",
+                "nodes": [
+                  {
+                    "id": "0x10450",
+                    "tainted": true
+                  },
+                  {
+                    "id": "0x10478",
+                    "tainted": true
+                  },
+                  {
+                    "id": "0x104a4",
+                    "tainted": false
+                  },
+                  {
+                    "id": "0x10490",
+                    "tainted": true
+                  }
+                ],
+                "edges": [
+                  {
+                    "source": "0x10450",
+                    "target": "0x10478"
+                  },
+                  {
+                    "source": "0x10478",
+                    "target": "0x104a4"
+                  },
+                  {
+                    "source": "0x10478",
+                    "target": "0x10490"
+                  },
+                  {
+                    "source": "0x10490",
+                    "target": "0x104a4"
+                  }
+                ],
+                "incomplete": false
+              },
+              {
+                "address": "0x104b8",
+                "name": "function_0x104b8",
+                "nodes": [
+                  {
+                    "id": "0x104b8",
+                    "tainted": false
+                  }
+                ],
+                "edges": [],
+                "incomplete": false
+              }
+            ],
+            "method": "angr CFGFast",
+            "limits": {
+              "functions": 128,
+              "nodes_per_function": 256
+            }
+          }
+        },
+        "stages": {
+          "extract": {
+            "status": "extracted"
+          },
+          "static": {
+            "status": "completed",
+            "binary_count": 2
+          },
+          "emulation": {
+            "status": "completed",
+            "executions": [
+              {
+                "status": "completed",
+                "architecture": "ARM32",
+                "mode": "user",
+                "returncode": 0,
+                "stdout_sha256": "6ddb6ffc8d4e7c1267f703dfc931728c7e03bb9715dee4ce7bb3bba34299628d",
+                "stdout_bytes": 29,
+                "fallback": null
+              },
+              {
+                "status": "completed",
+                "architecture": "ARM32",
+                "network": "job_private_loopback",
+                "probe": {
+                  "protocol": "http",
+                  "response_sha256": "25a65af531e52889f13a8d83566a4b49f7150d92306f4df39e08f58958b8b81c",
+                  "bytes": 40
+                }
+              },
+              {
+                "status": "completed",
+                "architecture": "ARM32",
+                "network": "job_private_loopback",
+                "probe": {
+                  "protocol": "upnp",
+                  "response_sha256": "6c056d2e32c3166ac365d6c94ae95e01515c06543ff576ae6503bb581ae195cc",
+                  "bytes": 40
+                }
+              },
+              {
+                "status": "completed",
+                "architecture": "ARM32",
+                "network": "job_private_loopback",
+                "probe": {
+                  "protocol": "mqtt",
+                  "response_sha256": "b3e0adaf40f19d19ae5846a499ef09653350f3f359d52424cec547a12789b1fe",
+                  "bytes": 4
+                }
+              }
+            ],
+            "authorization": "exact_controlled_image_registry"
+          },
+          "symbolic": {
+            "status": "completed",
+            "analyses": [
+              {
+                "status": "completed",
+                "reasons": [],
+                "budgets": {
+                  "seconds": 15,
+                  "states": 32,
+                  "paths": 256,
+                  "depth": 200,
+                  "steps": 500,
+                  "memory_mb": 512,
+                  "source_bytes": 32,
+                  "merge": true
+                },
+                "telemetry": {
+                  "steps": 8,
+                  "paths": 2,
+                  "pruned": 0,
+                  "merged": 0,
+                  "peak_states": 2,
+                  "wall_seconds": 0.068
+                },
+                "limitations": [
+                  "Source models use bounded printable bytes, not exhaustive inputs.",
+                  "Exploration stops at candidate sink violations; bounded safe copies preserve taint.",
+                  "Stack bounds require supported DWARF x86_64 frame-pointer ABI.",
+                  "No concrete command or exploit input is generated."
+                ]
+              }
+            ]
+          },
+          "secrets_crypto": {
+            "status": "completed",
+            "files_scanned": 4,
+            "files_skipped": 0,
+            "bytes_scanned": 603781,
+            "architecture_inheritance": "single known image architecture; ambiguous non-ELF files skipped"
+          },
+          "normalize": {
+            "status": "completed",
+            "finding_count": 16
+          }
+        },
+        "analysis_scope": "integrated_gated",
+        "redacted": true,
+        "entropy": [
+          {
+            "offset": 0,
+            "size": 65536,
+            "bits_per_byte": 7.959563
+          },
+          {
+            "offset": 65536,
+            "size": 65536,
+            "bits_per_byte": 7.958433
+          },
+          {
+            "offset": 131072,
+            "size": 65536,
+            "bits_per_byte": 7.954926
+          },
+          {
+            "offset": 196608,
+            "size": 65536,
+            "bits_per_byte": 7.955537
+          },
+          {
+            "offset": 262144,
+            "size": 20480,
+            "bits_per_byte": 7.411277
+          }
+        ],
+        "extraction": {
+          "status": "extracted",
+          "attempts": [
+            {
+              "format": "squashfs",
+              "status": "extracted"
+            }
+          ],
+          "filesystems": [
+            {
+              "format": "squashfs",
+              "partition": "partition-0"
+            }
+          ],
+          "special_entries": []
+        },
+        "observability": {
+          "spans": [
+            {
+              "name": "extract",
+              "trace_id": "43fb65e9dbf62b055d06895768bd699e",
+              "span_id": "02c3ab521c1e37f6",
+              "status": "UNSET",
+              "parent_span_id": "9abbda96d1c8bde7",
+              "start_ns": 1792474229255192806,
+              "end_ns": 1792474229272841922,
+              "attributes": {
+                "job.id": "841bca18-4e8a-4f9c-9c3e-91ddefb7e21d",
+                "outcome": "completed"
+              }
+            },
+            {
+              "name": "static",
+              "trace_id": "43fb65e9dbf62b055d06895768bd699e",
+              "span_id": "d71a0b70451fd26b",
+              "status": "UNSET",
+              "parent_span_id": "9abbda96d1c8bde7",
+              "start_ns": 1792474229272940289,
+              "end_ns": 1792474229354827056,
+              "attributes": {
+                "job.id": "841bca18-4e8a-4f9c-9c3e-91ddefb7e21d",
+                "outcome": "completed"
+              }
+            },
+            {
+              "name": "emulation",
+              "trace_id": "43fb65e9dbf62b055d06895768bd699e",
+              "span_id": "e2664f6ea39eb4b5",
+              "status": "UNSET",
+              "parent_span_id": "9abbda96d1c8bde7",
+              "start_ns": 1792474229354930293,
+              "end_ns": 1792474231570542367,
+              "attributes": {
+                "job.id": "841bca18-4e8a-4f9c-9c3e-91ddefb7e21d",
+                "outcome": "completed"
+              }
+            },
+            {
+              "name": "symbolic",
+              "trace_id": "43fb65e9dbf62b055d06895768bd699e",
+              "span_id": "ee1d6fb6909a5357",
+              "status": "UNSET",
+              "parent_span_id": "9abbda96d1c8bde7",
+              "start_ns": 1792474231570769095,
+              "end_ns": 1792474232897464152,
+              "attributes": {
+                "job.id": "841bca18-4e8a-4f9c-9c3e-91ddefb7e21d",
+                "outcome": "completed"
+              }
+            },
+            {
+              "name": "secrets_crypto",
+              "trace_id": "43fb65e9dbf62b055d06895768bd699e",
+              "span_id": "5c7731c544e0004e",
+              "status": "UNSET",
+              "parent_span_id": "9abbda96d1c8bde7",
+              "start_ns": 1792474232897567774,
+              "end_ns": 1792474232923560172,
+              "attributes": {
+                "job.id": "841bca18-4e8a-4f9c-9c3e-91ddefb7e21d",
+                "outcome": "completed"
+              }
+            },
+            {
+              "name": "normalize",
+              "trace_id": "43fb65e9dbf62b055d06895768bd699e",
+              "span_id": "a8cbfb843563f429",
+              "status": "UNSET",
+              "parent_span_id": "9abbda96d1c8bde7",
+              "start_ns": 1792474232923648280,
+              "end_ns": 1792474232923744281,
+              "attributes": {
+                "job.id": "841bca18-4e8a-4f9c-9c3e-91ddefb7e21d",
+                "outcome": "completed"
+              }
+            },
+            {
+              "name": "pipeline",
+              "trace_id": "43fb65e9dbf62b055d06895768bd699e",
+              "span_id": "9abbda96d1c8bde7",
+              "status": "UNSET",
+              "parent_span_id": "cd4a5a30522c3889",
+              "start_ns": 1792474229255133349,
+              "end_ns": 1792474232923909098,
+              "attributes": {
+                "job.id": "841bca18-4e8a-4f9c-9c3e-91ddefb7e21d",
+                "outcome": "completed"
+              }
+            }
+          ],
+          "metrics": {
+            "resource_metrics": [
+              {
+                "resource": {
+                  "attributes": {
+                    "telemetry.sdk.language": "python",
+                    "telemetry.sdk.name": "opentelemetry",
+                    "telemetry.sdk.version": "1.45.1",
+                    "service.instance.id": "d1c4064c-3e07-4dff-adc9-1ebf82b0d717",
+                    "service.name": "firmwarex-analysis"
+                  },
+                  "schema_url": ""
+                },
+                "scope_metrics": [
+                  {
+                    "scope": {
+                      "name": "firmwarex.pipeline",
+                      "version": null,
+                      "schema_url": "",
+                      "attributes": null
+                    },
+                    "metrics": [
+                      {
+                        "name": "firmwarex.stage.completed",
+                        "description": "",
+                        "unit": "",
+                        "data": {
+                          "data_points": [
+                            {
+                              "attributes": {
+                                "stage": "extract"
+                              },
+                              "start_time_unix_nano": 1792474229272711389,
+                              "time_unix_nano": 1792474232923944144,
+                              "value": 1,
+                              "exemplars": [
+                                {
+                                  "filtered_attributes": {},
+                                  "value": 1,
+                                  "time_unix_nano": 1792474229272639721,
+                                  "span_id": 199191177681844214,
+                                  "trace_id": 90363609280688255924815154280434330014
+                                }
+                              ]
+                            },
+                            {
+                              "attributes": {
+                                "stage": "static"
+                              },
+                              "start_time_unix_nano": 1792474229354751357,
+                              "time_unix_nano": 1792474232923944144,
+                              "value": 1,
+                              "exemplars": [
+                                {
+                                  "filtered_attributes": {},
+                                  "value": 1,
+                                  "time_unix_nano": 1792474229354715100,
+                                  "span_id": 15499713644372939371,
+                                  "trace_id": 90363609280688255924815154280434330014
+                                }
+                              ]
+                            },
+                            {
+                              "attributes": {
+                                "stage": "emulation"
+                              },
+                              "start_time_unix_nano": 1792474231570281893,
+                              "time_unix_nano": 1792474232923944144,
+                              "value": 1,
+                              "exemplars": [
+                                {
+                                  "filtered_attributes": {},
+                                  "value": 1,
+                                  "time_unix_nano": 1792474231570178064,
+                                  "span_id": 16313814036806284469,
+                                  "trace_id": 90363609280688255924815154280434330014
+                                }
+                              ]
+                            },
+                            {
+                              "attributes": {
+                                "stage": "symbolic"
+                              },
+                              "start_time_unix_nano": 1792474232897367145,
+                              "time_unix_nano": 1792474232923944144,
+                              "value": 1,
+                              "exemplars": [
+                                {
+                                  "filtered_attributes": {},
+                                  "value": 1,
+                                  "time_unix_nano": 1792474232897299485,
+                                  "span_id": 17157992985252221783,
+                                  "trace_id": 90363609280688255924815154280434330014
+                                }
+                              ]
+                            },
+                            {
+                              "attributes": {
+                                "stage": "secrets_crypto"
+                              },
+                              "start_time_unix_nano": 1792474232923497214,
+                              "time_unix_nano": 1792474232923944144,
+                              "value": 1,
+                              "exemplars": [
+                                {
+                                  "filtered_attributes": {},
+                                  "value": 1,
+                                  "time_unix_nano": 1792474232923465420,
+                                  "span_id": 6662848897051787342,
+                                  "trace_id": 90363609280688255924815154280434330014
+                                }
+                              ]
+                            },
+                            {
+                              "attributes": {
+                                "stage": "normalize"
+                              },
+                              "start_time_unix_nano": 1792474232923700480,
+                              "time_unix_nano": 1792474232923944144,
+                              "value": 1,
+                              "exemplars": [
+                                {
+                                  "filtered_attributes": {},
+                                  "value": 1,
+                                  "time_unix_nano": 1792474232923688418,
+                                  "span_id": 12163091763894154281,
+                                  "trace_id": 90363609280688255924815154280434330014
+                                }
+                              ]
+                            },
+                            {
+                              "attributes": {
+                                "stage": "pipeline"
+                              },
+                              "start_time_unix_nano": 1792474232923877952,
+                              "time_unix_nano": 1792474232923944144,
+                              "value": 1,
+                              "exemplars": [
+                                {
+                                  "filtered_attributes": {},
+                                  "value": 1,
+                                  "time_unix_nano": 1792474232923867073,
+                                  "span_id": 11149745643785338343,
+                                  "trace_id": 90363609280688255924815154280434330014
+                                }
+                              ]
+                            }
+                          ],
+                          "aggregation_temporality": 2,
+                          "is_monotonic": true
+                        }
+                      },
+                      {
+                        "name": "firmwarex.stage.duration",
+                        "description": "",
+                        "unit": "s",
+                        "data": {
+                          "data_points": [
+                            {
+                              "attributes": {
+                                "stage": "extract"
+                              },
+                              "start_time_unix_nano": 1792474229272813397,
+                              "time_unix_nano": 1792474232923944144,
+                              "count": 1,
+                              "sum": 0.0175825909999503,
+                              "bucket_counts": [
+                                0,
+                                1,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
+                              ],
+                              "explicit_bounds": [
+                                0.0,
+                                5.0,
+                                10.0,
+                                25.0,
+                                50.0,
+                                75.0,
+                                100.0,
+                                250.0,
+                                500.0,
+                                750.0,
+                                1000.0,
+                                2500.0,
+                                5000.0,
+                                7500.0,
+                                10000.0
+                              ],
+                              "min": 0.0175825909999503,
+                              "max": 0.0175825909999503,
+                              "exemplars": [
+                                {
+                                  "filtered_attributes": {},
+                                  "value": 0.0175825909999503,
+                                  "time_unix_nano": 1792474229272733147,
+                                  "span_id": 199191177681844214,
+                                  "trace_id": 90363609280688255924815154280434330014
+                                }
+                              ]
+                            },
+                            {
+                              "attributes": {
+                                "stage": "static"
+                              },
+                              "start_time_unix_nano": 1792474229354793788,
+                              "time_unix_nano": 1792474232923944144,
+                              "count": 1,
+                              "sum": 0.08188238299999284,
+                              "bucket_counts": [
+                                0,
+                                1,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
+                              ],
+                              "explicit_bounds": [
+                                0.0,
+                                5.0,
+                                10.0,
+                                25.0,
+                                50.0,
+                                75.0,
+                                100.0,
+                                250.0,
+                                500.0,
+                                750.0,
+                                1000.0,
+                                2500.0,
+                                5000.0,
+                                7500.0,
+                                10000.0
+                              ],
+                              "min": 0.08188238299999284,
+                              "max": 0.08188238299999284,
+                              "exemplars": [
+                                {
+                                  "filtered_attributes": {},
+                                  "value": 0.08188238299999284,
+                                  "time_unix_nano": 1792474229354779629,
+                                  "span_id": 15499713644372939371,
+                                  "trace_id": 90363609280688255924815154280434330014
+                                }
+                              ]
+                            },
+                            {
+                              "attributes": {
+                                "stage": "emulation"
+                              },
+                              "start_time_unix_nano": 1792474231570455411,
+                              "time_unix_nano": 1792474232923944144,
+                              "count": 1,
+                              "sum": 2.215526424000018,
+                              "bucket_counts": [
+                                0,
+                                1,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
+                              ],
+                              "explicit_bounds": [
+                                0.0,
+                                5.0,
+                                10.0,
+                                25.0,
+                                50.0,
+                                75.0,
+                                100.0,
+                                250.0,
+                                500.0,
+                                750.0,
+                                1000.0,
+                                2500.0,
+                                5000.0,
+                                7500.0,
+                                10000.0
+                              ],
+                              "min": 2.215526424000018,
+                              "max": 2.215526424000018,
+                              "exemplars": [
+                                {
+                                  "filtered_attributes": {},
+                                  "value": 2.215526424000018,
+                                  "time_unix_nano": 1792474231570411743,
+                                  "span_id": 16313814036806284469,
+                                  "trace_id": 90363609280688255924815154280434330014
+                                }
+                              ]
+                            },
+                            {
+                              "attributes": {
+                                "stage": "symbolic"
+                              },
+                              "start_time_unix_nano": 1792474232897403938,
+                              "time_unix_nano": 1792474232923944144,
+                              "count": 1,
+                              "sum": 1.3267405649999091,
+                              "bucket_counts": [
+                                0,
+                                1,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
+                              ],
+                              "explicit_bounds": [
+                                0.0,
+                                5.0,
+                                10.0,
+                                25.0,
+                                50.0,
+                                75.0,
+                                100.0,
+                                250.0,
+                                500.0,
+                                750.0,
+                                1000.0,
+                                2500.0,
+                                5000.0,
+                                7500.0,
+                                10000.0
+                              ],
+                              "min": 1.3267405649999091,
+                              "max": 1.3267405649999091,
+                              "exemplars": [
+                                {
+                                  "filtered_attributes": {},
+                                  "value": 1.3267405649999091,
+                                  "time_unix_nano": 1792474232897393811,
+                                  "span_id": 17157992985252221783,
+                                  "trace_id": 90363609280688255924815154280434330014
+                                }
+                              ]
+                            },
+                            {
+                              "attributes": {
+                                "stage": "secrets_crypto"
+                              },
+                              "start_time_unix_nano": 1792474232923530629,
+                              "time_unix_nano": 1792474232923944144,
+                              "count": 1,
+                              "sum": 0.02601672699995561,
+                              "bucket_counts": [
+                                0,
+                                1,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
+                              ],
+                              "explicit_bounds": [
+                                0.0,
+                                5.0,
+                                10.0,
+                                25.0,
+                                50.0,
+                                75.0,
+                                100.0,
+                                250.0,
+                                500.0,
+                                750.0,
+                                1000.0,
+                                2500.0,
+                                5000.0,
+                                7500.0,
+                                10000.0
+                              ],
+                              "min": 0.02601672699995561,
+                              "max": 0.02601672699995561,
+                              "exemplars": [
+                                {
+                                  "filtered_attributes": {},
+                                  "value": 0.02601672699995561,
+                                  "time_unix_nano": 1792474232923521229,
+                                  "span_id": 6662848897051787342,
+                                  "trace_id": 90363609280688255924815154280434330014
+                                }
+                              ]
+                            },
+                            {
+                              "attributes": {
+                                "stage": "normalize"
+                              },
+                              "start_time_unix_nano": 1792474232923726494,
+                              "time_unix_nano": 1792474232923944144,
+                              "count": 1,
+                              "sum": 0.00010867800006053585,
+                              "bucket_counts": [
+                                0,
+                                1,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
+                              ],
+                              "explicit_bounds": [
+                                0.0,
+                                5.0,
+                                10.0,
+                                25.0,
+                                50.0,
+                                75.0,
+                                100.0,
+                                250.0,
+                                500.0,
+                                750.0,
+                                1000.0,
+                                2500.0,
+                                5000.0,
+                                7500.0,
+                                10000.0
+                              ],
+                              "min": 0.00010867800006053585,
+                              "max": 0.00010867800006053585,
+                              "exemplars": [
+                                {
+                                  "filtered_attributes": {},
+                                  "value": 0.00010867800006053585,
+                                  "time_unix_nano": 1792474232923710970,
+                                  "span_id": 12163091763894154281,
+                                  "trace_id": 90363609280688255924815154280434330014
+                                }
+                              ]
+                            },
+                            {
+                              "attributes": {
+                                "stage": "pipeline"
+                              },
+                              "start_time_unix_nano": 1792474232923895245,
+                              "time_unix_nano": 1792474232923944144,
+                              "count": 1,
+                              "sum": 3.6688765430000103,
+                              "bucket_counts": [
+                                0,
+                                1,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
+                              ],
+                              "explicit_bounds": [
+                                0.0,
+                                5.0,
+                                10.0,
+                                25.0,
+                                50.0,
+                                75.0,
+                                100.0,
+                                250.0,
+                                500.0,
+                                750.0,
+                                1000.0,
+                                2500.0,
+                                5000.0,
+                                7500.0,
+                                10000.0
+                              ],
+                              "min": 3.6688765430000103,
+                              "max": 3.6688765430000103,
+                              "exemplars": [
+                                {
+                                  "filtered_attributes": {},
+                                  "value": 3.6688765430000103,
+                                  "time_unix_nano": 1792474232923887141,
+                                  "span_id": 11149745643785338343,
+                                  "trace_id": 90363609280688255924815154280434330014
+                                }
+                              ]
+                            }
+                          ],
+                          "aggregation_temporality": 2
+                        }
+                      }
+                    ],
+                    "schema_url": ""
+                  }
+                ],
+                "schema_url": ""
+              }
+            ]
+          }
+        },
+        "status": "complete",
+        "sandbox": {
+          "network_mode": "none",
+          "read_only": true,
+          "reason": null,
+          "profile": {
+            "NetworkMode": "none",
+            "ReadonlyRootfs": true,
+            "CapDrop": [
+              "ALL"
+            ],
+            "SecurityOpt": [
+              "no-new-privileges:true"
+            ],
+            "Privileged": false,
+            "Memory": 805306368,
+            "MemorySwap": 805306368,
+            "NanoCpus": 1000000000,
+            "PidsLimit": 64
+          },
+          "image_id": "sha256:ee5aaca41f9feae3c17137a02cc94652687afa8656027865adf86f5af44c5abd",
+          "user": "1000:1000",
+          "wall_seconds": 4.43,
+          "cpu_seconds": 2.074,
+          "exit_code": 0
+        },
+        "control_observability": {
+          "spans": [
+            {
+              "name": "upload",
+              "trace_id": "43fb65e9dbf62b055d06895768bd699e",
+              "span_id": "c64c8a22a2156021",
+              "status": "UNSET",
+              "parent_span_id": null,
+              "start_ns": 1792474228382719261,
+              "end_ns": 1792474228387356919,
+              "attributes": {
+                "job.id": "841bca18-4e8a-4f9c-9c3e-91ddefb7e21d",
+                "outcome": "completed"
+              }
+            },
+            {
+              "name": "queue_wait",
+              "trace_id": "43fb65e9dbf62b055d06895768bd699e",
+              "span_id": "d793edf0ac746975",
+              "status": "UNSET",
+              "parent_span_id": "c64c8a22a2156021",
+              "start_ns": 1792474228389556992,
+              "end_ns": 1792474228402139541,
+              "attributes": {
+                "job.id": "841bca18-4e8a-4f9c-9c3e-91ddefb7e21d",
+                "outcome": "completed"
+              }
+            },
+            {
+              "name": "sandbox_execution",
+              "trace_id": "43fb65e9dbf62b055d06895768bd699e",
+              "span_id": "cd4a5a30522c3889",
+              "status": "UNSET",
+              "parent_span_id": "c64c8a22a2156021",
+              "start_ns": 1792474228411156904,
+              "end_ns": 1792474233536396226,
+              "attributes": {
+                "job.id": "841bca18-4e8a-4f9c-9c3e-91ddefb7e21d",
+                "outcome": "completed"
+              }
+            },
+            {
+              "name": "persistence",
+              "trace_id": "43fb65e9dbf62b055d06895768bd699e",
+              "span_id": "080e9d3641c63264",
+              "status": "UNSET",
+              "parent_span_id": "c64c8a22a2156021",
+              "start_ns": 1792474233536585649,
+              "end_ns": 1792474233586069719,
+              "attributes": {
+                "job.id": "841bca18-4e8a-4f9c-9c3e-91ddefb7e21d",
+                "outcome": "completed"
+              }
+            }
+          ],
+          "metrics": {
+            "resource_metrics": [
+              {
+                "resource": {
+                  "attributes": {
+                    "telemetry.sdk.language": "python",
+                    "telemetry.sdk.name": "opentelemetry",
+                    "telemetry.sdk.version": "1.45.1",
+                    "service.instance.id": "378b76dd-6eaf-4197-9aac-66606d424b02",
+                    "service.name": "firmwarex-analysis"
+                  },
+                  "schema_url": ""
+                },
+                "scope_metrics": [
+                  {
+                    "scope": {
+                      "name": "firmwarex.pipeline",
+                      "version": null,
+                      "schema_url": "",
+                      "attributes": null
+                    },
+                    "metrics": [
+                      {
+                        "name": "firmwarex.stage.completed",
+                        "description": "",
+                        "unit": "",
+                        "data": {
+                          "data_points": [
+                            {
+                              "attributes": {
+                                "stage": "upload",
+                                "outcome": "completed"
+                              },
+                              "start_time_unix_nano": 1792474228387588046,
+                              "time_unix_nano": 1792474228387705555,
+                              "value": 1,
+                              "exemplars": []
+                            }
+                          ],
+                          "aggregation_temporality": 2,
+                          "is_monotonic": true
+                        }
+                      },
+                      {
+                        "name": "firmwarex.stage.duration",
+                        "description": "",
+                        "unit": "s",
+                        "data": {
+                          "data_points": [
+                            {
+                              "attributes": {
+                                "stage": "upload",
+                                "outcome": "completed"
+                              },
+                              "start_time_unix_nano": 1792474228387665576,
+                              "time_unix_nano": 1792474228387705555,
+                              "count": 1,
+                              "sum": 0.004637658,
+                              "bucket_counts": [
+                                0,
+                                1,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
+                              ],
+                              "explicit_bounds": [
+                                0.0,
+                                5.0,
+                                10.0,
+                                25.0,
+                                50.0,
+                                75.0,
+                                100.0,
+                                250.0,
+                                500.0,
+                                750.0,
+                                1000.0,
+                                2500.0,
+                                5000.0,
+                                7500.0,
+                                10000.0
+                              ],
+                              "min": 0.004637658,
+                              "max": 0.004637658,
+                              "exemplars": []
+                            }
+                          ],
+                          "aggregation_temporality": 2
+                        }
+                      }
+                    ],
+                    "schema_url": ""
+                  }
+                ],
+                "schema_url": ""
+              },
+              {
+                "resource": {
+                  "attributes": {
+                    "telemetry.sdk.language": "python",
+                    "telemetry.sdk.name": "opentelemetry",
+                    "telemetry.sdk.version": "1.45.1",
+                    "service.instance.id": "c141a60d-819d-43da-b18d-d23790918c22",
+                    "service.name": "firmwarex-analysis"
+                  },
+                  "schema_url": ""
+                },
+                "scope_metrics": [
+                  {
+                    "scope": {
+                      "name": "firmwarex.pipeline",
+                      "version": null,
+                      "schema_url": "",
+                      "attributes": null
+                    },
+                    "metrics": [
+                      {
+                        "name": "firmwarex.stage.completed",
+                        "description": "",
+                        "unit": "",
+                        "data": {
+                          "data_points": [
+                            {
+                              "attributes": {
+                                "stage": "queue_wait",
+                                "outcome": "completed"
+                              },
+                              "start_time_unix_nano": 1792474228402310343,
+                              "time_unix_nano": 1792474233587797027,
+                              "value": 1,
+                              "exemplars": []
+                            },
+                            {
+                              "attributes": {
+                                "stage": "sandbox_execution"
+                              },
+                              "start_time_unix_nano": 1792474233536259544,
+                              "time_unix_nano": 1792474233587797027,
+                              "value": 1,
+                              "exemplars": [
+                                {
+                                  "filtered_attributes": {},
+                                  "value": 1,
+                                  "time_unix_nano": 1792474233536177910,
+                                  "span_id": 14792735089635375241,
+                                  "trace_id": 90363609280688255924815154280434330014
+                                }
+                              ]
+                            },
+                            {
+                              "attributes": {
+                                "stage": "persistence"
+                              },
+                              "start_time_unix_nano": 1792474233585999538,
+                              "time_unix_nano": 1792474233587797027,
+                              "value": 1,
+                              "exemplars": [
+                                {
+                                  "filtered_attributes": {},
+                                  "value": 1,
+                                  "time_unix_nano": 1792474233585964076,
+                                  "span_id": 580574258334675556,
+                                  "trace_id": 90363609280688255924815154280434330014
+                                }
+                              ]
+                            }
+                          ],
+                          "aggregation_temporality": 2,
+                          "is_monotonic": true
+                        }
+                      },
+                      {
+                        "name": "firmwarex.stage.duration",
+                        "description": "",
+                        "unit": "s",
+                        "data": {
+                          "data_points": [
+                            {
+                              "attributes": {
+                                "stage": "queue_wait",
+                                "outcome": "completed"
+                              },
+                              "start_time_unix_nano": 1792474228402350012,
+                              "time_unix_nano": 1792474233587797027,
+                              "count": 1,
+                              "sum": 0.012582549,
+                              "bucket_counts": [
+                                0,
+                                1,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
+                              ],
+                              "explicit_bounds": [
+                                0.0,
+                                5.0,
+                                10.0,
+                                25.0,
+                                50.0,
+                                75.0,
+                                100.0,
+                                250.0,
+                                500.0,
+                                750.0,
+                                1000.0,
+                                2500.0,
+                                5000.0,
+                                7500.0,
+                                10000.0
+                              ],
+                              "min": 0.012582549,
+                              "max": 0.012582549,
+                              "exemplars": []
+                            },
+                            {
+                              "attributes": {
+                                "stage": "sandbox_execution"
+                              },
+                              "start_time_unix_nano": 1792474233536334144,
+                              "time_unix_nano": 1792474233587797027,
+                              "count": 1,
+                              "sum": 5.1252372339999965,
+                              "bucket_counts": [
+                                0,
+                                0,
+                                1,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
+                              ],
+                              "explicit_bounds": [
+                                0.0,
+                                5.0,
+                                10.0,
+                                25.0,
+                                50.0,
+                                75.0,
+                                100.0,
+                                250.0,
+                                500.0,
+                                750.0,
+                                1000.0,
+                                2500.0,
+                                5000.0,
+                                7500.0,
+                                10000.0
+                              ],
+                              "min": 5.1252372339999965,
+                              "max": 5.1252372339999965,
+                              "exemplars": [
+                                {
+                                  "filtered_attributes": {},
+                                  "value": 5.1252372339999965,
+                                  "time_unix_nano": 1792474233536310528,
+                                  "span_id": 14792735089635375241,
+                                  "trace_id": 90363609280688255924815154280434330014
+                                }
+                              ]
+                            },
+                            {
+                              "attributes": {
+                                "stage": "persistence"
+                              },
+                              "start_time_unix_nano": 1792474233586037432,
+                              "time_unix_nano": 1792474233587797027,
+                              "count": 1,
+                              "sum": 0.04954517199996644,
+                              "bucket_counts": [
+                                0,
+                                1,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
+                              ],
+                              "explicit_bounds": [
+                                0.0,
+                                5.0,
+                                10.0,
+                                25.0,
+                                50.0,
+                                75.0,
+                                100.0,
+                                250.0,
+                                500.0,
+                                750.0,
+                                1000.0,
+                                2500.0,
+                                5000.0,
+                                7500.0,
+                                10000.0
+                              ],
+                              "min": 0.04954517199996644,
+                              "max": 0.04954517199996644,
+                              "exemplars": [
+                                {
+                                  "filtered_attributes": {},
+                                  "value": 0.04954517199996644,
+                                  "time_unix_nano": 1792474233586025871,
+                                  "span_id": 580574258334675556,
+                                  "trace_id": 90363609280688255924815154280434330014
+                                }
+                              ]
+                            }
+                          ],
+                          "aggregation_temporality": 2
+                        }
+                      }
+                    ],
+                    "schema_url": ""
+                  }
+                ],
+                "schema_url": ""
+              }
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "safety": {
+    "untrusted_execution": "blocked_pending_mentor_approval",
+    "raw_reveal": "disabled"
+  },
+  "limitations": [
+    "Only registered controlled images execute; other images receive static and scanner analysis.",
+    "Unknown path components are pseudonymized to prevent proprietary-string disclosure.",
+    "Symbolic findings are bounded candidates for human review."
+  ]
+}

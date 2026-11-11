@@ -1,0 +1,965 @@
+{
+  "schema_version": "1.0.0",
+  "firmware_id": "718dfb20-994f-4fc0-9f86-d9c38ff0d378",
+  "display_name": "Sample firmware",
+  "sha256": "1a09968fe300a72aa161d00f833bf65135ee8a7c6dbb2814eafbc2fded23b9c5",
+  "size": 8192,
+  "redacted": true,
+  "files": [
+    {
+      "path": "/bin",
+      "type": "directory",
+      "size": 120,
+      "hash": null
+    },
+    {
+      "path": "/bin/redacted-881ec5963debc568",
+      "type": "file",
+      "size": 15576,
+      "hash": "867088d4eab8e324211b151c95b404d1cfae3f4ab14c11045b96ba1dd925e657"
+    },
+    {
+      "path": "/bin/redacted-d4e5de633b8ff411",
+      "type": "file",
+      "size": 16144,
+      "hash": "2e6983a55d0f6514df8e1b7d47b28249d50d38be2fc15c7b1a33a7473334b10e"
+    },
+    {
+      "path": "/bin/redacted-3d549331a7915553",
+      "type": "file",
+      "size": 16056,
+      "hash": "d3258b4fa3dd8c60fb54034e82a018eb27027f83ac5c283a2a352c1c368cae83"
+    },
+    {
+      "path": "/bin/redacted-8257f899921760af",
+      "type": "file",
+      "size": 12640,
+      "hash": "814298162eb7a18da081aabec66bb7a5e814a0bca70fe8a98c4ee31fb5eb7010"
+    },
+    {
+      "path": "/etc",
+      "type": "directory",
+      "size": 80,
+      "hash": null
+    },
+    {
+      "path": "/etc/redacted-fbe1e15122e8f228",
+      "type": "symlink",
+      "size": 21,
+      "hash": "97422ae3ce5c03af5c269ac79f2e64c7d2d8223ede44a2dd3f41d32ead1d5226"
+    },
+    {
+      "path": "/etc/redacted-625f517b0d4b95c2",
+      "type": "file",
+      "size": 40,
+      "hash": "90d415918ca220084bf7c3db5e7ae51b09e2dcc2617a822c8b7e22c7fce59fff"
+    }
+  ],
+  "binaries": [
+    {
+      "path": "/bin/redacted-881ec5963debc568",
+      "architecture": "x86_64",
+      "endianness": "little",
+      "bits": 64,
+      "elf_type": "ET_DYN",
+      "nx": true,
+      "pie": false,
+      "relro": "partial",
+      "stack_canary": true,
+      "fortify": false,
+      "stripped": false,
+      "wx_segments": [],
+      "banned_functions": [
+        "strcpy"
+      ],
+      "limitations": [
+        "Missing symbols may conceal canary/FORTIFY use; PIE does not prove runtime ASLR."
+      ]
+    },
+    {
+      "path": "/bin/redacted-d4e5de633b8ff411",
+      "architecture": "x86_64",
+      "endianness": "little",
+      "bits": 64,
+      "elf_type": "ET_DYN",
+      "nx": true,
+      "pie": true,
+      "relro": "partial",
+      "stack_canary": true,
+      "fortify": false,
+      "stripped": false,
+      "wx_segments": [],
+      "banned_functions": [
+        "strcpy"
+      ],
+      "limitations": [
+        "Missing symbols may conceal canary/FORTIFY use; PIE does not prove runtime ASLR."
+      ]
+    },
+    {
+      "path": "/bin/redacted-3d549331a7915553",
+      "architecture": "x86_64",
+      "endianness": "little",
+      "bits": 64,
+      "elf_type": "ET_DYN",
+      "nx": true,
+      "pie": true,
+      "relro": "full",
+      "stack_canary": true,
+      "fortify": true,
+      "stripped": false,
+      "wx_segments": [],
+      "banned_functions": [],
+      "limitations": [
+        "Missing symbols may conceal canary/FORTIFY use; PIE does not prove runtime ASLR."
+      ]
+    },
+    {
+      "path": "/bin/redacted-8257f899921760af",
+      "architecture": "x86_64",
+      "endianness": "little",
+      "bits": 64,
+      "elf_type": "ET_EXEC",
+      "nx": false,
+      "pie": false,
+      "relro": "none",
+      "stack_canary": false,
+      "fortify": false,
+      "stripped": false,
+      "wx_segments": [],
+      "banned_functions": [
+        "strcpy"
+      ],
+      "limitations": [
+        "Missing symbols may conceal canary/FORTIFY use; PIE does not prove runtime ASLR."
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "vulnerability_id": "43e54e9a-cc06-5990-8c57-0fb112d0c8c1",
+      "firmware_id": "718dfb20-994f-4fc0-9f86-d9c38ff0d378",
+      "binary": "/bin/redacted-881ec5963debc568",
+      "architecture": "x86_64",
+      "category": "memory_corruption",
+      "cwe": "CWE-676",
+      "address": null,
+      "sink": "strcpy",
+      "source": null,
+      "tainted_path": [],
+      "crash_state": {
+        "fault_address": null,
+        "registers": null,
+        "overflow_offset": null,
+        "stack_hash": null
+      },
+      "risk_rating": "low",
+      "confidence": "heuristic",
+      "evidence_ref": "evidence:9f26cf77847cb0f150b93bf6a32de0fe421d1fc84e000f539293d7be970a4c71",
+      "redacted": true,
+      "status": "new",
+      "detected_at": "2026-10-19T17:25:59.568620Z"
+    },
+    {
+      "vulnerability_id": "b96e52ac-4a81-5a57-8197-55d10d0615d9",
+      "firmware_id": "718dfb20-994f-4fc0-9f86-d9c38ff0d378",
+      "binary": "/bin/redacted-d4e5de633b8ff411",
+      "architecture": "x86_64",
+      "category": "memory_corruption",
+      "cwe": "CWE-676",
+      "address": null,
+      "sink": "strcpy",
+      "source": null,
+      "tainted_path": [],
+      "crash_state": {
+        "fault_address": null,
+        "registers": null,
+        "overflow_offset": null,
+        "stack_hash": null
+      },
+      "risk_rating": "low",
+      "confidence": "heuristic",
+      "evidence_ref": "evidence:9f26cf77847cb0f150b93bf6a32de0fe421d1fc84e000f539293d7be970a4c71",
+      "redacted": true,
+      "status": "new",
+      "detected_at": "2026-10-19T17:25:59.568825Z"
+    },
+    {
+      "vulnerability_id": "06f573df-5fad-5f3c-a71e-dad9909a8112",
+      "firmware_id": "718dfb20-994f-4fc0-9f86-d9c38ff0d378",
+      "binary": "/bin/redacted-8257f899921760af",
+      "architecture": "x86_64",
+      "category": "memory_corruption",
+      "cwe": "CWE-676",
+      "address": null,
+      "sink": "strcpy",
+      "source": null,
+      "tainted_path": [],
+      "crash_state": {
+        "fault_address": null,
+        "registers": null,
+        "overflow_offset": null,
+        "stack_hash": null
+      },
+      "risk_rating": "low",
+      "confidence": "heuristic",
+      "evidence_ref": "evidence:9f26cf77847cb0f150b93bf6a32de0fe421d1fc84e000f539293d7be970a4c71",
+      "redacted": true,
+      "status": "new",
+      "detected_at": "2026-10-19T17:25:59.568872Z"
+    }
+  ],
+  "evidence": {
+    "evidence:9f26cf77847cb0f150b93bf6a32de0fe421d1fc84e000f539293d7be970a4c71": {
+      "rule": "potentially_dangerous_function_symbol",
+      "redacted": true,
+      "heuristic": true,
+      "function": "strcpy",
+      "invocation_proven": false,
+      "overflow_proven": false
+    }
+  },
+  "jobs": [
+    {
+      "job_id": "378f5fdc-ea35-4b09-83b9-117096fd5db7",
+      "status": "partial",
+      "stage": "finished",
+      "result": {
+        "schema_version": 1,
+        "errors": [],
+        "graphs": {},
+        "stages": {
+          "extract": {
+            "status": "extracted"
+          },
+          "static": {
+            "status": "completed",
+            "binary_count": 4
+          },
+          "emulation": {
+            "status": "blocked",
+            "reason": "mentor_signoff_required"
+          },
+          "symbolic": {
+            "status": "blocked",
+            "reason": "mentor_signoff_required"
+          },
+          "secrets_crypto": {
+            "status": "completed",
+            "files_scanned": 5,
+            "files_skipped": 0,
+            "bytes_scanned": 60456,
+            "architecture_inheritance": "single known image architecture; ambiguous non-ELF files skipped"
+          },
+          "normalize": {
+            "status": "completed",
+            "finding_count": 3
+          }
+        },
+        "analysis_scope": "integrated_gated",
+        "redacted": true,
+        "entropy": [
+          {
+            "offset": 0,
+            "size": 8192,
+            "bits_per_byte": 6.529014
+          }
+        ],
+        "extraction": {
+          "status": "extracted",
+          "attempts": [
+            {
+              "format": "squashfs",
+              "status": "extracted"
+            }
+          ],
+          "filesystems": [
+            {
+              "format": "squashfs",
+              "partition": "partition-0"
+            }
+          ],
+          "special_entries": []
+        },
+        "observability": {
+          "spans": [
+            {
+              "name": "extract",
+              "trace_id": "1572a53575518894303fd6cf449a874e",
+              "span_id": "4fcf71867e1fca55",
+              "parent_span_id": "cf9af8d60c2d987a",
+              "start_ns": 1792430759547543398,
+              "end_ns": 1792430759556707863,
+              "attributes": {
+                "job.id": "378f5fdc-ea35-4b09-83b9-117096fd5db7",
+                "outcome": "completed"
+              }
+            },
+            {
+              "name": "static",
+              "trace_id": "1572a53575518894303fd6cf449a874e",
+              "span_id": "fb0f5c0d2d697b84",
+              "parent_span_id": "cf9af8d60c2d987a",
+              "start_ns": 1792430759556814441,
+              "end_ns": 1792430759569012667,
+              "attributes": {
+                "job.id": "378f5fdc-ea35-4b09-83b9-117096fd5db7",
+                "outcome": "completed"
+              }
+            },
+            {
+              "name": "emulation",
+              "trace_id": "1572a53575518894303fd6cf449a874e",
+              "span_id": "852bc810579a7e20",
+              "parent_span_id": "cf9af8d60c2d987a",
+              "start_ns": 1792430759569104416,
+              "end_ns": 1792430759569185224,
+              "attributes": {
+                "job.id": "378f5fdc-ea35-4b09-83b9-117096fd5db7",
+                "outcome": "completed"
+              }
+            },
+            {
+              "name": "symbolic",
+              "trace_id": "1572a53575518894303fd6cf449a874e",
+              "span_id": "8ff618e569a16153",
+              "parent_span_id": "cf9af8d60c2d987a",
+              "start_ns": 1792430759569225997,
+              "end_ns": 1792430759569270193,
+              "attributes": {
+                "job.id": "378f5fdc-ea35-4b09-83b9-117096fd5db7",
+                "outcome": "completed"
+              }
+            },
+            {
+              "name": "secrets_crypto",
+              "trace_id": "1572a53575518894303fd6cf449a874e",
+              "span_id": "04ed9c2d1f736bc7",
+              "parent_span_id": "cf9af8d60c2d987a",
+              "start_ns": 1792430759569302152,
+              "end_ns": 1792430759571603669,
+              "attributes": {
+                "job.id": "378f5fdc-ea35-4b09-83b9-117096fd5db7",
+                "outcome": "completed"
+              }
+            },
+            {
+              "name": "normalize",
+              "trace_id": "1572a53575518894303fd6cf449a874e",
+              "span_id": "0ed8566bf44d72bf",
+              "parent_span_id": "cf9af8d60c2d987a",
+              "start_ns": 1792430759571668833,
+              "end_ns": 1792430759571771719,
+              "attributes": {
+                "job.id": "378f5fdc-ea35-4b09-83b9-117096fd5db7",
+                "outcome": "completed"
+              }
+            },
+            {
+              "name": "pipeline",
+              "trace_id": "1572a53575518894303fd6cf449a874e",
+              "span_id": "cf9af8d60c2d987a",
+              "parent_span_id": null,
+              "start_ns": 1792430759547490823,
+              "end_ns": 1792430759571825022,
+              "attributes": {
+                "job.id": "378f5fdc-ea35-4b09-83b9-117096fd5db7",
+                "outcome": "completed"
+              }
+            }
+          ],
+          "metrics": {
+            "resource_metrics": [
+              {
+                "resource": {
+                  "attributes": {
+                    "telemetry.sdk.language": "python",
+                    "telemetry.sdk.name": "opentelemetry",
+                    "telemetry.sdk.version": "1.45.1",
+                    "service.instance.id": "d79c5212-d92e-4e92-aeca-3464c477f827",
+                    "service.name": "firmwarex-analysis"
+                  },
+                  "schema_url": ""
+                },
+                "scope_metrics": [
+                  {
+                    "scope": {
+                      "name": "firmwarex.pipeline",
+                      "version": null,
+                      "schema_url": "",
+                      "attributes": null
+                    },
+                    "metrics": [
+                      {
+                        "name": "firmwarex.stage.completed",
+                        "description": "",
+                        "unit": "",
+                        "data": {
+                          "data_points": [
+                            {
+                              "attributes": {
+                                "stage": "extract"
+                              },
+                              "start_time_unix_nano": 1792430759556568626,
+                              "time_unix_nano": 1792430759571858628,
+                              "value": 1,
+                              "exemplars": [
+                                {
+                                  "filtered_attributes": {},
+                                  "value": 1,
+                                  "time_unix_nano": 1792430759556491283,
+                                  "span_id": 5750940071630981717,
+                                  "trace_id": 28509060586341733578184953409474037582
+                                }
+                              ]
+                            },
+                            {
+                              "attributes": {
+                                "stage": "static"
+                              },
+                              "start_time_unix_nano": 1792430759568941132,
+                              "time_unix_nano": 1792430759571858628,
+                              "value": 1,
+                              "exemplars": [
+                                {
+                                  "filtered_attributes": {},
+                                  "value": 1,
+                                  "time_unix_nano": 1792430759568907614,
+                                  "span_id": 18090779439836789636,
+                                  "trace_id": 28509060586341733578184953409474037582
+                                }
+                              ]
+                            },
+                            {
+                              "attributes": {
+                                "stage": "emulation"
+                              },
+                              "start_time_unix_nano": 1792430759569126951,
+                              "time_unix_nano": 1792430759571858628,
+                              "value": 1,
+                              "exemplars": [
+                                {
+                                  "filtered_attributes": {},
+                                  "value": 1,
+                                  "time_unix_nano": 1792430759569116044,
+                                  "span_id": 9595983403557748256,
+                                  "trace_id": 28509060586341733578184953409474037582
+                                }
+                              ]
+                            },
+                            {
+                              "attributes": {
+                                "stage": "symbolic"
+                              },
+                              "start_time_unix_nano": 1792430759569242207,
+                              "time_unix_nano": 1792430759571858628,
+                              "value": 1,
+                              "exemplars": [
+                                {
+                                  "filtered_attributes": {},
+                                  "value": 1,
+                                  "time_unix_nano": 1792430759569233502,
+                                  "span_id": 10373506165293277523,
+                                  "trace_id": 28509060586341733578184953409474037582
+                                }
+                              ]
+                            },
+                            {
+                              "attributes": {
+                                "stage": "secrets_crypto"
+                              },
+                              "start_time_unix_nano": 1792430759571550371,
+                              "time_unix_nano": 1792430759571858628,
+                              "value": 1,
+                              "exemplars": [
+                                {
+                                  "filtered_attributes": {},
+                                  "value": 1,
+                                  "time_unix_nano": 1792430759571524781,
+                                  "span_id": 355111663247256519,
+                                  "trace_id": 28509060586341733578184953409474037582
+                                }
+                              ]
+                            },
+                            {
+                              "attributes": {
+                                "stage": "normalize"
+                              },
+                              "start_time_unix_nano": 1792430759571731850,
+                              "time_unix_nano": 1792430759571858628,
+                              "value": 1,
+                              "exemplars": [
+                                {
+                                  "filtered_attributes": {},
+                                  "value": 1,
+                                  "time_unix_nano": 1792430759571721960,
+                                  "span_id": 1069699933160698559,
+                                  "trace_id": 28509060586341733578184953409474037582
+                                }
+                              ]
+                            },
+                            {
+                              "attributes": {
+                                "stage": "pipeline"
+                              },
+                              "start_time_unix_nano": 1792430759571797954,
+                              "time_unix_nano": 1792430759571858628,
+                              "value": 1,
+                              "exemplars": [
+                                {
+                                  "filtered_attributes": {},
+                                  "value": 1,
+                                  "time_unix_nano": 1792430759571789069,
+                                  "span_id": 14959542710475528314,
+                                  "trace_id": 28509060586341733578184953409474037582
+                                }
+                              ]
+                            }
+                          ],
+                          "aggregation_temporality": 2,
+                          "is_monotonic": true
+                        }
+                      },
+                      {
+                        "name": "firmwarex.stage.duration",
+                        "description": "",
+                        "unit": "s",
+                        "data": {
+                          "data_points": [
+                            {
+                              "attributes": {
+                                "stage": "extract"
+                              },
+                              "start_time_unix_nano": 1792430759556676304,
+                              "time_unix_nano": 1792430759571858628,
+                              "count": 1,
+                              "sum": 0.009084880999921552,
+                              "bucket_counts": [
+                                0,
+                                1,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
+                              ],
+                              "explicit_bounds": [
+                                0.0,
+                                5.0,
+                                10.0,
+                                25.0,
+                                50.0,
+                                75.0,
+                                100.0,
+                                250.0,
+                                500.0,
+                                750.0,
+                                1000.0,
+                                2500.0,
+                                5000.0,
+                                7500.0,
+                                10000.0
+                              ],
+                              "min": 0.009084880999921552,
+                              "max": 0.009084880999921552,
+                              "exemplars": [
+                                {
+                                  "filtered_attributes": {},
+                                  "value": 0.009084880999921552,
+                                  "time_unix_nano": 1792430759556592408,
+                                  "span_id": 5750940071630981717,
+                                  "trace_id": 28509060586341733578184953409474037582
+                                }
+                              ]
+                            },
+                            {
+                              "attributes": {
+                                "stage": "static"
+                              },
+                              "start_time_unix_nano": 1792430759568979321,
+                              "time_unix_nano": 1792430759571858628,
+                              "count": 1,
+                              "sum": 0.012205768000058015,
+                              "bucket_counts": [
+                                0,
+                                1,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
+                              ],
+                              "explicit_bounds": [
+                                0.0,
+                                5.0,
+                                10.0,
+                                25.0,
+                                50.0,
+                                75.0,
+                                100.0,
+                                250.0,
+                                500.0,
+                                750.0,
+                                1000.0,
+                                2500.0,
+                                5000.0,
+                                7500.0,
+                                10000.0
+                              ],
+                              "min": 0.012205768000058015,
+                              "max": 0.012205768000058015,
+                              "exemplars": [
+                                {
+                                  "filtered_attributes": {},
+                                  "value": 0.012205768000058015,
+                                  "time_unix_nano": 1792430759568969256,
+                                  "span_id": 18090779439836789636,
+                                  "trace_id": 28509060586341733578184953409474037582
+                                }
+                              ]
+                            },
+                            {
+                              "attributes": {
+                                "stage": "emulation"
+                              },
+                              "start_time_unix_nano": 1792430759569167333,
+                              "time_unix_nano": 1792430759571858628,
+                              "count": 1,
+                              "sum": 9.611600000880571e-05,
+                              "bucket_counts": [
+                                0,
+                                1,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
+                              ],
+                              "explicit_bounds": [
+                                0.0,
+                                5.0,
+                                10.0,
+                                25.0,
+                                50.0,
+                                75.0,
+                                100.0,
+                                250.0,
+                                500.0,
+                                750.0,
+                                1000.0,
+                                2500.0,
+                                5000.0,
+                                7500.0,
+                                10000.0
+                              ],
+                              "min": 9.611600000880571e-05,
+                              "max": 9.611600000880571e-05,
+                              "exemplars": [
+                                {
+                                  "filtered_attributes": {},
+                                  "value": 9.611600000880571e-05,
+                                  "time_unix_nano": 1792430759569156965,
+                                  "span_id": 9595983403557748256,
+                                  "trace_id": 28509060586341733578184953409474037582
+                                }
+                              ]
+                            },
+                            {
+                              "attributes": {
+                                "stage": "symbolic"
+                              },
+                              "start_time_unix_nano": 1792430759569258085,
+                              "time_unix_nano": 1792430759571858628,
+                              "count": 1,
+                              "sum": 4.655399993680476e-05,
+                              "bucket_counts": [
+                                0,
+                                1,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
+                              ],
+                              "explicit_bounds": [
+                                0.0,
+                                5.0,
+                                10.0,
+                                25.0,
+                                50.0,
+                                75.0,
+                                100.0,
+                                250.0,
+                                500.0,
+                                750.0,
+                                1000.0,
+                                2500.0,
+                                5000.0,
+                                7500.0,
+                                10000.0
+                              ],
+                              "min": 4.655399993680476e-05,
+                              "max": 4.655399993680476e-05,
+                              "exemplars": [
+                                {
+                                  "filtered_attributes": {},
+                                  "value": 4.655399993680476e-05,
+                                  "time_unix_nano": 1792430759569250903,
+                                  "span_id": 10373506165293277523,
+                                  "trace_id": 28509060586341733578184953409474037582
+                                }
+                              ]
+                            },
+                            {
+                              "attributes": {
+                                "stage": "secrets_crypto"
+                              },
+                              "start_time_unix_nano": 1792430759571579866,
+                              "time_unix_nano": 1792430759571858628,
+                              "count": 1,
+                              "sum": 0.002286318999949799,
+                              "bucket_counts": [
+                                0,
+                                1,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
+                              ],
+                              "explicit_bounds": [
+                                0.0,
+                                5.0,
+                                10.0,
+                                25.0,
+                                50.0,
+                                75.0,
+                                100.0,
+                                250.0,
+                                500.0,
+                                750.0,
+                                1000.0,
+                                2500.0,
+                                5000.0,
+                                7500.0,
+                                10000.0
+                              ],
+                              "min": 0.002286318999949799,
+                              "max": 0.002286318999949799,
+                              "exemplars": [
+                                {
+                                  "filtered_attributes": {},
+                                  "value": 0.002286318999949799,
+                                  "time_unix_nano": 1792430759571570531,
+                                  "span_id": 355111663247256519,
+                                  "trace_id": 28509060586341733578184953409474037582
+                                }
+                              ]
+                            },
+                            {
+                              "attributes": {
+                                "stage": "normalize"
+                              },
+                              "start_time_unix_nano": 1792430759571749882,
+                              "time_unix_nano": 1792430759571858628,
+                              "count": 1,
+                              "sum": 0.00010731800000485237,
+                              "bucket_counts": [
+                                0,
+                                1,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
+                              ],
+                              "explicit_bounds": [
+                                0.0,
+                                5.0,
+                                10.0,
+                                25.0,
+                                50.0,
+                                75.0,
+                                100.0,
+                                250.0,
+                                500.0,
+                                750.0,
+                                1000.0,
+                                2500.0,
+                                5000.0,
+                                7500.0,
+                                10000.0
+                              ],
+                              "min": 0.00010731800000485237,
+                              "max": 0.00010731800000485237,
+                              "exemplars": [
+                                {
+                                  "filtered_attributes": {},
+                                  "value": 0.00010731800000485237,
+                                  "time_unix_nano": 1792430759571741783,
+                                  "span_id": 1069699933160698559,
+                                  "trace_id": 28509060586341733578184953409474037582
+                                }
+                              ]
+                            },
+                            {
+                              "attributes": {
+                                "stage": "pipeline"
+                              },
+                              "start_time_unix_nano": 1792430759571813182,
+                              "time_unix_nano": 1792430759571858628,
+                              "count": 1,
+                              "sum": 0.024427063999951315,
+                              "bucket_counts": [
+                                0,
+                                1,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
+                              ],
+                              "explicit_bounds": [
+                                0.0,
+                                5.0,
+                                10.0,
+                                25.0,
+                                50.0,
+                                75.0,
+                                100.0,
+                                250.0,
+                                500.0,
+                                750.0,
+                                1000.0,
+                                2500.0,
+                                5000.0,
+                                7500.0,
+                                10000.0
+                              ],
+                              "min": 0.024427063999951315,
+                              "max": 0.024427063999951315,
+                              "exemplars": [
+                                {
+                                  "filtered_attributes": {},
+                                  "value": 0.024427063999951315,
+                                  "time_unix_nano": 1792430759571805702,
+                                  "span_id": 14959542710475528314,
+                                  "trace_id": 28509060586341733578184953409474037582
+                                }
+                              ]
+                            }
+                          ],
+                          "aggregation_temporality": 2
+                        }
+                      }
+                    ],
+                    "schema_url": ""
+                  }
+                ],
+                "schema_url": ""
+              }
+            ]
+          }
+        },
+        "status": "partial",
+        "sandbox": {
+          "network_mode": "none",
+          "read_only": true,
+          "reason": null,
+          "profile": {
+            "NetworkMode": "none",
+            "ReadonlyRootfs": true,
+            "CapDrop": [
+              "ALL"
+            ],
+            "SecurityOpt": [
+              "no-new-privileges:true"
+            ],
+            "Privileged": false,
+            "Memory": 805306368,
+            "MemorySwap": 805306368,
+            "NanoCpus": 1000000000,
+            "PidsLimit": 64
+          },
+          "image_id": "sha256:136ae19ed70253352f879888d0b2a6e2b128721ce3f6d494cf657d0ebdffe7e3",
+          "user": "1000:1000",
+          "wall_seconds": 0.616,
+          "cpu_seconds": 0.388,
+          "exit_code": 0
+        }
+      }
+    }
+  ],
+  "safety": {
+    "untrusted_execution": "blocked_pending_mentor_approval",
+    "raw_reveal": "disabled"
+  },
+  "limitations": [
+    "Only registered controlled images execute; other images receive static and scanner analysis.",
+    "Unknown path components are pseudonymized to prevent proprietary-string disclosure.",
+    "Symbolic findings are bounded candidates for human review."
+  ]
+}

@@ -1,0 +1,1766 @@
+[
+  {
+    "job_id": "0e6ab74a-cd92-4190-961c-d248d3966487",
+    "architecture": "MIPS",
+    "mode": "user",
+    "args": [],
+    "result": {
+      "status": "completed",
+      "architecture": "MIPS",
+      "mode": "user",
+      "returncode": 0,
+      "stdout_sha256": "6ddb6ffc8d4e7c1267f703dfc931728c7e03bb9715dee4ce7bb3bba34299628d",
+      "stdout_bytes": 29,
+      "fallback": null,
+      "schema_version": 1
+    },
+    "sandbox": {
+      "network_mode": "none",
+      "read_only": true,
+      "reason": null,
+      "profile": {
+        "NetworkMode": "none",
+        "ReadonlyRootfs": true,
+        "CapDrop": [
+          "ALL"
+        ],
+        "SecurityOpt": [
+          "no-new-privileges:true"
+        ],
+        "Privileged": false,
+        "Memory": 805306368,
+        "MemorySwap": 805306368,
+        "NanoCpus": 1000000000,
+        "PidsLimit": 64
+      },
+      "image_id": "sha256:17e7933089cb187608f4a7fd04994aae9a426dfc197ffdc252e5b49eb2f195af",
+      "user": "1001:1001",
+      "wall_seconds": 0.455,
+      "cpu_seconds": 0.258,
+      "exit_code": 0,
+      "output_limit_bytes": 41943040
+    },
+    "authorization": {
+      "authorization": "controlled_fixture_registry",
+      "sha256": "0a63cc3d066920fde5eefb9d96d67435be2c0a0d2ee2bf576c89456340f4f541"
+    },
+    "cleanup_verified": true,
+    "audit_verified": true
+  },
+  {
+    "job_id": "2037e3aa-073a-4033-87e5-5a04d07662c9",
+    "architecture": "MIPS",
+    "mode": "user",
+    "args": [],
+    "result": {
+      "status": "completed",
+      "architecture": "MIPS",
+      "mode": "user",
+      "returncode": 0,
+      "stdout_sha256": "6ddb6ffc8d4e7c1267f703dfc931728c7e03bb9715dee4ce7bb3bba34299628d",
+      "stdout_bytes": 29,
+      "fallback": null,
+      "schema_version": 1
+    },
+    "sandbox": {
+      "network_mode": "none",
+      "read_only": true,
+      "reason": null,
+      "profile": {
+        "NetworkMode": "none",
+        "ReadonlyRootfs": true,
+        "CapDrop": [
+          "ALL"
+        ],
+        "SecurityOpt": [
+          "no-new-privileges:true"
+        ],
+        "Privileged": false,
+        "Memory": 805306368,
+        "MemorySwap": 805306368,
+        "NanoCpus": 1000000000,
+        "PidsLimit": 64
+      },
+      "image_id": "sha256:17e7933089cb187608f4a7fd04994aae9a426dfc197ffdc252e5b49eb2f195af",
+      "user": "1001:1001",
+      "wall_seconds": 0.455,
+      "cpu_seconds": 0.246,
+      "exit_code": 0,
+      "output_limit_bytes": 41943040
+    },
+    "authorization": {
+      "authorization": "controlled_fixture_registry",
+      "sha256": "0a63cc3d066920fde5eefb9d96d67435be2c0a0d2ee2bf576c89456340f4f541"
+    },
+    "cleanup_verified": true,
+    "audit_verified": true
+  },
+  {
+    "job_id": "47ac994c-dfa2-4c25-8ab2-e25f2ad985d0",
+    "architecture": "MIPS",
+    "mode": "service",
+    "args": [
+      "http"
+    ],
+    "result": {
+      "status": "completed",
+      "architecture": "MIPS",
+      "network": "job_private_loopback",
+      "probe": {
+        "protocol": "http",
+        "response_sha256": "25a65af531e52889f13a8d83566a4b49f7150d92306f4df39e08f58958b8b81c",
+        "bytes": 40
+      },
+      "schema_version": 1
+    },
+    "sandbox": {
+      "network_mode": "none",
+      "read_only": true,
+      "reason": null,
+      "profile": {
+        "NetworkMode": "none",
+        "ReadonlyRootfs": true,
+        "CapDrop": [
+          "ALL"
+        ],
+        "SecurityOpt": [
+          "no-new-privileges:true"
+        ],
+        "Privileged": false,
+        "Memory": 805306368,
+        "MemorySwap": 805306368,
+        "NanoCpus": 1000000000,
+        "PidsLimit": 64
+      },
+      "image_id": "sha256:17e7933089cb187608f4a7fd04994aae9a426dfc197ffdc252e5b49eb2f195af",
+      "user": "1001:1001",
+      "wall_seconds": 0.468,
+      "cpu_seconds": 0.25,
+      "exit_code": 0,
+      "output_limit_bytes": 41943040
+    },
+    "authorization": {
+      "authorization": "controlled_fixture_registry",
+      "sha256": "0a63cc3d066920fde5eefb9d96d67435be2c0a0d2ee2bf576c89456340f4f541"
+    },
+    "cleanup_verified": true,
+    "audit_verified": true
+  },
+  {
+    "job_id": "62e2e60d-e836-46b6-9ba9-4bbb1a905f73",
+    "architecture": "MIPS",
+    "mode": "service",
+    "args": [
+      "upnp"
+    ],
+    "result": {
+      "status": "completed",
+      "architecture": "MIPS",
+      "network": "job_private_loopback",
+      "probe": {
+        "protocol": "upnp",
+        "response_sha256": "6c056d2e32c3166ac365d6c94ae95e01515c06543ff576ae6503bb581ae195cc",
+        "bytes": 40
+      },
+      "schema_version": 1
+    },
+    "sandbox": {
+      "network_mode": "none",
+      "read_only": true,
+      "reason": null,
+      "profile": {
+        "NetworkMode": "none",
+        "ReadonlyRootfs": true,
+        "CapDrop": [
+          "ALL"
+        ],
+        "SecurityOpt": [
+          "no-new-privileges:true"
+        ],
+        "Privileged": false,
+        "Memory": 805306368,
+        "MemorySwap": 805306368,
+        "NanoCpus": 1000000000,
+        "PidsLimit": 64
+      },
+      "image_id": "sha256:17e7933089cb187608f4a7fd04994aae9a426dfc197ffdc252e5b49eb2f195af",
+      "user": "1001:1001",
+      "wall_seconds": 2.429,
+      "cpu_seconds": 0.268,
+      "exit_code": 0,
+      "output_limit_bytes": 41943040
+    },
+    "authorization": {
+      "authorization": "controlled_fixture_registry",
+      "sha256": "0a63cc3d066920fde5eefb9d96d67435be2c0a0d2ee2bf576c89456340f4f541"
+    },
+    "cleanup_verified": true,
+    "audit_verified": true
+  },
+  {
+    "job_id": "806e35a9-13a6-4502-aeb5-f6591e184cd9",
+    "architecture": "MIPS",
+    "mode": "service",
+    "args": [
+      "mqtt"
+    ],
+    "result": {
+      "status": "completed",
+      "architecture": "MIPS",
+      "network": "job_private_loopback",
+      "probe": {
+        "protocol": "mqtt",
+        "response_sha256": "b3e0adaf40f19d19ae5846a499ef09653350f3f359d52424cec547a12789b1fe",
+        "bytes": 4
+      },
+      "schema_version": 1
+    },
+    "sandbox": {
+      "network_mode": "none",
+      "read_only": true,
+      "reason": null,
+      "profile": {
+        "NetworkMode": "none",
+        "ReadonlyRootfs": true,
+        "CapDrop": [
+          "ALL"
+        ],
+        "SecurityOpt": [
+          "no-new-privileges:true"
+        ],
+        "Privileged": false,
+        "Memory": 805306368,
+        "MemorySwap": 805306368,
+        "NanoCpus": 1000000000,
+        "PidsLimit": 64
+      },
+      "image_id": "sha256:17e7933089cb187608f4a7fd04994aae9a426dfc197ffdc252e5b49eb2f195af",
+      "user": "1001:1001",
+      "wall_seconds": 0.449,
+      "cpu_seconds": 0.273,
+      "exit_code": 0,
+      "output_limit_bytes": 41943040
+    },
+    "authorization": {
+      "authorization": "controlled_fixture_registry",
+      "sha256": "0a63cc3d066920fde5eefb9d96d67435be2c0a0d2ee2bf576c89456340f4f541"
+    },
+    "cleanup_verified": true,
+    "audit_verified": true
+  },
+  {
+    "job_id": "44b05062-88fa-445b-b8ed-41fd4e6e6e0d",
+    "architecture": "MIPS",
+    "mode": "user",
+    "args": [
+      "containment"
+    ],
+    "result": {
+      "status": "completed",
+      "architecture": "MIPS",
+      "mode": "user",
+      "returncode": 0,
+      "stdout_sha256": "3c5de2245513ab9c60a5910e63a661e345e69cae6c9986eeaad5170ace3c4957",
+      "stdout_bytes": 26,
+      "fallback": null,
+      "schema_version": 1
+    },
+    "sandbox": {
+      "network_mode": "none",
+      "read_only": true,
+      "reason": null,
+      "profile": {
+        "NetworkMode": "none",
+        "ReadonlyRootfs": true,
+        "CapDrop": [
+          "ALL"
+        ],
+        "SecurityOpt": [
+          "no-new-privileges:true"
+        ],
+        "Privileged": false,
+        "Memory": 805306368,
+        "MemorySwap": 805306368,
+        "NanoCpus": 1000000000,
+        "PidsLimit": 64
+      },
+      "image_id": "sha256:17e7933089cb187608f4a7fd04994aae9a426dfc197ffdc252e5b49eb2f195af",
+      "user": "1001:1001",
+      "wall_seconds": 0.494,
+      "cpu_seconds": 0.266,
+      "exit_code": 0,
+      "output_limit_bytes": 41943040
+    },
+    "authorization": {
+      "authorization": "controlled_fixture_registry",
+      "sha256": "0a63cc3d066920fde5eefb9d96d67435be2c0a0d2ee2bf576c89456340f4f541"
+    },
+    "cleanup_verified": true,
+    "audit_verified": true
+  },
+  {
+    "job_id": "f3188941-36d9-4f16-8e0c-82c24deea74f",
+    "architecture": "MIPSEL",
+    "mode": "user",
+    "args": [],
+    "result": {
+      "status": "completed",
+      "architecture": "MIPSEL",
+      "mode": "user",
+      "returncode": 0,
+      "stdout_sha256": "6ddb6ffc8d4e7c1267f703dfc931728c7e03bb9715dee4ce7bb3bba34299628d",
+      "stdout_bytes": 29,
+      "fallback": null,
+      "schema_version": 1
+    },
+    "sandbox": {
+      "network_mode": "none",
+      "read_only": true,
+      "reason": null,
+      "profile": {
+        "NetworkMode": "none",
+        "ReadonlyRootfs": true,
+        "CapDrop": [
+          "ALL"
+        ],
+        "SecurityOpt": [
+          "no-new-privileges:true"
+        ],
+        "Privileged": false,
+        "Memory": 805306368,
+        "MemorySwap": 805306368,
+        "NanoCpus": 1000000000,
+        "PidsLimit": 64
+      },
+      "image_id": "sha256:17e7933089cb187608f4a7fd04994aae9a426dfc197ffdc252e5b49eb2f195af",
+      "user": "1001:1001",
+      "wall_seconds": 0.46,
+      "cpu_seconds": 0.259,
+      "exit_code": 0,
+      "output_limit_bytes": 41943040
+    },
+    "authorization": {
+      "authorization": "controlled_fixture_registry",
+      "sha256": "ace94e1517f6e1c3dc6e18001fc714d56d7441e93e46d468cf6cee1380d16efe"
+    },
+    "cleanup_verified": true,
+    "audit_verified": true
+  },
+  {
+    "job_id": "cb652aae-542c-4e0c-a8ef-4e03dd05105d",
+    "architecture": "MIPSEL",
+    "mode": "user",
+    "args": [],
+    "result": {
+      "status": "completed",
+      "architecture": "MIPSEL",
+      "mode": "user",
+      "returncode": 0,
+      "stdout_sha256": "6ddb6ffc8d4e7c1267f703dfc931728c7e03bb9715dee4ce7bb3bba34299628d",
+      "stdout_bytes": 29,
+      "fallback": null,
+      "schema_version": 1
+    },
+    "sandbox": {
+      "network_mode": "none",
+      "read_only": true,
+      "reason": null,
+      "profile": {
+        "NetworkMode": "none",
+        "ReadonlyRootfs": true,
+        "CapDrop": [
+          "ALL"
+        ],
+        "SecurityOpt": [
+          "no-new-privileges:true"
+        ],
+        "Privileged": false,
+        "Memory": 805306368,
+        "MemorySwap": 805306368,
+        "NanoCpus": 1000000000,
+        "PidsLimit": 64
+      },
+      "image_id": "sha256:17e7933089cb187608f4a7fd04994aae9a426dfc197ffdc252e5b49eb2f195af",
+      "user": "1001:1001",
+      "wall_seconds": 0.454,
+      "cpu_seconds": 0.261,
+      "exit_code": 0,
+      "output_limit_bytes": 41943040
+    },
+    "authorization": {
+      "authorization": "controlled_fixture_registry",
+      "sha256": "ace94e1517f6e1c3dc6e18001fc714d56d7441e93e46d468cf6cee1380d16efe"
+    },
+    "cleanup_verified": true,
+    "audit_verified": true
+  },
+  {
+    "job_id": "e1b19144-d9ce-4b88-b9ff-1bc98d42def2",
+    "architecture": "MIPSEL",
+    "mode": "service",
+    "args": [
+      "http"
+    ],
+    "result": {
+      "status": "completed",
+      "architecture": "MIPSEL",
+      "network": "job_private_loopback",
+      "probe": {
+        "protocol": "http",
+        "response_sha256": "25a65af531e52889f13a8d83566a4b49f7150d92306f4df39e08f58958b8b81c",
+        "bytes": 40
+      },
+      "schema_version": 1
+    },
+    "sandbox": {
+      "network_mode": "none",
+      "read_only": true,
+      "reason": null,
+      "profile": {
+        "NetworkMode": "none",
+        "ReadonlyRootfs": true,
+        "CapDrop": [
+          "ALL"
+        ],
+        "SecurityOpt": [
+          "no-new-privileges:true"
+        ],
+        "Privileged": false,
+        "Memory": 805306368,
+        "MemorySwap": 805306368,
+        "NanoCpus": 1000000000,
+        "PidsLimit": 64
+      },
+      "image_id": "sha256:17e7933089cb187608f4a7fd04994aae9a426dfc197ffdc252e5b49eb2f195af",
+      "user": "1001:1001",
+      "wall_seconds": 0.495,
+      "cpu_seconds": 0.256,
+      "exit_code": 0,
+      "output_limit_bytes": 41943040
+    },
+    "authorization": {
+      "authorization": "controlled_fixture_registry",
+      "sha256": "ace94e1517f6e1c3dc6e18001fc714d56d7441e93e46d468cf6cee1380d16efe"
+    },
+    "cleanup_verified": true,
+    "audit_verified": true
+  },
+  {
+    "job_id": "d7328b4a-5268-460a-9270-cb7690ef637b",
+    "architecture": "MIPSEL",
+    "mode": "service",
+    "args": [
+      "upnp"
+    ],
+    "result": {
+      "status": "completed",
+      "architecture": "MIPSEL",
+      "network": "job_private_loopback",
+      "probe": {
+        "protocol": "upnp",
+        "response_sha256": "6c056d2e32c3166ac365d6c94ae95e01515c06543ff576ae6503bb581ae195cc",
+        "bytes": 40
+      },
+      "schema_version": 1
+    },
+    "sandbox": {
+      "network_mode": "none",
+      "read_only": true,
+      "reason": null,
+      "profile": {
+        "NetworkMode": "none",
+        "ReadonlyRootfs": true,
+        "CapDrop": [
+          "ALL"
+        ],
+        "SecurityOpt": [
+          "no-new-privileges:true"
+        ],
+        "Privileged": false,
+        "Memory": 805306368,
+        "MemorySwap": 805306368,
+        "NanoCpus": 1000000000,
+        "PidsLimit": 64
+      },
+      "image_id": "sha256:17e7933089cb187608f4a7fd04994aae9a426dfc197ffdc252e5b49eb2f195af",
+      "user": "1001:1001",
+      "wall_seconds": 2.32,
+      "cpu_seconds": 0.262,
+      "exit_code": 0,
+      "output_limit_bytes": 41943040
+    },
+    "authorization": {
+      "authorization": "controlled_fixture_registry",
+      "sha256": "ace94e1517f6e1c3dc6e18001fc714d56d7441e93e46d468cf6cee1380d16efe"
+    },
+    "cleanup_verified": true,
+    "audit_verified": true
+  },
+  {
+    "job_id": "696831d4-1515-472d-80a0-69c691671b29",
+    "architecture": "MIPSEL",
+    "mode": "service",
+    "args": [
+      "mqtt"
+    ],
+    "result": {
+      "status": "completed",
+      "architecture": "MIPSEL",
+      "network": "job_private_loopback",
+      "probe": {
+        "protocol": "mqtt",
+        "response_sha256": "b3e0adaf40f19d19ae5846a499ef09653350f3f359d52424cec547a12789b1fe",
+        "bytes": 4
+      },
+      "schema_version": 1
+    },
+    "sandbox": {
+      "network_mode": "none",
+      "read_only": true,
+      "reason": null,
+      "profile": {
+        "NetworkMode": "none",
+        "ReadonlyRootfs": true,
+        "CapDrop": [
+          "ALL"
+        ],
+        "SecurityOpt": [
+          "no-new-privileges:true"
+        ],
+        "Privileged": false,
+        "Memory": 805306368,
+        "MemorySwap": 805306368,
+        "NanoCpus": 1000000000,
+        "PidsLimit": 64
+      },
+      "image_id": "sha256:17e7933089cb187608f4a7fd04994aae9a426dfc197ffdc252e5b49eb2f195af",
+      "user": "1001:1001",
+      "wall_seconds": 0.468,
+      "cpu_seconds": 0.253,
+      "exit_code": 0,
+      "output_limit_bytes": 41943040
+    },
+    "authorization": {
+      "authorization": "controlled_fixture_registry",
+      "sha256": "ace94e1517f6e1c3dc6e18001fc714d56d7441e93e46d468cf6cee1380d16efe"
+    },
+    "cleanup_verified": true,
+    "audit_verified": true
+  },
+  {
+    "job_id": "898de21e-f530-4809-942b-9f6e7df8d889",
+    "architecture": "MIPSEL",
+    "mode": "user",
+    "args": [
+      "containment"
+    ],
+    "result": {
+      "status": "completed",
+      "architecture": "MIPSEL",
+      "mode": "user",
+      "returncode": 0,
+      "stdout_sha256": "3c5de2245513ab9c60a5910e63a661e345e69cae6c9986eeaad5170ace3c4957",
+      "stdout_bytes": 26,
+      "fallback": null,
+      "schema_version": 1
+    },
+    "sandbox": {
+      "network_mode": "none",
+      "read_only": true,
+      "reason": null,
+      "profile": {
+        "NetworkMode": "none",
+        "ReadonlyRootfs": true,
+        "CapDrop": [
+          "ALL"
+        ],
+        "SecurityOpt": [
+          "no-new-privileges:true"
+        ],
+        "Privileged": false,
+        "Memory": 805306368,
+        "MemorySwap": 805306368,
+        "NanoCpus": 1000000000,
+        "PidsLimit": 64
+      },
+      "image_id": "sha256:17e7933089cb187608f4a7fd04994aae9a426dfc197ffdc252e5b49eb2f195af",
+      "user": "1001:1001",
+      "wall_seconds": 0.496,
+      "cpu_seconds": 0.263,
+      "exit_code": 0,
+      "output_limit_bytes": 41943040
+    },
+    "authorization": {
+      "authorization": "controlled_fixture_registry",
+      "sha256": "ace94e1517f6e1c3dc6e18001fc714d56d7441e93e46d468cf6cee1380d16efe"
+    },
+    "cleanup_verified": true,
+    "audit_verified": true
+  },
+  {
+    "job_id": "e94068fb-8d26-4606-a82d-8bec58a745f6",
+    "architecture": "ARM32",
+    "mode": "user",
+    "args": [],
+    "result": {
+      "status": "completed",
+      "architecture": "ARM32",
+      "mode": "user",
+      "returncode": 0,
+      "stdout_sha256": "6ddb6ffc8d4e7c1267f703dfc931728c7e03bb9715dee4ce7bb3bba34299628d",
+      "stdout_bytes": 29,
+      "fallback": null,
+      "schema_version": 1
+    },
+    "sandbox": {
+      "network_mode": "none",
+      "read_only": true,
+      "reason": null,
+      "profile": {
+        "NetworkMode": "none",
+        "ReadonlyRootfs": true,
+        "CapDrop": [
+          "ALL"
+        ],
+        "SecurityOpt": [
+          "no-new-privileges:true"
+        ],
+        "Privileged": false,
+        "Memory": 805306368,
+        "MemorySwap": 805306368,
+        "NanoCpus": 1000000000,
+        "PidsLimit": 64
+      },
+      "image_id": "sha256:17e7933089cb187608f4a7fd04994aae9a426dfc197ffdc252e5b49eb2f195af",
+      "user": "1001:1001",
+      "wall_seconds": 0.463,
+      "cpu_seconds": 0.259,
+      "exit_code": 0,
+      "output_limit_bytes": 41943040
+    },
+    "authorization": {
+      "authorization": "controlled_fixture_registry",
+      "sha256": "c4fd7b7a6d32a1ec7524d991bca37035156e19acb1c93b82e7033877491de711"
+    },
+    "cleanup_verified": true,
+    "audit_verified": true
+  },
+  {
+    "job_id": "7a4643bb-dd45-4cbb-8192-560d8d6bb9e0",
+    "architecture": "ARM32",
+    "mode": "user",
+    "args": [],
+    "result": {
+      "status": "completed",
+      "architecture": "ARM32",
+      "mode": "user",
+      "returncode": 0,
+      "stdout_sha256": "6ddb6ffc8d4e7c1267f703dfc931728c7e03bb9715dee4ce7bb3bba34299628d",
+      "stdout_bytes": 29,
+      "fallback": null,
+      "schema_version": 1
+    },
+    "sandbox": {
+      "network_mode": "none",
+      "read_only": true,
+      "reason": null,
+      "profile": {
+        "NetworkMode": "none",
+        "ReadonlyRootfs": true,
+        "CapDrop": [
+          "ALL"
+        ],
+        "SecurityOpt": [
+          "no-new-privileges:true"
+        ],
+        "Privileged": false,
+        "Memory": 805306368,
+        "MemorySwap": 805306368,
+        "NanoCpus": 1000000000,
+        "PidsLimit": 64
+      },
+      "image_id": "sha256:17e7933089cb187608f4a7fd04994aae9a426dfc197ffdc252e5b49eb2f195af",
+      "user": "1001:1001",
+      "wall_seconds": 0.472,
+      "cpu_seconds": 0.273,
+      "exit_code": 0,
+      "output_limit_bytes": 41943040
+    },
+    "authorization": {
+      "authorization": "controlled_fixture_registry",
+      "sha256": "c4fd7b7a6d32a1ec7524d991bca37035156e19acb1c93b82e7033877491de711"
+    },
+    "cleanup_verified": true,
+    "audit_verified": true
+  },
+  {
+    "job_id": "d7b8d9c6-fc76-446b-8572-59eba9613a60",
+    "architecture": "ARM32",
+    "mode": "service",
+    "args": [
+      "http"
+    ],
+    "result": {
+      "status": "completed",
+      "architecture": "ARM32",
+      "network": "job_private_loopback",
+      "probe": {
+        "protocol": "http",
+        "response_sha256": "25a65af531e52889f13a8d83566a4b49f7150d92306f4df39e08f58958b8b81c",
+        "bytes": 40
+      },
+      "schema_version": 1
+    },
+    "sandbox": {
+      "network_mode": "none",
+      "read_only": true,
+      "reason": null,
+      "profile": {
+        "NetworkMode": "none",
+        "ReadonlyRootfs": true,
+        "CapDrop": [
+          "ALL"
+        ],
+        "SecurityOpt": [
+          "no-new-privileges:true"
+        ],
+        "Privileged": false,
+        "Memory": 805306368,
+        "MemorySwap": 805306368,
+        "NanoCpus": 1000000000,
+        "PidsLimit": 64
+      },
+      "image_id": "sha256:17e7933089cb187608f4a7fd04994aae9a426dfc197ffdc252e5b49eb2f195af",
+      "user": "1001:1001",
+      "wall_seconds": 0.456,
+      "cpu_seconds": 0.255,
+      "exit_code": 0,
+      "output_limit_bytes": 41943040
+    },
+    "authorization": {
+      "authorization": "controlled_fixture_registry",
+      "sha256": "c4fd7b7a6d32a1ec7524d991bca37035156e19acb1c93b82e7033877491de711"
+    },
+    "cleanup_verified": true,
+    "audit_verified": true
+  },
+  {
+    "job_id": "adfbf213-dc16-4f69-ba75-62cf43f86dac",
+    "architecture": "ARM32",
+    "mode": "service",
+    "args": [
+      "upnp"
+    ],
+    "result": {
+      "status": "completed",
+      "architecture": "ARM32",
+      "network": "job_private_loopback",
+      "probe": {
+        "protocol": "upnp",
+        "response_sha256": "6c056d2e32c3166ac365d6c94ae95e01515c06543ff576ae6503bb581ae195cc",
+        "bytes": 40
+      },
+      "schema_version": 1
+    },
+    "sandbox": {
+      "network_mode": "none",
+      "read_only": true,
+      "reason": null,
+      "profile": {
+        "NetworkMode": "none",
+        "ReadonlyRootfs": true,
+        "CapDrop": [
+          "ALL"
+        ],
+        "SecurityOpt": [
+          "no-new-privileges:true"
+        ],
+        "Privileged": false,
+        "Memory": 805306368,
+        "MemorySwap": 805306368,
+        "NanoCpus": 1000000000,
+        "PidsLimit": 64
+      },
+      "image_id": "sha256:17e7933089cb187608f4a7fd04994aae9a426dfc197ffdc252e5b49eb2f195af",
+      "user": "1001:1001",
+      "wall_seconds": 2.336,
+      "cpu_seconds": 0.281,
+      "exit_code": 0,
+      "output_limit_bytes": 41943040
+    },
+    "authorization": {
+      "authorization": "controlled_fixture_registry",
+      "sha256": "c4fd7b7a6d32a1ec7524d991bca37035156e19acb1c93b82e7033877491de711"
+    },
+    "cleanup_verified": true,
+    "audit_verified": true
+  },
+  {
+    "job_id": "f2162f78-ca85-4a06-b048-a6fcba2b20cd",
+    "architecture": "ARM32",
+    "mode": "service",
+    "args": [
+      "mqtt"
+    ],
+    "result": {
+      "status": "completed",
+      "architecture": "ARM32",
+      "network": "job_private_loopback",
+      "probe": {
+        "protocol": "mqtt",
+        "response_sha256": "b3e0adaf40f19d19ae5846a499ef09653350f3f359d52424cec547a12789b1fe",
+        "bytes": 4
+      },
+      "schema_version": 1
+    },
+    "sandbox": {
+      "network_mode": "none",
+      "read_only": true,
+      "reason": null,
+      "profile": {
+        "NetworkMode": "none",
+        "ReadonlyRootfs": true,
+        "CapDrop": [
+          "ALL"
+        ],
+        "SecurityOpt": [
+          "no-new-privileges:true"
+        ],
+        "Privileged": false,
+        "Memory": 805306368,
+        "MemorySwap": 805306368,
+        "NanoCpus": 1000000000,
+        "PidsLimit": 64
+      },
+      "image_id": "sha256:17e7933089cb187608f4a7fd04994aae9a426dfc197ffdc252e5b49eb2f195af",
+      "user": "1001:1001",
+      "wall_seconds": 0.483,
+      "cpu_seconds": 0.248,
+      "exit_code": 0,
+      "output_limit_bytes": 41943040
+    },
+    "authorization": {
+      "authorization": "controlled_fixture_registry",
+      "sha256": "c4fd7b7a6d32a1ec7524d991bca37035156e19acb1c93b82e7033877491de711"
+    },
+    "cleanup_verified": true,
+    "audit_verified": true
+  },
+  {
+    "job_id": "94ffc14f-d9bd-45af-af4b-21d50792bcb5",
+    "architecture": "ARM32",
+    "mode": "user",
+    "args": [
+      "containment"
+    ],
+    "result": {
+      "status": "completed",
+      "architecture": "ARM32",
+      "mode": "user",
+      "returncode": 0,
+      "stdout_sha256": "3c5de2245513ab9c60a5910e63a661e345e69cae6c9986eeaad5170ace3c4957",
+      "stdout_bytes": 26,
+      "fallback": null,
+      "schema_version": 1
+    },
+    "sandbox": {
+      "network_mode": "none",
+      "read_only": true,
+      "reason": null,
+      "profile": {
+        "NetworkMode": "none",
+        "ReadonlyRootfs": true,
+        "CapDrop": [
+          "ALL"
+        ],
+        "SecurityOpt": [
+          "no-new-privileges:true"
+        ],
+        "Privileged": false,
+        "Memory": 805306368,
+        "MemorySwap": 805306368,
+        "NanoCpus": 1000000000,
+        "PidsLimit": 64
+      },
+      "image_id": "sha256:17e7933089cb187608f4a7fd04994aae9a426dfc197ffdc252e5b49eb2f195af",
+      "user": "1001:1001",
+      "wall_seconds": 0.464,
+      "cpu_seconds": 0.27,
+      "exit_code": 0,
+      "output_limit_bytes": 41943040
+    },
+    "authorization": {
+      "authorization": "controlled_fixture_registry",
+      "sha256": "c4fd7b7a6d32a1ec7524d991bca37035156e19acb1c93b82e7033877491de711"
+    },
+    "cleanup_verified": true,
+    "audit_verified": true
+  },
+  {
+    "job_id": "6239d142-ab54-4325-82ea-4890f8bd475b",
+    "architecture": "ARM64",
+    "mode": "user",
+    "args": [],
+    "result": {
+      "status": "completed",
+      "architecture": "ARM64",
+      "mode": "user",
+      "returncode": 0,
+      "stdout_sha256": "6ddb6ffc8d4e7c1267f703dfc931728c7e03bb9715dee4ce7bb3bba34299628d",
+      "stdout_bytes": 29,
+      "fallback": null,
+      "schema_version": 1
+    },
+    "sandbox": {
+      "network_mode": "none",
+      "read_only": true,
+      "reason": null,
+      "profile": {
+        "NetworkMode": "none",
+        "ReadonlyRootfs": true,
+        "CapDrop": [
+          "ALL"
+        ],
+        "SecurityOpt": [
+          "no-new-privileges:true"
+        ],
+        "Privileged": false,
+        "Memory": 805306368,
+        "MemorySwap": 805306368,
+        "NanoCpus": 1000000000,
+        "PidsLimit": 64
+      },
+      "image_id": "sha256:17e7933089cb187608f4a7fd04994aae9a426dfc197ffdc252e5b49eb2f195af",
+      "user": "1001:1001",
+      "wall_seconds": 0.508,
+      "cpu_seconds": 0.257,
+      "exit_code": 0,
+      "output_limit_bytes": 41943040
+    },
+    "authorization": {
+      "authorization": "controlled_fixture_registry",
+      "sha256": "15cc700fb47b09701895629df429314c87a81f0a37b262064a7f66915bcaf511"
+    },
+    "cleanup_verified": true,
+    "audit_verified": true
+  },
+  {
+    "job_id": "b39b359e-ac80-4aa0-8b69-6d11955e128e",
+    "architecture": "ARM64",
+    "mode": "user",
+    "args": [],
+    "result": {
+      "status": "completed",
+      "architecture": "ARM64",
+      "mode": "user",
+      "returncode": 0,
+      "stdout_sha256": "6ddb6ffc8d4e7c1267f703dfc931728c7e03bb9715dee4ce7bb3bba34299628d",
+      "stdout_bytes": 29,
+      "fallback": null,
+      "schema_version": 1
+    },
+    "sandbox": {
+      "network_mode": "none",
+      "read_only": true,
+      "reason": null,
+      "profile": {
+        "NetworkMode": "none",
+        "ReadonlyRootfs": true,
+        "CapDrop": [
+          "ALL"
+        ],
+        "SecurityOpt": [
+          "no-new-privileges:true"
+        ],
+        "Privileged": false,
+        "Memory": 805306368,
+        "MemorySwap": 805306368,
+        "NanoCpus": 1000000000,
+        "PidsLimit": 64
+      },
+      "image_id": "sha256:17e7933089cb187608f4a7fd04994aae9a426dfc197ffdc252e5b49eb2f195af",
+      "user": "1001:1001",
+      "wall_seconds": 0.506,
+      "cpu_seconds": 0.258,
+      "exit_code": 0,
+      "output_limit_bytes": 41943040
+    },
+    "authorization": {
+      "authorization": "controlled_fixture_registry",
+      "sha256": "15cc700fb47b09701895629df429314c87a81f0a37b262064a7f66915bcaf511"
+    },
+    "cleanup_verified": true,
+    "audit_verified": true
+  },
+  {
+    "job_id": "092e189a-72d7-4af3-939f-fefd4a1e9fe1",
+    "architecture": "ARM64",
+    "mode": "service",
+    "args": [
+      "http"
+    ],
+    "result": {
+      "status": "completed",
+      "architecture": "ARM64",
+      "network": "job_private_loopback",
+      "probe": {
+        "protocol": "http",
+        "response_sha256": "25a65af531e52889f13a8d83566a4b49f7150d92306f4df39e08f58958b8b81c",
+        "bytes": 40
+      },
+      "schema_version": 1
+    },
+    "sandbox": {
+      "network_mode": "none",
+      "read_only": true,
+      "reason": null,
+      "profile": {
+        "NetworkMode": "none",
+        "ReadonlyRootfs": true,
+        "CapDrop": [
+          "ALL"
+        ],
+        "SecurityOpt": [
+          "no-new-privileges:true"
+        ],
+        "Privileged": false,
+        "Memory": 805306368,
+        "MemorySwap": 805306368,
+        "NanoCpus": 1000000000,
+        "PidsLimit": 64
+      },
+      "image_id": "sha256:17e7933089cb187608f4a7fd04994aae9a426dfc197ffdc252e5b49eb2f195af",
+      "user": "1001:1001",
+      "wall_seconds": 0.496,
+      "cpu_seconds": 0.26,
+      "exit_code": 0,
+      "output_limit_bytes": 41943040
+    },
+    "authorization": {
+      "authorization": "controlled_fixture_registry",
+      "sha256": "15cc700fb47b09701895629df429314c87a81f0a37b262064a7f66915bcaf511"
+    },
+    "cleanup_verified": true,
+    "audit_verified": true
+  },
+  {
+    "job_id": "a8c1c9c2-e366-4e2d-afdb-f32994586dea",
+    "architecture": "ARM64",
+    "mode": "service",
+    "args": [
+      "upnp"
+    ],
+    "result": {
+      "status": "completed",
+      "architecture": "ARM64",
+      "network": "job_private_loopback",
+      "probe": {
+        "protocol": "upnp",
+        "response_sha256": "6c056d2e32c3166ac365d6c94ae95e01515c06543ff576ae6503bb581ae195cc",
+        "bytes": 40
+      },
+      "schema_version": 1
+    },
+    "sandbox": {
+      "network_mode": "none",
+      "read_only": true,
+      "reason": null,
+      "profile": {
+        "NetworkMode": "none",
+        "ReadonlyRootfs": true,
+        "CapDrop": [
+          "ALL"
+        ],
+        "SecurityOpt": [
+          "no-new-privileges:true"
+        ],
+        "Privileged": false,
+        "Memory": 805306368,
+        "MemorySwap": 805306368,
+        "NanoCpus": 1000000000,
+        "PidsLimit": 64
+      },
+      "image_id": "sha256:17e7933089cb187608f4a7fd04994aae9a426dfc197ffdc252e5b49eb2f195af",
+      "user": "1001:1001",
+      "wall_seconds": 2.443,
+      "cpu_seconds": 0.277,
+      "exit_code": 0,
+      "output_limit_bytes": 41943040
+    },
+    "authorization": {
+      "authorization": "controlled_fixture_registry",
+      "sha256": "15cc700fb47b09701895629df429314c87a81f0a37b262064a7f66915bcaf511"
+    },
+    "cleanup_verified": true,
+    "audit_verified": true
+  },
+  {
+    "job_id": "cd3bacb0-3929-4063-8dd3-e5b883499c94",
+    "architecture": "ARM64",
+    "mode": "service",
+    "args": [
+      "mqtt"
+    ],
+    "result": {
+      "status": "completed",
+      "architecture": "ARM64",
+      "network": "job_private_loopback",
+      "probe": {
+        "protocol": "mqtt",
+        "response_sha256": "b3e0adaf40f19d19ae5846a499ef09653350f3f359d52424cec547a12789b1fe",
+        "bytes": 4
+      },
+      "schema_version": 1
+    },
+    "sandbox": {
+      "network_mode": "none",
+      "read_only": true,
+      "reason": null,
+      "profile": {
+        "NetworkMode": "none",
+        "ReadonlyRootfs": true,
+        "CapDrop": [
+          "ALL"
+        ],
+        "SecurityOpt": [
+          "no-new-privileges:true"
+        ],
+        "Privileged": false,
+        "Memory": 805306368,
+        "MemorySwap": 805306368,
+        "NanoCpus": 1000000000,
+        "PidsLimit": 64
+      },
+      "image_id": "sha256:17e7933089cb187608f4a7fd04994aae9a426dfc197ffdc252e5b49eb2f195af",
+      "user": "1001:1001",
+      "wall_seconds": 0.48,
+      "cpu_seconds": 0.26,
+      "exit_code": 0,
+      "output_limit_bytes": 41943040
+    },
+    "authorization": {
+      "authorization": "controlled_fixture_registry",
+      "sha256": "15cc700fb47b09701895629df429314c87a81f0a37b262064a7f66915bcaf511"
+    },
+    "cleanup_verified": true,
+    "audit_verified": true
+  },
+  {
+    "job_id": "a2e88c5e-a294-414a-97af-6399e0d6fd6c",
+    "architecture": "ARM64",
+    "mode": "user",
+    "args": [
+      "containment"
+    ],
+    "result": {
+      "status": "completed",
+      "architecture": "ARM64",
+      "mode": "user",
+      "returncode": 0,
+      "stdout_sha256": "3c5de2245513ab9c60a5910e63a661e345e69cae6c9986eeaad5170ace3c4957",
+      "stdout_bytes": 26,
+      "fallback": null,
+      "schema_version": 1
+    },
+    "sandbox": {
+      "network_mode": "none",
+      "read_only": true,
+      "reason": null,
+      "profile": {
+        "NetworkMode": "none",
+        "ReadonlyRootfs": true,
+        "CapDrop": [
+          "ALL"
+        ],
+        "SecurityOpt": [
+          "no-new-privileges:true"
+        ],
+        "Privileged": false,
+        "Memory": 805306368,
+        "MemorySwap": 805306368,
+        "NanoCpus": 1000000000,
+        "PidsLimit": 64
+      },
+      "image_id": "sha256:17e7933089cb187608f4a7fd04994aae9a426dfc197ffdc252e5b49eb2f195af",
+      "user": "1001:1001",
+      "wall_seconds": 0.469,
+      "cpu_seconds": 0.272,
+      "exit_code": 0,
+      "output_limit_bytes": 41943040
+    },
+    "authorization": {
+      "authorization": "controlled_fixture_registry",
+      "sha256": "15cc700fb47b09701895629df429314c87a81f0a37b262064a7f66915bcaf511"
+    },
+    "cleanup_verified": true,
+    "audit_verified": true
+  },
+  {
+    "job_id": "699fa8b8-c6ec-4b98-a513-7be5da7054b1",
+    "architecture": "x86_64",
+    "mode": "user",
+    "args": [],
+    "result": {
+      "status": "completed",
+      "architecture": "x86_64",
+      "mode": "user",
+      "returncode": 0,
+      "stdout_sha256": "6ddb6ffc8d4e7c1267f703dfc931728c7e03bb9715dee4ce7bb3bba34299628d",
+      "stdout_bytes": 29,
+      "fallback": null,
+      "schema_version": 1
+    },
+    "sandbox": {
+      "network_mode": "none",
+      "read_only": true,
+      "reason": null,
+      "profile": {
+        "NetworkMode": "none",
+        "ReadonlyRootfs": true,
+        "CapDrop": [
+          "ALL"
+        ],
+        "SecurityOpt": [
+          "no-new-privileges:true"
+        ],
+        "Privileged": false,
+        "Memory": 805306368,
+        "MemorySwap": 805306368,
+        "NanoCpus": 1000000000,
+        "PidsLimit": 64
+      },
+      "image_id": "sha256:17e7933089cb187608f4a7fd04994aae9a426dfc197ffdc252e5b49eb2f195af",
+      "user": "1001:1001",
+      "wall_seconds": 0.5,
+      "cpu_seconds": 0.285,
+      "exit_code": 0,
+      "output_limit_bytes": 41943040
+    },
+    "authorization": {
+      "authorization": "controlled_fixture_registry",
+      "sha256": "c1f9baac129f2e7617852fec9581bc6f3f34db5b91eac081d4edb36b53952d0d"
+    },
+    "cleanup_verified": true,
+    "audit_verified": true
+  },
+  {
+    "job_id": "228e7e84-f18d-47c1-8683-9a48bd37b35d",
+    "architecture": "x86_64",
+    "mode": "user",
+    "args": [],
+    "result": {
+      "status": "completed",
+      "architecture": "x86_64",
+      "mode": "user",
+      "returncode": 0,
+      "stdout_sha256": "6ddb6ffc8d4e7c1267f703dfc931728c7e03bb9715dee4ce7bb3bba34299628d",
+      "stdout_bytes": 29,
+      "fallback": null,
+      "schema_version": 1
+    },
+    "sandbox": {
+      "network_mode": "none",
+      "read_only": true,
+      "reason": null,
+      "profile": {
+        "NetworkMode": "none",
+        "ReadonlyRootfs": true,
+        "CapDrop": [
+          "ALL"
+        ],
+        "SecurityOpt": [
+          "no-new-privileges:true"
+        ],
+        "Privileged": false,
+        "Memory": 805306368,
+        "MemorySwap": 805306368,
+        "NanoCpus": 1000000000,
+        "PidsLimit": 64
+      },
+      "image_id": "sha256:17e7933089cb187608f4a7fd04994aae9a426dfc197ffdc252e5b49eb2f195af",
+      "user": "1001:1001",
+      "wall_seconds": 0.471,
+      "cpu_seconds": 0.258,
+      "exit_code": 0,
+      "output_limit_bytes": 41943040
+    },
+    "authorization": {
+      "authorization": "controlled_fixture_registry",
+      "sha256": "c1f9baac129f2e7617852fec9581bc6f3f34db5b91eac081d4edb36b53952d0d"
+    },
+    "cleanup_verified": true,
+    "audit_verified": true
+  },
+  {
+    "job_id": "8102bc7e-b0a0-4b8a-a669-3e1f4bd1243e",
+    "architecture": "x86_64",
+    "mode": "service",
+    "args": [
+      "http"
+    ],
+    "result": {
+      "status": "completed",
+      "architecture": "x86_64",
+      "network": "job_private_loopback",
+      "probe": {
+        "protocol": "http",
+        "response_sha256": "25a65af531e52889f13a8d83566a4b49f7150d92306f4df39e08f58958b8b81c",
+        "bytes": 40
+      },
+      "schema_version": 1
+    },
+    "sandbox": {
+      "network_mode": "none",
+      "read_only": true,
+      "reason": null,
+      "profile": {
+        "NetworkMode": "none",
+        "ReadonlyRootfs": true,
+        "CapDrop": [
+          "ALL"
+        ],
+        "SecurityOpt": [
+          "no-new-privileges:true"
+        ],
+        "Privileged": false,
+        "Memory": 805306368,
+        "MemorySwap": 805306368,
+        "NanoCpus": 1000000000,
+        "PidsLimit": 64
+      },
+      "image_id": "sha256:17e7933089cb187608f4a7fd04994aae9a426dfc197ffdc252e5b49eb2f195af",
+      "user": "1001:1001",
+      "wall_seconds": 0.496,
+      "cpu_seconds": 0.278,
+      "exit_code": 0,
+      "output_limit_bytes": 41943040
+    },
+    "authorization": {
+      "authorization": "controlled_fixture_registry",
+      "sha256": "c1f9baac129f2e7617852fec9581bc6f3f34db5b91eac081d4edb36b53952d0d"
+    },
+    "cleanup_verified": true,
+    "audit_verified": true
+  },
+  {
+    "job_id": "911ba738-be7e-4ff3-b771-45842e28a025",
+    "architecture": "x86_64",
+    "mode": "service",
+    "args": [
+      "upnp"
+    ],
+    "result": {
+      "status": "completed",
+      "architecture": "x86_64",
+      "network": "job_private_loopback",
+      "probe": {
+        "protocol": "upnp",
+        "response_sha256": "6c056d2e32c3166ac365d6c94ae95e01515c06543ff576ae6503bb581ae195cc",
+        "bytes": 40
+      },
+      "schema_version": 1
+    },
+    "sandbox": {
+      "network_mode": "none",
+      "read_only": true,
+      "reason": null,
+      "profile": {
+        "NetworkMode": "none",
+        "ReadonlyRootfs": true,
+        "CapDrop": [
+          "ALL"
+        ],
+        "SecurityOpt": [
+          "no-new-privileges:true"
+        ],
+        "Privileged": false,
+        "Memory": 805306368,
+        "MemorySwap": 805306368,
+        "NanoCpus": 1000000000,
+        "PidsLimit": 64
+      },
+      "image_id": "sha256:17e7933089cb187608f4a7fd04994aae9a426dfc197ffdc252e5b49eb2f195af",
+      "user": "1001:1001",
+      "wall_seconds": 2.451,
+      "cpu_seconds": 0.281,
+      "exit_code": 0,
+      "output_limit_bytes": 41943040
+    },
+    "authorization": {
+      "authorization": "controlled_fixture_registry",
+      "sha256": "c1f9baac129f2e7617852fec9581bc6f3f34db5b91eac081d4edb36b53952d0d"
+    },
+    "cleanup_verified": true,
+    "audit_verified": true
+  },
+  {
+    "job_id": "31b3087e-bb1a-4216-a804-21073dfb7c55",
+    "architecture": "x86_64",
+    "mode": "service",
+    "args": [
+      "mqtt"
+    ],
+    "result": {
+      "status": "completed",
+      "architecture": "x86_64",
+      "network": "job_private_loopback",
+      "probe": {
+        "protocol": "mqtt",
+        "response_sha256": "b3e0adaf40f19d19ae5846a499ef09653350f3f359d52424cec547a12789b1fe",
+        "bytes": 4
+      },
+      "schema_version": 1
+    },
+    "sandbox": {
+      "network_mode": "none",
+      "read_only": true,
+      "reason": null,
+      "profile": {
+        "NetworkMode": "none",
+        "ReadonlyRootfs": true,
+        "CapDrop": [
+          "ALL"
+        ],
+        "SecurityOpt": [
+          "no-new-privileges:true"
+        ],
+        "Privileged": false,
+        "Memory": 805306368,
+        "MemorySwap": 805306368,
+        "NanoCpus": 1000000000,
+        "PidsLimit": 64
+      },
+      "image_id": "sha256:17e7933089cb187608f4a7fd04994aae9a426dfc197ffdc252e5b49eb2f195af",
+      "user": "1001:1001",
+      "wall_seconds": 0.494,
+      "cpu_seconds": 0.286,
+      "exit_code": 0,
+      "output_limit_bytes": 41943040
+    },
+    "authorization": {
+      "authorization": "controlled_fixture_registry",
+      "sha256": "c1f9baac129f2e7617852fec9581bc6f3f34db5b91eac081d4edb36b53952d0d"
+    },
+    "cleanup_verified": true,
+    "audit_verified": true
+  },
+  {
+    "job_id": "80649802-a789-4ea4-98a1-6ed85459509a",
+    "architecture": "x86_64",
+    "mode": "user",
+    "args": [
+      "containment"
+    ],
+    "result": {
+      "status": "completed",
+      "architecture": "x86_64",
+      "mode": "user",
+      "returncode": 0,
+      "stdout_sha256": "3c5de2245513ab9c60a5910e63a661e345e69cae6c9986eeaad5170ace3c4957",
+      "stdout_bytes": 26,
+      "fallback": null,
+      "schema_version": 1
+    },
+    "sandbox": {
+      "network_mode": "none",
+      "read_only": true,
+      "reason": null,
+      "profile": {
+        "NetworkMode": "none",
+        "ReadonlyRootfs": true,
+        "CapDrop": [
+          "ALL"
+        ],
+        "SecurityOpt": [
+          "no-new-privileges:true"
+        ],
+        "Privileged": false,
+        "Memory": 805306368,
+        "MemorySwap": 805306368,
+        "NanoCpus": 1000000000,
+        "PidsLimit": 64
+      },
+      "image_id": "sha256:17e7933089cb187608f4a7fd04994aae9a426dfc197ffdc252e5b49eb2f195af",
+      "user": "1001:1001",
+      "wall_seconds": 0.469,
+      "cpu_seconds": 0.267,
+      "exit_code": 0,
+      "output_limit_bytes": 41943040
+    },
+    "authorization": {
+      "authorization": "controlled_fixture_registry",
+      "sha256": "c1f9baac129f2e7617852fec9581bc6f3f34db5b91eac081d4edb36b53952d0d"
+    },
+    "cleanup_verified": true,
+    "audit_verified": true
+  },
+  {
+    "job_id": "a06318ab-4aaa-44be-878e-7bd7bf9ba10a",
+    "architecture": "x86_64",
+    "mode": "user",
+    "args": [
+      "sleep"
+    ],
+    "result": {
+      "error_code": "wall_quota"
+    },
+    "sandbox": {
+      "network_mode": "none",
+      "read_only": true,
+      "reason": "wall_quota",
+      "profile": {
+        "NetworkMode": "none",
+        "ReadonlyRootfs": true,
+        "CapDrop": [
+          "ALL"
+        ],
+        "SecurityOpt": [
+          "no-new-privileges:true"
+        ],
+        "Privileged": false,
+        "Memory": 805306368,
+        "MemorySwap": 805306368,
+        "NanoCpus": 1000000000,
+        "PidsLimit": 64
+      },
+      "image_id": "sha256:17e7933089cb187608f4a7fd04994aae9a426dfc197ffdc252e5b49eb2f195af",
+      "user": "1001:1001",
+      "wall_seconds": 2.248,
+      "cpu_seconds": 0.288,
+      "exit_code": 137,
+      "output_limit_bytes": 41943040
+    },
+    "authorization": {
+      "authorization": "controlled_fixture_registry",
+      "sha256": "c1f9baac129f2e7617852fec9581bc6f3f34db5b91eac081d4edb36b53952d0d"
+    },
+    "cleanup_verified": true,
+    "audit_verified": true
+  },
+  {
+    "job_id": "36e26b51-f810-4566-b506-7981fc55e09f",
+    "architecture": "x86_64",
+    "mode": "user",
+    "args": [
+      "spin"
+    ],
+    "result": {
+      "error_code": "cpu_quota"
+    },
+    "sandbox": {
+      "network_mode": "none",
+      "read_only": true,
+      "reason": "cpu_quota",
+      "profile": {
+        "NetworkMode": "none",
+        "ReadonlyRootfs": true,
+        "CapDrop": [
+          "ALL"
+        ],
+        "SecurityOpt": [
+          "no-new-privileges:true"
+        ],
+        "Privileged": false,
+        "Memory": 805306368,
+        "MemorySwap": 805306368,
+        "NanoCpus": 1000000000,
+        "PidsLimit": 64
+      },
+      "image_id": "sha256:17e7933089cb187608f4a7fd04994aae9a426dfc197ffdc252e5b49eb2f195af",
+      "user": "1001:1001",
+      "wall_seconds": 1.202,
+      "cpu_seconds": 1.075,
+      "exit_code": 137,
+      "output_limit_bytes": 41943040
+    },
+    "authorization": {
+      "authorization": "controlled_fixture_registry",
+      "sha256": "c1f9baac129f2e7617852fec9581bc6f3f34db5b91eac081d4edb36b53952d0d"
+    },
+    "cleanup_verified": true,
+    "audit_verified": true
+  },
+  {
+    "job_id": "705ab078-46f9-428a-a997-c925b85000a2",
+    "architecture": "x86_64",
+    "mode": "user",
+    "args": [
+      "memory"
+    ],
+    "result": {
+      "error_code": "memory_quota"
+    },
+    "sandbox": {
+      "network_mode": "none",
+      "read_only": true,
+      "reason": "memory_quota",
+      "profile": {
+        "NetworkMode": "none",
+        "ReadonlyRootfs": true,
+        "CapDrop": [
+          "ALL"
+        ],
+        "SecurityOpt": [
+          "no-new-privileges:true"
+        ],
+        "Privileged": false,
+        "Memory": 134217728,
+        "MemorySwap": 134217728,
+        "NanoCpus": 1000000000,
+        "PidsLimit": 64
+      },
+      "image_id": "sha256:17e7933089cb187608f4a7fd04994aae9a426dfc197ffdc252e5b49eb2f195af",
+      "user": "1001:1001",
+      "wall_seconds": 0.464,
+      "cpu_seconds": 0.276,
+      "exit_code": 0,
+      "output_limit_bytes": 41943040
+    },
+    "authorization": {
+      "authorization": "controlled_fixture_registry",
+      "sha256": "c1f9baac129f2e7617852fec9581bc6f3f34db5b91eac081d4edb36b53952d0d"
+    },
+    "cleanup_verified": true,
+    "audit_verified": true
+  },
+  {
+    "job_id": "ec05621e-a001-4a48-b7c0-7572e9a4ce9c",
+    "architecture": "ARM32",
+    "mode": "system",
+    "args": [],
+    "result": {
+      "status": "incomplete",
+      "reason": "kernel_profile_required",
+      "fallback": "user_mode",
+      "architecture": "ARM32",
+      "schema_version": 1
+    },
+    "sandbox": {
+      "network_mode": "none",
+      "read_only": true,
+      "reason": null,
+      "profile": {
+        "NetworkMode": "none",
+        "ReadonlyRootfs": true,
+        "CapDrop": [
+          "ALL"
+        ],
+        "SecurityOpt": [
+          "no-new-privileges:true"
+        ],
+        "Privileged": false,
+        "Memory": 805306368,
+        "MemorySwap": 805306368,
+        "NanoCpus": 1000000000,
+        "PidsLimit": 64
+      },
+      "image_id": "sha256:17e7933089cb187608f4a7fd04994aae9a426dfc197ffdc252e5b49eb2f195af",
+      "user": "1001:1001",
+      "wall_seconds": 0.464,
+      "cpu_seconds": 0.255,
+      "exit_code": 0,
+      "output_limit_bytes": 41943040
+    },
+    "authorization": {
+      "authorization": "controlled_fixture_registry",
+      "sha256": "c4fd7b7a6d32a1ec7524d991bca37035156e19acb1c93b82e7033877491de711"
+    },
+    "cleanup_verified": true,
+    "audit_verified": true
+  },
+  {
+    "job_id": "471744ac-ab2c-4b7e-9fbc-7caa1a4465c2",
+    "architecture": "ARM32",
+    "mode": "system",
+    "args": [],
+    "result": {
+      "console_sha256": "9d2a7dbc254d53e9b41d3605d47d00bc5b42b0861a44291bc76678e70667f7a4",
+      "console_bytes": 20,
+      "status": "incomplete",
+      "reason": "emulator_timeout",
+      "mode": "system",
+      "fallback": "user_mode",
+      "schema_version": 1
+    },
+    "sandbox": {
+      "network_mode": "none",
+      "read_only": true,
+      "reason": null,
+      "profile": {
+        "NetworkMode": "none",
+        "ReadonlyRootfs": true,
+        "CapDrop": [
+          "ALL"
+        ],
+        "SecurityOpt": [
+          "no-new-privileges:true"
+        ],
+        "Privileged": false,
+        "Memory": 805306368,
+        "MemorySwap": 805306368,
+        "NanoCpus": 1000000000,
+        "PidsLimit": 64
+      },
+      "image_id": "sha256:17e7933089cb187608f4a7fd04994aae9a426dfc197ffdc252e5b49eb2f195af",
+      "user": "1001:1001",
+      "wall_seconds": 2.341,
+      "cpu_seconds": 0.317,
+      "exit_code": 0,
+      "output_limit_bytes": 41943040
+    },
+    "authorization": {
+      "authorization": "controlled_fixture_registry",
+      "sha256": "c4fd7b7a6d32a1ec7524d991bca37035156e19acb1c93b82e7033877491de711"
+    },
+    "cleanup_verified": true,
+    "audit_verified": true
+  },
+  {
+    "job_id": "cb7643c8-64d8-4791-90c7-a0d709f06529",
+    "architecture": "ARM32",
+    "mode": "user",
+    "args": [],
+    "result": {
+      "status": "completed",
+      "architecture": "ARM32",
+      "mode": "user",
+      "returncode": 0,
+      "stdout_sha256": "4cd6b6bafdfb7c61b856d5f5632466a5236b49dfdda5e5bfac876aeb0c02a997",
+      "stdout_bytes": 27,
+      "fallback": null,
+      "schema_version": 1
+    },
+    "sandbox": {
+      "network_mode": "none",
+      "read_only": true,
+      "reason": null,
+      "profile": {
+        "NetworkMode": "none",
+        "ReadonlyRootfs": true,
+        "CapDrop": [
+          "ALL"
+        ],
+        "SecurityOpt": [
+          "no-new-privileges:true"
+        ],
+        "Privileged": false,
+        "Memory": 805306368,
+        "MemorySwap": 805306368,
+        "NanoCpus": 1000000000,
+        "PidsLimit": 64
+      },
+      "image_id": "sha256:17e7933089cb187608f4a7fd04994aae9a426dfc197ffdc252e5b49eb2f195af",
+      "user": "1001:1001",
+      "wall_seconds": 0.471,
+      "cpu_seconds": 0.264,
+      "exit_code": 0,
+      "output_limit_bytes": 41943040
+    },
+    "authorization": {
+      "authorization": "controlled_fixture_registry",
+      "sha256": "0787b4980e66f8c3e47e636fac97799b989bfed5af4f448b77268ad0d580ee9c"
+    },
+    "cleanup_verified": true,
+    "audit_verified": true
+  }
+]

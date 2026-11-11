@@ -1,0 +1,66 @@
+{
+  "status": "passed",
+  "sample_size": 6,
+  "checks": [
+    {
+      "report": "regression/controlled-report.json",
+      "label": "static dangerous-function lead",
+      "finding_ids": [
+        "6eb8a21c-8a2e-5731-b725-83793c71fda3",
+        "3804ed8d-f527-5d4a-a44c-24757080327a"
+      ],
+      "result": "pass",
+      "rationale": "Source symbol is an explicit heuristic; invocation and overflow are not claimed."
+    },
+    {
+      "report": "extended-fuzz.json",
+      "label": "modeled bounded write",
+      "finding_ids": [
+        "c48a4a66-3f07-5316-9520-0f65bcbcf7f1"
+      ],
+      "result": "pass",
+      "rationale": "Controlled source-to-sink model establishes a satisfiable out-of-bounds write condition."
+    },
+    {
+      "report": "extended-fuzz.json",
+      "label": "controlled null write",
+      "finding_ids": [
+        "c8f31f3b-6968-591c-a521-3a1b60b981be"
+      ],
+      "result": "pass",
+      "rationale": "Controlled diagnostic crash fixture writes through a null pointer; no exploitability is claimed."
+    },
+    {
+      "report": "extended-snapshots.json",
+      "label": "modeled command sink",
+      "finding_ids": [
+        "d7eae0c7-61ef-50bc-ba82-c178af590823"
+      ],
+      "result": "pass",
+      "rationale": "Controlled taint source reaches a modeled command sink; the command is never executed."
+    },
+    {
+      "report": "extended-snapshots.json",
+      "label": "explicit credential assignment",
+      "finding_ids": [
+        "50dbbb03-29ac-596d-85e2-c302840318f0",
+        "20fc8fd7-aa05-5cc7-8844-7f6a7c169ab0",
+        "21b69354-dd24-58f0-8d21-e22071e46179"
+      ],
+      "result": "pass",
+      "rationale": "Scanner assigns probable confidence only to explicit credential assignments."
+    },
+    {
+      "report": "extended-snapshots.json",
+      "label": "cryptographic candidate",
+      "finding_ids": [
+        "8d844f89-d2d3-5590-8b5c-195dd236462c",
+        "c203bc3f-2422-5a4c-869a-c8c90b6ace42",
+        "711b8b19-0906-546e-87a9-c8affb6a6cc0"
+      ],
+      "result": "pass",
+      "rationale": "Private-key and weak-crypto pattern matches remain heuristic without usage validation."
+    }
+  ],
+  "scope": "Controlled labeled samples with source/evidence rules; vendor-image calibration and independent human review remain separate."
+}

@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/home/ubunt/projects/firmwarex/scripts/verify-formats.py", line 41, in <module>
+    assert job["status"] == expected, job
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'job_id': 'a3159214-babd-42ea-8c96-0588358aa9e6', 'firmware_id': 'b8c1bddc-d54c-4127-badc-97a370dc0ebf', 'status': 'unsupported', 'stage': 'static', 'error_code': None, 'result': {'schema_version': 1, 'extraction': {'status': 'unsupported', 'attempts': [{'format': 'cramfs', 'status': 'failed'}], 'filesystems': []}, 'entropy': [{'offset': 0, 'size': 12288, 'bits_per_byte': 7.116312}], 'errors': [], 'analysis_scope': 'static_only', 'sandbox': {'network_mode': 'none', 'read_only': True, 'reason': None, 'wall_seconds': 0.001, 'cpu_seconds': 0.0, 'exit_code': 0}}, 'created_at': '2026-10-19T09:51:15.308947+00:00', 'updated_at': '2026-10-19T09:51:17.116439+00:00'}

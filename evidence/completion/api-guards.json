@@ -1,0 +1,42 @@
+[
+  {
+    "route": "report",
+    "expected": 401,
+    "actual": 401
+  },
+  {
+    "route": "report",
+    "expected": 401,
+    "actual": 401
+  },
+  {
+    "route": "report",
+    "expected": 404,
+    "actual": 404
+  },
+  {
+    "route": "report",
+    "expected": 422,
+    "actual": 422
+  },
+  {
+    "route": "vulnerabilities",
+    "expected": 401,
+    "actual": 401
+  },
+  {
+    "route": "vulnerabilities",
+    "expected": 401,
+    "actual": 401
+  },
+  {
+    "route": "vulnerabilities",
+    "expected": 404,
+    "actual": 404
+  },
+  {
+    "route": "vulnerabilities",
+    "expected": 422,
+    "actual": 422
+  }
+]

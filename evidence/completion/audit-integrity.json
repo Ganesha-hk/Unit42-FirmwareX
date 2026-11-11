@@ -1,0 +1,24 @@
+{
+  "UPDATE audit_events SET event=event": true,
+  "DELETE FROM audit_events": true,
+  "TRUNCATE audit_events": true,
+  "lifecycle_events": {
+    "emulation_started": 192,
+    "analysis_started": 244,
+    "firmware_renamed": 1,
+    "historical_output_redacted": 1,
+    "emulation_finished": 192,
+    "raw_reveal_denied": 2,
+    "analysis_denied": 17,
+    "emulation_denied": 2,
+    "stage_finished": 138,
+    "uploaded": 72,
+    "pipeline_started": 36,
+    "analysis_finished": 244,
+    "findings_persisted": 267,
+    "static_finished": 46,
+    "pipeline_finished": 36,
+    "static_started": 46,
+    "job_recovered": 3
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "passed": true,
+  "uploads": [
+    {
+      "firmware_id": "f5cecba3-7d2e-4940-9de6-7af63f5fcabe",
+      "job_id": "19e4e555-861c-49e1-84d8-8831edfdabdc",
+      "sha256": "bb9f8df61474d25e71fa00722318cd387396ca1736605e1248821cc0de3d3af8",
+      "status": "queued",
+      "analysis_scope": "integrated_gated"
+    },
+    {
+      "firmware_id": "37b3b184-3217-4537-bc1f-2d8e9a26ad3f",
+      "job_id": "7ac47847-82a3-4120-a388-a5fc6c92af6d",
+      "sha256": "bb9f8df61474d25e71fa00722318cd387396ca1736605e1248821cc0de3d3af8",
+      "status": "queued",
+      "analysis_scope": "integrated_gated"
+    },
+    {
+      "firmware_id": "87e4ebfe-99c6-47b5-bcb7-d813c0220439",
+      "job_id": "b3ddd7fe-f064-4b32-91a4-2e337dd326a2",
+      "sha256": "bb9f8df61474d25e71fa00722318cd387396ca1736605e1248821cc0de3d3af8",
+      "status": "queued",
+      "analysis_scope": "integrated_gated"
+    },
+    {
+      "firmware_id": "d16c89b5-670e-42ee-8214-623b04a1cb3f",
+      "job_id": "765829eb-4f21-47df-9e16-1165c0f34945",
+      "sha256": "bb9f8df61474d25e71fa00722318cd387396ca1736605e1248821cc0de3d3af8",
+      "status": "queued",
+      "analysis_scope": "integrated_gated"
+    }
+  ],
+  "health_checks": 93,
+  "max_health_seconds": 0.23409906599999886
+}

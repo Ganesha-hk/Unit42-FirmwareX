@@ -1,0 +1,302 @@
+[
+  {
+    "architecture": "x86_64",
+    "endianness": "little",
+    "image": "controlled-pipeline.bin",
+    "sha256": "a71d1e4937d2eb468ea965462c27f6b3c99eb2207fa39bd59d04161bf45856c9",
+    "firmware_id": "6c58a431-6678-45cb-be0e-527ba795c7a1",
+    "job_id": "3a539fba-7754-45ec-bb85-0e1f13b9037c",
+    "status": "complete",
+    "result": "PASS",
+    "checks": {
+      "fixture_hash": true,
+      "pipeline_complete": true,
+      "extraction": true,
+      "inventory": true,
+      "architecture_endianness": true,
+      "mitigations": true,
+      "qemu": true,
+      "service_probes": true,
+      "symbolic": true,
+      "scanner": true,
+      "fingerprints": true,
+      "redaction": true,
+      "finding_architectures": true,
+      "cfg": true,
+      "tracing": true,
+      "sandbox": true,
+      "api": true
+    },
+    "findings": 17,
+    "cwes": [
+      "CWE-259",
+      "CWE-321",
+      "CWE-327",
+      "CWE-328",
+      "CWE-676",
+      "CWE-787",
+      "CWE-798"
+    ],
+    "report": "x86_64-report.json"
+  },
+  {
+    "architecture": "ARM32",
+    "endianness": "little",
+    "image": "controlled-pipeline-ARM32.bin",
+    "sha256": "974c196dd678242ab3b6e1ad0a79e48225b9e83244cc122eebe4e86332e67bd3",
+    "bytes": 282624,
+    "repeat_sha256": "974c196dd678242ab3b6e1ad0a79e48225b9e83244cc122eebe4e86332e67bd3",
+    "targets": {
+      "name": "controlled-pipeline-ARM32",
+      "emulation": [
+        {
+          "binary": "bin/service-probe",
+          "architecture": "ARM32",
+          "sha256": "c4fd7b7a6d32a1ec7524d991bca37035156e19acb1c93b82e7033877491de711"
+        }
+      ],
+      "symbolic": [
+        {
+          "binary": "bin/taint-demo",
+          "architecture": "ARM32",
+          "sha256": "e11e9fa1d22edd7bd3dc8c15f5638cdeb017a40164b20a032ea2470169174d82"
+        }
+      ]
+    },
+    "source_files": {
+      "symbolic.c": "2cabd2b0494ba01c14ddb192997808afcd4793b1c6b3df66756ea83301eff75c",
+      "emulation.c": "f699979fe5ec72670b4bf1117ceb0c5ce0cf5df6797c1b7fc2013f07499092e2"
+    },
+    "authorization": "existing controlled artifact hashes only",
+    "license": "MIT",
+    "firmware_id": "b6c30b7d-d781-476d-9f23-24b8a255e3a8",
+    "job_id": "98ab8e7b-db63-4cff-b652-850f26b92c4d",
+    "status": "complete",
+    "result": "PASS",
+    "checks": {
+      "fixture_hash": true,
+      "pipeline_complete": true,
+      "extraction": true,
+      "inventory": true,
+      "architecture_endianness": true,
+      "mitigations": true,
+      "qemu": true,
+      "service_probes": true,
+      "symbolic": true,
+      "scanner": true,
+      "fingerprints": true,
+      "redaction": true,
+      "finding_architectures": true,
+      "cfg": true,
+      "tracing": true,
+      "sandbox": true,
+      "api": true
+    },
+    "findings": 16,
+    "cwes": [
+      "CWE-259",
+      "CWE-321",
+      "CWE-327",
+      "CWE-328",
+      "CWE-676",
+      "CWE-78",
+      "CWE-798"
+    ],
+    "report": "ARM32-report.json"
+  },
+  {
+    "architecture": "ARM64",
+    "endianness": "little",
+    "image": "controlled-pipeline-ARM64.bin",
+    "sha256": "acb47f36f2be8b92e7acc0c03f9bb7fde6a28d127c59b1d81782eb96c6168111",
+    "bytes": 303104,
+    "repeat_sha256": "acb47f36f2be8b92e7acc0c03f9bb7fde6a28d127c59b1d81782eb96c6168111",
+    "targets": {
+      "name": "controlled-pipeline-ARM64",
+      "emulation": [
+        {
+          "binary": "bin/service-probe",
+          "architecture": "ARM64",
+          "sha256": "15cc700fb47b09701895629df429314c87a81f0a37b262064a7f66915bcaf511"
+        }
+      ],
+      "symbolic": [
+        {
+          "binary": "bin/taint-demo",
+          "architecture": "ARM64",
+          "sha256": "11e22d58a68587cb14d6dc304d04a0c8c44a86caf7405256ea103d6cf38b047d"
+        }
+      ]
+    },
+    "source_files": {
+      "symbolic.c": "2cabd2b0494ba01c14ddb192997808afcd4793b1c6b3df66756ea83301eff75c",
+      "emulation.c": "f699979fe5ec72670b4bf1117ceb0c5ce0cf5df6797c1b7fc2013f07499092e2"
+    },
+    "authorization": "existing controlled artifact hashes only",
+    "license": "MIT",
+    "firmware_id": "0f708baa-3944-4db7-8b2a-fa32e9077370",
+    "job_id": "be9e6d23-78b6-4a15-92ee-fd0d015633b1",
+    "status": "complete",
+    "result": "PASS",
+    "checks": {
+      "fixture_hash": true,
+      "pipeline_complete": true,
+      "extraction": true,
+      "inventory": true,
+      "architecture_endianness": true,
+      "mitigations": true,
+      "qemu": true,
+      "service_probes": true,
+      "symbolic": true,
+      "scanner": true,
+      "fingerprints": true,
+      "redaction": true,
+      "finding_architectures": true,
+      "cfg": true,
+      "tracing": true,
+      "sandbox": true,
+      "api": true
+    },
+    "findings": 16,
+    "cwes": [
+      "CWE-259",
+      "CWE-321",
+      "CWE-327",
+      "CWE-328",
+      "CWE-676",
+      "CWE-78",
+      "CWE-798"
+    ],
+    "report": "ARM64-report.json"
+  },
+  {
+    "architecture": "MIPS",
+    "endianness": "big",
+    "image": "controlled-pipeline-MIPS.bin",
+    "sha256": "b8b8d218b355f87c721ce5129ccc5623905c249e1e92565b9f4b69a45c68d255",
+    "bytes": 315392,
+    "repeat_sha256": "b8b8d218b355f87c721ce5129ccc5623905c249e1e92565b9f4b69a45c68d255",
+    "targets": {
+      "name": "controlled-pipeline-MIPS",
+      "emulation": [
+        {
+          "binary": "bin/service-probe",
+          "architecture": "MIPS",
+          "sha256": "0a63cc3d066920fde5eefb9d96d67435be2c0a0d2ee2bf576c89456340f4f541"
+        }
+      ],
+      "symbolic": [
+        {
+          "binary": "bin/taint-demo",
+          "architecture": "MIPS",
+          "sha256": "e2d2c60b02ff3d7fa8b17e9233fd048cd78eb77161f81e1127a0af51456451b3"
+        }
+      ]
+    },
+    "source_files": {
+      "symbolic.c": "2cabd2b0494ba01c14ddb192997808afcd4793b1c6b3df66756ea83301eff75c",
+      "emulation.c": "f699979fe5ec72670b4bf1117ceb0c5ce0cf5df6797c1b7fc2013f07499092e2"
+    },
+    "authorization": "existing controlled artifact hashes only",
+    "license": "MIT",
+    "firmware_id": "96c128c9-acd8-4b72-ab49-aaf58fd109f3",
+    "job_id": "54ff30dd-66e7-436c-a137-a0433ca076ec",
+    "status": "complete",
+    "result": "PASS",
+    "checks": {
+      "fixture_hash": true,
+      "pipeline_complete": true,
+      "extraction": true,
+      "inventory": true,
+      "architecture_endianness": true,
+      "mitigations": true,
+      "qemu": true,
+      "service_probes": true,
+      "symbolic": true,
+      "scanner": true,
+      "fingerprints": true,
+      "redaction": true,
+      "finding_architectures": true,
+      "cfg": true,
+      "tracing": true,
+      "sandbox": true,
+      "api": true
+    },
+    "findings": 16,
+    "cwes": [
+      "CWE-259",
+      "CWE-321",
+      "CWE-327",
+      "CWE-328",
+      "CWE-676",
+      "CWE-78",
+      "CWE-798"
+    ],
+    "report": "MIPS-report.json"
+  },
+  {
+    "architecture": "MIPSEL",
+    "endianness": "little",
+    "image": "controlled-pipeline-MIPSEL.bin",
+    "sha256": "6a1804f3f01b6ecb8f39e83ed73cdf52895f7e739a493f983c6ad0b4f9135902",
+    "bytes": 315392,
+    "repeat_sha256": "6a1804f3f01b6ecb8f39e83ed73cdf52895f7e739a493f983c6ad0b4f9135902",
+    "targets": {
+      "name": "controlled-pipeline-MIPSEL",
+      "emulation": [
+        {
+          "binary": "bin/service-probe",
+          "architecture": "MIPSEL",
+          "sha256": "ace94e1517f6e1c3dc6e18001fc714d56d7441e93e46d468cf6cee1380d16efe"
+        }
+      ],
+      "symbolic": [
+        {
+          "binary": "bin/taint-demo",
+          "architecture": "MIPSEL",
+          "sha256": "a1ca69f07ed8a79ad4f0a615176478676531540d7ca590f927cfbb87acb8da61"
+        }
+      ]
+    },
+    "source_files": {
+      "symbolic.c": "2cabd2b0494ba01c14ddb192997808afcd4793b1c6b3df66756ea83301eff75c",
+      "emulation.c": "f699979fe5ec72670b4bf1117ceb0c5ce0cf5df6797c1b7fc2013f07499092e2"
+    },
+    "authorization": "existing controlled artifact hashes only",
+    "license": "MIT",
+    "firmware_id": "94aa272b-9a2a-4e2a-a5e1-1ac2bc64da27",
+    "job_id": "c862ef66-4f06-4381-99e9-253249258531",
+    "status": "complete",
+    "result": "PASS",
+    "checks": {
+      "fixture_hash": true,
+      "pipeline_complete": true,
+      "extraction": true,
+      "inventory": true,
+      "architecture_endianness": true,
+      "mitigations": true,
+      "qemu": true,
+      "service_probes": true,
+      "symbolic": true,
+      "scanner": true,
+      "fingerprints": true,
+      "redaction": true,
+      "finding_architectures": true,
+      "cfg": true,
+      "tracing": true,
+      "sandbox": true,
+      "api": true
+    },
+    "findings": 16,
+    "cwes": [
+      "CWE-259",
+      "CWE-321",
+      "CWE-327",
+      "CWE-328",
+      "CWE-676",
+      "CWE-78",
+      "CWE-798"
+    ],
+    "report": "MIPSEL-report.json"
+  }
+]

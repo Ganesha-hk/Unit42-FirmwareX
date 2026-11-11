@@ -1,0 +1,22 @@
+[
+  {
+    "path": "/api/v1/jobs/ad0e883b-fce6-47bc-ba8f-ef1b8dc07329",
+    "expected": 401,
+    "actual": 401
+  },
+  {
+    "path": "/api/v1/jobs/3c8d4fd2-5b7e-40b3-8a50-3ae7500db260",
+    "expected": 401,
+    "actual": 401
+  },
+  {
+    "path": "/api/v1/jobs/4c935cdb-8056-49db-8349-e6bc056699e3",
+    "expected": 404,
+    "actual": 404
+  },
+  {
+    "path": "/api/v1/jobs/invalid",
+    "expected": 422,
+    "actual": 422
+  }
+]

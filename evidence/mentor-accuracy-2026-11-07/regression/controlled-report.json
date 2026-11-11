@@ -1,0 +1,3323 @@
+{
+  "schema_version": "1.0.0",
+  "firmware_id": "e9a1a254-c063-44e7-81f9-daa8d5ad8454",
+  "display_name": "Sample firmware",
+  "sha256": "a71d1e4937d2eb468ea965462c27f6b3c99eb2207fa39bd59d04161bf45856c9",
+  "size": 339968,
+  "redacted": true,
+  "files": [
+    {
+      "path": "/bin",
+      "type": "directory",
+      "size": 80,
+      "hash": null
+    },
+    {
+      "path": "/bin/service-probe",
+      "type": "file",
+      "size": 767920,
+      "hash": "c1f9baac129f2e7617852fec9581bc6f3f34db5b91eac081d4edb36b53952d0d"
+    },
+    {
+      "path": "/bin/taint-demo",
+      "type": "file",
+      "size": 17592,
+      "hash": "ea65acce224d0fd57bb3be965c778d86edcc9bbabf4749016efd4586f24211db"
+    },
+    {
+      "path": "/etc",
+      "type": "directory",
+      "size": 80,
+      "hash": null
+    },
+    {
+      "path": "/etc/controlled.conf",
+      "type": "file",
+      "size": 289,
+      "hash": "65a8329b7126f67013c132cde9f03511a5abbda553670c0fbf80b60c274af234"
+    },
+    {
+      "path": "/etc/redacted-fe7a428e1cd254fe",
+      "type": "file",
+      "size": 64,
+      "hash": "aa750e0c59add1192be1c4f8add725728d1380d93aff50c3fe11e4ec05ded8fc"
+    }
+  ],
+  "binaries": [
+    {
+      "path": "/bin/service-probe",
+      "architecture": "x86_64",
+      "endianness": "little",
+      "bits": 64,
+      "elf_type": "ET_EXEC",
+      "nx": true,
+      "pie": false,
+      "relro": "partial",
+      "stack_canary": true,
+      "fortify": false,
+      "stripped": false,
+      "wx_segments": [],
+      "banned_functions": [
+        "strcpy"
+      ],
+      "limitations": [
+        "Missing symbols may conceal canary/FORTIFY use; PIE does not prove runtime ASLR."
+      ]
+    },
+    {
+      "path": "/bin/taint-demo",
+      "architecture": "x86_64",
+      "endianness": "little",
+      "bits": 64,
+      "elf_type": "ET_EXEC",
+      "nx": true,
+      "pie": false,
+      "relro": "partial",
+      "stack_canary": false,
+      "fortify": false,
+      "stripped": false,
+      "wx_segments": [],
+      "banned_functions": [
+        "strcpy"
+      ],
+      "limitations": [
+        "Missing symbols may conceal canary/FORTIFY use; PIE does not prove runtime ASLR."
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "vulnerability_id": "6eb8a21c-8a2e-5731-b725-83793c71fda3",
+      "firmware_id": "e9a1a254-c063-44e7-81f9-daa8d5ad8454",
+      "binary": "/bin/service-probe",
+      "architecture": "x86_64",
+      "category": "memory_corruption",
+      "cwe": "CWE-676",
+      "address": null,
+      "sink": "strcpy",
+      "source": null,
+      "tainted_path": [],
+      "crash_state": {
+        "fault_address": null,
+        "registers": null,
+        "overflow_offset": null,
+        "stack_hash": null
+      },
+      "risk_rating": "low",
+      "confidence": "heuristic",
+      "evidence_ref": "evidence:9f26cf77847cb0f150b93bf6a32de0fe421d1fc84e000f539293d7be970a4c71",
+      "redacted": true,
+      "status": "new",
+      "detected_at": "2026-11-07T14:42:22.380945Z"
+    },
+    {
+      "vulnerability_id": "3804ed8d-f527-5d4a-a44c-24757080327a",
+      "firmware_id": "e9a1a254-c063-44e7-81f9-daa8d5ad8454",
+      "binary": "/bin/taint-demo",
+      "architecture": "x86_64",
+      "category": "memory_corruption",
+      "cwe": "CWE-676",
+      "address": null,
+      "sink": "strcpy",
+      "source": null,
+      "tainted_path": [],
+      "crash_state": {
+        "fault_address": null,
+        "registers": null,
+        "overflow_offset": null,
+        "stack_hash": null
+      },
+      "risk_rating": "low",
+      "confidence": "heuristic",
+      "evidence_ref": "evidence:9f26cf77847cb0f150b93bf6a32de0fe421d1fc84e000f539293d7be970a4c71",
+      "redacted": true,
+      "status": "new",
+      "detected_at": "2026-11-07T14:42:22.381110Z"
+    },
+    {
+      "vulnerability_id": "428f9d8f-1a76-5050-a64f-c6620702db0c",
+      "firmware_id": "e9a1a254-c063-44e7-81f9-daa8d5ad8454",
+      "binary": "/bin/taint-demo",
+      "architecture": "x86_64",
+      "category": "memory_corruption",
+      "cwe": "CWE-787",
+      "address": "0x500008",
+      "sink": "strcpy",
+      "source": "fwx_cgi_stdin_0",
+      "tainted_path": [
+        "0x401136",
+        "0x401040",
+        "0x500010",
+        "0x40115c",
+        "0x40116b",
+        "0x401030",
+        "0x500008"
+      ],
+      "crash_state": {
+        "fault_address": "0x404030",
+        "registers": {
+          "rip": "0x500008",
+          "rsp": "0x7ffffffeff68",
+          "rbp": "0x7ffffffefff0",
+          "rax": {
+            "fingerprint": "956daabdb55a9a1fed8cb282e4c12442bdd4ed06e1e5ba7b7ba55862bee3c8a3"
+          },
+          "rdi": {
+            "fingerprint": "956daabdb55a9a1fed8cb282e4c12442bdd4ed06e1e5ba7b7ba55862bee3c8a3"
+          },
+          "rsi": {
+            "fingerprint": "2627352917aca4fc74eb63a9fee477cc0a64ea623ab71ac5ea0078232e310b05"
+          },
+          "rdx": {
+            "fingerprint": "2627352917aca4fc74eb63a9fee477cc0a64ea623ab71ac5ea0078232e310b05"
+          }
+        },
+        "overflow_offset": 8,
+        "stack_hash": "bfc322b46d82910dab6757cff82dd695801b2df2172325cbb73b4e88d0926fc2"
+      },
+      "risk_rating": "high",
+      "confidence": "probable",
+      "evidence_ref": "evidence:23653057565cf200bfb055a8738434edc311e16c271c53fa2f71acb0ad2e6958",
+      "redacted": true,
+      "status": "new",
+      "detected_at": "2026-11-07T14:42:25.649962Z"
+    },
+    {
+      "vulnerability_id": "954d40ba-2605-5e69-b6a8-4e7a971d5d03",
+      "firmware_id": "e9a1a254-c063-44e7-81f9-daa8d5ad8454",
+      "binary": "/etc/controlled.conf",
+      "architecture": "x86_64",
+      "category": "hardcoded_secret",
+      "cwe": "CWE-259",
+      "address": null,
+      "sink": null,
+      "source": null,
+      "tainted_path": [],
+      "crash_state": {
+        "fault_address": null,
+        "registers": null,
+        "overflow_offset": null,
+        "stack_hash": null
+      },
+      "risk_rating": "medium",
+      "confidence": "probable",
+      "evidence_ref": "evidence:d43f7aa0bda35d584f15c152a4b12b129a42fe0c134b81ed90b9630b8c49576c",
+      "redacted": true,
+      "status": "new",
+      "detected_at": "2026-11-07T14:42:25.733817Z"
+    },
+    {
+      "vulnerability_id": "68ceeb0c-208e-5dbb-9cda-c76aafbf7a40",
+      "firmware_id": "e9a1a254-c063-44e7-81f9-daa8d5ad8454",
+      "binary": "/etc/controlled.conf",
+      "architecture": "x86_64",
+      "category": "hardcoded_secret",
+      "cwe": "CWE-798",
+      "address": null,
+      "sink": null,
+      "source": null,
+      "tainted_path": [],
+      "crash_state": {
+        "fault_address": null,
+        "registers": null,
+        "overflow_offset": null,
+        "stack_hash": null
+      },
+      "risk_rating": "medium",
+      "confidence": "probable",
+      "evidence_ref": "evidence:2679a6d9382af1242c6789cf0381b70b75b26841f9ca4948868f81fc7965d226",
+      "redacted": true,
+      "status": "new",
+      "detected_at": "2026-11-07T14:42:25.733860Z"
+    },
+    {
+      "vulnerability_id": "a0b6b82d-694d-5452-bfb6-bada80854b41",
+      "firmware_id": "e9a1a254-c063-44e7-81f9-daa8d5ad8454",
+      "binary": "/etc/controlled.conf",
+      "architecture": "x86_64",
+      "category": "hardcoded_secret",
+      "cwe": "CWE-321",
+      "address": null,
+      "sink": null,
+      "source": null,
+      "tainted_path": [],
+      "crash_state": {
+        "fault_address": null,
+        "registers": null,
+        "overflow_offset": null,
+        "stack_hash": null
+      },
+      "risk_rating": "medium",
+      "confidence": "heuristic",
+      "evidence_ref": "evidence:0afc9adf2924db97f401fd53c7215cdf17592ba2fc382e26f1a143f674c7a3f0",
+      "redacted": true,
+      "status": "new",
+      "detected_at": "2026-11-07T14:42:25.733892Z"
+    },
+    {
+      "vulnerability_id": "c25f7373-8e74-5731-b843-67fea50c28c1",
+      "firmware_id": "e9a1a254-c063-44e7-81f9-daa8d5ad8454",
+      "binary": "/etc/controlled.conf",
+      "architecture": "x86_64",
+      "category": "weak_crypto",
+      "cwe": "CWE-328",
+      "address": null,
+      "sink": null,
+      "source": null,
+      "tainted_path": [],
+      "crash_state": {
+        "fault_address": null,
+        "registers": null,
+        "overflow_offset": null,
+        "stack_hash": null
+      },
+      "risk_rating": "medium",
+      "confidence": "heuristic",
+      "evidence_ref": "evidence:759c7ae81b1e13357265619653589a2320ef1b80dc694c2465fd164c76146571",
+      "redacted": true,
+      "status": "new",
+      "detected_at": "2026-11-07T14:42:25.733913Z"
+    },
+    {
+      "vulnerability_id": "abc3b545-2495-5ca1-aa29-a1e62d9259bd",
+      "firmware_id": "e9a1a254-c063-44e7-81f9-daa8d5ad8454",
+      "binary": "/etc/controlled.conf",
+      "architecture": "x86_64",
+      "category": "weak_crypto",
+      "cwe": "CWE-327",
+      "address": null,
+      "sink": null,
+      "source": null,
+      "tainted_path": [],
+      "crash_state": {
+        "fault_address": null,
+        "registers": null,
+        "overflow_offset": null,
+        "stack_hash": null
+      },
+      "risk_rating": "medium",
+      "confidence": "heuristic",
+      "evidence_ref": "evidence:0406c1899550698dc262df4a09197f6b4c072087731d6584eeecdf7c27bf6297",
+      "redacted": true,
+      "status": "new",
+      "detected_at": "2026-11-07T14:42:25.733935Z"
+    },
+    {
+      "vulnerability_id": "9a3d5d04-a80e-5540-b598-4f3e9d1ca594",
+      "firmware_id": "e9a1a254-c063-44e7-81f9-daa8d5ad8454",
+      "binary": "/etc/redacted-fe7a428e1cd254fe",
+      "architecture": "x86_64",
+      "category": "hardcoded_secret",
+      "cwe": "CWE-259",
+      "address": null,
+      "sink": null,
+      "source": null,
+      "tainted_path": [],
+      "crash_state": {
+        "fault_address": null,
+        "registers": null,
+        "overflow_offset": null,
+        "stack_hash": null
+      },
+      "risk_rating": "medium",
+      "confidence": "probable",
+      "evidence_ref": "evidence:8436eaf2074a8920f52574b9e1619e7b127c6fa058e32fe5e87edaf073eafe35",
+      "redacted": true,
+      "status": "new",
+      "detected_at": "2026-11-07T14:42:25.734154Z"
+    }
+  ],
+  "evidence": {
+    "evidence:759c7ae81b1e13357265619653589a2320ef1b80dc694c2465fd164c76146571": {
+      "rule": "security_weak_crypto",
+      "byte_offset": 237,
+      "byte_length": 3,
+      "fingerprint": "d19d84cf16b50218e29463f89bde7fa0b2a335676895bca0a71c98374ed9a4d5",
+      "redacted": true,
+      "heuristic": true
+    },
+    "evidence:23653057565cf200bfb055a8738434edc311e16c271c53fa2f71acb0ad2e6958": {
+      "kind": "modeled_out_of_bounds_write",
+      "sources": [
+        "fwx_cgi_stdin_0"
+      ],
+      "condition": [
+        {
+          "op": "UGE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                247,
+                240,
+                {
+                  "symbol": "fwx_cgi_stdin_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 32,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "ULE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                247,
+                240,
+                {
+                  "symbol": "fwx_cgi_stdin_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 126,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "UGE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                239,
+                232,
+                {
+                  "symbol": "fwx_cgi_stdin_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 32,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "ULE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                239,
+                232,
+                {
+                  "symbol": "fwx_cgi_stdin_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 126,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "UGE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                231,
+                224,
+                {
+                  "symbol": "fwx_cgi_stdin_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 32,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "ULE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                231,
+                224,
+                {
+                  "symbol": "fwx_cgi_stdin_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 126,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "UGE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                223,
+                216,
+                {
+                  "symbol": "fwx_cgi_stdin_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 32,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "ULE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                223,
+                216,
+                {
+                  "symbol": "fwx_cgi_stdin_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 126,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "UGE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                215,
+                208,
+                {
+                  "symbol": "fwx_cgi_stdin_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 32,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "ULE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                215,
+                208,
+                {
+                  "symbol": "fwx_cgi_stdin_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 126,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "UGE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                207,
+                200,
+                {
+                  "symbol": "fwx_cgi_stdin_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 32,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "ULE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                207,
+                200,
+                {
+                  "symbol": "fwx_cgi_stdin_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 126,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "UGE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                199,
+                192,
+                {
+                  "symbol": "fwx_cgi_stdin_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 32,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "ULE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                199,
+                192,
+                {
+                  "symbol": "fwx_cgi_stdin_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 126,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "UGE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                191,
+                184,
+                {
+                  "symbol": "fwx_cgi_stdin_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 32,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "ULE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                191,
+                184,
+                {
+                  "symbol": "fwx_cgi_stdin_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 126,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "UGE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                183,
+                176,
+                {
+                  "symbol": "fwx_cgi_stdin_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 32,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "ULE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                183,
+                176,
+                {
+                  "symbol": "fwx_cgi_stdin_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 126,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "UGE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                175,
+                168,
+                {
+                  "symbol": "fwx_cgi_stdin_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 32,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "ULE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                175,
+                168,
+                {
+                  "symbol": "fwx_cgi_stdin_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 126,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "UGE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                167,
+                160,
+                {
+                  "symbol": "fwx_cgi_stdin_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 32,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "ULE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                167,
+                160,
+                {
+                  "symbol": "fwx_cgi_stdin_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 126,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "UGE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                159,
+                152,
+                {
+                  "symbol": "fwx_cgi_stdin_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 32,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "ULE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                159,
+                152,
+                {
+                  "symbol": "fwx_cgi_stdin_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 126,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "UGE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                151,
+                144,
+                {
+                  "symbol": "fwx_cgi_stdin_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 32,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "ULE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                151,
+                144,
+                {
+                  "symbol": "fwx_cgi_stdin_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 126,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "UGE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                143,
+                136,
+                {
+                  "symbol": "fwx_cgi_stdin_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 32,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "ULE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                143,
+                136,
+                {
+                  "symbol": "fwx_cgi_stdin_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 126,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "UGE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                135,
+                128,
+                {
+                  "symbol": "fwx_cgi_stdin_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 32,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "ULE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                135,
+                128,
+                {
+                  "symbol": "fwx_cgi_stdin_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 126,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "UGE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                127,
+                120,
+                {
+                  "symbol": "fwx_cgi_stdin_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 32,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "ULE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                127,
+                120,
+                {
+                  "symbol": "fwx_cgi_stdin_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 126,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "UGE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                119,
+                112,
+                {
+                  "symbol": "fwx_cgi_stdin_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 32,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "ULE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                119,
+                112,
+                {
+                  "symbol": "fwx_cgi_stdin_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 126,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "UGE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                111,
+                104,
+                {
+                  "symbol": "fwx_cgi_stdin_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 32,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "ULE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                111,
+                104,
+                {
+                  "symbol": "fwx_cgi_stdin_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 126,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "UGE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                103,
+                96,
+                {
+                  "symbol": "fwx_cgi_stdin_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 32,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "ULE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                103,
+                96,
+                {
+                  "symbol": "fwx_cgi_stdin_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 126,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "UGE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                95,
+                88,
+                {
+                  "symbol": "fwx_cgi_stdin_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 32,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "ULE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                95,
+                88,
+                {
+                  "symbol": "fwx_cgi_stdin_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 126,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "UGE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                87,
+                80,
+                {
+                  "symbol": "fwx_cgi_stdin_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 32,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "ULE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                87,
+                80,
+                {
+                  "symbol": "fwx_cgi_stdin_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 126,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "UGE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                79,
+                72,
+                {
+                  "symbol": "fwx_cgi_stdin_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 32,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "ULE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                79,
+                72,
+                {
+                  "symbol": "fwx_cgi_stdin_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 126,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "UGE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                71,
+                64,
+                {
+                  "symbol": "fwx_cgi_stdin_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 32,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "ULE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                71,
+                64,
+                {
+                  "symbol": "fwx_cgi_stdin_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 126,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "UGE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                63,
+                56,
+                {
+                  "symbol": "fwx_cgi_stdin_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 32,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "ULE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                63,
+                56,
+                {
+                  "symbol": "fwx_cgi_stdin_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 126,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "UGE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                55,
+                48,
+                {
+                  "symbol": "fwx_cgi_stdin_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 32,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "ULE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                55,
+                48,
+                {
+                  "symbol": "fwx_cgi_stdin_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 126,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "UGE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                47,
+                40,
+                {
+                  "symbol": "fwx_cgi_stdin_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 32,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "ULE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                47,
+                40,
+                {
+                  "symbol": "fwx_cgi_stdin_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 126,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "UGE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                39,
+                32,
+                {
+                  "symbol": "fwx_cgi_stdin_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 32,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "ULE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                39,
+                32,
+                {
+                  "symbol": "fwx_cgi_stdin_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 126,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "UGE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                31,
+                24,
+                {
+                  "symbol": "fwx_cgi_stdin_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 32,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "ULE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                31,
+                24,
+                {
+                  "symbol": "fwx_cgi_stdin_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 126,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "UGE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                23,
+                16,
+                {
+                  "symbol": "fwx_cgi_stdin_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 32,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "ULE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                23,
+                16,
+                {
+                  "symbol": "fwx_cgi_stdin_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 126,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "UGE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                15,
+                8,
+                {
+                  "symbol": "fwx_cgi_stdin_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 32,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "ULE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                15,
+                8,
+                {
+                  "symbol": "fwx_cgi_stdin_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 126,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "UGE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                7,
+                0,
+                {
+                  "symbol": "fwx_cgi_stdin_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 32,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "ULE",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                7,
+                0,
+                {
+                  "symbol": "fwx_cgi_stdin_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 126,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "__eq__",
+          "args": [
+            {
+              "op": "Extract",
+              "args": [
+                247,
+                240,
+                {
+                  "symbol": "fwx_cgi_stdin_0",
+                  "bits": 248
+                }
+              ]
+            },
+            {
+              "constant": 65,
+              "bits": 8
+            }
+          ]
+        },
+        {
+          "op": "BoolV",
+          "args": [
+            true
+          ]
+        }
+      ],
+      "condition_satisfiable": true,
+      "call_path": [
+        "0x40116b"
+      ],
+      "alternative_paths": [],
+      "redacted": true
+    },
+    "evidence:0406c1899550698dc262df4a09197f6b4c072087731d6584eeecdf7c27bf6297": {
+      "rule": "security_weak_crypto",
+      "byte_offset": 255,
+      "byte_length": 3,
+      "fingerprint": "96609d259ca71abddc3399df4fb31f62f5a2938a2a5f183f4d7a213a278d17de",
+      "redacted": true,
+      "heuristic": true
+    },
+    "evidence:d43f7aa0bda35d584f15c152a4b12b129a42fe0c134b81ed90b9630b8c49576c": {
+      "rule": "credential",
+      "byte_offset": 9,
+      "byte_length": 19,
+      "fingerprint": "a7d3dc2be77ee5233da70e479c42db19715d4a84fb494ea8f1d0de16f7d64fab",
+      "redacted": true,
+      "heuristic": false
+    },
+    "evidence:0afc9adf2924db97f401fd53c7215cdf17592ba2fc382e26f1a143f674c7a3f0": {
+      "rule": "private_key",
+      "byte_offset": 62,
+      "byte_length": 78,
+      "fingerprint": "3bebee911187bf3fc58bdbc3b2c01f7f2ed027ef39858e29e692c04dcdd897a6",
+      "redacted": true,
+      "heuristic": true
+    },
+    "evidence:2679a6d9382af1242c6789cf0381b70b75b26841f9ca4948868f81fc7965d226": {
+      "rule": "credential",
+      "byte_offset": 37,
+      "byte_length": 24,
+      "fingerprint": "f95672306d915e435addbaac628548661ad279857a782f95fc0c2af53fdb6c1a",
+      "redacted": true,
+      "heuristic": false
+    },
+    "evidence:9f26cf77847cb0f150b93bf6a32de0fe421d1fc84e000f539293d7be970a4c71": {
+      "rule": "potentially_dangerous_function_symbol",
+      "redacted": true,
+      "heuristic": true,
+      "function": "strcpy",
+      "invocation_proven": false,
+      "overflow_proven": false
+    },
+    "evidence:8436eaf2074a8920f52574b9e1619e7b127c6fa058e32fe5e87edaf073eafe35": {
+      "rule": "credential",
+      "byte_offset": 38,
+      "byte_length": 25,
+      "fingerprint": "7af789d7a4d7e1fcb222240da8b1c2e7d243c5d744989914e98fdf853795a0ba",
+      "redacted": true,
+      "heuristic": false
+    }
+  },
+  "jobs": [
+    {
+      "job_id": "12e6ac64-f74b-45b0-b043-bc57b5dfc1e9",
+      "status": "complete",
+      "stage": "finished",
+      "result": {
+        "schema_version": 1,
+        "errors": [],
+        "graphs": {
+          "/bin/taint-demo": {
+            "functions": [
+              {
+                "address": "0x401000",
+                "name": "function_0x401000",
+                "nodes": [
+                  {
+                    "id": "0x401000",
+                    "tainted": false
+                  },
+                  {
+                    "id": "0x401012",
+                    "tainted": false
+                  },
+                  {
+                    "id": "0x401010",
+                    "tainted": false
+                  }
+                ],
+                "edges": [
+                  {
+                    "source": "0x401000",
+                    "target": "0x401012"
+                  },
+                  {
+                    "source": "0x401000",
+                    "target": "0x401010"
+                  },
+                  {
+                    "source": "0x401010",
+                    "target": "0x401012"
+                  }
+                ],
+                "incomplete": false
+              },
+              {
+                "address": "0x401020",
+                "name": "function_0x401020",
+                "nodes": [
+                  {
+                    "id": "0x401020",
+                    "tainted": false
+                  }
+                ],
+                "edges": [],
+                "incomplete": false
+              },
+              {
+                "address": "0x40102c",
+                "name": "function_0x40102c",
+                "nodes": [
+                  {
+                    "id": "0x40102c",
+                    "tainted": false
+                  }
+                ],
+                "edges": [],
+                "incomplete": false
+              },
+              {
+                "address": "0x401030",
+                "name": "function_0x401030",
+                "nodes": [
+                  {
+                    "id": "0x401030",
+                    "tainted": true
+                  }
+                ],
+                "edges": [],
+                "incomplete": false
+              },
+              {
+                "address": "0x401040",
+                "name": "function_0x401040",
+                "nodes": [
+                  {
+                    "id": "0x401040",
+                    "tainted": true
+                  }
+                ],
+                "edges": [],
+                "incomplete": false
+              },
+              {
+                "address": "0x401050",
+                "name": "_start",
+                "nodes": [
+                  {
+                    "id": "0x401050",
+                    "tainted": false
+                  }
+                ],
+                "edges": [],
+                "incomplete": false
+              },
+              {
+                "address": "0x401071",
+                "name": "function_0x401071",
+                "nodes": [
+                  {
+                    "id": "0x401071",
+                    "tainted": false
+                  }
+                ],
+                "edges": [],
+                "incomplete": false
+              },
+              {
+                "address": "0x401072",
+                "name": "function_0x401072",
+                "nodes": [
+                  {
+                    "id": "0x401072",
+                    "tainted": false
+                  }
+                ],
+                "edges": [],
+                "incomplete": false
+              },
+              {
+                "address": "0x401080",
+                "name": "function_0x401080",
+                "nodes": [
+                  {
+                    "id": "0x401080",
+                    "tainted": false
+                  }
+                ],
+                "edges": [],
+                "incomplete": false
+              },
+              {
+                "address": "0x401081",
+                "name": "function_0x401081",
+                "nodes": [
+                  {
+                    "id": "0x401081",
+                    "tainted": false
+                  }
+                ],
+                "edges": [],
+                "incomplete": false
+              },
+              {
+                "address": "0x401090",
+                "name": "function_0x401090",
+                "nodes": [
+                  {
+                    "id": "0x401090",
+                    "tainted": false
+                  },
+                  {
+                    "id": "0x4010b0",
+                    "tainted": false
+                  },
+                  {
+                    "id": "0x40109d",
+                    "tainted": false
+                  },
+                  {
+                    "id": "0x4010a7",
+                    "tainted": false
+                  },
+                  {
+                    "id": "0x4010ae",
+                    "tainted": false
+                  }
+                ],
+                "edges": [
+                  {
+                    "source": "0x401090",
+                    "target": "0x4010b0"
+                  },
+                  {
+                    "source": "0x401090",
+                    "target": "0x40109d"
+                  },
+                  {
+                    "source": "0x40109d",
+                    "target": "0x4010b0"
+                  },
+                  {
+                    "source": "0x40109d",
+                    "target": "0x4010a7"
+                  },
+                  {
+                    "source": "0x4010ae",
+                    "target": "0x4010b0"
+                  }
+                ],
+                "incomplete": false
+              },
+              {
+                "address": "0x4010b1",
+                "name": "function_0x4010b1",
+                "nodes": [
+                  {
+                    "id": "0x4010b1",
+                    "tainted": false
+                  }
+                ],
+                "edges": [],
+                "incomplete": false
+              },
+              {
+                "address": "0x4010c0",
+                "name": "function_0x4010c0",
+                "nodes": [
+                  {
+                    "id": "0x4010c0",
+                    "tainted": false
+                  },
+                  {
+                    "id": "0x4010f0",
+                    "tainted": false
+                  },
+                  {
+                    "id": "0x4010df",
+                    "tainted": false
+                  },
+                  {
+                    "id": "0x4010e9",
+                    "tainted": false
+                  }
+                ],
+                "edges": [
+                  {
+                    "source": "0x4010c0",
+                    "target": "0x4010f0"
+                  },
+                  {
+                    "source": "0x4010c0",
+                    "target": "0x4010df"
+                  },
+                  {
+                    "source": "0x4010df",
+                    "target": "0x4010f0"
+                  },
+                  {
+                    "source": "0x4010df",
+                    "target": "0x4010e9"
+                  }
+                ],
+                "incomplete": false
+              },
+              {
+                "address": "0x4010f1",
+                "name": "function_0x4010f1",
+                "nodes": [
+                  {
+                    "id": "0x4010f1",
+                    "tainted": false
+                  }
+                ],
+                "edges": [],
+                "incomplete": false
+              },
+              {
+                "address": "0x401100",
+                "name": "function_0x401100",
+                "nodes": [
+                  {
+                    "id": "0x401100",
+                    "tainted": false
+                  },
+                  {
+                    "id": "0x40110d",
+                    "tainted": false
+                  },
+                  {
+                    "id": "0x401120",
+                    "tainted": false
+                  },
+                  {
+                    "id": "0x401116",
+                    "tainted": false
+                  }
+                ],
+                "edges": [
+                  {
+                    "source": "0x401100",
+                    "target": "0x40110d"
+                  },
+                  {
+                    "source": "0x401100",
+                    "target": "0x401120"
+                  },
+                  {
+                    "source": "0x40110d",
+                    "target": "0x401116"
+                  }
+                ],
+                "incomplete": false
+              },
+              {
+                "address": "0x40111f",
+                "name": "function_0x40111f",
+                "nodes": [
+                  {
+                    "id": "0x40111f",
+                    "tainted": false
+                  }
+                ],
+                "edges": [],
+                "incomplete": false
+              },
+              {
+                "address": "0x401121",
+                "name": "function_0x401121",
+                "nodes": [
+                  {
+                    "id": "0x401121",
+                    "tainted": false
+                  }
+                ],
+                "edges": [],
+                "incomplete": false
+              },
+              {
+                "address": "0x401130",
+                "name": "function_0x401130",
+                "nodes": [
+                  {
+                    "id": "0x401130",
+                    "tainted": false
+                  }
+                ],
+                "edges": [],
+                "incomplete": false
+              },
+              {
+                "address": "0x401136",
+                "name": "main",
+                "nodes": [
+                  {
+                    "id": "0x401136",
+                    "tainted": true
+                  },
+                  {
+                    "id": "0x40115c",
+                    "tainted": true
+                  },
+                  {
+                    "id": "0x40116b",
+                    "tainted": true
+                  },
+                  {
+                    "id": "0x401189",
+                    "tainted": false
+                  }
+                ],
+                "edges": [
+                  {
+                    "source": "0x401136",
+                    "target": "0x40115c"
+                  },
+                  {
+                    "source": "0x40115c",
+                    "target": "0x40116b"
+                  },
+                  {
+                    "source": "0x40115c",
+                    "target": "0x401189"
+                  },
+                  {
+                    "source": "0x40116b",
+                    "target": "0x401189"
+                  }
+                ],
+                "incomplete": false
+              },
+              {
+                "address": "0x401190",
+                "name": "function_0x401190",
+                "nodes": [
+                  {
+                    "id": "0x401190",
+                    "tainted": false
+                  }
+                ],
+                "edges": [],
+                "incomplete": false
+              }
+            ],
+            "method": "angr CFGFast",
+            "limits": {
+              "functions": 128,
+              "nodes_per_function": 256
+            }
+          }
+        },
+        "stages": {
+          "extract": {
+            "status": "extracted"
+          },
+          "static": {
+            "status": "completed",
+            "binary_count": 2
+          },
+          "emulation": {
+            "status": "completed",
+            "executions": [
+              {
+                "status": "completed",
+                "architecture": "x86_64",
+                "mode": "user",
+                "returncode": 0,
+                "stdout_sha256": "6ddb6ffc8d4e7c1267f703dfc931728c7e03bb9715dee4ce7bb3bba34299628d",
+                "stdout_bytes": 29,
+                "fallback": null
+              },
+              {
+                "status": "completed",
+                "architecture": "x86_64",
+                "network": "job_private_loopback",
+                "probe": {
+                  "protocol": "http",
+                  "response_sha256": "25a65af531e52889f13a8d83566a4b49f7150d92306f4df39e08f58958b8b81c",
+                  "bytes": 40
+                }
+              },
+              {
+                "status": "completed",
+                "architecture": "x86_64",
+                "network": "job_private_loopback",
+                "probe": {
+                  "protocol": "upnp",
+                  "response_sha256": "6c056d2e32c3166ac365d6c94ae95e01515c06543ff576ae6503bb581ae195cc",
+                  "bytes": 40
+                }
+              },
+              {
+                "status": "completed",
+                "architecture": "x86_64",
+                "network": "job_private_loopback",
+                "probe": {
+                  "protocol": "mqtt",
+                  "response_sha256": "b3e0adaf40f19d19ae5846a499ef09653350f3f359d52424cec547a12789b1fe",
+                  "bytes": 4
+                }
+              }
+            ],
+            "authorization": "exact_controlled_image_registry"
+          },
+          "symbolic": {
+            "status": "completed",
+            "analyses": [
+              {
+                "status": "completed",
+                "reasons": [],
+                "budgets": {
+                  "seconds": 15,
+                  "states": 32,
+                  "paths": 256,
+                  "depth": 200,
+                  "steps": 500,
+                  "memory_mb": 512,
+                  "source_bytes": 32,
+                  "merge": true
+                },
+                "telemetry": {
+                  "steps": 8,
+                  "paths": 2,
+                  "pruned": 0,
+                  "merged": 0,
+                  "peak_states": 2,
+                  "wall_seconds": 0.073
+                },
+                "limitations": [
+                  "Source models use bounded printable bytes, not exhaustive inputs.",
+                  "Exploration stops at candidate sink violations; bounded safe copies preserve taint.",
+                  "Stack bounds require supported DWARF x86_64 frame-pointer ABI.",
+                  "No concrete command or exploit input is generated."
+                ]
+              }
+            ]
+          },
+          "secrets_crypto": {
+            "status": "completed",
+            "files_scanned": 4,
+            "files_skipped": 0,
+            "bytes_scanned": 785865,
+            "observations": {
+              "entropy_candidates": 6,
+              "certificates": 1
+            },
+            "architecture_inheritance": "single known image architecture; ambiguous non-ELF files skipped"
+          },
+          "normalize": {
+            "status": "completed",
+            "finding_count": 9
+          }
+        },
+        "analysis_scope": "integrated_gated",
+        "redacted": true,
+        "entropy": [
+          {
+            "offset": 0,
+            "size": 65536,
+            "bits_per_byte": 7.992777
+          },
+          {
+            "offset": 65536,
+            "size": 65536,
+            "bits_per_byte": 7.992076
+          },
+          {
+            "offset": 131072,
+            "size": 65536,
+            "bits_per_byte": 7.993064
+          },
+          {
+            "offset": 196608,
+            "size": 65536,
+            "bits_per_byte": 7.988501
+          },
+          {
+            "offset": 262144,
+            "size": 65536,
+            "bits_per_byte": 7.975175
+          },
+          {
+            "offset": 327680,
+            "size": 12288,
+            "bits_per_byte": 6.628062
+          }
+        ],
+        "extraction": {
+          "status": "extracted",
+          "attempts": [
+            {
+              "format": "squashfs",
+              "status": "extracted"
+            }
+          ],
+          "filesystems": [
+            {
+              "format": "squashfs",
+              "partition": "partition-0"
+            }
+          ],
+          "special_entries": []
+        },
+        "observability": {
+          "spans": [
+            {
+              "name": "extract",
+              "trace_id": "db68611cfdf0a900d25c1f4df0e3ae6d",
+              "span_id": "8978512501f0041a",
+              "status": "UNSET",
+              "parent_span_id": "c381d11fcf4ea301",
+              "start_ns": 1794062542322358082,
+              "end_ns": 1794062542339668134,
+              "attributes": {
+                "job.id": "12e6ac64-f74b-45b0-b043-bc57b5dfc1e9",
+                "outcome": "completed"
+              }
+            },
+            {
+              "name": "static",
+              "trace_id": "db68611cfdf0a900d25c1f4df0e3ae6d",
+              "span_id": "58db5756621d7514",
+              "status": "UNSET",
+              "parent_span_id": "c381d11fcf4ea301",
+              "start_ns": 1794062542339745425,
+              "end_ns": 1794062542381236356,
+              "attributes": {
+                "job.id": "12e6ac64-f74b-45b0-b043-bc57b5dfc1e9",
+                "outcome": "completed"
+              }
+            },
+            {
+              "name": "emulation",
+              "trace_id": "db68611cfdf0a900d25c1f4df0e3ae6d",
+              "span_id": "b53853d0a282a781",
+              "status": "UNSET",
+              "parent_span_id": "c381d11fcf4ea301",
+              "start_ns": 1794062542381316567,
+              "end_ns": 1794062544521099265,
+              "attributes": {
+                "job.id": "12e6ac64-f74b-45b0-b043-bc57b5dfc1e9",
+                "outcome": "completed"
+              }
+            },
+            {
+              "name": "symbolic",
+              "trace_id": "db68611cfdf0a900d25c1f4df0e3ae6d",
+              "span_id": "9d3a2f9e40c33b34",
+              "status": "UNSET",
+              "parent_span_id": "c381d11fcf4ea301",
+              "start_ns": 1794062544521209270,
+              "end_ns": 1794062545698438396,
+              "attributes": {
+                "job.id": "12e6ac64-f74b-45b0-b043-bc57b5dfc1e9",
+                "outcome": "completed"
+              }
+            },
+            {
+              "name": "secrets_crypto",
+              "trace_id": "db68611cfdf0a900d25c1f4df0e3ae6d",
+              "span_id": "d782ba2515a21bc7",
+              "status": "UNSET",
+              "parent_span_id": "c381d11fcf4ea301",
+              "start_ns": 1794062545698552655,
+              "end_ns": 1794062545734265747,
+              "attributes": {
+                "job.id": "12e6ac64-f74b-45b0-b043-bc57b5dfc1e9",
+                "outcome": "completed"
+              }
+            },
+            {
+              "name": "normalize",
+              "trace_id": "db68611cfdf0a900d25c1f4df0e3ae6d",
+              "span_id": "b74b698738f0cc98",
+              "status": "UNSET",
+              "parent_span_id": "c381d11fcf4ea301",
+              "start_ns": 1794062545734337949,
+              "end_ns": 1794062545734419287,
+              "attributes": {
+                "job.id": "12e6ac64-f74b-45b0-b043-bc57b5dfc1e9",
+                "outcome": "completed"
+              }
+            },
+            {
+              "name": "pipeline",
+              "trace_id": "db68611cfdf0a900d25c1f4df0e3ae6d",
+              "span_id": "c381d11fcf4ea301",
+              "status": "UNSET",
+              "parent_span_id": "216f93bfa6230c16",
+              "start_ns": 1794062542322314961,
+              "end_ns": 1794062545734476104,
+              "attributes": {
+                "job.id": "12e6ac64-f74b-45b0-b043-bc57b5dfc1e9",
+                "outcome": "completed"
+              }
+            }
+          ],
+          "metrics": {
+            "resource_metrics": [
+              {
+                "resource": {
+                  "attributes": {
+                    "telemetry.sdk.language": "python",
+                    "telemetry.sdk.name": "opentelemetry",
+                    "telemetry.sdk.version": "1.45.1",
+                    "service.instance.id": "4cc67068-2f37-4cd7-80f9-cde03d1c624a",
+                    "service.name": "firmwarex-analysis"
+                  },
+                  "schema_url": ""
+                },
+                "scope_metrics": [
+                  {
+                    "scope": {
+                      "name": "firmwarex.pipeline",
+                      "version": null,
+                      "schema_url": "",
+                      "attributes": null
+                    },
+                    "metrics": [
+                      {
+                        "name": "firmwarex.stage.completed",
+                        "description": "",
+                        "unit": "",
+                        "data": {
+                          "data_points": [
+                            {
+                              "attributes": {
+                                "stage": "extract"
+                              },
+                              "start_time_unix_nano": 1794062542339553023,
+                              "time_unix_nano": 1794062545734521410,
+                              "value": 1,
+                              "exemplars": [
+                                {
+                                  "filtered_attributes": {},
+                                  "value": 1,
+                                  "time_unix_nano": 1794062542339494115,
+                                  "span_id": 9905756599789552666,
+                                  "trace_id": 291642899640894950627334936547016552045
+                                }
+                              ]
+                            },
+                            {
+                              "attributes": {
+                                "stage": "static"
+                              },
+                              "start_time_unix_nano": 1794062542381177316,
+                              "time_unix_nano": 1794062545734521410,
+                              "value": 1,
+                              "exemplars": [
+                                {
+                                  "filtered_attributes": {},
+                                  "value": 1,
+                                  "time_unix_nano": 1794062542381148921,
+                                  "span_id": 6402807323762193684,
+                                  "trace_id": 291642899640894950627334936547016552045
+                                }
+                              ]
+                            },
+                            {
+                              "attributes": {
+                                "stage": "emulation"
+                              },
+                              "start_time_unix_nano": 1794062544521034244,
+                              "time_unix_nano": 1794062545734521410,
+                              "value": 1,
+                              "exemplars": [
+                                {
+                                  "filtered_attributes": {},
+                                  "value": 1,
+                                  "time_unix_nano": 1794062544520996434,
+                                  "span_id": 13058279275105527681,
+                                  "trace_id": 291642899640894950627334936547016552045
+                                }
+                              ]
+                            },
+                            {
+                              "attributes": {
+                                "stage": "symbolic"
+                              },
+                              "start_time_unix_nano": 1794062545698333797,
+                              "time_unix_nano": 1794062545734521410,
+                              "value": 1,
+                              "exemplars": [
+                                {
+                                  "filtered_attributes": {},
+                                  "value": 1,
+                                  "time_unix_nano": 1794062545698263200,
+                                  "span_id": 11329420169341778740,
+                                  "trace_id": 291642899640894950627334936547016552045
+                                }
+                              ]
+                            },
+                            {
+                              "attributes": {
+                                "stage": "secrets_crypto"
+                              },
+                              "start_time_unix_nano": 1794062545734211737,
+                              "time_unix_nano": 1794062545734521410,
+                              "value": 1,
+                              "exemplars": [
+                                {
+                                  "filtered_attributes": {},
+                                  "value": 1,
+                                  "time_unix_nano": 1794062545734186170,
+                                  "span_id": 15529179133566393287,
+                                  "trace_id": 291642899640894950627334936547016552045
+                                }
+                              ]
+                            },
+                            {
+                              "attributes": {
+                                "stage": "normalize"
+                              },
+                              "start_time_unix_nano": 1794062545734386311,
+                              "time_unix_nano": 1794062545734521410,
+                              "value": 1,
+                              "exemplars": [
+                                {
+                                  "filtered_attributes": {},
+                                  "value": 1,
+                                  "time_unix_nano": 1794062545734376664,
+                                  "span_id": 13207766361690918040,
+                                  "trace_id": 291642899640894950627334936547016552045
+                                }
+                              ]
+                            },
+                            {
+                              "attributes": {
+                                "stage": "pipeline"
+                              },
+                              "start_time_unix_nano": 1794062545734447912,
+                              "time_unix_nano": 1794062545734521410,
+                              "value": 1,
+                              "exemplars": [
+                                {
+                                  "filtered_attributes": {},
+                                  "value": 1,
+                                  "time_unix_nano": 1794062545734439876,
+                                  "span_id": 14087771043943850753,
+                                  "trace_id": 291642899640894950627334936547016552045
+                                }
+                              ]
+                            }
+                          ],
+                          "aggregation_temporality": 2,
+                          "is_monotonic": true
+                        }
+                      },
+                      {
+                        "name": "firmwarex.stage.duration",
+                        "description": "",
+                        "unit": "s",
+                        "data": {
+                          "data_points": [
+                            {
+                              "attributes": {
+                                "stage": "extract"
+                              },
+                              "start_time_unix_nano": 1794062542339643011,
+                              "time_unix_nano": 1794062545734521410,
+                              "count": 1,
+                              "sum": 0.01724337999985437,
+                              "bucket_counts": [
+                                0,
+                                1,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
+                              ],
+                              "explicit_bounds": [
+                                0.0,
+                                5.0,
+                                10.0,
+                                25.0,
+                                50.0,
+                                75.0,
+                                100.0,
+                                250.0,
+                                500.0,
+                                750.0,
+                                1000.0,
+                                2500.0,
+                                5000.0,
+                                7500.0,
+                                10000.0
+                              ],
+                              "min": 0.01724337999985437,
+                              "max": 0.01724337999985437,
+                              "exemplars": [
+                                {
+                                  "filtered_attributes": {},
+                                  "value": 0.01724337999985437,
+                                  "time_unix_nano": 1794062542339570293,
+                                  "span_id": 9905756599789552666,
+                                  "trace_id": 291642899640894950627334936547016552045
+                                }
+                              ]
+                            },
+                            {
+                              "attributes": {
+                                "stage": "static"
+                              },
+                              "start_time_unix_nano": 1794062542381208803,
+                              "time_unix_nano": 1794062545734521410,
+                              "count": 1,
+                              "sum": 0.04148778200033121,
+                              "bucket_counts": [
+                                0,
+                                1,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
+                              ],
+                              "explicit_bounds": [
+                                0.0,
+                                5.0,
+                                10.0,
+                                25.0,
+                                50.0,
+                                75.0,
+                                100.0,
+                                250.0,
+                                500.0,
+                                750.0,
+                                1000.0,
+                                2500.0,
+                                5000.0,
+                                7500.0,
+                                10000.0
+                              ],
+                              "min": 0.04148778200033121,
+                              "max": 0.04148778200033121,
+                              "exemplars": [
+                                {
+                                  "filtered_attributes": {},
+                                  "value": 0.04148778200033121,
+                                  "time_unix_nano": 1794062542381199483,
+                                  "span_id": 6402807323762193684,
+                                  "trace_id": 291642899640894950627334936547016552045
+                                }
+                              ]
+                            },
+                            {
+                              "attributes": {
+                                "stage": "emulation"
+                              },
+                              "start_time_unix_nano": 1794062544521068765,
+                              "time_unix_nano": 1794062545734521410,
+                              "count": 1,
+                              "sum": 2.1397787559999415,
+                              "bucket_counts": [
+                                0,
+                                1,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
+                              ],
+                              "explicit_bounds": [
+                                0.0,
+                                5.0,
+                                10.0,
+                                25.0,
+                                50.0,
+                                75.0,
+                                100.0,
+                                250.0,
+                                500.0,
+                                750.0,
+                                1000.0,
+                                2500.0,
+                                5000.0,
+                                7500.0,
+                                10000.0
+                              ],
+                              "min": 2.1397787559999415,
+                              "max": 2.1397787559999415,
+                              "exemplars": [
+                                {
+                                  "filtered_attributes": {},
+                                  "value": 2.1397787559999415,
+                                  "time_unix_nano": 1794062544521058989,
+                                  "span_id": 13058279275105527681,
+                                  "trace_id": 291642899640894950627334936547016552045
+                                }
+                              ]
+                            },
+                            {
+                              "attributes": {
+                                "stage": "symbolic"
+                              },
+                              "start_time_unix_nano": 1794062545698367605,
+                              "time_unix_nano": 1794062545734521410,
+                              "count": 1,
+                              "sum": 1.1772168609995788,
+                              "bucket_counts": [
+                                0,
+                                1,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
+                              ],
+                              "explicit_bounds": [
+                                0.0,
+                                5.0,
+                                10.0,
+                                25.0,
+                                50.0,
+                                75.0,
+                                100.0,
+                                250.0,
+                                500.0,
+                                750.0,
+                                1000.0,
+                                2500.0,
+                                5000.0,
+                                7500.0,
+                                10000.0
+                              ],
+                              "min": 1.1772168609995788,
+                              "max": 1.1772168609995788,
+                              "exemplars": [
+                                {
+                                  "filtered_attributes": {},
+                                  "value": 1.1772168609995788,
+                                  "time_unix_nano": 1794062545698357928,
+                                  "span_id": 11329420169341778740,
+                                  "trace_id": 291642899640894950627334936547016552045
+                                }
+                              ]
+                            },
+                            {
+                              "attributes": {
+                                "stage": "secrets_crypto"
+                              },
+                              "start_time_unix_nano": 1794062545734241106,
+                              "time_unix_nano": 1794062545734521410,
+                              "count": 1,
+                              "sum": 0.03574644799937232,
+                              "bucket_counts": [
+                                0,
+                                1,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
+                              ],
+                              "explicit_bounds": [
+                                0.0,
+                                5.0,
+                                10.0,
+                                25.0,
+                                50.0,
+                                75.0,
+                                100.0,
+                                250.0,
+                                500.0,
+                                750.0,
+                                1000.0,
+                                2500.0,
+                                5000.0,
+                                7500.0,
+                                10000.0
+                              ],
+                              "min": 0.03574644799937232,
+                              "max": 0.03574644799937232,
+                              "exemplars": [
+                                {
+                                  "filtered_attributes": {},
+                                  "value": 0.03574644799937232,
+                                  "time_unix_nano": 1794062545734233254,
+                                  "span_id": 15529179133566393287,
+                                  "trace_id": 291642899640894950627334936547016552045
+                                }
+                              ]
+                            },
+                            {
+                              "attributes": {
+                                "stage": "normalize"
+                              },
+                              "start_time_unix_nano": 1794062545734402956,
+                              "time_unix_nano": 1794062545734521410,
+                              "count": 1,
+                              "sum": 9.260499973606784e-05,
+                              "bucket_counts": [
+                                0,
+                                1,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
+                              ],
+                              "explicit_bounds": [
+                                0.0,
+                                5.0,
+                                10.0,
+                                25.0,
+                                50.0,
+                                75.0,
+                                100.0,
+                                250.0,
+                                500.0,
+                                750.0,
+                                1000.0,
+                                2500.0,
+                                5000.0,
+                                7500.0,
+                                10000.0
+                              ],
+                              "min": 9.260499973606784e-05,
+                              "max": 9.260499973606784e-05,
+                              "exemplars": [
+                                {
+                                  "filtered_attributes": {},
+                                  "value": 9.260499973606784e-05,
+                                  "time_unix_nano": 1794062545734395945,
+                                  "span_id": 13207766361690918040,
+                                  "trace_id": 291642899640894950627334936547016552045
+                                }
+                              ]
+                            },
+                            {
+                              "attributes": {
+                                "stage": "pipeline"
+                              },
+                              "start_time_unix_nano": 1794062545734463936,
+                              "time_unix_nano": 1794062545734521410,
+                              "count": 1,
+                              "sum": 3.4122130750001816,
+                              "bucket_counts": [
+                                0,
+                                1,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
+                              ],
+                              "explicit_bounds": [
+                                0.0,
+                                5.0,
+                                10.0,
+                                25.0,
+                                50.0,
+                                75.0,
+                                100.0,
+                                250.0,
+                                500.0,
+                                750.0,
+                                1000.0,
+                                2500.0,
+                                5000.0,
+                                7500.0,
+                                10000.0
+                              ],
+                              "min": 3.4122130750001816,
+                              "max": 3.4122130750001816,
+                              "exemplars": [
+                                {
+                                  "filtered_attributes": {},
+                                  "value": 3.4122130750001816,
+                                  "time_unix_nano": 1794062545734455356,
+                                  "span_id": 14087771043943850753,
+                                  "trace_id": 291642899640894950627334936547016552045
+                                }
+                              ]
+                            }
+                          ],
+                          "aggregation_temporality": 2
+                        }
+                      }
+                    ],
+                    "schema_url": ""
+                  }
+                ],
+                "schema_url": ""
+              }
+            ]
+          }
+        },
+        "status": "complete",
+        "sandbox": {
+          "network_mode": "none",
+          "read_only": true,
+          "reason": null,
+          "profile": {
+            "NetworkMode": "none",
+            "ReadonlyRootfs": true,
+            "CapDrop": [
+              "ALL"
+            ],
+            "SecurityOpt": [
+              "no-new-privileges:true"
+            ],
+            "Privileged": false,
+            "Memory": 805306368,
+            "MemorySwap": 805306368,
+            "NanoCpus": 1000000000,
+            "PidsLimit": 64
+          },
+          "image_id": "sha256:dabeec1350afd50f32b3966be9060332c4376b494d4156632565f66777aaba39",
+          "user": "1001:1001",
+          "wall_seconds": 4.18,
+          "cpu_seconds": 1.865,
+          "exit_code": 0,
+          "output_limit_bytes": 41943040
+        },
+        "control_observability": {
+          "spans": [
+            {
+              "name": "upload",
+              "trace_id": "db68611cfdf0a900d25c1f4df0e3ae6d",
+              "span_id": "cec85c358708e49d",
+              "status": "UNSET",
+              "parent_span_id": null,
+              "start_ns": 1794062541725707633,
+              "end_ns": 1794062541728020522,
+              "attributes": {
+                "job.id": "12e6ac64-f74b-45b0-b043-bc57b5dfc1e9",
+                "outcome": "completed"
+              }
+            },
+            {
+              "name": "queue_wait",
+              "trace_id": "db68611cfdf0a900d25c1f4df0e3ae6d",
+              "span_id": "e4d921903b9d30fd",
+              "status": "UNSET",
+              "parent_span_id": "cec85c358708e49d",
+              "start_ns": 1794062541730031872,
+              "end_ns": 1794062541739803176,
+              "attributes": {
+                "job.id": "12e6ac64-f74b-45b0-b043-bc57b5dfc1e9",
+                "outcome": "completed"
+              }
+            },
+            {
+              "name": "sandbox_execution",
+              "trace_id": "db68611cfdf0a900d25c1f4df0e3ae6d",
+              "span_id": "216f93bfa6230c16",
+              "status": "UNSET",
+              "parent_span_id": "cec85c358708e49d",
+              "start_ns": 1794062541747007294,
+              "end_ns": 1794062546283891082,
+              "attributes": {
+                "job.id": "12e6ac64-f74b-45b0-b043-bc57b5dfc1e9",
+                "outcome": "completed"
+              }
+            },
+            {
+              "name": "persistence",
+              "trace_id": "db68611cfdf0a900d25c1f4df0e3ae6d",
+              "span_id": "eaf17282032c9929",
+              "status": "UNSET",
+              "parent_span_id": "cec85c358708e49d",
+              "start_ns": 1794062546283993008,
+              "end_ns": 1794062546307225159,
+              "attributes": {
+                "job.id": "12e6ac64-f74b-45b0-b043-bc57b5dfc1e9",
+                "outcome": "completed"
+              }
+            }
+          ],
+          "metrics": {
+            "resource_metrics": [
+              {
+                "resource": {
+                  "attributes": {
+                    "telemetry.sdk.language": "python",
+                    "telemetry.sdk.name": "opentelemetry",
+                    "telemetry.sdk.version": "1.45.1",
+                    "service.instance.id": "92b6ea10-d7d9-4e32-9b1f-42c85daebf54",
+                    "service.name": "firmwarex-analysis"
+                  },
+                  "schema_url": ""
+                },
+                "scope_metrics": [
+                  {
+                    "scope": {
+                      "name": "firmwarex.pipeline",
+                      "version": null,
+                      "schema_url": "",
+                      "attributes": null
+                    },
+                    "metrics": [
+                      {
+                        "name": "firmwarex.stage.completed",
+                        "description": "",
+                        "unit": "",
+                        "data": {
+                          "data_points": [
+                            {
+                              "attributes": {
+                                "stage": "upload",
+                                "outcome": "completed"
+                              },
+                              "start_time_unix_nano": 1794062541728228956,
+                              "time_unix_nano": 1794062541728345422,
+                              "value": 1,
+                              "exemplars": []
+                            }
+                          ],
+                          "aggregation_temporality": 2,
+                          "is_monotonic": true
+                        }
+                      },
+                      {
+                        "name": "firmwarex.stage.duration",
+                        "description": "",
+                        "unit": "s",
+                        "data": {
+                          "data_points": [
+                            {
+                              "attributes": {
+                                "stage": "upload",
+                                "outcome": "completed"
+                              },
+                              "start_time_unix_nano": 1794062541728312975,
+                              "time_unix_nano": 1794062541728345422,
+                              "count": 1,
+                              "sum": 0.002312889,
+                              "bucket_counts": [
+                                0,
+                                1,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
+                              ],
+                              "explicit_bounds": [
+                                0.0,
+                                5.0,
+                                10.0,
+                                25.0,
+                                50.0,
+                                75.0,
+                                100.0,
+                                250.0,
+                                500.0,
+                                750.0,
+                                1000.0,
+                                2500.0,
+                                5000.0,
+                                7500.0,
+                                10000.0
+                              ],
+                              "min": 0.002312889,
+                              "max": 0.002312889,
+                              "exemplars": []
+                            }
+                          ],
+                          "aggregation_temporality": 2
+                        }
+                      }
+                    ],
+                    "schema_url": ""
+                  }
+                ],
+                "schema_url": ""
+              },
+              {
+                "resource": {
+                  "attributes": {
+                    "telemetry.sdk.language": "python",
+                    "telemetry.sdk.name": "opentelemetry",
+                    "telemetry.sdk.version": "1.45.1",
+                    "service.instance.id": "12d24ae0-db7c-4fc6-aebe-af70cbe3bb26",
+                    "service.name": "firmwarex-analysis"
+                  },
+                  "schema_url": ""
+                },
+                "scope_metrics": [
+                  {
+                    "scope": {
+                      "name": "firmwarex.pipeline",
+                      "version": null,
+                      "schema_url": "",
+                      "attributes": null
+                    },
+                    "metrics": [
+                      {
+                        "name": "firmwarex.stage.completed",
+                        "description": "",
+                        "unit": "",
+                        "data": {
+                          "data_points": [
+                            {
+                              "attributes": {
+                                "stage": "queue_wait",
+                                "outcome": "completed"
+                              },
+                              "start_time_unix_nano": 1794062541739905510,
+                              "time_unix_nano": 1794062546308301214,
+                              "value": 1,
+                              "exemplars": []
+                            },
+                            {
+                              "attributes": {
+                                "stage": "sandbox_execution"
+                              },
+                              "start_time_unix_nano": 1794062546283822903,
+                              "time_unix_nano": 1794062546308301214,
+                              "value": 1,
+                              "exemplars": [
+                                {
+                                  "filtered_attributes": {},
+                                  "value": 1,
+                                  "time_unix_nano": 1794062546283778134,
+                                  "span_id": 2409306777001856022,
+                                  "trace_id": 291642899640894950627334936547016552045
+                                }
+                              ]
+                            },
+                            {
+                              "attributes": {
+                                "stage": "persistence"
+                              },
+                              "start_time_unix_nano": 1794062546307168351,
+                              "time_unix_nano": 1794062546308301214,
+                              "value": 1,
+                              "exemplars": [
+                                {
+                                  "filtered_attributes": {},
+                                  "value": 1,
+                                  "time_unix_nano": 1794062546307137168,
+                                  "span_id": 16929438376986974505,
+                                  "trace_id": 291642899640894950627334936547016552045
+                                }
+                              ]
+                            }
+                          ],
+                          "aggregation_temporality": 2,
+                          "is_monotonic": true
+                        }
+                      },
+                      {
+                        "name": "firmwarex.stage.duration",
+                        "description": "",
+                        "unit": "s",
+                        "data": {
+                          "data_points": [
+                            {
+                              "attributes": {
+                                "stage": "queue_wait",
+                                "outcome": "completed"
+                              },
+                              "start_time_unix_nano": 1794062541739933021,
+                              "time_unix_nano": 1794062546308301214,
+                              "count": 1,
+                              "sum": 0.009771304,
+                              "bucket_counts": [
+                                0,
+                                1,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
+                              ],
+                              "explicit_bounds": [
+                                0.0,
+                                5.0,
+                                10.0,
+                                25.0,
+                                50.0,
+                                75.0,
+                                100.0,
+                                250.0,
+                                500.0,
+                                750.0,
+                                1000.0,
+                                2500.0,
+                                5000.0,
+                                7500.0,
+                                10000.0
+                              ],
+                              "min": 0.009771304,
+                              "max": 0.009771304,
+                              "exemplars": []
+                            },
+                            {
+                              "attributes": {
+                                "stage": "sandbox_execution"
+                              },
+                              "start_time_unix_nano": 1794062546283859331,
+                              "time_unix_nano": 1794062546308301214,
+                              "count": 1,
+                              "sum": 4.536918052999681,
+                              "bucket_counts": [
+                                0,
+                                1,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
+                              ],
+                              "explicit_bounds": [
+                                0.0,
+                                5.0,
+                                10.0,
+                                25.0,
+                                50.0,
+                                75.0,
+                                100.0,
+                                250.0,
+                                500.0,
+                                750.0,
+                                1000.0,
+                                2500.0,
+                                5000.0,
+                                7500.0,
+                                10000.0
+                              ],
+                              "min": 4.536918052999681,
+                              "max": 4.536918052999681,
+                              "exemplars": [
+                                {
+                                  "filtered_attributes": {},
+                                  "value": 4.536918052999681,
+                                  "time_unix_nano": 1794062546283850958,
+                                  "span_id": 2409306777001856022,
+                                  "trace_id": 291642899640894950627334936547016552045
+                                }
+                              ]
+                            },
+                            {
+                              "attributes": {
+                                "stage": "persistence"
+                              },
+                              "start_time_unix_nano": 1794062546307199296,
+                              "time_unix_nano": 1794062546308301214,
+                              "count": 1,
+                              "sum": 0.023248984000019846,
+                              "bucket_counts": [
+                                0,
+                                1,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
+                              ],
+                              "explicit_bounds": [
+                                0.0,
+                                5.0,
+                                10.0,
+                                25.0,
+                                50.0,
+                                75.0,
+                                100.0,
+                                250.0,
+                                500.0,
+                                750.0,
+                                1000.0,
+                                2500.0,
+                                5000.0,
+                                7500.0,
+                                10000.0
+                              ],
+                              "min": 0.023248984000019846,
+                              "max": 0.023248984000019846,
+                              "exemplars": [
+                                {
+                                  "filtered_attributes": {},
+                                  "value": 0.023248984000019846,
+                                  "time_unix_nano": 1794062546307190403,
+                                  "span_id": 16929438376986974505,
+                                  "trace_id": 291642899640894950627334936547016552045
+                                }
+                              ]
+                            }
+                          ],
+                          "aggregation_temporality": 2
+                        }
+                      }
+                    ],
+                    "schema_url": ""
+                  }
+                ],
+                "schema_url": ""
+              }
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "safety": {
+    "untrusted_execution": "controlled_or_static_only",
+    "raw_reveal": "disabled"
+  },
+  "limitations": [
+    "Mentor-authorized images receive bounded best-effort execution and symbolic sampling; startup success is not service coverage.",
+    "Unknown path components are pseudonymized to prevent proprietary-string disclosure.",
+    "Symbolic findings are bounded candidates for human review."
+  ]
+}

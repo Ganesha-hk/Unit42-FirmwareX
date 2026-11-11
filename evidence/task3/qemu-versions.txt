@@ -1,0 +1,28 @@
+qemu-arm version 7.2.22 (Debian 1:7.2+dfsg-7+deb12u18+b3)
+Copyright (c) 2003-2022 Fabrice Bellard and the QEMU Project developers
+QEMU emulator version 7.2.22 (Debian 1:7.2+dfsg-7+deb12u18+b3)
+Copyright (c) 2003-2022 Fabrice Bellard and the QEMU Project developers
+qemu-block-extra |  | un
+qemu-efi-aarch64 |  | un
+qemu-efi-arm |  | un
+qemu-keymaps |  | un
+qemu-kvm |  | un
+qemu-skiboot |  | un
+qemu-slof |  | un
+qemu-system-aarch64 |  | un
+qemu-system-arm | 1:7.2+dfsg-7+deb12u18+b3 | ii
+qemu-system-common | 1:7.2+dfsg-7+deb12u18+b3 | ii
+qemu-system-data | 1:7.2+dfsg-7+deb12u18 | ii
+qemu-system-gui |  | un
+qemu-system-i386 |  | un
+qemu-system-mips | 1:7.2+dfsg-7+deb12u18+b3 | ii
+qemu-system-mips64 |  | un
+qemu-system-mips64el |  | un
+qemu-system-mipsel |  | un
+qemu-system-ppc |  | un
+qemu-system-sparc |  | un
+qemu-system-x86 | 1:7.2+dfsg-7+deb12u18+b3 | ii
+qemu-system-x86-64 |  | un
+qemu-user | 1:7.2+dfsg-7+deb12u18+b3 | ii
+qemu-user-binfmt |  | un
+qemu-utils |  | un

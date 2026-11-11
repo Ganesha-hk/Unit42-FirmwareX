@@ -1,0 +1,13 @@
+ Container firmwarex-dispatcher-run-b333f881a8e4 Creating 
+ Container firmwarex-dispatcher-run-b333f881a8e4 Created 
+Traceback (most recent call last):
+  File "/scripts/verify-emulation.py", line 38, in <module>
+    out=run('arm','ARM32',mode='system',kernel=True);assert out['result'].get('console_sha256')==hashlib.sha256(b'FWX controlled boot\n').hexdigest(),out
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scripts/verify-emulation.py", line 16, in run
+    shutil.copyfile('/fixtures/boot-arm.elf',root/'boot-arm.elf')
+  File "/usr/local/lib/python3.12/shutil.py", line 260, in copyfile
+    with open(src, 'rb') as fsrc:
+         ^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/fixtures/boot-arm.elf'
+

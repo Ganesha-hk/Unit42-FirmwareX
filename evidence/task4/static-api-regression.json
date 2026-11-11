@@ -1,0 +1,494 @@
+{
+  "cases": [
+    {
+      "name": "controlled-squashfs.bin",
+      "upload": {
+        "firmware_id": "049f3ab3-98ec-4dc9-940e-de5efc357b11",
+        "job_id": "8b3c139a-3a75-466e-82f2-92dd9522b379",
+        "sha256": "1a09968fe300a72aa161d00f833bf65135ee8a7c6dbb2814eafbc2fded23b9c5",
+        "status": "queued",
+        "analysis_scope": "static_only"
+      },
+      "job": {
+        "job_id": "8b3c139a-3a75-466e-82f2-92dd9522b379",
+        "firmware_id": "049f3ab3-98ec-4dc9-940e-de5efc357b11",
+        "status": "static_complete",
+        "stage": "static",
+        "error_code": null,
+        "result": {
+          "schema_version": 1,
+          "extraction": {
+            "status": "extracted",
+            "attempts": [
+              {
+                "format": "squashfs",
+                "status": "extracted"
+              }
+            ],
+            "filesystems": [
+              {
+                "format": "squashfs",
+                "partition": "partition-0"
+              }
+            ],
+            "special_entries": []
+          },
+          "entropy": [
+            {
+              "offset": 0,
+              "size": 8192,
+              "bits_per_byte": 6.529014
+            }
+          ],
+          "errors": [],
+          "analysis_scope": "static_only",
+          "sandbox": {
+            "network_mode": "none",
+            "read_only": true,
+            "reason": null,
+            "profile": {
+              "NetworkMode": "none",
+              "ReadonlyRootfs": true,
+              "CapDrop": [
+                "ALL"
+              ],
+              "SecurityOpt": [
+                "no-new-privileges:true"
+              ],
+              "Privileged": false,
+              "Memory": 805306368,
+              "MemorySwap": 805306368,
+              "NanoCpus": 1000000000,
+              "PidsLimit": 64
+            },
+            "image_id": "sha256:499cd215752d90955d78019bd196f805955ab4571c29aa014941b364b149897f",
+            "user": "1000:1000",
+            "wall_seconds": 0.433,
+            "cpu_seconds": 0.252,
+            "exit_code": 0
+          }
+        },
+        "created_at": "2026-10-19T14:48:56.939541+00:00",
+        "updated_at": "2026-10-19T14:48:58.070551+00:00"
+      },
+      "filesystem": {
+        "firmware_id": "049f3ab3-98ec-4dc9-940e-de5efc357b11",
+        "files": [
+          {
+            "path": "/bin",
+            "type": "directory",
+            "size": 120,
+            "hash": null
+          },
+          {
+            "path": "/bin/libfixture.so",
+            "type": "file",
+            "size": 15576,
+            "hash": "867088d4eab8e324211b151c95b404d1cfae3f4ab14c11045b96ba1dd925e657"
+          },
+          {
+            "path": "/bin/partial",
+            "type": "file",
+            "size": 16144,
+            "hash": "2e6983a55d0f6514df8e1b7d47b28249d50d38be2fc15c7b1a33a7473334b10e"
+          },
+          {
+            "path": "/bin/strong",
+            "type": "file",
+            "size": 16056,
+            "hash": "d3258b4fa3dd8c60fb54034e82a018eb27027f83ac5c283a2a352c1c368cae83"
+          },
+          {
+            "path": "/bin/weak",
+            "type": "file",
+            "size": 12640,
+            "hash": "814298162eb7a18da081aabec66bb7a5e814a0bca70fe8a98c4ee31fb5eb7010"
+          },
+          {
+            "path": "/etc",
+            "type": "directory",
+            "size": 80,
+            "hash": null
+          },
+          {
+            "path": "/etc/external-link",
+            "type": "symlink",
+            "size": 21,
+            "hash": "97422ae3ce5c03af5c269ac79f2e64c7d2d8223ede44a2dd3f41d32ead1d5226"
+          },
+          {
+            "path": "/etc/fixture.txt",
+            "type": "file",
+            "size": 40,
+            "hash": "90d415918ca220084bf7c3db5e7ae51b09e2dcc2617a822c8b7e22c7fce59fff"
+          }
+        ]
+      },
+      "binary_audit": {
+        "firmware_id": "049f3ab3-98ec-4dc9-940e-de5efc357b11",
+        "binaries": [
+          {
+            "path": "/bin/libfixture.so",
+            "architecture": "x86_64",
+            "endianness": "little",
+            "bits": 64,
+            "elf_type": "ET_DYN",
+            "nx": true,
+            "pie": false,
+            "relro": "partial",
+            "stack_canary": true,
+            "fortify": false,
+            "stripped": false,
+            "wx_segments": [],
+            "banned_functions": [
+              "strcpy"
+            ],
+            "limitations": [
+              "Missing symbols may conceal canary/FORTIFY use; PIE does not prove runtime ASLR."
+            ]
+          },
+          {
+            "path": "/bin/partial",
+            "architecture": "x86_64",
+            "endianness": "little",
+            "bits": 64,
+            "elf_type": "ET_DYN",
+            "nx": true,
+            "pie": true,
+            "relro": "partial",
+            "stack_canary": true,
+            "fortify": false,
+            "stripped": false,
+            "wx_segments": [],
+            "banned_functions": [
+              "strcpy"
+            ],
+            "limitations": [
+              "Missing symbols may conceal canary/FORTIFY use; PIE does not prove runtime ASLR."
+            ]
+          },
+          {
+            "path": "/bin/strong",
+            "architecture": "x86_64",
+            "endianness": "little",
+            "bits": 64,
+            "elf_type": "ET_DYN",
+            "nx": true,
+            "pie": true,
+            "relro": "full",
+            "stack_canary": true,
+            "fortify": true,
+            "stripped": false,
+            "wx_segments": [],
+            "banned_functions": [],
+            "limitations": [
+              "Missing symbols may conceal canary/FORTIFY use; PIE does not prove runtime ASLR."
+            ]
+          },
+          {
+            "path": "/bin/weak",
+            "architecture": "x86_64",
+            "endianness": "little",
+            "bits": 64,
+            "elf_type": "ET_EXEC",
+            "nx": false,
+            "pie": false,
+            "relro": "none",
+            "stack_canary": false,
+            "fortify": false,
+            "stripped": false,
+            "wx_segments": [],
+            "banned_functions": [
+              "strcpy"
+            ],
+            "limitations": [
+              "Missing symbols may conceal canary/FORTIFY use; PIE does not prove runtime ASLR."
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "controlled-nested.bin",
+      "upload": {
+        "firmware_id": "bf31f2ed-04c1-475e-84aa-5015743602ba",
+        "job_id": "56e03b8c-3f12-49c8-bf1a-e4fb9ba753d8",
+        "sha256": "9aa99432bb1f89d1c43b4dc46d027ce34869502b7ff7dd5307c51fa4be50acfe",
+        "status": "queued",
+        "analysis_scope": "static_only"
+      },
+      "job": {
+        "job_id": "56e03b8c-3f12-49c8-bf1a-e4fb9ba753d8",
+        "firmware_id": "bf31f2ed-04c1-475e-84aa-5015743602ba",
+        "status": "static_complete",
+        "stage": "static",
+        "error_code": null,
+        "result": {
+          "schema_version": 1,
+          "extraction": {
+            "status": "extracted",
+            "attempts": [
+              {
+                "format": "gzip",
+                "status": "decompressed"
+              },
+              {
+                "format": "squashfs",
+                "status": "extracted"
+              }
+            ],
+            "filesystems": [
+              {
+                "format": "squashfs",
+                "partition": "partition-0"
+              }
+            ],
+            "special_entries": []
+          },
+          "entropy": [
+            {
+              "offset": 0,
+              "size": 5983,
+              "bits_per_byte": 7.959426
+            }
+          ],
+          "errors": [],
+          "analysis_scope": "static_only",
+          "sandbox": {
+            "network_mode": "none",
+            "read_only": true,
+            "reason": null,
+            "profile": {
+              "NetworkMode": "none",
+              "ReadonlyRootfs": true,
+              "CapDrop": [
+                "ALL"
+              ],
+              "SecurityOpt": [
+                "no-new-privileges:true"
+              ],
+              "Privileged": false,
+              "Memory": 805306368,
+              "MemorySwap": 805306368,
+              "NanoCpus": 1000000000,
+              "PidsLimit": 64
+            },
+            "image_id": "sha256:499cd215752d90955d78019bd196f805955ab4571c29aa014941b364b149897f",
+            "user": "1000:1000",
+            "wall_seconds": 0.829,
+            "cpu_seconds": 0.593,
+            "exit_code": 0
+          }
+        },
+        "created_at": "2026-10-19T14:48:58.325879+00:00",
+        "updated_at": "2026-10-19T14:48:59.664390+00:00"
+      },
+      "filesystem": {
+        "firmware_id": "bf31f2ed-04c1-475e-84aa-5015743602ba",
+        "files": [
+          {
+            "path": "/bin",
+            "type": "directory",
+            "size": 120,
+            "hash": null
+          },
+          {
+            "path": "/bin/libfixture.so",
+            "type": "file",
+            "size": 15576,
+            "hash": "867088d4eab8e324211b151c95b404d1cfae3f4ab14c11045b96ba1dd925e657"
+          },
+          {
+            "path": "/bin/partial",
+            "type": "file",
+            "size": 16144,
+            "hash": "2e6983a55d0f6514df8e1b7d47b28249d50d38be2fc15c7b1a33a7473334b10e"
+          },
+          {
+            "path": "/bin/strong",
+            "type": "file",
+            "size": 16056,
+            "hash": "d3258b4fa3dd8c60fb54034e82a018eb27027f83ac5c283a2a352c1c368cae83"
+          },
+          {
+            "path": "/bin/weak",
+            "type": "file",
+            "size": 12640,
+            "hash": "814298162eb7a18da081aabec66bb7a5e814a0bca70fe8a98c4ee31fb5eb7010"
+          },
+          {
+            "path": "/etc",
+            "type": "directory",
+            "size": 80,
+            "hash": null
+          },
+          {
+            "path": "/etc/external-link",
+            "type": "symlink",
+            "size": 21,
+            "hash": "97422ae3ce5c03af5c269ac79f2e64c7d2d8223ede44a2dd3f41d32ead1d5226"
+          },
+          {
+            "path": "/etc/fixture.txt",
+            "type": "file",
+            "size": 40,
+            "hash": "90d415918ca220084bf7c3db5e7ae51b09e2dcc2617a822c8b7e22c7fce59fff"
+          }
+        ]
+      },
+      "binary_audit": {
+        "firmware_id": "bf31f2ed-04c1-475e-84aa-5015743602ba",
+        "binaries": [
+          {
+            "path": "/bin/libfixture.so",
+            "architecture": "x86_64",
+            "endianness": "little",
+            "bits": 64,
+            "elf_type": "ET_DYN",
+            "nx": true,
+            "pie": false,
+            "relro": "partial",
+            "stack_canary": true,
+            "fortify": false,
+            "stripped": false,
+            "wx_segments": [],
+            "banned_functions": [
+              "strcpy"
+            ],
+            "limitations": [
+              "Missing symbols may conceal canary/FORTIFY use; PIE does not prove runtime ASLR."
+            ]
+          },
+          {
+            "path": "/bin/partial",
+            "architecture": "x86_64",
+            "endianness": "little",
+            "bits": 64,
+            "elf_type": "ET_DYN",
+            "nx": true,
+            "pie": true,
+            "relro": "partial",
+            "stack_canary": true,
+            "fortify": false,
+            "stripped": false,
+            "wx_segments": [],
+            "banned_functions": [
+              "strcpy"
+            ],
+            "limitations": [
+              "Missing symbols may conceal canary/FORTIFY use; PIE does not prove runtime ASLR."
+            ]
+          },
+          {
+            "path": "/bin/strong",
+            "architecture": "x86_64",
+            "endianness": "little",
+            "bits": 64,
+            "elf_type": "ET_DYN",
+            "nx": true,
+            "pie": true,
+            "relro": "full",
+            "stack_canary": true,
+            "fortify": true,
+            "stripped": false,
+            "wx_segments": [],
+            "banned_functions": [],
+            "limitations": [
+              "Missing symbols may conceal canary/FORTIFY use; PIE does not prove runtime ASLR."
+            ]
+          },
+          {
+            "path": "/bin/weak",
+            "architecture": "x86_64",
+            "endianness": "little",
+            "bits": 64,
+            "elf_type": "ET_EXEC",
+            "nx": false,
+            "pie": false,
+            "relro": "none",
+            "stack_canary": false,
+            "fortify": false,
+            "stripped": false,
+            "wx_segments": [],
+            "banned_functions": [
+              "strcpy"
+            ],
+            "limitations": [
+              "Missing symbols may conceal canary/FORTIFY use; PIE does not prove runtime ASLR."
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "unsupported.bin",
+      "upload": {
+        "firmware_id": "7dc205e2-f24e-45c8-9c48-62c43e90af52",
+        "job_id": "48ee25f4-6bd3-416b-86a5-45a15fb3ed49",
+        "sha256": "41481a6ae632effa6eb72c38903166094975331fff5d688252ae5cf41cae0ea9",
+        "status": "queued",
+        "analysis_scope": "static_only"
+      },
+      "job": {
+        "job_id": "48ee25f4-6bd3-416b-86a5-45a15fb3ed49",
+        "firmware_id": "7dc205e2-f24e-45c8-9c48-62c43e90af52",
+        "status": "unsupported",
+        "stage": "static",
+        "error_code": null,
+        "result": {
+          "schema_version": 1,
+          "extraction": {
+            "status": "unsupported",
+            "attempts": [],
+            "filesystems": []
+          },
+          "entropy": [
+            {
+              "offset": 0,
+              "size": 30,
+              "bits_per_byte": 3.856565
+            }
+          ],
+          "errors": [],
+          "analysis_scope": "static_only",
+          "sandbox": {
+            "network_mode": "none",
+            "read_only": true,
+            "reason": null,
+            "profile": {
+              "NetworkMode": "none",
+              "ReadonlyRootfs": true,
+              "CapDrop": [
+                "ALL"
+              ],
+              "SecurityOpt": [
+                "no-new-privileges:true"
+              ],
+              "Privileged": false,
+              "Memory": 805306368,
+              "MemorySwap": 805306368,
+              "NanoCpus": 1000000000,
+              "PidsLimit": 64
+            },
+            "image_id": "sha256:499cd215752d90955d78019bd196f805955ab4571c29aa014941b364b149897f",
+            "user": "1000:1000",
+            "wall_seconds": 0.631,
+            "cpu_seconds": 0.489,
+            "exit_code": 0
+          }
+        },
+        "created_at": "2026-10-19T14:49:00.419276+00:00",
+        "updated_at": "2026-10-19T14:49:01.502384+00:00"
+      },
+      "filesystem": {
+        "firmware_id": "7dc205e2-f24e-45c8-9c48-62c43e90af52",
+        "files": []
+      },
+      "binary_audit": {
+        "firmware_id": "7dc205e2-f24e-45c8-9c48-62c43e90af52",
+        "binaries": []
+      }
+    }
+  ],
+  "scope": "static_only"
+}

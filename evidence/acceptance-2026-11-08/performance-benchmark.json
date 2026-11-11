@@ -1,0 +1,37 @@
+{
+  "status": "partial_benchmark",
+  "firmware_id": "b32e825f-eb90-438d-9016-4f1b86542350",
+  "job_id": "dac488e5-2248-4757-ae1a-c925566e4b9e",
+  "sha256": "8c88c338afad0535ab295a62e9555dc91f3bf5c8f4fc3bc67008adb2619f60e6",
+  "host": {
+    "platform": "Linux-7.0.0-38-generic-x86_64-with-glibc2.43",
+    "python": "3.14.4",
+    "processor": ""
+  },
+  "configuration": {
+    "image": "firmwarex-pipeline:task5",
+    "mentor_authorized": true,
+    "network": "none",
+    "symbolic_budgets": {
+      "seconds_per_binary": 10,
+      "steps": 200,
+      "memory_mb": 512
+    }
+  },
+  "stage_seconds": {
+    "persistence": 0.371717,
+    "queue_wait": 0.055673,
+    "sandbox_execution": 59.462904,
+    "upload": 0.052973
+  },
+  "total_seconds": 59.943267,
+  "stage_status": {
+    "extract": "extracted",
+    "static": "completed",
+    "emulation": "incomplete",
+    "symbolic": "incomplete",
+    "secrets_crypto": "completed",
+    "normalize": "completed"
+  },
+  "acceptance": "Not a passing KPI benchmark because emulation and symbolic stages are incomplete; records exact observed timing only."
+}

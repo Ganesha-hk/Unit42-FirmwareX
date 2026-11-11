@@ -1,0 +1,42 @@
+{
+  "acceptance": "NOT ACCEPTED",
+  "unit_tests": 78,
+  "unit_line_coverage_percent": 28.66,
+  "symbolic_cases": 42,
+  "emulation_cases": 36,
+  "architectures": 5,
+  "independent_pipeline_quota_cases": 4,
+  "guard_cases": 9,
+  "corpus_successes": 6,
+  "corpus_denominator": 6,
+  "real_image_findings_schema_validated": 1941,
+  "real_image_binary_counts": [
+    171,
+    171,
+    186,
+    209,
+    153,
+    153
+  ],
+  "real_image_end_to_end_seconds": [
+    5.254,
+    4.238,
+    4.275,
+    4.246,
+    4.331,
+    4.273
+  ],
+  "timing_scope": "static/scanner with dynamic stages blocked; NOT a symbolic benchmark",
+  "real_image_dynamic_execution": "BLOCKED pending mentor sign-off",
+  "controlled_demo": {
+    "firmware_id": "3b8d2934-d310-437b-968d-d89505851639",
+    "scope": "controlled fixture; does not replace required real-image dynamic demonstration",
+    "video": [
+      "page@c0b9bcb8e57fa352445b0f5f9c6de4d0.webm"
+    ]
+  },
+  "requirements": {
+    "PASS": 71,
+    "FAIL": 41
+  }
+}

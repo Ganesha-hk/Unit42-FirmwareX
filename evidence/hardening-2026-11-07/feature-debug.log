@@ -1,0 +1,26 @@
+Traceback (most recent call last):
+  File "/debug/probe.py", line 5, in <module>
+    registry=json.loads(Path('/registry/snapshot-controlled.json').read_text());print('SNAPSHOT',run(next(iter(registry.values())),Path('/fixtures'),registry),flush=True)
+                                                                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/src/firmwarex/emulation/snapshots.py", line 78, in run
+    subprocess.run(['qemu-img', 'create', '-f', 'qcow2', str(disk), '8M'],
+  File "/usr/local/lib/python3.12/subprocess.py", line 548, in run
+    with Popen(*popenargs, **kwargs) as process:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/subprocess.py", line 1026, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/usr/local/lib/python3.12/subprocess.py", line 1955, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'qemu-img'
+GDB 0x00000000004014f0 in _start ()
+
+Program received signal SIGSEGV, Segmentation fault.
+controlled_null_write () at /sources/protocol-fuzz.c:9
+#0  controlled_null_write () at /sources/protocol-fuzz.c:9
+#1  0x00000000004018b5 in main (argc=2, argv=0x4000800ca8) at /sources/protocol-fuzz.c:25
+pc             0x40161e            0x40161e <controlled_null_write+9>
+sp             0x4000800890        0x4000800890
+ 9	/sources/protocol-fuzz.c: No such file or directory.
+
+QEMU  qemu-x86_64: QEMU: Terminated via GDBstub
+

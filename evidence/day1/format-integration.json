@@ -1,0 +1,2381 @@
+{
+  "cases": [
+    {
+      "name": "cramfs.bin",
+      "upload": {
+        "firmware_id": "50066ea6-8fbe-4dc4-9ae2-a96f8b21fe20",
+        "job_id": "3a5075df-6944-44b0-b14d-83639b148979",
+        "sha256": "b257910cc39df8adf9add00a60fff246fae5f031857ad5625461737ca2f03b8c",
+        "status": "queued",
+        "analysis_scope": "static_only"
+      },
+      "job": {
+        "job_id": "3a5075df-6944-44b0-b14d-83639b148979",
+        "firmware_id": "50066ea6-8fbe-4dc4-9ae2-a96f8b21fe20",
+        "status": "static_complete",
+        "stage": "static",
+        "error_code": null,
+        "result": {
+          "schema_version": 1,
+          "extraction": {
+            "status": "extracted",
+            "attempts": [
+              {
+                "format": "cramfs",
+                "status": "extracted"
+              }
+            ],
+            "filesystems": [
+              {
+                "format": "cramfs",
+                "partition": "partition-0"
+              }
+            ],
+            "special_entries": []
+          },
+          "entropy": [
+            {
+              "offset": 0,
+              "size": 12288,
+              "bits_per_byte": 7.116312
+            }
+          ],
+          "errors": [],
+          "analysis_scope": "static_only",
+          "sandbox": {
+            "network_mode": "none",
+            "read_only": true,
+            "reason": null,
+            "wall_seconds": 0.413,
+            "cpu_seconds": 0.246,
+            "exit_code": 0
+          }
+        },
+        "created_at": "2026-10-19T09:59:59.101608+00:00",
+        "updated_at": "2026-10-19T09:59:59.864793+00:00"
+      },
+      "filesystem": {
+        "firmware_id": "50066ea6-8fbe-4dc4-9ae2-a96f8b21fe20",
+        "files": [
+          {
+            "path": "/bin",
+            "type": "directory",
+            "size": 120,
+            "hash": null
+          },
+          {
+            "path": "/bin/libfixture.so",
+            "type": "file",
+            "size": 15576,
+            "hash": "867088d4eab8e324211b151c95b404d1cfae3f4ab14c11045b96ba1dd925e657"
+          },
+          {
+            "path": "/bin/partial",
+            "type": "file",
+            "size": 16144,
+            "hash": "2e6983a55d0f6514df8e1b7d47b28249d50d38be2fc15c7b1a33a7473334b10e"
+          },
+          {
+            "path": "/bin/strong",
+            "type": "file",
+            "size": 16056,
+            "hash": "d3258b4fa3dd8c60fb54034e82a018eb27027f83ac5c283a2a352c1c368cae83"
+          },
+          {
+            "path": "/bin/weak",
+            "type": "file",
+            "size": 12640,
+            "hash": "814298162eb7a18da081aabec66bb7a5e814a0bca70fe8a98c4ee31fb5eb7010"
+          },
+          {
+            "path": "/etc",
+            "type": "directory",
+            "size": 80,
+            "hash": null
+          },
+          {
+            "path": "/etc/external-link",
+            "type": "symlink",
+            "size": 21,
+            "hash": "97422ae3ce5c03af5c269ac79f2e64c7d2d8223ede44a2dd3f41d32ead1d5226"
+          },
+          {
+            "path": "/etc/fixture.txt",
+            "type": "file",
+            "size": 40,
+            "hash": "90d415918ca220084bf7c3db5e7ae51b09e2dcc2617a822c8b7e22c7fce59fff"
+          }
+        ]
+      },
+      "binary_audit": {
+        "firmware_id": "50066ea6-8fbe-4dc4-9ae2-a96f8b21fe20",
+        "binaries": [
+          {
+            "path": "/bin/libfixture.so",
+            "architecture": "x86_64",
+            "endianness": "little",
+            "bits": 64,
+            "elf_type": "ET_DYN",
+            "nx": true,
+            "pie": false,
+            "relro": "partial",
+            "stack_canary": true,
+            "fortify": false,
+            "stripped": false,
+            "wx_segments": [],
+            "banned_functions": [
+              "strcpy"
+            ],
+            "limitations": [
+              "Missing symbols may conceal canary/FORTIFY use; PIE does not prove runtime ASLR."
+            ]
+          },
+          {
+            "path": "/bin/partial",
+            "architecture": "x86_64",
+            "endianness": "little",
+            "bits": 64,
+            "elf_type": "ET_DYN",
+            "nx": true,
+            "pie": true,
+            "relro": "partial",
+            "stack_canary": true,
+            "fortify": false,
+            "stripped": false,
+            "wx_segments": [],
+            "banned_functions": [
+              "strcpy"
+            ],
+            "limitations": [
+              "Missing symbols may conceal canary/FORTIFY use; PIE does not prove runtime ASLR."
+            ]
+          },
+          {
+            "path": "/bin/strong",
+            "architecture": "x86_64",
+            "endianness": "little",
+            "bits": 64,
+            "elf_type": "ET_DYN",
+            "nx": true,
+            "pie": true,
+            "relro": "full",
+            "stack_canary": true,
+            "fortify": true,
+            "stripped": false,
+            "wx_segments": [],
+            "banned_functions": [],
+            "limitations": [
+              "Missing symbols may conceal canary/FORTIFY use; PIE does not prove runtime ASLR."
+            ]
+          },
+          {
+            "path": "/bin/weak",
+            "architecture": "x86_64",
+            "endianness": "little",
+            "bits": 64,
+            "elf_type": "ET_EXEC",
+            "nx": false,
+            "pie": false,
+            "relro": "none",
+            "stack_canary": false,
+            "fortify": false,
+            "stripped": false,
+            "wx_segments": [],
+            "banned_functions": [
+              "strcpy"
+            ],
+            "limitations": [
+              "Missing symbols may conceal canary/FORTIFY use; PIE does not prove runtime ASLR."
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "jffs2.bin",
+      "upload": {
+        "firmware_id": "f62da08b-fd30-476b-86a4-9dde14f61c51",
+        "job_id": "c3361bf8-cbf2-4681-ba5e-45b087025520",
+        "sha256": "5cc5d34b10a4d19707a853e1a50f5f097b754449b28a07f0262b59fbdd592d2e",
+        "status": "queued",
+        "analysis_scope": "static_only"
+      },
+      "job": {
+        "job_id": "c3361bf8-cbf2-4681-ba5e-45b087025520",
+        "firmware_id": "f62da08b-fd30-476b-86a4-9dde14f61c51",
+        "status": "static_complete",
+        "stage": "static",
+        "error_code": null,
+        "result": {
+          "schema_version": 1,
+          "extraction": {
+            "status": "extracted",
+            "attempts": [
+              {
+                "format": "jffs2",
+                "status": "extracted"
+              }
+            ],
+            "filesystems": [
+              {
+                "format": "jffs2",
+                "partition": "partition-0"
+              }
+            ],
+            "special_entries": []
+          },
+          "entropy": [
+            {
+              "offset": 0,
+              "size": 65536,
+              "bits_per_byte": 2.132767
+            },
+            {
+              "offset": 65536,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 131072,
+              "size": 65536,
+              "bits_per_byte": 0.003121
+            },
+            {
+              "offset": 196608,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            }
+          ],
+          "errors": [],
+          "analysis_scope": "static_only",
+          "sandbox": {
+            "network_mode": "none",
+            "read_only": true,
+            "reason": null,
+            "wall_seconds": 0.68,
+            "cpu_seconds": 0.463,
+            "exit_code": 0
+          }
+        },
+        "created_at": "2026-10-19T10:00:00.168892+00:00",
+        "updated_at": "2026-10-19T10:00:01.209455+00:00"
+      },
+      "filesystem": {
+        "firmware_id": "f62da08b-fd30-476b-86a4-9dde14f61c51",
+        "files": [
+          {
+            "path": "/bin",
+            "type": "directory",
+            "size": 120,
+            "hash": null
+          },
+          {
+            "path": "/bin/libfixture.so",
+            "type": "file",
+            "size": 15576,
+            "hash": "867088d4eab8e324211b151c95b404d1cfae3f4ab14c11045b96ba1dd925e657"
+          },
+          {
+            "path": "/bin/partial",
+            "type": "file",
+            "size": 16144,
+            "hash": "2e6983a55d0f6514df8e1b7d47b28249d50d38be2fc15c7b1a33a7473334b10e"
+          },
+          {
+            "path": "/bin/strong",
+            "type": "file",
+            "size": 16056,
+            "hash": "d3258b4fa3dd8c60fb54034e82a018eb27027f83ac5c283a2a352c1c368cae83"
+          },
+          {
+            "path": "/bin/weak",
+            "type": "file",
+            "size": 12640,
+            "hash": "814298162eb7a18da081aabec66bb7a5e814a0bca70fe8a98c4ee31fb5eb7010"
+          },
+          {
+            "path": "/etc",
+            "type": "directory",
+            "size": 80,
+            "hash": null
+          },
+          {
+            "path": "/etc/external-link",
+            "type": "symlink",
+            "size": 21,
+            "hash": "97422ae3ce5c03af5c269ac79f2e64c7d2d8223ede44a2dd3f41d32ead1d5226"
+          },
+          {
+            "path": "/etc/fixture.txt",
+            "type": "file",
+            "size": 40,
+            "hash": "90d415918ca220084bf7c3db5e7ae51b09e2dcc2617a822c8b7e22c7fce59fff"
+          }
+        ]
+      },
+      "binary_audit": {
+        "firmware_id": "f62da08b-fd30-476b-86a4-9dde14f61c51",
+        "binaries": [
+          {
+            "path": "/bin/libfixture.so",
+            "architecture": "x86_64",
+            "endianness": "little",
+            "bits": 64,
+            "elf_type": "ET_DYN",
+            "nx": true,
+            "pie": false,
+            "relro": "partial",
+            "stack_canary": true,
+            "fortify": false,
+            "stripped": false,
+            "wx_segments": [],
+            "banned_functions": [
+              "strcpy"
+            ],
+            "limitations": [
+              "Missing symbols may conceal canary/FORTIFY use; PIE does not prove runtime ASLR."
+            ]
+          },
+          {
+            "path": "/bin/partial",
+            "architecture": "x86_64",
+            "endianness": "little",
+            "bits": 64,
+            "elf_type": "ET_DYN",
+            "nx": true,
+            "pie": true,
+            "relro": "partial",
+            "stack_canary": true,
+            "fortify": false,
+            "stripped": false,
+            "wx_segments": [],
+            "banned_functions": [
+              "strcpy"
+            ],
+            "limitations": [
+              "Missing symbols may conceal canary/FORTIFY use; PIE does not prove runtime ASLR."
+            ]
+          },
+          {
+            "path": "/bin/strong",
+            "architecture": "x86_64",
+            "endianness": "little",
+            "bits": 64,
+            "elf_type": "ET_DYN",
+            "nx": true,
+            "pie": true,
+            "relro": "full",
+            "stack_canary": true,
+            "fortify": true,
+            "stripped": false,
+            "wx_segments": [],
+            "banned_functions": [],
+            "limitations": [
+              "Missing symbols may conceal canary/FORTIFY use; PIE does not prove runtime ASLR."
+            ]
+          },
+          {
+            "path": "/bin/weak",
+            "architecture": "x86_64",
+            "endianness": "little",
+            "bits": 64,
+            "elf_type": "ET_EXEC",
+            "nx": false,
+            "pie": false,
+            "relro": "none",
+            "stack_canary": false,
+            "fortify": false,
+            "stripped": false,
+            "wx_segments": [],
+            "banned_functions": [
+              "strcpy"
+            ],
+            "limitations": [
+              "Missing symbols may conceal canary/FORTIFY use; PIE does not prove runtime ASLR."
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "ubifs.bin",
+      "upload": {
+        "firmware_id": "a2ec91c5-e22a-4a6e-b7be-8bbcf3008745",
+        "job_id": "803e1df2-bc63-4ed3-9d4f-b97fee0770f5",
+        "sha256": "023fde115358aca72622baf4e063fdae54237683f1f164a2b1a7724443838f3b",
+        "status": "queued",
+        "analysis_scope": "static_only"
+      },
+      "job": {
+        "job_id": "803e1df2-bc63-4ed3-9d4f-b97fee0770f5",
+        "firmware_id": "a2ec91c5-e22a-4a6e-b7be-8bbcf3008745",
+        "status": "static_complete",
+        "stage": "static",
+        "error_code": null,
+        "result": {
+          "schema_version": 1,
+          "extraction": {
+            "status": "extracted",
+            "attempts": [
+              {
+                "format": "ubifs",
+                "status": "extracted"
+              }
+            ],
+            "filesystems": [
+              {
+                "format": "ubifs",
+                "partition": "partition-0"
+              }
+            ],
+            "special_entries": []
+          },
+          "entropy": [
+            {
+              "offset": 0,
+              "size": 65536,
+              "bits_per_byte": 0.462337
+            },
+            {
+              "offset": 65536,
+              "size": 65536,
+              "bits_per_byte": 0.209631
+            },
+            {
+              "offset": 131072,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 196608,
+              "size": 65536,
+              "bits_per_byte": 0.209793
+            },
+            {
+              "offset": 262144,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 327680,
+              "size": 65536,
+              "bits_per_byte": 0.204864
+            },
+            {
+              "offset": 393216,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 458752,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 524288,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 589824,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 655360,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 720896,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 786432,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 851968,
+              "size": 65536,
+              "bits_per_byte": 0.012137
+            },
+            {
+              "offset": 917504,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 983040,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 1048576,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 1114112,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 1179648,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 1245184,
+              "size": 65536,
+              "bits_per_byte": 2.051657
+            },
+            {
+              "offset": 1310720,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 1376256,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 1441792,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 1507328,
+              "size": 65536,
+              "bits_per_byte": 0.252008
+            },
+            {
+              "offset": 1572864,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 1638400,
+              "size": 12288,
+              "bits_per_byte": -0.0
+            }
+          ],
+          "errors": [],
+          "analysis_scope": "static_only",
+          "sandbox": {
+            "network_mode": "none",
+            "read_only": true,
+            "reason": null,
+            "wall_seconds": 0.653,
+            "cpu_seconds": 0.469,
+            "exit_code": 0
+          }
+        },
+        "created_at": "2026-10-19T10:00:02.253291+00:00",
+        "updated_at": "2026-10-19T10:00:03.346124+00:00"
+      },
+      "filesystem": {
+        "firmware_id": "a2ec91c5-e22a-4a6e-b7be-8bbcf3008745",
+        "files": [
+          {
+            "path": "/bin",
+            "type": "directory",
+            "size": 120,
+            "hash": null
+          },
+          {
+            "path": "/bin/libfixture.so",
+            "type": "file",
+            "size": 15576,
+            "hash": "867088d4eab8e324211b151c95b404d1cfae3f4ab14c11045b96ba1dd925e657"
+          },
+          {
+            "path": "/bin/partial",
+            "type": "file",
+            "size": 16144,
+            "hash": "2e6983a55d0f6514df8e1b7d47b28249d50d38be2fc15c7b1a33a7473334b10e"
+          },
+          {
+            "path": "/bin/strong",
+            "type": "file",
+            "size": 16056,
+            "hash": "d3258b4fa3dd8c60fb54034e82a018eb27027f83ac5c283a2a352c1c368cae83"
+          },
+          {
+            "path": "/bin/weak",
+            "type": "file",
+            "size": 12640,
+            "hash": "814298162eb7a18da081aabec66bb7a5e814a0bca70fe8a98c4ee31fb5eb7010"
+          },
+          {
+            "path": "/etc",
+            "type": "directory",
+            "size": 80,
+            "hash": null
+          },
+          {
+            "path": "/etc/external-link",
+            "type": "symlink",
+            "size": 21,
+            "hash": "97422ae3ce5c03af5c269ac79f2e64c7d2d8223ede44a2dd3f41d32ead1d5226"
+          },
+          {
+            "path": "/etc/fixture.txt",
+            "type": "file",
+            "size": 40,
+            "hash": "90d415918ca220084bf7c3db5e7ae51b09e2dcc2617a822c8b7e22c7fce59fff"
+          }
+        ]
+      },
+      "binary_audit": {
+        "firmware_id": "a2ec91c5-e22a-4a6e-b7be-8bbcf3008745",
+        "binaries": [
+          {
+            "path": "/bin/libfixture.so",
+            "architecture": "x86_64",
+            "endianness": "little",
+            "bits": 64,
+            "elf_type": "ET_DYN",
+            "nx": true,
+            "pie": false,
+            "relro": "partial",
+            "stack_canary": true,
+            "fortify": false,
+            "stripped": false,
+            "wx_segments": [],
+            "banned_functions": [
+              "strcpy"
+            ],
+            "limitations": [
+              "Missing symbols may conceal canary/FORTIFY use; PIE does not prove runtime ASLR."
+            ]
+          },
+          {
+            "path": "/bin/partial",
+            "architecture": "x86_64",
+            "endianness": "little",
+            "bits": 64,
+            "elf_type": "ET_DYN",
+            "nx": true,
+            "pie": true,
+            "relro": "partial",
+            "stack_canary": true,
+            "fortify": false,
+            "stripped": false,
+            "wx_segments": [],
+            "banned_functions": [
+              "strcpy"
+            ],
+            "limitations": [
+              "Missing symbols may conceal canary/FORTIFY use; PIE does not prove runtime ASLR."
+            ]
+          },
+          {
+            "path": "/bin/strong",
+            "architecture": "x86_64",
+            "endianness": "little",
+            "bits": 64,
+            "elf_type": "ET_DYN",
+            "nx": true,
+            "pie": true,
+            "relro": "full",
+            "stack_canary": true,
+            "fortify": true,
+            "stripped": false,
+            "wx_segments": [],
+            "banned_functions": [],
+            "limitations": [
+              "Missing symbols may conceal canary/FORTIFY use; PIE does not prove runtime ASLR."
+            ]
+          },
+          {
+            "path": "/bin/weak",
+            "architecture": "x86_64",
+            "endianness": "little",
+            "bits": 64,
+            "elf_type": "ET_EXEC",
+            "nx": false,
+            "pie": false,
+            "relro": "none",
+            "stack_canary": false,
+            "fortify": false,
+            "stripped": false,
+            "wx_segments": [],
+            "banned_functions": [
+              "strcpy"
+            ],
+            "limitations": [
+              "Missing symbols may conceal canary/FORTIFY use; PIE does not prove runtime ASLR."
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "cpio.bin",
+      "upload": {
+        "firmware_id": "735247a6-0706-4b1f-b8a7-1c00ab50bc8f",
+        "job_id": "14593384-b403-4b8f-a8f5-ab9de103ab7d",
+        "sha256": "70332c8cf5171936a2ab1edf0437a83083c4b70c1c816c1964899cf42f5d8ac3",
+        "status": "queued",
+        "analysis_scope": "static_only"
+      },
+      "job": {
+        "job_id": "14593384-b403-4b8f-a8f5-ab9de103ab7d",
+        "firmware_id": "735247a6-0706-4b1f-b8a7-1c00ab50bc8f",
+        "status": "static_complete",
+        "stage": "static",
+        "error_code": null,
+        "result": {
+          "schema_version": 1,
+          "extraction": {
+            "status": "extracted",
+            "attempts": [
+              {
+                "format": "cpio",
+                "status": "extracted"
+              }
+            ],
+            "filesystems": [
+              {
+                "format": "cpio",
+                "partition": "partition-0"
+              }
+            ],
+            "special_entries": []
+          },
+          "entropy": [
+            {
+              "offset": 0,
+              "size": 61952,
+              "bits_per_byte": 1.745582
+            }
+          ],
+          "errors": [],
+          "analysis_scope": "static_only",
+          "sandbox": {
+            "network_mode": "none",
+            "read_only": true,
+            "reason": null,
+            "wall_seconds": 0.411,
+            "cpu_seconds": 0.264,
+            "exit_code": 0
+          }
+        },
+        "created_at": "2026-10-19T10:00:04.339439+00:00",
+        "updated_at": "2026-10-19T10:00:05.270403+00:00"
+      },
+      "filesystem": {
+        "firmware_id": "735247a6-0706-4b1f-b8a7-1c00ab50bc8f",
+        "files": [
+          {
+            "path": "/bin",
+            "type": "directory",
+            "size": 120,
+            "hash": null
+          },
+          {
+            "path": "/bin/libfixture.so",
+            "type": "file",
+            "size": 15576,
+            "hash": "867088d4eab8e324211b151c95b404d1cfae3f4ab14c11045b96ba1dd925e657"
+          },
+          {
+            "path": "/bin/partial",
+            "type": "file",
+            "size": 16144,
+            "hash": "2e6983a55d0f6514df8e1b7d47b28249d50d38be2fc15c7b1a33a7473334b10e"
+          },
+          {
+            "path": "/bin/strong",
+            "type": "file",
+            "size": 16056,
+            "hash": "d3258b4fa3dd8c60fb54034e82a018eb27027f83ac5c283a2a352c1c368cae83"
+          },
+          {
+            "path": "/bin/weak",
+            "type": "file",
+            "size": 12640,
+            "hash": "814298162eb7a18da081aabec66bb7a5e814a0bca70fe8a98c4ee31fb5eb7010"
+          },
+          {
+            "path": "/etc",
+            "type": "directory",
+            "size": 80,
+            "hash": null
+          },
+          {
+            "path": "/etc/external-link",
+            "type": "symlink",
+            "size": 21,
+            "hash": "97422ae3ce5c03af5c269ac79f2e64c7d2d8223ede44a2dd3f41d32ead1d5226"
+          },
+          {
+            "path": "/etc/fixture.txt",
+            "type": "file",
+            "size": 40,
+            "hash": "90d415918ca220084bf7c3db5e7ae51b09e2dcc2617a822c8b7e22c7fce59fff"
+          }
+        ]
+      },
+      "binary_audit": {
+        "firmware_id": "735247a6-0706-4b1f-b8a7-1c00ab50bc8f",
+        "binaries": [
+          {
+            "path": "/bin/libfixture.so",
+            "architecture": "x86_64",
+            "endianness": "little",
+            "bits": 64,
+            "elf_type": "ET_DYN",
+            "nx": true,
+            "pie": false,
+            "relro": "partial",
+            "stack_canary": true,
+            "fortify": false,
+            "stripped": false,
+            "wx_segments": [],
+            "banned_functions": [
+              "strcpy"
+            ],
+            "limitations": [
+              "Missing symbols may conceal canary/FORTIFY use; PIE does not prove runtime ASLR."
+            ]
+          },
+          {
+            "path": "/bin/partial",
+            "architecture": "x86_64",
+            "endianness": "little",
+            "bits": 64,
+            "elf_type": "ET_DYN",
+            "nx": true,
+            "pie": true,
+            "relro": "partial",
+            "stack_canary": true,
+            "fortify": false,
+            "stripped": false,
+            "wx_segments": [],
+            "banned_functions": [
+              "strcpy"
+            ],
+            "limitations": [
+              "Missing symbols may conceal canary/FORTIFY use; PIE does not prove runtime ASLR."
+            ]
+          },
+          {
+            "path": "/bin/strong",
+            "architecture": "x86_64",
+            "endianness": "little",
+            "bits": 64,
+            "elf_type": "ET_DYN",
+            "nx": true,
+            "pie": true,
+            "relro": "full",
+            "stack_canary": true,
+            "fortify": true,
+            "stripped": false,
+            "wx_segments": [],
+            "banned_functions": [],
+            "limitations": [
+              "Missing symbols may conceal canary/FORTIFY use; PIE does not prove runtime ASLR."
+            ]
+          },
+          {
+            "path": "/bin/weak",
+            "architecture": "x86_64",
+            "endianness": "little",
+            "bits": 64,
+            "elf_type": "ET_EXEC",
+            "nx": false,
+            "pie": false,
+            "relro": "none",
+            "stack_canary": false,
+            "fortify": false,
+            "stripped": false,
+            "wx_segments": [],
+            "banned_functions": [
+              "strcpy"
+            ],
+            "limitations": [
+              "Missing symbols may conceal canary/FORTIFY use; PIE does not prove runtime ASLR."
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "ext.bin",
+      "upload": {
+        "firmware_id": "c7840253-a757-4d50-8bc7-258864bdd66c",
+        "job_id": "e06598a6-d6bc-4453-93b2-f1acd97281e0",
+        "sha256": "4379729d6d4afdfb84014560abaf7de9fbd72e8870340c123a20cd5cf070c1a1",
+        "status": "queued",
+        "analysis_scope": "static_only"
+      },
+      "job": {
+        "job_id": "e06598a6-d6bc-4453-93b2-f1acd97281e0",
+        "firmware_id": "c7840253-a757-4d50-8bc7-258864bdd66c",
+        "status": "static_complete",
+        "stage": "static",
+        "error_code": null,
+        "result": {
+          "schema_version": 1,
+          "extraction": {
+            "status": "extracted",
+            "attempts": [
+              {
+                "format": "ext",
+                "status": "extracted"
+              }
+            ],
+            "filesystems": [
+              {
+                "format": "ext",
+                "partition": "partition-0"
+              }
+            ],
+            "special_entries": []
+          },
+          "entropy": [
+            {
+              "offset": 0,
+              "size": 65536,
+              "bits_per_byte": 0.058601
+            },
+            {
+              "offset": 65536,
+              "size": 65536,
+              "bits_per_byte": 0.028206
+            },
+            {
+              "offset": 131072,
+              "size": 65536,
+              "bits_per_byte": 0.230487
+            },
+            {
+              "offset": 196608,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 262144,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 327680,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 393216,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 458752,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 524288,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 589824,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 655360,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 720896,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 786432,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 851968,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 917504,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 983040,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 1048576,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 1114112,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 1179648,
+              "size": 65536,
+              "bits_per_byte": 1.57776
+            },
+            {
+              "offset": 1245184,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 1310720,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 1376256,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 1441792,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 1507328,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 1572864,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 1638400,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 1703936,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 1769472,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 1835008,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 1900544,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 1966080,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 2031616,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 2097152,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 2162688,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 2228224,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 2293760,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 2359296,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 2424832,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 2490368,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 2555904,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 2621440,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 2686976,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 2752512,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 2818048,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 2883584,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 2949120,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 3014656,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 3080192,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 3145728,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 3211264,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 3276800,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 3342336,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 3407872,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 3473408,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 3538944,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 3604480,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 3670016,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 3735552,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 3801088,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 3866624,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 3932160,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 3997696,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 4063232,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 4128768,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 4194304,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 4259840,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 4325376,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 4390912,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 4456448,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 4521984,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 4587520,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 4653056,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 4718592,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 4784128,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 4849664,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 4915200,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 4980736,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 5046272,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 5111808,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 5177344,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 5242880,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 5308416,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 5373952,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 5439488,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 5505024,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 5570560,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 5636096,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 5701632,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 5767168,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 5832704,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 5898240,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 5963776,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 6029312,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 6094848,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 6160384,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 6225920,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 6291456,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 6356992,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 6422528,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 6488064,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 6553600,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 6619136,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 6684672,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 6750208,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 6815744,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 6881280,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 6946816,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 7012352,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 7077888,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 7143424,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 7208960,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 7274496,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 7340032,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 7405568,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 7471104,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 7536640,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 7602176,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 7667712,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 7733248,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 7798784,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 7864320,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 7929856,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 7995392,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 8060928,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 8126464,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 8192000,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 8257536,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 8323072,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 8388608,
+              "size": 65536,
+              "bits_per_byte": 0.032953
+            },
+            {
+              "offset": 8454144,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 8519680,
+              "size": 65536,
+              "bits_per_byte": 0.006725
+            },
+            {
+              "offset": 8585216,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 8650752,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 8716288,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 8781824,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 8847360,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 8912896,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 8978432,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 9043968,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 9109504,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 9175040,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 9240576,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 9306112,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 9371648,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 9437184,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 9502720,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 9568256,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 9633792,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 9699328,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 9764864,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 9830400,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 9895936,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 9961472,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 10027008,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 10092544,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 10158080,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 10223616,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 10289152,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 10354688,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 10420224,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 10485760,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 10551296,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 10616832,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 10682368,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 10747904,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 10813440,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 10878976,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 10944512,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 11010048,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 11075584,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 11141120,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 11206656,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 11272192,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 11337728,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 11403264,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 11468800,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 11534336,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 11599872,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 11665408,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 11730944,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 11796480,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 11862016,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 11927552,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 11993088,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 12058624,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 12124160,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 12189696,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 12255232,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 12320768,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 12386304,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 12451840,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 12517376,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 12582912,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 12648448,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 12713984,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 12779520,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 12845056,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 12910592,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 12976128,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 13041664,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 13107200,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 13172736,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 13238272,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 13303808,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 13369344,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 13434880,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 13500416,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 13565952,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 13631488,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 13697024,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 13762560,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 13828096,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 13893632,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 13959168,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 14024704,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 14090240,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 14155776,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 14221312,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 14286848,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 14352384,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 14417920,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 14483456,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 14548992,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 14614528,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 14680064,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 14745600,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 14811136,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 14876672,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 14942208,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 15007744,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 15073280,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 15138816,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 15204352,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 15269888,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 15335424,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 15400960,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 15466496,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 15532032,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 15597568,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 15663104,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 15728640,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 15794176,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 15859712,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 15925248,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 15990784,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 16056320,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 16121856,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 16187392,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 16252928,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 16318464,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 16384000,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 16449536,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 16515072,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 16580608,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 16646144,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            },
+            {
+              "offset": 16711680,
+              "size": 65536,
+              "bits_per_byte": -0.0
+            }
+          ],
+          "errors": [],
+          "analysis_scope": "static_only",
+          "sandbox": {
+            "network_mode": "none",
+            "read_only": true,
+            "reason": null,
+            "wall_seconds": 1.133,
+            "cpu_seconds": 0.0,
+            "exit_code": 0
+          }
+        },
+        "created_at": "2026-10-19T10:00:05.477699+00:00",
+        "updated_at": "2026-10-19T10:00:09.078048+00:00"
+      },
+      "filesystem": {
+        "firmware_id": "c7840253-a757-4d50-8bc7-258864bdd66c",
+        "files": [
+          {
+            "path": "/bin",
+            "type": "directory",
+            "size": 120,
+            "hash": null
+          },
+          {
+            "path": "/bin/libfixture.so",
+            "type": "file",
+            "size": 15576,
+            "hash": "867088d4eab8e324211b151c95b404d1cfae3f4ab14c11045b96ba1dd925e657"
+          },
+          {
+            "path": "/bin/partial",
+            "type": "file",
+            "size": 16144,
+            "hash": "2e6983a55d0f6514df8e1b7d47b28249d50d38be2fc15c7b1a33a7473334b10e"
+          },
+          {
+            "path": "/bin/strong",
+            "type": "file",
+            "size": 16056,
+            "hash": "d3258b4fa3dd8c60fb54034e82a018eb27027f83ac5c283a2a352c1c368cae83"
+          },
+          {
+            "path": "/bin/weak",
+            "type": "file",
+            "size": 12640,
+            "hash": "814298162eb7a18da081aabec66bb7a5e814a0bca70fe8a98c4ee31fb5eb7010"
+          },
+          {
+            "path": "/etc",
+            "type": "directory",
+            "size": 80,
+            "hash": null
+          },
+          {
+            "path": "/etc/external-link",
+            "type": "symlink",
+            "size": 21,
+            "hash": "97422ae3ce5c03af5c269ac79f2e64c7d2d8223ede44a2dd3f41d32ead1d5226"
+          },
+          {
+            "path": "/etc/fixture.txt",
+            "type": "file",
+            "size": 40,
+            "hash": "90d415918ca220084bf7c3db5e7ae51b09e2dcc2617a822c8b7e22c7fce59fff"
+          },
+          {
+            "path": "/lost+found",
+            "type": "directory",
+            "size": 40,
+            "hash": null
+          }
+        ]
+      },
+      "binary_audit": {
+        "firmware_id": "c7840253-a757-4d50-8bc7-258864bdd66c",
+        "binaries": [
+          {
+            "path": "/bin/libfixture.so",
+            "architecture": "x86_64",
+            "endianness": "little",
+            "bits": 64,
+            "elf_type": "ET_DYN",
+            "nx": true,
+            "pie": false,
+            "relro": "partial",
+            "stack_canary": true,
+            "fortify": false,
+            "stripped": false,
+            "wx_segments": [],
+            "banned_functions": [
+              "strcpy"
+            ],
+            "limitations": [
+              "Missing symbols may conceal canary/FORTIFY use; PIE does not prove runtime ASLR."
+            ]
+          },
+          {
+            "path": "/bin/partial",
+            "architecture": "x86_64",
+            "endianness": "little",
+            "bits": 64,
+            "elf_type": "ET_DYN",
+            "nx": true,
+            "pie": true,
+            "relro": "partial",
+            "stack_canary": true,
+            "fortify": false,
+            "stripped": false,
+            "wx_segments": [],
+            "banned_functions": [
+              "strcpy"
+            ],
+            "limitations": [
+              "Missing symbols may conceal canary/FORTIFY use; PIE does not prove runtime ASLR."
+            ]
+          },
+          {
+            "path": "/bin/strong",
+            "architecture": "x86_64",
+            "endianness": "little",
+            "bits": 64,
+            "elf_type": "ET_DYN",
+            "nx": true,
+            "pie": true,
+            "relro": "full",
+            "stack_canary": true,
+            "fortify": true,
+            "stripped": false,
+            "wx_segments": [],
+            "banned_functions": [],
+            "limitations": [
+              "Missing symbols may conceal canary/FORTIFY use; PIE does not prove runtime ASLR."
+            ]
+          },
+          {
+            "path": "/bin/weak",
+            "architecture": "x86_64",
+            "endianness": "little",
+            "bits": 64,
+            "elf_type": "ET_EXEC",
+            "nx": false,
+            "pie": false,
+            "relro": "none",
+            "stack_canary": false,
+            "fortify": false,
+            "stripped": false,
+            "wx_segments": [],
+            "banned_functions": [
+              "strcpy"
+            ],
+            "limitations": [
+              "Missing symbols may conceal canary/FORTIFY use; PIE does not prove runtime ASLR."
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "scope": "static_only"
+}

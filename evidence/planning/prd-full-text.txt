@@ -1,0 +1,648 @@
+000: PALO ALTO NETWORKS
+001: Unit 42 · Threat Research & Security Engineering
+002: Project Unit42-FirmwareX
+003: Automated IoT / Embedded Firmware Attack Surface & Vulnerability Analysis Engine
+004: Product Requirements Document (PRD) — Internship Engineering Brief
+005: 
+006: Document Control
+007: Field
+008: Detail
+009: Document title
+010: Project Unit42-FirmwareX — Product Requirements Document
+011: Codename
+012: Unit42-FirmwareX
+013: Organisation
+014: Palo Alto Networks — Unit 42 (Threat Research & Security Engineering)
+015: Document type
+016: Engineering PRD / Internship project brief
+017: Prepared by
+018: Principal Security Architect, Unit 42
+019: Audience
+020: Security Engineering Intern(s); Vulnerability Researchers; Reverse Engineers
+021: Version
+022: 1.0
+023: Status
+024: Approved for internship execution
+025: Classification
+026: Internal // Confidential
+027: Project duration
+028: 4 weeks (single engineer, full end-to-end vertical slice)
+029: Analysis inputs
+030: Publicly available open-source IoT firmware images only
+031: Execution environment
+032: Isolated, non-network-routed analysis sandbox — no live devices or networks
+033: 
+034: Contents
+035: Project Unit42-FirmwareX — Product Requirements Document
+036: PART A — PRODUCT REQUIREMENTS
+037: 1.   Executive Summary & Strategic Rationale3
+038: 2.   What You Are Building4
+039: 3.   Learning Outcomes4
+040: 4.   Scope and Boundaries5
+041: 5.   System Architecture & High-Level Design6
+042: 6.   Functional Requirements & Feature Specifications7
+043: 7.   Guardrails, Safety Controls & Containment9
+044: 8.   System Interface & API Specifications10
+045: PART B — INTERN EXECUTION GUIDE
+046: 9.   Technology Stack & Project Constraints11
+047: 10.   Four-Week Delivery Plan12
+048: 11.   Required Deliverables14
+049: 12.   Evidence to Submit14
+050: 13.   KPIs, Acceptance Criteria & Definition of Done15
+051: 14.   Risks, Assumptions & Mitigations15
+052: 15.   Mentorship, Cadence & Ways of Working16
+053: APPENDICES
+054: A.   Finding & Flaw Reporting Schema (JSON)17
+055: B.   CWE Reference Mapping17
+056: C.   Glossary18
+057: D.   References & Recommended Reading18
+058: 
+059: 1. Executive Summary & Strategic Rationale
+060: 1.1 Product Vision
+061: Embedded and IoT devices — home and enterprise routers, IP cameras, and industrial control systems — run firmware that is rarely patched, heavily reused across product lines, and built from old C/C++ toolchains with weak memory-safety guarantees. The firmware supply chain is opaque: a single vulnerable component, a hardcoded credential, or a deprecated cryptographic primitive can propagate across millions of shipped devices and remain exploitable for years. Finding these defects today depends on a small population of highly skilled reverse engineers performing slow, manual, per-image analysis. That approach cannot keep pace with the volume of firmware a vendor, enterprise, or research team must vet before deployment.
+062: Project Unit42-FirmwareX moves firmware assurance from manual reverse engineering to an automated binary-analysis and emulation pipeline. The engine unpacks a firmware image, emulates its binaries across CPU architectures, applies symbolic execution and taint analysis to trace attacker-controllable input to dangerous memory sinks, and scans for hardcoded secrets and weak cryptography — producing a structured, CWE-classified report of memory-safety and posture defects. Every stage runs inside an isolated, non-network-routed sandbox, and the engine never weaponises what it finds: crash conditions are captured as diagnostic state for human validation, not turned into working exploits.
+063: 1.2 Core Value Proposition
+064: Proactive, pre-deployment assurance. Memory-safety defects and posture weaknesses are identified across firmware images before devices ship, at a scale manual reverse engineering cannot match.
+065: Consistent and repeatable. Every image is analysed the same way, producing auditable, comparable results rather than analyst-dependent findings.
+066: A force multiplier for scarce expertise. Automated triage focuses expensive reverse-engineering effort on the findings that actually warrant human attention.
+067: Supply-chain visibility. Reused vulnerable components and secrets are surfaced across many images, closing a blind spot in embedded supply-chain security.
+068: 1.3 User Personas
+069: Persona
+070: Primary goals
+071: How FirmwareX helps
+072: Vulnerability Researcher
+073: Find exploitable memory-corruption bugs efficiently; prioritise manual effort.
+074: Automated taint-to-sink triage and crash-state reports point researchers straight at the candidate bugs worth confirming.
+075: Reverse Engineer
+076: Unpacked, annotated binaries with control-flow context.
+077: Delivers a reconstructed filesystem, per-binary metadata, CFGs and emulated state, removing the slow setup work.
+078: Hardware Security Auditor
+079: A defensible posture assessment of an image.
+080: Produces a mitigation matrix (NX, PIE, RELRO, canaries), secret inventory and crypto findings in one report.
+081: Embedded Systems Developer
+082: Fix issues before release, mapped to code.
+083: Maps findings to CWEs and specific binaries so defects are actionable during development, not after a breach.
+084: 2. What You Are Building
+085: In plain terms, you are building a pipeline that takes a firmware image file, pulls it apart, runs its binaries safely in an emulated sandbox, analyses them for memory-corruption risk, hardcoded secrets and weak cryptography, and produces a structured vulnerability report with a dashboard to explore it. You run it only against publicly available, open-source IoT firmware, inside an isolated sandbox that has no route to any live network or device.
+086: The engine performs five things in sequence, and your job is to deliver a working vertical slice through all of them:
+087: Unpack the firmware image — identify its format and carve out the embedded filesystems (SquashFS, CramFS, UBIFS, JFFS2 and friends), reconstructing the root filesystem.
+088: Audit every extracted executable statically — architecture, endianness, and the binary-hardening matrix (NX/DEP, stack canaries, RELRO, PIE/ASLR).
+089: Emulate the binaries across architectures (MIPS, ARM32, ARM64, x86_64) inside containerised QEMU nodes, bringing up network services where possible.
+090: Analyse with symbolic execution and taint analysis — trace attacker-controllable input to dangerous sinks, and fuzz emulated services to surface crash conditions, capturing non-weaponised crash state.
+091: Report every finding as a structured, CWE-classified record, served through an API and a dashboard with a file tree, mitigation matrix, CFG viewer and crash log.
+092: Scoped to be delivered by one engineer in four weeks
+093: Firmware analysis is a hard domain, so this project is bounded to be completable by a single capable engineer in four weeks — handling the common cases well and degrading gracefully on the hard ones:
+094: • Linux-based IoT firmware first. Target the common router/camera class; MIPS and ARM are the priority architectures.
+095: • Bounded analysis. Full-system emulation of arbitrary firmware and exhaustive symbolic execution are open research problems — you bound them with budgets and best-effort fallbacks, not promises of completeness.
+096: • Public firmware only. Open-source images you are licensed to examine, analysed in an isolated sandbox. Never a live device, never a network you do not own.
+097: • Analysis, not weaponisation. The engine produces diagnostic crash state and findings for a human to validate — never a functional exploit, PoC weapon, or shellcode.
+098: 3. Learning Outcomes
+099: By completing FirmwareX you will have built — and be able to speak credibly to — an end-to-end automated binary-analysis platform spanning firmware internals, emulation, program analysis and backend engineering. Concretely you will gain hands-on competence in:
+100: Domain
+101: What you will be able to do
+102: Firmware internals & unpacking
+103: Identify firmware formats and carve embedded filesystems (SquashFS, CramFS, UBIFS, JFFS2); reconstruct a root filesystem from a raw image.
+104: Binary formats & hardening
+105: Read ELF metadata across architectures and assess exploit-mitigation posture (NX, PIE/ASLR, RELRO, stack canaries, FORTIFY).
+106: Cross-architecture emulation
+107: Run MIPS/ARM/x86 binaries under QEMU (user and system mode) and Unicorn inside containers; stand up contained virtual networks for emulated services.
+108: Symbolic execution & taint
+109: Use angr/Triton to explore paths from input sources to memory sinks, and manage path explosion with budgets and pruning.
+110: Dynamic analysis & fuzzing
+111: Build protocol-aware fuzzing harnesses for emulated services and triage crashes into deduplicated, reproducible findings.
+112: Secret & crypto scanning
+113: Detect hardcoded credentials, private keys and certificates (pattern + entropy) and flag deprecated/weak cryptographic primitives.
+114: Backend systems engineering
+115: Design an API + task-queue + worker architecture (FastAPI, Celery/RQ, Redis, PostgreSQL) for long-running analysis jobs.
+116: Containment engineering
+117: Enforce isolation, egress denial and resource quotas so untrusted binaries run safely and cannot cause harm or denial-of-service.
+118: Observability & reporting
+119: Instrument job lifecycles with OpenTelemetry and produce a defensible, CWE-classified analysis report and dashboard.
+120: 4. Scope and Boundaries
+121: 4.1 In Scope
+122: Publicly available, open-source IoT firmware images you are licensed to analyse.
+123: Unpacking common firmware containers and filesystems, including multi-stage compression and custom headers.
+124: Static hardening audit of extracted ELF binaries and a per-binary mitigation matrix.
+125: User-mode and best-effort full-system emulation for MIPS, ARM32, ARM64 and x86_64 inside containerised QEMU nodes.
+126: Bounded symbolic execution and taint analysis tracing input sources to memory sinks on selected binaries.
+127: Hardcoded-secret and weak-cryptography scanning with output redaction.
+128: Protocol-aware fuzzing (HTTP/UPnP/MQTT) of emulated services to surface crash conditions.
+129: A REST/gRPC API, a dashboard, and structured CWE-classified reporting.
+130: 4.2 Out of Scope
+131: Firmware you are not licensed to examine. Only public, open-source images.
+132: Any testing against live or physical devices or real networks. Analysis happens only against image files in the sandbox.
+133: Functional exploits, weaponised proof-of-concepts, or shellcode. The engine produces diagnostic crash state for validation, never a working exploit.
+134: Distribution of extracted proprietary IP or real secrets. Discovered secrets are redacted and stored as fingerprints by default.
+135: Guaranteed full-system emulation of arbitrary firmware. This is an open research problem; the engine is best-effort with graceful fallback.
+136: Kernel, bootloader or driver exploitation. Focus is user-space binaries and network services.
+137: 4.3 Safety Boundaries (non-negotiable)
+138: Hard guardrails — enforced in code, not policy documents
+139: No network egress from analysis workers. Emulation and analysis run in sandboxes with no route to external networks; emulated service networks are contained and non-routed.
+140: Per-job resource quotas. CPU, memory and wall-clock limits per analysis job, terminated on breach, to prevent denial-of-service and runaway symbolic execution.
+141: Output sanitisation. Discovered credentials, keys, certificates and proprietary strings are automatically redacted in stored and displayed output; only hashes/fingerprints are retained by default.
+142: Non-weaponised artefacts only. Crash artefacts are register/stack state, offsets and tainted paths for human validation — not exploit code.
+143: Immutable audit log. Every analysis job — inputs, parameters, artefacts, findings — is recorded in an append-only log.
+144: 5. System Architecture & High-Level Design
+145: 5.1 Component Overview
+146: The engine is a control plane plus four analysis subsystems, fronted by an API and backed by a task queue and datastore. Long-running analysis runs as isolated workers pulled from the queue, each subject to the containment guardrails.
+147: Unpacking & File System Extractor Engine. Deconstructs firmware binaries — identifies the container, carves embedded filesystems (SquashFS, CramFS, UBIFS, JFFS2, cpio, ext), and reconstructs the root filesystem and a file inventory.
+148: Cross-Architecture Emulation Controller. A QEMU/Unicorn-based system- and user-mode emulation layer that runs extracted binaries for MIPS/ARM/x86 inside containerised nodes and brings up emulated network services.
+149: Dynamic & Symbolic Analysis Runner. Automated taint analysis and path exploration via a symbolic-execution engine (angr), tracing user-controlled input to memory sinks and producing non-weaponised crash-state reports; also drives protocol-aware fuzzing.
+150: Cryptographic & Secret Scanner. Automated discovery of hardcoded API keys, private certificates and credentials, and detection of weak/deprecated hashing and cryptographic primitives.
+151: 5.2 Component Communication Flow
+152: The sequence from raw firmware upload to vulnerability report is shown below. Heavy stages are dispatched as isolated, quota-bound worker jobs via the task queue.
+153:   Client ──POST .bin/.img──> [ API / Control Plane ] ──enqueue──> [ Redis Queue ]
+154:                                      |                                   |
+155:                                store metadata                      worker pulls job
+156:                                      v                                   v
+157:                              [ PostgreSQL ]                 [ 1. Unpacker / Extractor ]
+158:                                      ^                                   |
+159:                                      |                      reconstruct rootfs + inventory
+160:                                      |                                   v
+161:                                      |                      [ Static Hardening Audit ]
+162:                                      |                                   |
+163:                                      |        ┌──────────────────────────┤
+164:                                      |        v                          v
+165:                                      |  [ 2. QEMU Emulation ]   [ 4. Secret / Crypto Scan ]
+166:                                      |        |  (sandboxed, no egress)   |
+167:                                      |        v                          |
+168:                                      |  [ 3. Symbolic / Taint + Fuzz ]    |
+169:                                      |        |  crash state (non-weaponised)
+170:                                      |        v                          v
+171:                                      └──── normalise findings ──> [ CWE-classified Report ]
+172:                                                                          |
+173:                                                                          v
+174:                                                           [ Dashboard: tree · matrix · CFG · crashes ]
+175:  
+176:   (OpenTelemetry traces every job stage · immutable audit log records inputs + findings)
+177: 
+178: 5.3 Data Architecture
+179: Findings are normalised into a single schema so static results, emulation crashes, taint paths and scanner hits are comparable and queryable. The core fields are below; Appendix A gives the full JSON schema.
+180: Field
+181: Type
+182: Description
+183: vulnerability_id
+184: UUID
+185: Stable identifier for the finding.
+186: address
+187: hex string
+188: Virtual address of the finding (e.g., 0x00401a2c), where applicable.
+189: architecture
+190: enum
+191: ARM32 · ARM64 · MIPS · MIPSEL · x86_64 · …
+192: risk_rating
+193: enum
+194: critical · high · medium · low · info.
+195: cwe
+196: string
+197: CWE classification (e.g., CWE-120, CWE-787, CWE-798).
+198: category
+199: enum
+200: memory_corruption · hardcoded_secret · weak_crypto · missing_mitigation · command_injection.
+201: confidence
+202: enum
+203: confirmed · probable · heuristic.
+204: 6. Functional Requirements & Feature Specifications
+205: Requirements are identified as FR-x.y and prioritised using MoSCoW (Must / Should / Could). All capabilities are analysis-only: the engine discovers and reports defects as diagnostic state and never generates functional exploits, weaponised proof-of-concepts, or shellcode.
+206: 6.1 Firmware Parsing & Static Reconnaissance
+207: ID
+208: Requirement
+209: Priority / notes
+210: FR-1.1
+211: Identify the firmware container/format and carve embedded filesystems (SquashFS, CramFS, UBIFS, JFFS2, cpio, ext), including multi-stage compression and custom/vendor headers.
+212: Must
+213: FR-1.2
+214: Reconstruct the root filesystem and produce a file-tree inventory (path, type, size, hash) for exploration.
+215: Must
+216: FR-1.3
+217: Enumerate executables and shared libraries; detect architecture, endianness and bitness per ELF.
+218: Must
+219: FR-1.4
+220: Perform a static hardening audit per ELF — NX/DEP, stack canaries, RELRO (none/partial/full), PIE/ASLR, FORTIFY, stripped — and emit a mitigation matrix.
+221: Must
+222: FR-1.5
+223: Flag statically-visible risk leads (use of banned functions, writable-and-executable segments) for downstream analysis.
+224: Should
+225: 6.2 Cross-Architecture Full-System & User-Space Emulation
+226: ID
+227: Requirement
+228: Priority / notes
+229: FR-2.1
+230: User-mode emulation of individual binaries for MIPS, ARM32, ARM64 and x86_64 inside containerised QEMU nodes.
+231: Must
+232: FR-2.2
+233: Best-effort full-system emulation to bring up the firmware userland and its network services, with NVRAM/peripheral stubs where required (completeness not guaranteed).
+234: Should
+235: FR-2.3
+236: A contained, non-routed virtual network to reach emulated web/UPnP/MQTT services for dynamic analysis.
+237: Must
+238: FR-2.4
+239: Snapshot and restore of emulated state for repeatable, deterministic analysis runs.
+240: Could
+241: 6.3 Automated Symbolic Execution & Taint Analysis
+242: ID
+243: Requirement
+244: Priority / notes
+245: FR-3.1
+246: Integrate a symbolic-execution engine (angr) to explore paths from input sources (network/CGI parameters, environment) to memory sinks such as strcpy, memcpy, sprintf, system and popen.
+247: Must
+248: FR-3.2
+249: Perform taint analysis tracking attacker-controllable data to those sinks, and report the tainted path and the condition under which the sink is reached.
+250: Must
+251: FR-3.3
+252: Produce non-weaponised crash-state reports — faulting address, register state, stack/heap overflow offset, call path and candidate CWE — for human validation, not exploitation.
+253: Must
+254: FR-3.4
+255: Bound exploration (path/time/memory budgets, state pruning and merging) to manage path explosion.
+256: Must
+257: 6.4 API & Network Service Fuzzing Automation
+258: ID
+259: Requirement
+260: Priority / notes
+261: FR-4.1
+262: Provide a protocol-aware fuzzing harness (HTTP/UPnP/MQTT) targeting emulated network services to identify crash conditions.
+263: Should
+264: FR-4.2
+265: Use deterministic, seeded corpora; minimise crash inputs and capture a reproducer plus emulated crash state (not a weaponised exploit).
+266: Should
+267: FR-4.3
+268: Deduplicate crashes by stack/backtrace hash and map them to normalised findings.
+269: Should
+270: 7. Guardrails, Safety Controls & Containment
+271: 7.1 Execution Isolation
+272: ID
+273: Control
+274: Target / acceptance
+275: SC-1.1
+276: All binary execution and emulation occur inside isolated Docker/KVM sandboxes with no route to external networks.
+277: Workers have zero outbound egress; verified by test.
+278: SC-1.2
+279: Emulated service networks are contained and non-routed; fuzzing traffic never leaves the sandbox.
+280: No packet escapes the analysis network.
+281: SC-1.3
+282: Untrusted binaries run under least privilege with a restricted syscall surface.
+283: Container profile denies host access.
+284: 7.2 Resource Quotas
+285: ID
+286: Control
+287: Target / acceptance
+288: SC-2.1
+289: Per-job CPU, memory and wall-clock limits, enforced and terminated on breach.
+290: No single job exceeds its quota or stalls the system.
+291: SC-2.2
+292: Symbolic-execution budgets (states, depth, time) prevent infinite loops and path explosion.
+293: Runaway analysis is bounded and reported as incomplete.
+294: SC-2.3
+295: Queue-level concurrency and back-pressure prevent resource exhaustion across jobs.
+296: System remains responsive under load.
+297: 7.3 Output Sanitisation
+298: ID
+299: Control
+300: Target / acceptance
+301: SC-3.1
+302: Automatic redaction of discovered secrets (keys, passwords, certificates) and proprietary IP in stored and displayed output.
+303: Raw secrets never persisted in plaintext by default.
+304: SC-3.2
+305: Secrets retained as salted hashes/fingerprints so findings remain actionable without exposing the value.
+306: Findings reference fingerprints, not values.
+307: SC-3.3
+308: Access to any unredacted artefact is gated and audited.
+309: Every reveal is authorised and logged.
+310: 8. System Interface & API Specifications
+311: 8.1 REST / gRPC Endpoints
+312: Endpoint
+313: Method
+314: Purpose
+315: /api/v1/firmware/upload
+316: POST
+317: Ingest a raw firmware image; returns a firmware id and queues analysis.
+318: /api/v1/firmware/{id}
+319: GET
+320: Retrieve analysis status and summary for an image.
+321: /api/v1/firmware/{id}/filesystem
+322: GET
+323: Return the reconstructed file-tree inventory.
+324: /api/v1/firmware/{id}/binary-audit
+325: GET
+326: Retrieve the binary-protection status matrix per ELF.
+327: /api/v1/firmware/{id}/vulnerabilities
+328: GET
+329: Fetch identified CWEs, crash offsets and static findings.
+330: /api/v1/firmware/{id}/report
+331: GET
+332: Full normalised report (static + dynamic + scanner).
+333: /api/v1/jobs/{jobId}
+334: GET
+335: Status and telemetry for an individual analysis job.
+336: 
+337: Representative response — binary-audit (mitigation matrix)
+338: GET /api/v1/firmware/{id}/binary-audit
+339: {
+340:   "firmware_id": "f3c1…",
+341:   "binaries": [
+342:     {
+343:       "path": "/bin/httpd",
+344:       "architecture": "MIPS",  "endianness": "big",  "bits": 32,
+345:       "nx": true,   "pie": false,  "relro": "partial",
+346:       "stack_canary": false,  "fortify": false,  "stripped": true
+347:     }
+348:   ]
+349: }
+350: 
+351: 8.2 Dashboard UI Specifications
+352: Firmware file-tree viewer. Browse the reconstructed filesystem; inspect per-file metadata and hashes.
+353: Binary mitigation-status table. The hardening matrix (NX/PIE/RELRO/canary/FORTIFY) across all extracted ELFs, sortable by risk.
+354: Interactive control-flow-graph (CFG) visualiser. Render the CFG for a selected binary/function to support review of taint paths.
+355: Crash & finding log. Filterable list of findings with CWE, risk, address/offset, confidence and (redacted) evidence.
+356: 9. Technology Stack & Project Constraints
+357: The stack pairs Python's program-analysis ecosystem with C/C++ where native performance and emulator integration demand it, behind a conventional API/queue/worker backend. Choose within each layer and justify your choice; every tool listed is free and open source.
+358: Layer
+359: Technology
+360: Why / guidance
+361: Core analysis backend
+362: Python (angr, Binwalk, Triton)
+363: Mature libraries for unpacking, symbolic execution and taint analysis; fastest path to a working pipeline.
+364: Native integration
+365: C / C++
+366: QEMU wrappers and custom plugins where native performance and emulator hooks are required.
+367: Analysis frameworks
+368: Binwalk · Ghidra (headless) · angr · QEMU · Unicorn
+369: Unpacking, disassembly/CFG, symbolic execution and cross-architecture emulation respectively.
+370: API & workers
+371: FastAPI + Celery / RQ
+372: Async API for ingest/retrieval; distributed workers for long-running analysis jobs.
+373: Database layer
+374: PostgreSQL
+375: Analysis metadata, findings and the mitigation matrix.
+376: Task queue / cache
+377: Redis
+378: Job queuing and coordination behind Celery/RQ.
+379: Sandbox & orchestration
+380: Docker · Kubernetes · KVM
+381: Isolated, egress-denied emulation nodes and horizontal scale via one-shot jobs.
+382: Observability
+383: OpenTelemetry
+384: Traces and metrics across the analysis job lifecycle.
+385: 
+386: Reference projects to study (not to copy)
+387: These open-source projects define the firmware-analysis category and are the fastest way to build mental models. Study their design; build your own focused, safe subset.
+388: Unpacking & analysis frameworks: FACT (Firmware Analysis and Comparison Tool) and EMBA — end-to-end firmware analysers.
+389: Emulation: Firmadyne and FirmAE — research systems for full-system firmware emulation (and a clear picture of why it is hard).
+390: Program analysis: angr and Triton for symbolic/taint analysis; Ghidra for disassembly and CFGs.
+391: Fuzzing & posture: AFL++ for coverage-guided fuzzing and checksec for the hardening matrix.
+392: 10. Four-Week Delivery Plan
+393: Each week delivers a working, demonstrable increment, building a vertical slice: by the end of Week 1 you can unpack an image and produce its mitigation matrix; by the end of Week 4 the whole pipeline runs through the API and dashboard on a real open-source image. A safety review of the sandbox isolation and quotas must be signed off before Week 2 emulation of untrusted binaries begins.
+394: Week 1 — Unpacker Pipeline, Extraction Engine & Hardening Scanner
+395: WEEK 1
+396: Goal
+397: Turn a raw firmware image into a reconstructed filesystem and a per-binary hardening matrix.
+398: Key tasks
+399: Stand up the repo, the API skeleton (FastAPI), Postgres and Redis, and a worker running under the sandbox profile.
+400: Build the unpacker (Binwalk wrapper + entropy analysis) to carve SquashFS/CramFS/UBIFS/JFFS2 and reconstruct the root filesystem.
+401: Produce a file-tree inventory and enumerate ELFs with architecture, endianness and bitness.
+402: Implement the static hardening audit (NX, PIE/ASLR, RELRO, stack canary, FORTIFY) and persist the mitigation matrix.
+403: Expose POST /firmware/upload, GET /firmware/{id}/filesystem and GET /firmware/{id}/binary-audit.
+404: Deliverable
+405: Upload an open-source image via the API and retrieve its reconstructed file tree and mitigation matrix.
+406: Exit criteria
+407: >90% unpack on a set of standard open-source images; mitigation matrix correct against checksec on spot checks.
+408: Week 2 — Containerised QEMU Emulation Layer & Environment Setup
+409: WEEK 2
+410: Goal
+411: Run extracted binaries safely across architectures inside isolated, egress-denied QEMU nodes.
+412: Key tasks
+413: Obtain sign-off on sandbox isolation and resource quotas before emulating untrusted binaries.
+414: Build containerised QEMU user-mode emulation for MIPS and ARM (then x86_64); wire scoped, no-egress networking.
+415: Add best-effort full-system bring-up with NVRAM/peripheral stubs for common router/camera firmware.
+416: Stand up a contained virtual network to reach emulated HTTP/UPnP/MQTT services.
+417: Enforce per-job CPU/memory/wall-clock quotas and verify workers have zero outbound egress.
+418: Deliverable
+419: A selected binary (and, where possible, a network service) runs inside the sandbox with quotas enforced and no egress.
+420: Exit criteria
+421: Emulation reproducible for the target architectures; isolation and quota controls demonstrated.
+422: Week 3 — Symbolic Execution Engine & Secret Extraction
+423: WEEK 3
+424: Goal
+425: Find memory-corruption leads and secrets, and capture them as non-weaponised findings.
+426: Key tasks
+427: Integrate angr for path exploration from input sources to memory sinks (strcpy/memcpy/sprintf/system/popen).
+428: Implement taint tracking from attacker-controllable input to sinks; record the tainted path and reaching condition.
+429: Bound exploration with path/time/memory budgets and state pruning to manage path explosion.
+430: Generate non-weaponised crash-state reports (faulting address, registers, overflow offset, call path, candidate CWE).
+431: Build the secret/crypto scanner (pattern + entropy for keys/certs/credentials; weak-hash and deprecated-primitive detection) with redaction.
+432: Deliverable
+433: For a target binary, the engine emits taint-to-sink findings with crash state plus a redacted secret/crypto report.
+434: Exit criteria
+435: Findings carry correct CWE classification and confidence; secrets are redacted in stored output.
+436: Week 4 — Dashboard, API Integration, End-to-End Run & Documentation
+437: WEEK 4
+438: Goal
+439: Join the pipeline end to end and make the results explorable, then validate on a real image.
+440: Key tasks
+441: Integrate ingest → unpack → audit → emulate → analyse → scan → normalise → report into one orchestrated flow.
+442: Build the dashboard: file-tree viewer, mitigation matrix table, interactive CFG visualiser and crash/finding log.
+443: Finish the API (vulnerabilities, report, job status) and wire OpenTelemetry across job stages.
+444: (Should) add protocol-aware fuzzing of an emulated service and fold crashes into findings.
+445: Run end to end on a standard open-source image; write the architecture document, runbook and known-limitations.
+446: Deliverable
+447: A full run from upload to CWE-classified report, viewable in the dashboard, on a real open-source firmware image, with documentation.
+448: Exit criteria
+449: KPIs in Section 13 met; end-to-end run recorded; docs complete.
+450: 11. Required Deliverables
+451: Deliverable
+452: Description
+453: Source repository
+454: Version-controlled repo with modular layout, clear commit history and a documented PR workflow.
+455: README & runbook
+456: How to deploy (API, workers, Postgres, Redis, sandbox), submit an image, and read results; plus teardown.
+457: Architecture document + diagram
+458: Components, communication flow, data architecture and the containment design.
+459: Analysis pipeline
+460: Working unpacker, static audit, emulation layer, symbolic/taint runner and secret/crypto scanner.
+461: Finding schema + samples
+462: The versioned JSON finding schema (Appendix A) plus real sample findings from an analysed image.
+463: Mitigation matrix output
+464: Binary-protection status matrix for an analysed open-source image.
+465: Dashboard
+466: File tree, mitigation table, CFG visualiser and crash/finding log.
+467: API
+468: The documented REST/gRPC endpoints with example requests/responses.
+469: Containment controls
+470: Sandbox profiles, egress-deny configuration and resource-quota enforcement with their tests.
+471: Test suite + coverage report
+472: Tests for unpacking, static audit, emulation harness, analysis and redaction.
+473: Final write-up
+474: Results, design decisions, trade-offs and an explicit known-limitations section.
+475: 12. Evidence to Submit
+476: Evidence lets a reviewer confirm the engine works and is safely contained without re-running it. Submit all of the following, produced from real runs against open-source firmware:
+477: Repository URL with commit history and the README/runbook.
+478: Architecture diagram matching the delivered code.
+479: An unpack + mitigation-matrix result for a named open-source image (file tree + per-binary hardening table).
+480: Sample findings (JSON) including a taint-to-sink finding with crash state and CWE, and a redacted secret/crypto finding.
+481: A recorded end-to-end run (screen capture) from API upload to the report in the dashboard.
+482: Containment evidence: proof that workers have no network egress and that a job exceeding its quota is terminated.
+483: Redaction evidence showing a discovered secret stored only as a fingerprint.
+484: A throughput measurement for static audit + basic symbolic trace on a representative image.
+485: Test coverage report for the core modules.
+486: 13. KPIs, Acceptance Criteria & Definition of Done
+487: 13.1 Key Performance Indicators
+488: KPI
+489: Target
+490: How measured
+491: Extraction success rate
+492: > 90%
+493: Share of a standard open-source IoT firmware set unpacked successfully.
+494: Analysis throughput
+495: < 30 min / image
+496: Wall-clock for static binary audit plus a basic symbolic-execution trace on a representative image.
+497: Containment reliability
+498: 100%
+499: Share of analysis jobs that run inside the sandbox with quotas enforced and no egress — no job escapes isolation.
+500: Finding classification
+501: Correct CWE
+502: Spot-checked findings carry the correct CWE and a calibrated confidence.
+503: Redaction coverage
+504: 100%
+505: No raw secret persisted in plaintext in stored output.
+506: 13.2 Definition of Done
+507: The project is accepted when every item below is true and evidenced:
+508: ✔  The pipeline runs end to end — upload to CWE-classified report — on a standard open-source image, viewable in the dashboard.
+509: ✔  Unpacking succeeds on >90% of the standard open-source image set.
+510: ✔  All binary execution and emulation occur inside the sandbox; workers have no network egress (proven).
+511: ✔  Per-job CPU/memory/time quotas are enforced and a breaching job is terminated (proven).
+512: ✔  Findings are normalised to the schema and correctly CWE-classified with a confidence level.
+513: ✔  Discovered secrets are redacted and stored only as fingerprints by default.
+514: ✔  Static audit plus a basic symbolic trace completes under 30 minutes on a representative image.
+515: ✔  The API and dashboard expose the required views; job lifecycles are traced with OpenTelemetry.
+516: ✔  Code is tested and documented; the runbook lets a new engineer reproduce a run.
+517: 14. Risks, Assumptions & Mitigations
+518: Risk / assumption
+519: Impact
+520: Mitigation
+521: Full-system emulation fails on many images
+522: Dynamic analysis blocked
+523: Lead with user-mode emulation + static/symbolic analysis; treat full-system as best-effort with graceful fallback.
+524: Symbolic-execution path explosion
+525: Analysis stalls / times out
+526: Hard path/time/memory budgets, state pruning and merging; report partial results as incomplete.
+527: Running untrusted binaries causes harm
+528: Safety incident
+529: Egress-denied sandboxes, least privilege, resource quotas, no live devices — enforced in code.
+530: Scope creep (all formats, all arches)
+531: Misses the four-week window
+532: Linux IoT first; MIPS/ARM priority; common filesystems; extensibility by design.
+533: Discovered real secrets mishandled
+534: IP / credential exposure
+535: Automatic redaction, fingerprint-only storage, gated and audited reveal.
+536: Noisy findings (false positives)
+537: Low trust in output
+538: Confidence levels, taint-condition evidence and dedup; keep heuristic findings clearly labelled.
+539: 15. Mentorship, Cadence & Ways of Working
+540: Daily async stand-up: yesterday / today / blockers, in writing.
+541: Weekly demo + review: at the end of each week, demonstrate the working increment against its exit criteria.
+542: Containment gate: a mentor must review and sign off sandbox isolation and quotas before any emulation of untrusted binaries in Week 2.
+543: Code review: all changes land via pull request; sandbox, quota and redaction code require extra scrutiny.
+544: Pairing: book mentor time early on the unpacking edge cases (Week 1) and the symbolic-execution budgets (Week 3) — the two biggest time sinks.
+545: 
+546: Appendix A — Finding & Flaw Reporting Schema (JSON)
+547: All findings — static, dynamic and scanner — normalise to this schema. Crash state is diagnostic only; no exploit artefacts are stored.
+548: {
+549:   "vulnerability_id": "uuid",
+550:   "firmware_id":      "uuid",
+551:   "binary":           "string (path within rootfs)",
+552:   "architecture":     "enum [ARM32, ARM64, MIPS, MIPSEL, x86_64]",
+553:   "category":         "enum [memory_corruption, hardcoded_secret,
+554:                              weak_crypto, missing_mitigation, command_injection]",
+555:   "cwe":              "string (e.g., CWE-120)",
+556:   "address":          "string (hex virtual address) | null",
+557:   "sink":             "string (e.g., strcpy, system, memcpy) | null",
+558:   "source":           "string (input origin, e.g., http_param:host) | null",
+559:   "tainted_path":     ["hex address", "…"],
+560:   "crash_state": {
+561:       "fault_address":   "hex | null",
+562:       "registers":       "object | null",
+563:       "overflow_offset": "int | null",
+564:       "stack_hash":      "string | null"
+565:   },
+566:   "risk_rating":  "enum [critical, high, medium, low, info]",
+567:   "confidence":   "enum [confirmed, probable, heuristic]",
+568:   "evidence_ref": "string (artefact id, redacted)",
+569:   "redacted":     "bool",
+570:   "status":       "enum [new, triaged, validated, false_positive]",
+571:   "detected_at":  "string (RFC3339 UTC)"
+572: }
+573: Appendix B — CWE Reference Mapping
+574: The finding categories map to the following common weakness classes for embedded firmware. IDs are for classification only.
+575: CWE
+576: Name
+577: Where it shows up in firmware
+578: CWE-120
+579: Buffer Copy without Checking Size
+580: Classic unbounded strcpy/memcpy into fixed buffers.
+581: CWE-121 / 122
+582: Stack / Heap-based Buffer Overflow
+583: Overflow in stack frames or heap allocations reached from input.
+584: CWE-787
+585: Out-of-bounds Write
+586: Writes past allocation bounds; a frequent memory-corruption root cause.
+587: CWE-134
+588: Uncontrolled Format String
+589: User input passed as a format string to printf-family functions.
+590: CWE-78
+591: OS Command Injection
+592: Attacker-controlled input reaching system()/popen().
+593: CWE-798 / 259
+594: Use of Hardcoded Credentials / Password
+595: Embedded usernames, passwords or API keys in binaries or configs.
+596: CWE-321
+597: Use of Hardcoded Cryptographic Key
+598: Private keys or certificates shipped inside firmware.
+599: CWE-327 / 328
+600: Broken/Risky Crypto · Weak Hash
+601: Deprecated ciphers or weak hashing (e.g., MD5/SHA-1 for security).
+602: CWE-1277
+603: Firmware Not Updateable
+604: No secure update path, extending the exposure window.
+605: Appendix C — Glossary
+606: Term
+607: Meaning
+608: Firmware image
+609: The packaged software (kernel, filesystem, binaries) that runs a device, distributed as a .bin/.img file.
+610: SquashFS / CramFS / UBIFS / JFFS2
+611: Compressed/embedded filesystems commonly packed inside IoT firmware.
+612: ELF
+613: Executable and Linkable Format — the binary format for the firmware's programs and libraries.
+614: NX / DEP
+615: Marks memory non-executable, hindering code execution from data regions.
+616: ASLR / PIE
+617: Address-space layout randomisation; PIE lets the main binary be randomised.
+618: RELRO
+619: Read-only relocations; hardens the GOT against overwrite (partial or full).
+620: Stack canary
+621: A guard value that detects stack-buffer overflows before return.
+622: Emulation (QEMU/Unicorn)
+623: Running a binary built for one CPU architecture on another, in software.
+624: Symbolic execution
+625: Exploring program paths with symbolic (not concrete) inputs to reason about reachability.
+626: Taint analysis
+627: Tracking attacker-controllable data through a program to dangerous sinks.
+628: Sink
+629: A sensitive operation (e.g., strcpy, system) where tainted input can cause harm.
+630: Fuzzing
+631: Feeding malformed/random inputs to find crash conditions.
+632: CWE
+633: Common Weakness Enumeration — a catalogue of software weakness types.
+634: CFG
+635: Control-flow graph — a map of a program's possible execution paths.
+636: Appendix D — References & Recommended Reading
+637: MITRE CWE — Common Weakness Enumeration (cwe.mitre.org).
+638: Binwalk — firmware extraction and analysis.
+639: angr — binary analysis and symbolic execution framework.
+640: QEMU and Unicorn Engine — full-system/user-mode and lightweight CPU emulation.
+641: Ghidra — software reverse-engineering suite with a headless API (NSA, open source).
+642: FACT (Firmware Analysis and Comparison Tool) and EMBA — firmware analysis platforms.
+643: Firmadyne and FirmAE — research systems for full-system firmware emulation.
+644: AFL++ — coverage-guided fuzzing; checksec — binary hardening inspection.
+645: OpenTelemetry — instrumentation standards and SDKs.
+646: 
+647: End of document — Project Unit42-FirmwareX PRD v1.0 · Palo Alto Networks · Unit 42 · Internal // Confidential

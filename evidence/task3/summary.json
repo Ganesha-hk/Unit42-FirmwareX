@@ -1,0 +1,27 @@
+{
+  "status": "controlled engineering checks passed; human sign-off pending",
+  "unit_tests": 29,
+  "qemu_integration_cases": 36,
+  "packet_observed_cases": 20,
+  "architectures": [
+    "MIPS",
+    "MIPSEL",
+    "ARM32",
+    "ARM64",
+    "x86_64"
+  ],
+  "quota_termination": [
+    "cpu",
+    "memory",
+    "wall"
+  ],
+  "host_capture": {
+    "guest_packets": 0,
+    "observer_positive_control_packets": 1,
+    "kernel_drops": 0,
+    "filter": "port 18080 or port 45678"
+  },
+  "full_system": "controlled ARM UART boot reached; bounded timeout and user-mode fallback recommendation; vendor Linux boot unverified",
+  "mentor_approval": false,
+  "github_published": false
+}

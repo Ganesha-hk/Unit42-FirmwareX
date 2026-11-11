@@ -1,0 +1,118 @@
+{
+  "result": "PASS",
+  "scope": "selected_profiles_only",
+  "firmware_id": "e08a424b-5f4f-44a1-8c42-a60cb518b287",
+  "sha256": "8c88c338afad0535ab295a62e9555dc91f3bf5c8f4fc3bc67008adb2619f60e6",
+  "job_id": "f1adf448-7234-4574-a1ae-6ae0c39abca6",
+  "measurement": "Wall interval from static start to vendor_analysis end; includes selected emulation and symbolic work.",
+  "interval_start_ns": 1794310311377057500,
+  "interval_end_ns": 1794310315586398500,
+  "static_plus_selected_analysis_seconds": 4.209341,
+  "pipeline_seconds": 6.1065068,
+  "threshold_seconds": 1800,
+  "candidate_count": 171,
+  "selected_count": 3,
+  "symbolic_analyses": [
+    {
+      "binary": "/usr/redacted-4e2ffa7a670da699/redacted-5b3896efd7cae850",
+      "status": "completed",
+      "reasons": [],
+      "start_context": {
+        "argc": 1,
+        "argv0": "/usr/libexec/cgi-upload",
+        "environment": "named_environment",
+        "symbolic_environment": [
+          "CONTENT_TYPE"
+        ],
+        "working_directory": "/",
+        "stdin_eof": true,
+        "symbolic_environment_prefixes": [
+          "CONTENT_TYPE"
+        ]
+      },
+      "budgets": {
+        "seconds": 20,
+        "states": 32,
+        "paths": 256,
+        "depth": 200,
+        "steps": 1000,
+        "memory_mb": 512,
+        "source_bytes": 32,
+        "merge": true
+      },
+      "telemetry": {
+        "steps": 54,
+        "paths": 1,
+        "pruned": 0,
+        "merged": 0,
+        "peak_states": 1,
+        "terminal_returns": [
+          0
+        ],
+        "wall_seconds": 0.54
+      },
+      "limitations": [
+        "Source models use bounded printable bytes, not exhaustive inputs.",
+        "Exploration stops at candidate sink violations; bounded safe copies preserve taint.",
+        "Stack bounds require supported DWARF x86_64 frame-pointer ABI.",
+        "No concrete command or exploit input is generated."
+      ],
+      "entry_evidence": {
+        "function": "main",
+        "address": "0x402003",
+        "input_calls": [
+          "getenv"
+        ],
+        "sink_calls": [
+          "strcpy"
+        ],
+        "binary_sha256": "897d4abfc18c8c679f5cb3657fb67080ecd75b00288f7e25a59f75c4b06ced0f"
+      },
+      "input_scope": "multipart_header_empty_body"
+    }
+  ],
+  "sandbox": {
+    "network_mode": "none",
+    "read_only": true,
+    "reason": null,
+    "profile": {
+      "NetworkMode": "none",
+      "ReadonlyRootfs": true,
+      "CapDrop": [
+        "ALL"
+      ],
+      "SecurityOpt": [
+        "no-new-privileges:true"
+      ],
+      "Privileged": false,
+      "Memory": 805306368,
+      "MemorySwap": 805306368,
+      "NanoCpus": 1000000000,
+      "PidsLimit": 64
+    },
+    "image_id": "sha256:5aba8bf1348726904cfb23c3b993581a47f8035bce67bb88c679c01e70338f16",
+    "user": "1001:1001",
+    "wall_seconds": 6.937,
+    "cpu_seconds": 5.841,
+    "exit_code": 0,
+    "output_limit_bytes": 41943040
+  },
+  "stage_status": {
+    "extract": "extracted",
+    "static": "completed",
+    "emulation": "completed",
+    "symbolic": "completed",
+    "secrets_crypto": "completed",
+    "normalize": "completed"
+  },
+  "limitation": "One image and the declared header/empty-body symbolic scenario; not whole-image symbolic coverage or a general throughput guarantee.",
+  "report_sha256": "68eb9d1a2521e8f12e0534bf7e832e5afa81e288cc22bc9a77b70cb9670960e8",
+  "measurement_host": {
+    "system": "Linux",
+    "release": "7.0.0-38-generic",
+    "machine": "x86_64",
+    "logical_cpus": 8,
+    "memory_bytes": 7763550208,
+    "cpu_model": "13th Gen Intel(R) Core(TM) i5-13450HX"
+  }
+}

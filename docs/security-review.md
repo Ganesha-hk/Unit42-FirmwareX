@@ -1,0 +1,17 @@
+# Containment and redaction review packet
+
+Superseding ledger update — 2026-11-08: **95 PASS / 17 FAIL**. The remaining failures are still subject to independent review, calibration, performance and reproduction requirements.
+
+Latest status (2026-11-07): the user's mentor execution authorization is recorded in mentor-authorization.md and enabled for local jobs. This supersedes historical “NOT GRANTED” execution statements below. Independent sensitive-code review and formal release acceptance remain outstanding. Review must additionally cover vendor_analysis.py, guest symlink resolution, bounded process-group cleanup, the reanalysis endpoint, fuzzing and snapshot modules. Current ledger: 87 PASS / 25 FAIL.
+
+2026-11-07 update: review the current changes in `api.py`, `findings.py`, `output_policy.py`, `pipeline.py`, `analysis/sources.py`, `analysis/engine.py` and `sandbox.py`. The new sandbox replaces host-writable output with a 40 MiB/1,024-inode temporary Docker volume, freezes the completed workload before bounded archive reading, and removes temporary volumes during normal/orphan cleanup. See `hardening-validation.md` for fresh byte/inode, malformed-artifact, CPU/memory/wall/no-egress, source-model and API evidence. Review the supervisor/completion-marker trust assumptions, result regular-file validation, storage cleanup, and remaining whole-job kill behavior. This update supplies evidence; it grants no execution approval. The concrete remaining review record is in `release-readiness.md`.
+
+Current follow-up (2026-10-20): see [completion report](completion-report.md). Lifecycle/output-boundary gaps are addressed within the tested scope; current ledger is 78 PASS / 34 FAIL. Real firmware execution remains **PENDING HUMAN REVIEW**. Review must cover the new telemetry, redaction and privileged historical-maintenance changes. Earlier measurements below are historical.
+
+Review scope: sandbox.py, pipeline.py, emulation/runner.py, analysis/controller.py, persistence.py, output_policy.py, scanners/secrets.py, tasks.py and compose.yaml. Link mentor identity, date and reviewed Git revision before allowing arbitrary untrusted execution. Current approval: **NOT GRANTED**.
+
+Evidence to review: evidence/task3/egress.pcap and capture-integration.json; evidence/task5/pipeline-quotas.json; current evidence/task6/ quota, gate and storage regressions when present. Check the bounded executable /guest mount, exact-image/target hash gate, no host socket in workers, no routing, inherited syscall policy, quota/kill/cleanup behavior and dispatcher host authority. File decompression must allow the extraction bound while report serialization stays limited to 32 MiB.
+
+Review redaction across stored evidence, reports, traces, service output and exception paths. Raw reveal is disabled. Existing older static rows and arbitrary user-supplied names are not covered by firmware-string pseudonymization. Do not assert universal coverage from a few fixture sentinels. Review adversarial parser data and subprocess output under the same outer sandbox.
+
+Acceptance records required: mentor isolation/quotas approval; unpacker edge-case and symbolic-budget pairing; extra scrutiny PR review; agreed corpus and representative benchmark image; calibrated real-image CWE/confidence spot check; independent runbook reproduction. No signature is prefilled and no automation may manufacture these approvals.

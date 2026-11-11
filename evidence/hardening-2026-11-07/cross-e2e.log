@@ -1,0 +1,5 @@
+{"architecture": "x86_64", "result": "PASS", "status": "complete", "findings": 17, "failed_checks": []}
+{"architecture": "ARM32", "result": "PASS", "status": "complete", "findings": 16, "failed_checks": []}
+{"architecture": "ARM64", "result": "PASS", "status": "complete", "findings": 16, "failed_checks": []}
+{"architecture": "MIPS", "result": "PASS", "status": "complete", "findings": 16, "failed_checks": []}
+{"architecture": "MIPSEL", "result": "PASS", "status": "complete", "findings": 16, "failed_checks": []}

@@ -1,0 +1,18 @@
+[
+  {
+    "image": "controlled-pipeline.bin",
+    "firmware_id": "d40f904b-9870-4070-8f4f-1d13190f3050",
+    "job_id": "1cd76975-d767-4660-93d5-21534156581e",
+    "status": "complete",
+    "findings": 17,
+    "approved_execution": true
+  },
+  {
+    "image": "controlled-squashfs.bin",
+    "firmware_id": "15241338-451f-4245-b7c2-e780957ccbf8",
+    "job_id": "c7de5b41-d563-4926-81db-ab45e1b0dddb",
+    "status": "partial",
+    "findings": 3,
+    "approved_execution": false
+  }
+]

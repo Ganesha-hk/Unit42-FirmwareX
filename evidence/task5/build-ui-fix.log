@@ -1,0 +1,55 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 488B done
+#1 DONE 0.1s
+
+#2 [internal] load metadata for docker.io/library/python@sha256:34386ef0cb081344d7ec1c103ba398e6e9f64e9ab3a1509accc92a4e24a07258
+#2 DONE 0.1s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 117B done
+#3 DONE 0.0s
+
+#4 [internal] load build context
+#4 transferring context: 95.65kB 0.0s done
+#4 DONE 0.1s
+
+#5 [1/7] FROM docker.io/library/python@sha256:34386ef0cb081344d7ec1c103ba398e6e9f64e9ab3a1509accc92a4e24a07258
+#5 resolve docker.io/library/python@sha256:34386ef0cb081344d7ec1c103ba398e6e9f64e9ab3a1509accc92a4e24a07258 0.2s done
+#5 DONE 0.2s
+
+#6 [2/7] WORKDIR /app
+#6 CACHED
+
+#7 [3/7] COPY locks/control.txt /app/locks/control.txt
+#7 CACHED
+
+#8 [4/7] RUN pip install --no-cache-dir --require-hashes -r locks/control.txt
+#8 CACHED
+
+#9 [5/7] COPY src /app/src
+#9 DONE 0.2s
+
+#10 [6/7] COPY pyproject.toml alembic.ini /app/
+#10 DONE 0.3s
+
+#11 [7/7] COPY migrations /app/migrations
+#11 DONE 0.5s
+
+#12 exporting to image
+#12 exporting layers
+#12 exporting layers 1.7s done
+#12 exporting manifest sha256:219d685d9bf728a06924071e4aee5c29f6f0f6c115a741fb811b79f96f33f49d
+#12 exporting manifest sha256:219d685d9bf728a06924071e4aee5c29f6f0f6c115a741fb811b79f96f33f49d 0.1s done
+#12 exporting config sha256:bb1b89d6f7cc82f4f1fc21bf43d161039e331b712d6c1dea8fbdbf52a1f084fc
+#12 exporting config sha256:bb1b89d6f7cc82f4f1fc21bf43d161039e331b712d6c1dea8fbdbf52a1f084fc 0.1s done
+#12 exporting attestation manifest sha256:beaa567b0e4efd9b8797d0137e0e852ab530f59b3801856480f0227167e80f06
+#12 exporting attestation manifest sha256:beaa567b0e4efd9b8797d0137e0e852ab530f59b3801856480f0227167e80f06 0.2s done
+#12 exporting manifest list sha256:6c9dcfb9a01cc5abcef898c1bd717f273fb52fb784e0cccc4ca8da0b5312e0de
+#12 exporting manifest list sha256:6c9dcfb9a01cc5abcef898c1bd717f273fb52fb784e0cccc4ca8da0b5312e0de 0.2s done
+#12 naming to docker.io/library/firmwarex-control:day1
+#12 naming to docker.io/library/firmwarex-control:day1 0.0s done
+#12 unpacking to docker.io/library/firmwarex-control:day1
+#12 unpacking to docker.io/library/firmwarex-control:day1 0.5s done
+#12 DONE 3.2s

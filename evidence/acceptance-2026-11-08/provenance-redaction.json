@@ -1,0 +1,41 @@
+{
+  "status": "passed",
+  "manifests": [
+    {
+      "manifest": "fixtures/manifests/analysis-controlled.json",
+      "license": "MIT",
+      "sha256": "e1568f9a968bd2da12c9591e5a3b4c06b6cefc9a74872d44ef6d687807784a0d"
+    },
+    {
+      "manifest": "fixtures/manifests/emulation-controlled.json",
+      "license": "MIT",
+      "sha256": "082cd4562a814a6f7f4b123272e6b4c873dbf5f870308d270559a8f43c42b63f"
+    },
+    {
+      "manifest": "fixtures/manifests/fuzz-controlled.json",
+      "license": "MIT",
+      "sha256": "ba962a4b21fd70d8b9667b5a5a1b41ba467323c63528a4ee3d23c93649ff55d2"
+    },
+    {
+      "manifest": "fixtures/manifests/openwrt-24.10.4.json",
+      "license": "OpenWrt build GPL-2.0; component licenses vary; publicly distributed open-source generic/virtual-target images.",
+      "sha256": "17b357a10ca3a60fff242bde9ad991391bd7b25ac2c20ef9568d2e0e71964b8e"
+    },
+    {
+      "manifest": "fixtures/manifests/pipeline-controlled.json",
+      "license": "MIT",
+      "sha256": "746273af9c53477e9d75149eb6e445a4ffa916a86fc00f56cdc628ef48bdf100"
+    },
+    {
+      "manifest": "fixtures/manifests/snapshot-controlled.json",
+      "license": "MIT",
+      "sha256": "86b221ab0bcbe7d6ec8cbe19762b1146d8b83138dcb506fbd006a505bfe17721"
+    }
+  ],
+  "evidence_roots": [
+    "evidence",
+    "docs"
+  ],
+  "sentinel_matches": 0,
+  "scope": "Declared fixture/OpenWrt provenance and committed documentation/evidence sentinel scan; not a proof about ignored private input storage or every future output."
+}

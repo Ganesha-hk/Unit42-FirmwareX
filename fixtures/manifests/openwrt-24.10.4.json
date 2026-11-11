@@ -1,0 +1,64 @@
+{
+  "version": 1,
+  "frozen_before_analysis": true,
+  "license": "OpenWrt build GPL-2.0; component licenses vary; publicly distributed open-source generic/virtual-target images.",
+  "license_source": "https://openwrt.org/license",
+  "source": "https://github.com/openwrt/openwrt/tree/v24.10.4",
+  "success_rule": "Successful extraction; nonempty inventory; at least one correctly detected ELF; no extraction or ELF parse errors.",
+  "denominator": 6,
+  "limitations": "One release, generic/virtual targets, SquashFS/ext4; not all vendors or all filesystem formats.",
+  "representative_image": "openwrt-24.10.4-x86-64-generic-squashfs-rootfs.img.gz",
+  "representative_analysis_profile": {
+    "image_sha256": "8c88c338afad0535ab295a62e9555dc91f3bf5c8f4fc3bc67008adb2619f60e6",
+    "coverage": "selected_profiles_only",
+    "binaries": [
+      {"path": "/bin/busybox", "sha256": "2f05c4e66e4edab3914b24e00a8c016db2b65f4165b56b7842b359c5c1f55e8c", "check": "true applet exit 0"},
+      {"path": "/usr/sbin/uhttpd", "sha256": "02723a581496090ccc5d8b19da6bdd0e8fa8878e148dd99ae6be6c13fc5aa94b", "check": "loopback HTTP 200 with exact synthetic marker"},
+      {"path": "/usr/libexec/cgi-io", "sha256": "897d4abfc18c8c679f5cb3657fb67080ecd75b00288f7e25a59f75c4b06ced0f", "check": "cgi-upload environment input reaches strcpy under bounded symbolic model", "entry": "0x402003"}
+    ]
+  },
+  "images": [
+    {
+      "name": "openwrt-24.10.4-x86-64-generic-squashfs-rootfs.img.gz",
+      "url": "https://downloads.openwrt.org/releases/24.10.4/targets/x86/64/openwrt-24.10.4-x86-64-generic-squashfs-rootfs.img.gz",
+      "sha256": "8c88c338afad0535ab295a62e9555dc91f3bf5c8f4fc3bc67008adb2619f60e6",
+      "local_name": "openwrt-24.10.4-x86-64-generic-squashfs-rootfs.img.gz.bin",
+      "target": "x86/64"
+    },
+    {
+      "name": "openwrt-24.10.4-x86-64-generic-ext4-rootfs.img.gz",
+      "url": "https://downloads.openwrt.org/releases/24.10.4/targets/x86/64/openwrt-24.10.4-x86-64-generic-ext4-rootfs.img.gz",
+      "sha256": "f0c102b77223ab16aaee922edcd32dde8b539308174a6247820c332d6f5f3852",
+      "local_name": "openwrt-24.10.4-x86-64-generic-ext4-rootfs.img.gz.bin",
+      "target": "x86/64"
+    },
+    {
+      "name": "openwrt-24.10.4-armsr-armv7-generic-squashfs-rootfs.img.gz",
+      "url": "https://downloads.openwrt.org/releases/24.10.4/targets/armsr/armv7/openwrt-24.10.4-armsr-armv7-generic-squashfs-rootfs.img.gz",
+      "sha256": "947702622f5cd4d81a5b14297e19366a4d725d3178d519accec2380081dc89b0",
+      "local_name": "openwrt-24.10.4-armsr-armv7-generic-squashfs-rootfs.img.gz.bin",
+      "target": "armsr/armv7"
+    },
+    {
+      "name": "openwrt-24.10.4-armsr-armv8-generic-squashfs-rootfs.img.gz",
+      "url": "https://downloads.openwrt.org/releases/24.10.4/targets/armsr/armv8/openwrt-24.10.4-armsr-armv8-generic-squashfs-rootfs.img.gz",
+      "sha256": "4c52f0dcd15edab146ff0b07951205ced8de2b5690e9926da814691ea9a15c2e",
+      "local_name": "openwrt-24.10.4-armsr-armv8-generic-squashfs-rootfs.img.gz.bin",
+      "target": "armsr/armv8"
+    },
+    {
+      "name": "openwrt-24.10.4-malta-be-rootfs-squashfs.img.gz",
+      "url": "https://downloads.openwrt.org/releases/24.10.4/targets/malta/be/openwrt-24.10.4-malta-be-rootfs-squashfs.img.gz",
+      "sha256": "823b72327367e1df7fd90c7aafefca3c8a425586bcc1acb327a63e185b15bcdf",
+      "local_name": "openwrt-24.10.4-malta-be-rootfs-squashfs.img.gz.bin",
+      "target": "malta/be"
+    },
+    {
+      "name": "openwrt-24.10.4-malta-le-rootfs-squashfs.img.gz",
+      "url": "https://downloads.openwrt.org/releases/24.10.4/targets/malta/le/openwrt-24.10.4-malta-le-rootfs-squashfs.img.gz",
+      "sha256": "f831ad0918eb5042f6d81e81e5ef5ea0335d40bae88fcef0e00f35346c06bba2",
+      "local_name": "openwrt-24.10.4-malta-le-rootfs-squashfs.img.gz.bin",
+      "target": "malta/le"
+    }
+  ]
+}

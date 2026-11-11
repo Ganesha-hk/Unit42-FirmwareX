@@ -1,0 +1,138 @@
+{
+  "license": "MIT",
+  "images": {
+    "a71d1e4937d2eb468ea965462c27f6b3c99eb2207fa39bd59d04161bf45856c9": {
+      "name": "controlled-pipeline",
+      "emulation": [
+        {
+          "binary": "bin/service-probe",
+          "architecture": "x86_64",
+          "sha256": "c1f9baac129f2e7617852fec9581bc6f3f34db5b91eac081d4edb36b53952d0d"
+        }
+      ],
+      "symbolic": [
+        {
+          "binary": "bin/taint-demo",
+          "architecture": "x86_64",
+          "sha256": "ea65acce224d0fd57bb3be965c778d86edcc9bbabf4749016efd4586f24211db"
+        }
+      ]
+    },
+    "974c196dd678242ab3b6e1ad0a79e48225b9e83244cc122eebe4e86332e67bd3": {
+      "name": "controlled-pipeline-ARM32",
+      "emulation": [
+        {
+          "binary": "bin/service-probe",
+          "architecture": "ARM32",
+          "sha256": "c4fd7b7a6d32a1ec7524d991bca37035156e19acb1c93b82e7033877491de711"
+        }
+      ],
+      "symbolic": [
+        {
+          "binary": "bin/taint-demo",
+          "architecture": "ARM32",
+          "sha256": "e11e9fa1d22edd7bd3dc8c15f5638cdeb017a40164b20a032ea2470169174d82"
+        }
+      ]
+    },
+    "acb47f36f2be8b92e7acc0c03f9bb7fde6a28d127c59b1d81782eb96c6168111": {
+      "name": "controlled-pipeline-ARM64",
+      "emulation": [
+        {
+          "binary": "bin/service-probe",
+          "architecture": "ARM64",
+          "sha256": "15cc700fb47b09701895629df429314c87a81f0a37b262064a7f66915bcaf511"
+        }
+      ],
+      "symbolic": [
+        {
+          "binary": "bin/taint-demo",
+          "architecture": "ARM64",
+          "sha256": "11e22d58a68587cb14d6dc304d04a0c8c44a86caf7405256ea103d6cf38b047d"
+        }
+      ]
+    },
+    "b8b8d218b355f87c721ce5129ccc5623905c249e1e92565b9f4b69a45c68d255": {
+      "name": "controlled-pipeline-MIPS",
+      "emulation": [
+        {
+          "binary": "bin/service-probe",
+          "architecture": "MIPS",
+          "sha256": "0a63cc3d066920fde5eefb9d96d67435be2c0a0d2ee2bf576c89456340f4f541"
+        }
+      ],
+      "symbolic": [
+        {
+          "binary": "bin/taint-demo",
+          "architecture": "MIPS",
+          "sha256": "e2d2c60b02ff3d7fa8b17e9233fd048cd78eb77161f81e1127a0af51456451b3"
+        }
+      ]
+    },
+    "6a1804f3f01b6ecb8f39e83ed73cdf52895f7e739a493f983c6ad0b4f9135902": {
+      "name": "controlled-pipeline-MIPSEL",
+      "emulation": [
+        {
+          "binary": "bin/service-probe",
+          "architecture": "MIPSEL",
+          "sha256": "ace94e1517f6e1c3dc6e18001fc714d56d7441e93e46d468cf6cee1380d16efe"
+        }
+      ],
+      "symbolic": [
+        {
+          "binary": "bin/taint-demo",
+          "architecture": "MIPSEL",
+          "sha256": "a1ca69f07ed8a79ad4f0a615176478676531540d7ca590f927cfbb87acb8da61"
+        }
+      ]
+    },
+    "711b68470fd64f3b3b69412679c57faef0d16cbc82260fc597a9368841d6f8ed": {
+      "name": "controlled-extended-fuzz",
+      "emulation": [
+        {
+          "binary": "bin/service-probe",
+          "architecture": "x86_64",
+          "sha256": "c1f9baac129f2e7617852fec9581bc6f3f34db5b91eac081d4edb36b53952d0d"
+        }
+      ],
+      "symbolic": [
+        {
+          "binary": "bin/taint-demo",
+          "architecture": "x86_64",
+          "sha256": "ea65acce224d0fd57bb3be965c778d86edcc9bbabf4749016efd4586f24211db"
+        }
+      ],
+      "fuzz": [
+        {
+          "binary": "bin/protocol-fuzz",
+          "architecture": "x86_64",
+          "sha256": "800c864d7d334da8a5be7f8a6fbc725845dbb17cf4781ef49efa170a161832f0"
+        }
+      ]
+    },
+    "7d255bf5cbc9e03e697b67f471c11d0df955ae6ac5d2a364277960e9b8b7dd49": {
+      "name": "controlled-extended-snapshots",
+      "emulation": [
+        {
+          "binary": "bin/service-probe",
+          "architecture": "ARM32",
+          "sha256": "c4fd7b7a6d32a1ec7524d991bca37035156e19acb1c93b82e7033877491de711"
+        }
+      ],
+      "symbolic": [
+        {
+          "binary": "bin/taint-demo",
+          "architecture": "ARM32",
+          "sha256": "e11e9fa1d22edd7bd3dc8c15f5638cdeb017a40164b20a032ea2470169174d82"
+        }
+      ],
+      "snapshots": [
+        {
+          "binary": "bin/snapshot-arm.elf",
+          "architecture": "ARM32",
+          "sha256": "3643f733b504d80b674ea35ca3c9322411eea74b5fb7e85f31b44db873fa7df0"
+        }
+      ]
+    }
+  }
+}

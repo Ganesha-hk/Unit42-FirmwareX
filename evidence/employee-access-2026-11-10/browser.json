@@ -1,0 +1,13 @@
+{
+  "result": "PASS",
+  "checks": [
+    "wrong company code rejected",
+    "employee registration stored in PostgreSQL",
+    "employee login",
+    "existing real firmware report retained and accessible",
+    "session survives refresh",
+    "logout revokes access",
+    "mobile layout"
+  ],
+  "firmware_records": 1
+}

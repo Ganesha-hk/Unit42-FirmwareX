@@ -1,0 +1,11 @@
+ Container firmwarex-dispatcher-run-f1a29d7200a7 Creating 
+ Container firmwarex-dispatcher-run-f1a29d7200a7 Created 
+Traceback (most recent call last):
+  File "/scripts/verify-emulation.py", line 33, in <module>
+    out=run('x86_64','x86_64',[arg],**updates);assert out['sandbox']['reason']==reason,out
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scripts/verify-emulation.py", line 21, in run
+    assert [e.event for e in events]==['emulation_started','emulation_finished']
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
+

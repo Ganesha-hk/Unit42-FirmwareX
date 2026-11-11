@@ -1,0 +1,8 @@
+ Container firmwarex-dispatcher-run-60f5ad9b3e55 Creating 
+ Container firmwarex-dispatcher-run-60f5ad9b3e55 Created 
+Traceback (most recent call last):
+  File "/scripts/verify-emulation-gate.py", line 21, in <module>
+    with docker.from_env() as client:
+         ^^^^^^^^^^^^^^^^^
+TypeError: 'DockerClient' object does not support the context manager protocol
+

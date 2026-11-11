@@ -1,0 +1,11 @@
+x86/64 unsupported 0 0
+x86/64 static_complete 1571 171
+armsr/armv7 unsupported 0 0
+armsr/armv8 unsupported 0 0
+malta/be unsupported 0 0
+malta/le unsupported 0 0
+Traceback (most recent call last):
+  File "/home/ubunt/projects/firmwarex/scripts/verify-corpus.py", line 31, in <module>
+    assert sum(r['success'] for r in results)/6>0.90
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

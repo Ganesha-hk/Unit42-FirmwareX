@@ -1,0 +1,47 @@
+{
+  "renderer": "src/firmwarex/ui/report.js",
+  "renderer_sha256": "a06217f38344e6b2badf7e7dc40b591e9c759459b17b57d24c7b86664a925f0a",
+  "analysis_rerun": false,
+  "reports": [
+    {
+      "architecture": "x86_64",
+      "scope": "controlled integrated pipeline",
+      "findings": 17,
+      "source": "evidence/completion/controlled-report.json",
+      "source_sha256": "f2a450531bc60aa1c6eefdf46071e3157174e543a0a517b60b169e2d6f0ce857",
+      "pdf": "FirmwareX-x86_64-report.pdf"
+    },
+    {
+      "architecture": "ARM32",
+      "scope": "recorded symbolic component test only",
+      "findings": 1,
+      "source": "evidence/task6/symbolic-results.json",
+      "source_sha256": "ca7b0b94d16838492553b6267f16768b9f25e454b1413d6f8452556142f26365",
+      "pdf": "FirmwareX-ARM32-report.pdf"
+    },
+    {
+      "architecture": "ARM64",
+      "scope": "recorded symbolic component test only",
+      "findings": 1,
+      "source": "evidence/task6/symbolic-results.json",
+      "source_sha256": "ca7b0b94d16838492553b6267f16768b9f25e454b1413d6f8452556142f26365",
+      "pdf": "FirmwareX-ARM64-report.pdf"
+    },
+    {
+      "architecture": "MIPS",
+      "scope": "recorded symbolic component test only",
+      "findings": 1,
+      "source": "evidence/task6/symbolic-results.json",
+      "source_sha256": "ca7b0b94d16838492553b6267f16768b9f25e454b1413d6f8452556142f26365",
+      "pdf": "FirmwareX-MIPS-report.pdf"
+    },
+    {
+      "architecture": "MIPSEL",
+      "scope": "recorded symbolic component test only",
+      "findings": 1,
+      "source": "evidence/task6/symbolic-results.json",
+      "source_sha256": "ca7b0b94d16838492553b6267f16768b9f25e454b1413d6f8452556142f26365",
+      "pdf": "FirmwareX-MIPSEL-report.pdf"
+    }
+  ]
+}

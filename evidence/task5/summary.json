@@ -1,0 +1,64 @@
+{
+  "milestone": "Task 5 controlled integration gate",
+  "gate": "PASS",
+  "final_prd_acceptance": false,
+  "unit_tests": 78,
+  "pipeline_cases": [
+    {
+      "image": "controlled-pipeline.bin",
+      "firmware_id": "4c76a836-f47b-4c02-912c-2e64084324e3",
+      "job_id": "36e03525-050f-49e4-b64e-75915890e999",
+      "status": "complete",
+      "findings": 17,
+      "approved_execution": true
+    },
+    {
+      "image": "controlled-squashfs.bin",
+      "firmware_id": "c5beacd4-d6d1-4614-8e7b-9829809d69e6",
+      "job_id": "a38e8bcc-4d7a-443d-bfed-eda21090871a",
+      "status": "partial",
+      "findings": 3,
+      "approved_execution": false
+    }
+  ],
+  "browser": {
+    "passed": true,
+    "checks": [
+      "authentication",
+      "overview",
+      "file metadata",
+      "risk sorting",
+      "CWE filter",
+      "evidence inspection",
+      "CFG selection/zoom",
+      "telemetry",
+      "redacted export",
+      "mobile layout"
+    ],
+    "page_errors": []
+  },
+  "api_guard_cases": 8,
+  "sandbox_regressions": 4,
+  "storage": [
+    {
+      "job_id": "36e03525-050f-49e4-b64e-75915890e999",
+      "persisted_findings": 17,
+      "audit_events": 10,
+      "plaintext_sentinels": 0
+    },
+    {
+      "job_id": "a38e8bcc-4d7a-443d-bfed-eda21090871a",
+      "persisted_findings": 3,
+      "audit_events": 10,
+      "plaintext_sentinels": 0
+    }
+  ],
+  "otel_spans": 7,
+  "remaining": [
+    "FWX-FUZZ-001\u2013003",
+    "complete lifecycle/failure tracing",
+    "universal/historical redaction verification",
+    "Task 6 final acceptance",
+    "mentor and PR review gates"
+  ]
+}

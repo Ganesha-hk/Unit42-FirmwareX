@@ -1,0 +1,167 @@
+{
+  "license": "MIT",
+  "source": "fixtures/sources/emulation.c",
+  "source_sha256": "f699979fe5ec72670b4bf1117ceb0c5ce0cf5df6797c1b7fc2013f07499092e2",
+  "fixtures": {
+    "0a63cc3d066920fde5eefb9d96d67435be2c0a0d2ee2bf576c89456340f4f541": {
+      "architecture": "MIPS",
+      "filename": "mips",
+      "allowed_args": [
+        [],
+        [
+          "http"
+        ],
+        [
+          "upnp"
+        ],
+        [
+          "mqtt"
+        ],
+        [
+          "containment"
+        ],
+        [
+          "spin"
+        ],
+        [
+          "sleep"
+        ],
+        [
+          "memory"
+        ]
+      ]
+    },
+    "ace94e1517f6e1c3dc6e18001fc714d56d7441e93e46d468cf6cee1380d16efe": {
+      "architecture": "MIPSEL",
+      "filename": "mipsel",
+      "allowed_args": [
+        [],
+        [
+          "http"
+        ],
+        [
+          "upnp"
+        ],
+        [
+          "mqtt"
+        ],
+        [
+          "containment"
+        ],
+        [
+          "spin"
+        ],
+        [
+          "sleep"
+        ],
+        [
+          "memory"
+        ]
+      ]
+    },
+    "c4fd7b7a6d32a1ec7524d991bca37035156e19acb1c93b82e7033877491de711": {
+      "architecture": "ARM32",
+      "filename": "arm",
+      "allowed_args": [
+        [],
+        [
+          "http"
+        ],
+        [
+          "upnp"
+        ],
+        [
+          "mqtt"
+        ],
+        [
+          "containment"
+        ],
+        [
+          "spin"
+        ],
+        [
+          "sleep"
+        ],
+        [
+          "memory"
+        ]
+      ]
+    },
+    "15cc700fb47b09701895629df429314c87a81f0a37b262064a7f66915bcaf511": {
+      "architecture": "ARM64",
+      "filename": "aarch64",
+      "allowed_args": [
+        [],
+        [
+          "http"
+        ],
+        [
+          "upnp"
+        ],
+        [
+          "mqtt"
+        ],
+        [
+          "containment"
+        ],
+        [
+          "spin"
+        ],
+        [
+          "sleep"
+        ],
+        [
+          "memory"
+        ]
+      ]
+    },
+    "c1f9baac129f2e7617852fec9581bc6f3f34db5b91eac081d4edb36b53952d0d": {
+      "architecture": "x86_64",
+      "filename": "x86_64",
+      "allowed_args": [
+        [],
+        [
+          "http"
+        ],
+        [
+          "upnp"
+        ],
+        [
+          "mqtt"
+        ],
+        [
+          "containment"
+        ],
+        [
+          "spin"
+        ],
+        [
+          "sleep"
+        ],
+        [
+          "memory"
+        ]
+      ]
+    },
+    "0787b4980e66f8c3e47e636fac97799b989bfed5af4f448b77268ad0d580ee9c": {
+      "architecture": "ARM32",
+      "filename": "nvram-arm",
+      "allowed_args": [
+        []
+      ]
+    }
+  },
+  "kernels": {
+    "15e758c7f43b76a761313430b26b896e9f15a1405e733bdb50b1fc1b2c755cba": {
+      "architecture": "ARM32",
+      "source": "fixtures/sources/boot-arm.c"
+    }
+  },
+  "source_hashes": {
+    "fixtures/sources/nvram-probe.c": "5fd0126f2ff76c5cde85b9f2536159d09124f49bcfad1e5a9f79d57fa0deddbd",
+    "fixtures/sources/boot-arm.c": "accc58b182a9a452b483e2099ee73e9fc5ea44974f3050abac38ec5a57c895b8",
+    "fixtures/sources/nvram-stub.c": "7d12fa86016c13ce55369deb919b65bc3c3318cb1e23eeb88c7a7c1d310e6ccb",
+    "fixtures/sources/boot-arm.ld": "f30173502ac4332c8eecc6f23be2b48299df61e1ababe6e5027048b1614b6b56",
+    "fixtures/sources/emulation.c": "f699979fe5ec72670b4bf1117ceb0c5ce0cf5df6797c1b7fc2013f07499092e2"
+  }
+}

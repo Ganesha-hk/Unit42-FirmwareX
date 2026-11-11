@@ -1,0 +1,10 @@
+bf7391a Add readable security assessment reports with print and HTML export
+244c4ab Add recognizable firmware names and simpler selection
+bf26457 Integrate controlled analysis pipeline, reports and dashboard
+db6b633 Add bounded symbolic analysis and redacted finding persistence
+c1be2dd Add gated cross-architecture QEMU execution and containment evidence
+9f529a5 fix: close static worker recovery and validation gaps
+1ff701e feat: add isolated firmware extraction and static audit pipeline
+407f905 docs: establish PRD requirements and implementation plan
+origin	https://github.com/Ganesha-hk/Unit42-FirmwareX.git (fetch)
+origin	https://github.com/Ganesha-hk/Unit42-FirmwareX.git (push)

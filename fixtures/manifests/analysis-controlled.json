@@ -1,0 +1,199 @@
+{
+  "license": "MIT",
+  "fixtures": {
+    "c988df11a5d0791e314848d722770f793d9446b49e4585a39b08b78928778923": {
+      "filename": "branch",
+      "architecture": "x86_64",
+      "mode": "symbolic"
+    },
+    "af8aa70ee73a283927d05a80a2eb931916211f8481f42d832a1929a2ce0f5aac": {
+      "filename": "chain",
+      "architecture": "x86_64",
+      "mode": "symbolic"
+    },
+    "11e22d58a68587cb14d6dc304d04a0c8c44a86caf7405256ea103d6cf38b047d": {
+      "filename": "cross-aarch64",
+      "architecture": "ARM64",
+      "mode": "symbolic"
+    },
+    "e11e9fa1d22edd7bd3dc8c15f5638cdeb017a40164b20a032ea2470169174d82": {
+      "filename": "cross-arm",
+      "architecture": "ARM32",
+      "mode": "symbolic"
+    },
+    "e2d2c60b02ff3d7fa8b17e9233fd048cd78eb77161f81e1127a0af51456451b3": {
+      "filename": "cross-mips",
+      "architecture": "MIPS",
+      "mode": "symbolic"
+    },
+    "a1ca69f07ed8a79ad4f0a615176478676531540d7ca590f927cfbb87acb8da61": {
+      "filename": "cross-mipsel",
+      "architecture": "MIPSEL",
+      "mode": "symbolic"
+    },
+    "ee157c06fc52d14bb0e7e9cf6b45e852906f1f0d6a20ba1f12cdb1c4087435a6": {
+      "filename": "fault",
+      "architecture": "x86_64",
+      "mode": "symbolic"
+    },
+    "fa3c5fa0d7de7c1100c804dc60fc76b3318636e12df62bdadd322c9eb9019f4b": {
+      "filename": "loop",
+      "architecture": "x86_64",
+      "mode": "symbolic"
+    },
+    "02ab8cd87185c37bca452ee74f0256c3d7fa13db8b669d78a8b92535e5793a27": {
+      "filename": "negative",
+      "architecture": "x86_64",
+      "mode": "symbolic"
+    },
+    "e99f3a7dc8363453156627a2e57e5923af59f6fa0e4192d52aed09d0c7c78806": {
+      "filename": "region1",
+      "architecture": "x86_64",
+      "mode": "symbolic"
+    },
+    "4d59521cfcc03cf3013d29f48dc8a00820717a0f24839d2bdfc3c60af9950232": {
+      "filename": "region2",
+      "architecture": "x86_64",
+      "mode": "symbolic"
+    },
+    "75775ecb686ca2c941c839d7010f99565ec01102fe63da2561649a44620a042f": {
+      "filename": "region3",
+      "architecture": "x86_64",
+      "mode": "symbolic"
+    },
+    "65a8329b7126f67013c132cde9f03511a5abbda553670c0fbf80b60c274af234": {
+      "filename": "scanner.txt",
+      "architecture": "ARM32",
+      "mode": "scan"
+    },
+    "ea65acce224d0fd57bb3be965c778d86edcc9bbabf4749016efd4586f24211db": {
+      "filename": "source0-sink0",
+      "architecture": "x86_64",
+      "mode": "symbolic"
+    },
+    "f59dece74e1d1580abc5e8bd6105d8b32b09c89b59957d236304ce7e4da23a53": {
+      "filename": "source0-sink1",
+      "architecture": "x86_64",
+      "mode": "symbolic"
+    },
+    "0fba29c84a0fdf33ece3206938cbc2dfa3a3553d9046b5c1cceb794f206df01a": {
+      "filename": "source0-sink2",
+      "architecture": "x86_64",
+      "mode": "symbolic"
+    },
+    "a6e42ae7bf64f70b0421a3792a681781e54e9a6fe9a4a15892f3cb80261d8825": {
+      "filename": "source0-sink3",
+      "architecture": "x86_64",
+      "mode": "symbolic"
+    },
+    "34fa03160c13f40d0cb7a6a7bb8df517cefce92f50cb7592e7929d71fd890d9e": {
+      "filename": "source0-sink4",
+      "architecture": "x86_64",
+      "mode": "symbolic"
+    },
+    "004b32f1c294b0a7472457836c79468a79ca90f5083c5d7361ea4e381d96d6ad": {
+      "filename": "source0-sink5",
+      "architecture": "x86_64",
+      "mode": "symbolic"
+    },
+    "66414a9287ee9b01830213d54c9383bca63d05463a660df5fe0e0cc6b56beeee": {
+      "filename": "source1-sink0",
+      "architecture": "x86_64",
+      "mode": "symbolic"
+    },
+    "ecae2a987675e98ac8437582a2b07f9950b7e3c3a25e97cfd8d153b1d09bbf9f": {
+      "filename": "source1-sink1",
+      "architecture": "x86_64",
+      "mode": "symbolic"
+    },
+    "8806d6cf2eaed0d20fe34cad7b11e5eb085f31105263de3fc2664a936d0017d7": {
+      "filename": "source1-sink2",
+      "architecture": "x86_64",
+      "mode": "symbolic"
+    },
+    "d203fd17cd7725cd85ec05daeb36c5283853fe3b77926155183d36a04e1bc90a": {
+      "filename": "source1-sink3",
+      "architecture": "x86_64",
+      "mode": "symbolic"
+    },
+    "5501dd85275043164261eaec7b83fe80685551eafb875f77d84e9a3cd860a0d8": {
+      "filename": "source1-sink4",
+      "architecture": "x86_64",
+      "mode": "symbolic"
+    },
+    "1f55424698f58f7b09b97064a518bb54ea1506891768617407e86d599ad0e153": {
+      "filename": "source1-sink5",
+      "architecture": "x86_64",
+      "mode": "symbolic"
+    },
+    "9950254b878123000937834c7d0e62e3a809427305dbd0f81b5693ec7d4e52d0": {
+      "filename": "source2-sink0",
+      "architecture": "x86_64",
+      "mode": "symbolic"
+    },
+    "b491119541905ae366105d18f6cbb0bd3cc2a71c1de6722e79abb1af2e39be20": {
+      "filename": "source2-sink1",
+      "architecture": "x86_64",
+      "mode": "symbolic"
+    },
+    "946b37e608204c4454ff1b800fdef1c923ab6d9eaabc27bb0e14a482ce12af93": {
+      "filename": "source2-sink2",
+      "architecture": "x86_64",
+      "mode": "symbolic"
+    },
+    "80ef1ac9e4994c0bc891106572b0409832c36acc4dab75d6e0e7be53e314ce8f": {
+      "filename": "source2-sink3",
+      "architecture": "x86_64",
+      "mode": "symbolic"
+    },
+    "2b20e01507d7b1c0f818a7e48fd3702ee9c05dd5784f6a3f36f4d456e5ae5787": {
+      "filename": "source2-sink4",
+      "architecture": "x86_64",
+      "mode": "symbolic"
+    },
+    "46e0611856e988b02120f51cab3e5e0d252297c43e6791795f5949bf2a9f528e": {
+      "filename": "source2-sink5",
+      "architecture": "x86_64",
+      "mode": "symbolic"
+    },
+    "9b24fbc7d4de6b5a8dd725f921fbab337581a604b3c20c1587dfe96733d190da": {
+      "filename": "source3-sink0",
+      "architecture": "x86_64",
+      "mode": "symbolic"
+    },
+    "4c64ca4ce8a7bca05677598bc0544c2c23141c24b30c8e00526bab47f9559d6e": {
+      "filename": "source3-sink1",
+      "architecture": "x86_64",
+      "mode": "symbolic"
+    },
+    "cb3f733e4800a8a1f18dbecaa77a68c88c5eed615c91ddce0f742592c5fa5128": {
+      "filename": "source3-sink2",
+      "architecture": "x86_64",
+      "mode": "symbolic"
+    },
+    "750cd54cb3378f22bdfb1de0f8a39efc0f8086ea1a3fb69b1a9cee69f0b725db": {
+      "filename": "source3-sink3",
+      "architecture": "x86_64",
+      "mode": "symbolic"
+    },
+    "9067b6191227e98a56b1426cbe17b116378c60f6dabebe4a1448c4e3f5448df7": {
+      "filename": "source3-sink4",
+      "architecture": "x86_64",
+      "mode": "symbolic"
+    },
+    "f2450360fe8ec0392bbe227a39c520776c91ae120b03d2d5916193e13611f120": {
+      "filename": "source3-sink5",
+      "architecture": "x86_64",
+      "mode": "symbolic"
+    },
+    "daa65e2237469602661bac32c4f600914e7a37e4c91057e3fe47b2c6681fb634": {
+      "filename": "unreachable",
+      "architecture": "x86_64",
+      "mode": "symbolic"
+    }
+  },
+  "source_hashes": {
+    "fixtures/sources/symbolic.c": "2cabd2b0494ba01c14ddb192997808afcd4793b1c6b3df66756ea83301eff75c",
+    "fixtures/sources/symbolic-budget.c": "8c20a399117ced4c6f3e54f3f350162940e68799e6e5c7d9ff610ac23bfe2cd3"
+  }
+}

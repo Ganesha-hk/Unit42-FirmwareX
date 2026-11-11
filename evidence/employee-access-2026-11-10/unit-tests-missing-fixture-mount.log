@@ -1,0 +1,426 @@
+........................................................................ [ 42%]
+........................................................................ [ 84%]
+.........FFFFFFFF.FFFF..FF                                               [100%]
+=================================== FAILURES ===================================
+__________________ test_compiler_hardening[strong-expected0] ___________________
+
+name = 'strong'
+expected = {'nx': True, 'pie': True, 'relro': 'full', 'stack_canary': True, ...}
+
+    @pytest.mark.parametrize("name,expected", [
+        ("strong", {"nx": True, "pie": True, "relro": "full", "stack_canary": True, "fortify": True}),
+        ("weak", {"nx": False, "pie": False, "relro": "none", "stack_canary": False, "fortify": False}),
+        ("partial", {"nx": True, "pie": True, "relro": "partial", "stack_canary": True, "fortify": False}),
+    ])
+    def test_compiler_hardening(name, expected):
+>       actual = audit_elf(ROOT / "bin" / name, ROOT)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/unit/test_static.py:16: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/firmwarex/static.py:9: in audit_elf
+    with path.open("rb") as stream:
+         ^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/fixtures/rootfs/bin/strong'), mode = 'rb', buffering = -1
+encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/fixtures/rootfs/bin/strong'
+
+/usr/local/lib/python3.12/pathlib.py:1013: FileNotFoundError
+___________________ test_compiler_hardening[weak-expected1] ____________________
+
+name = 'weak'
+expected = {'nx': False, 'pie': False, 'relro': 'none', 'stack_canary': False, ...}
+
+    @pytest.mark.parametrize("name,expected", [
+        ("strong", {"nx": True, "pie": True, "relro": "full", "stack_canary": True, "fortify": True}),
+        ("weak", {"nx": False, "pie": False, "relro": "none", "stack_canary": False, "fortify": False}),
+        ("partial", {"nx": True, "pie": True, "relro": "partial", "stack_canary": True, "fortify": False}),
+    ])
+    def test_compiler_hardening(name, expected):
+>       actual = audit_elf(ROOT / "bin" / name, ROOT)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/unit/test_static.py:16: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/firmwarex/static.py:9: in audit_elf
+    with path.open("rb") as stream:
+         ^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/fixtures/rootfs/bin/weak'), mode = 'rb', buffering = -1
+encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/fixtures/rootfs/bin/weak'
+
+/usr/local/lib/python3.12/pathlib.py:1013: FileNotFoundError
+__________________ test_compiler_hardening[partial-expected2] __________________
+
+name = 'partial'
+expected = {'nx': True, 'pie': True, 'relro': 'partial', 'stack_canary': True, ...}
+
+    @pytest.mark.parametrize("name,expected", [
+        ("strong", {"nx": True, "pie": True, "relro": "full", "stack_canary": True, "fortify": True}),
+        ("weak", {"nx": False, "pie": False, "relro": "none", "stack_canary": False, "fortify": False}),
+        ("partial", {"nx": True, "pie": True, "relro": "partial", "stack_canary": True, "fortify": False}),
+    ])
+    def test_compiler_hardening(name, expected):
+>       actual = audit_elf(ROOT / "bin" / name, ROOT)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/unit/test_static.py:16: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/firmwarex/static.py:9: in audit_elf
+    with path.open("rb") as stream:
+         ^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/fixtures/rootfs/bin/partial'), mode = 'rb', buffering = -1
+encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/fixtures/rootfs/bin/partial'
+
+/usr/local/lib/python3.12/pathlib.py:1013: FileNotFoundError
+__________________ test_shared_library_is_not_pie_executable ___________________
+
+    def test_shared_library_is_not_pie_executable():
+>       actual = audit_elf(ROOT / "bin/libfixture.so", ROOT)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/unit/test_static.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/firmwarex/static.py:9: in audit_elf
+    with path.open("rb") as stream:
+         ^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/fixtures/rootfs/bin/libfixture.so'), mode = 'rb'
+buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/fixtures/rootfs/bin/libfixture.so'
+
+/usr/local/lib/python3.12/pathlib.py:1013: FileNotFoundError
+_____________________ test_inventory_never_follows_symlink _____________________
+
+    def test_inventory_never_follows_symlink():
+        entries, binaries, errors = inventory(ROOT)
+>       link = next(x for x in entries if x["path"] == "/etc/external-link")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       StopIteration
+
+tests/unit/test_static.py:30: StopIteration
+_____________________________ test_inventory_limit _____________________________
+
+    def test_inventory_limit():
+>       with pytest.raises(ValueError, match="file_count_limit"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+tests/unit/test_static.py:38: Failed
+__________________________ test_inventory_size_limit ___________________________
+
+    def test_inventory_size_limit():
+>       with pytest.raises(ValueError, match="expanded_size_limit"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+tests/unit/test_static.py:42: Failed
+__________________________ test_entropy_and_signature __________________________
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-0/test_entropy_and_signature0')
+
+    def test_entropy_and_signature(tmp_path):
+        low = tmp_path / "low"
+        low.write_bytes(bytes(65536))
+        assert entropy(low)[0]["bits_per_byte"] == 0
+        high = tmp_path / "high"
+        high.write_bytes(bytes(range(256)) * 256)
+        assert entropy(high)[0]["bits_per_byte"] == 8
+>       assert kind(Path("/fixtures/controlled-squashfs.bin")) == "squashfs"
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/unit/test_static.py:52: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/firmwarex/extract.py:35: in kind
+    with path.open("rb") as f:
+         ^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/fixtures/controlled-squashfs.bin'), mode = 'rb'
+buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/fixtures/controlled-squashfs.bin'
+
+/usr/local/lib/python3.12/pathlib.py:1013: FileNotFoundError
+______________ test_cross_architecture_metadata[mips-MIPS-32-big] ______________
+
+name = 'mips', architecture = 'MIPS', bits = 32, endian = 'big'
+
+    @pytest.mark.parametrize("name,architecture,bits,endian", [
+        ("mips", "MIPS", 32, "big"), ("mipsel", "MIPSEL", 32, "little"),
+        ("arm", "ARM32", 32, "little"), ("aarch64", "ARM64", 64, "little")])
+    def test_cross_architecture_metadata(name, architecture, bits, endian):
+        root = Path('/fixtures/cross')
+>       result = audit_elf(root / name, root)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/unit/test_static.py:65: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/firmwarex/static.py:9: in audit_elf
+    with path.open("rb") as stream:
+         ^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/fixtures/cross/mips'), mode = 'rb', buffering = -1
+encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/fixtures/cross/mips'
+
+/usr/local/lib/python3.12/pathlib.py:1013: FileNotFoundError
+__________ test_cross_architecture_metadata[mipsel-MIPSEL-32-little] ___________
+
+name = 'mipsel', architecture = 'MIPSEL', bits = 32, endian = 'little'
+
+    @pytest.mark.parametrize("name,architecture,bits,endian", [
+        ("mips", "MIPS", 32, "big"), ("mipsel", "MIPSEL", 32, "little"),
+        ("arm", "ARM32", 32, "little"), ("aarch64", "ARM64", 64, "little")])
+    def test_cross_architecture_metadata(name, architecture, bits, endian):
+        root = Path('/fixtures/cross')
+>       result = audit_elf(root / name, root)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/unit/test_static.py:65: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/firmwarex/static.py:9: in audit_elf
+    with path.open("rb") as stream:
+         ^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/fixtures/cross/mipsel'), mode = 'rb', buffering = -1
+encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/fixtures/cross/mipsel'
+
+/usr/local/lib/python3.12/pathlib.py:1013: FileNotFoundError
+____________ test_cross_architecture_metadata[arm-ARM32-32-little] _____________
+
+name = 'arm', architecture = 'ARM32', bits = 32, endian = 'little'
+
+    @pytest.mark.parametrize("name,architecture,bits,endian", [
+        ("mips", "MIPS", 32, "big"), ("mipsel", "MIPSEL", 32, "little"),
+        ("arm", "ARM32", 32, "little"), ("aarch64", "ARM64", 64, "little")])
+    def test_cross_architecture_metadata(name, architecture, bits, endian):
+        root = Path('/fixtures/cross')
+>       result = audit_elf(root / name, root)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/unit/test_static.py:65: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/firmwarex/static.py:9: in audit_elf
+    with path.open("rb") as stream:
+         ^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/fixtures/cross/arm'), mode = 'rb', buffering = -1
+encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/fixtures/cross/arm'
+
+/usr/local/lib/python3.12/pathlib.py:1013: FileNotFoundError
+__________ test_cross_architecture_metadata[aarch64-ARM64-64-little] ___________
+
+name = 'aarch64', architecture = 'ARM64', bits = 64, endian = 'little'
+
+    @pytest.mark.parametrize("name,architecture,bits,endian", [
+        ("mips", "MIPS", 32, "big"), ("mipsel", "MIPSEL", 32, "little"),
+        ("arm", "ARM32", 32, "little"), ("aarch64", "ARM64", 64, "little")])
+    def test_cross_architecture_metadata(name, architecture, bits, endian):
+        root = Path('/fixtures/cross')
+>       result = audit_elf(root / name, root)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/unit/test_static.py:65: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/firmwarex/static.py:9: in audit_elf
+    with path.open("rb") as stream:
+         ^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/fixtures/cross/aarch64'), mode = 'rb', buffering = -1
+encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/fixtures/cross/aarch64'
+
+/usr/local/lib/python3.12/pathlib.py:1013: FileNotFoundError
+______________ test_banned_function_and_writable_executable_leads ______________
+
+    def test_banned_function_and_writable_executable_leads():
+>    result=audit_elf(Path('/fixtures/static-risk'),Path('/fixtures'))
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/unit/test_static_leads.py:5: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/firmwarex/static.py:9: in audit_elf
+    with path.open("rb") as stream:
+         ^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/fixtures/static-risk'), mode = 'rb', buffering = -1
+encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/fixtures/static-risk'
+
+/usr/local/lib/python3.12/pathlib.py:1013: FileNotFoundError
+__________ test_hardened_fixture_has_no_writable_executable_segments ___________
+
+    def test_hardened_fixture_has_no_writable_executable_segments():
+>    result=audit_elf(Path('/fixtures/rootfs/bin/strong'),Path('/fixtures/rootfs'))
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/unit/test_static_leads.py:10: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/firmwarex/static.py:9: in audit_elf
+    with path.open("rb") as stream:
+         ^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/fixtures/rootfs/bin/strong'), mode = 'rb', buffering = -1
+encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/fixtures/rootfs/bin/strong'
+
+/usr/local/lib/python3.12/pathlib.py:1013: FileNotFoundError
+=============================== warnings summary ===============================
+../usr/local/lib/python3.12/site-packages/fastapi/testclient.py:1
+  /usr/local/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/unit/test_static.py::test_compiler_hardening[strong-expected0]
+FAILED tests/unit/test_static.py::test_compiler_hardening[weak-expected1] - F...
+FAILED tests/unit/test_static.py::test_compiler_hardening[partial-expected2]
+FAILED tests/unit/test_static.py::test_shared_library_is_not_pie_executable
+FAILED tests/unit/test_static.py::test_inventory_never_follows_symlink - Stop...
+FAILED tests/unit/test_static.py::test_inventory_limit - Failed: DID NOT RAIS...
+FAILED tests/unit/test_static.py::test_inventory_size_limit - Failed: DID NOT...
+FAILED tests/unit/test_static.py::test_entropy_and_signature - FileNotFoundEr...
+FAILED tests/unit/test_static.py::test_cross_architecture_metadata[mips-MIPS-32-big]
+FAILED tests/unit/test_static.py::test_cross_architecture_metadata[mipsel-MIPSEL-32-little]
+FAILED tests/unit/test_static.py::test_cross_architecture_metadata[arm-ARM32-32-little]
+FAILED tests/unit/test_static.py::test_cross_architecture_metadata[aarch64-ARM64-64-little]
+FAILED tests/unit/test_static_leads.py::test_banned_function_and_writable_executable_leads
+FAILED tests/unit/test_static_leads.py::test_hardened_fixture_has_no_writable_executable_segments
+14 failed, 156 passed, 1 warning in 5.94s

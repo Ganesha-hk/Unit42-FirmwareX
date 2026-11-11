@@ -1,0 +1,14 @@
+{
+  "unit_tests_passed": 154,
+  "emulation_checks_passed": 36,
+  "architectures_checked": 5,
+  "snapshot_restores_passed": 2,
+  "output_quota_and_invalid_output_cases_passed": 5,
+  "unsanitized_worker_redaction_probe_passed": true,
+  "queued_pipeline_cases_passed": 2,
+  "controlled_pipeline_status": "complete",
+  "controlled_pipeline_findings": 9,
+  "openwrt_browser_and_http_probe_passed": true,
+  "openwrt_analysis_status": "partial",
+  "complete_vendor_dynamic_analysis_verified": false
+}

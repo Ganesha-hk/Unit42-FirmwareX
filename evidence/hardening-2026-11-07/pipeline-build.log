@@ -1,0 +1,46 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 414B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/firmwarex-qemu:task3
+#2 DONE 0.1s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 117B done
+#3 DONE 0.0s
+
+#4 [internal] load build context
+#4 transferring context: 12.83kB 0.0s done
+#4 DONE 0.1s
+
+#5 [1/5] FROM docker.io/library/firmwarex-qemu:task3@sha256:17e7933089cb187608f4a7fd04994aae9a426dfc197ffdc252e5b49eb2f195af
+#5 resolve docker.io/library/firmwarex-qemu:task3@sha256:17e7933089cb187608f4a7fd04994aae9a426dfc197ffdc252e5b49eb2f195af
+#5 resolve docker.io/library/firmwarex-qemu:task3@sha256:17e7933089cb187608f4a7fd04994aae9a426dfc197ffdc252e5b49eb2f195af 0.1s done
+#5 DONE 0.1s
+
+#6 [2/5] COPY locks/analysis-linux-x86_64.txt locks/otel-linux-x86_64.txt /locks/
+#6 CACHED
+
+#7 [3/5] RUN pip install --no-cache-dir --require-hashes -r /locks/analysis-linux-x86_64.txt -r /locks/otel-linux-x86_64.txt && pip check
+#7 CACHED
+
+#8 [4/5] COPY src /app/src
+#8 DONE 0.2s
+
+#9 [5/5] COPY fixtures/manifests/pipeline-controlled.json /app/pipeline-controlled.json
+#9 DONE 0.2s
+
+#10 exporting to image
+#10 exporting layers
+#10 exporting layers 0.4s done
+#10 exporting manifest sha256:391e1b6779f24ebb1e7efc64cbe0e2fc0184d80dcda5084cf72cb7475cae87e2 0.1s done
+#10 exporting config sha256:896f069cbeeaf6218f18eda2f4c4cc3644189565bccf805a0e01c0bfb9528b33 0.1s done
+#10 exporting attestation manifest sha256:34a2b85e44e0fff0f0523da36e12edafad92da111aa6053d183ce382adcb468a 0.1s done
+#10 exporting manifest list sha256:4283850946fc237244c2a0fcc0e930c6901ccd3025c344f85ce670d415df3a51
+#10 exporting manifest list sha256:4283850946fc237244c2a0fcc0e930c6901ccd3025c344f85ce670d415df3a51 0.1s done
+#10 naming to docker.io/library/firmwarex-pipeline:task5 done
+#10 unpacking to docker.io/library/firmwarex-pipeline:task5
+#10 unpacking to docker.io/library/firmwarex-pipeline:task5 0.2s done
+#10 DONE 1.1s

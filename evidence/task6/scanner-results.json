@@ -1,0 +1,943 @@
+{
+  "firmware_id": "c88d7993-14d9-453b-a35d-1f2f160b8b09",
+  "results": [
+    {
+      "result": {
+        "status": "completed",
+        "findings": [
+          {
+            "vulnerability_id": "680f4c89-4e6e-5842-9082-722befbdd154",
+            "firmware_id": "c88d7993-14d9-453b-a35d-1f2f160b8b09",
+            "binary": "/scanner.txt",
+            "architecture": "ARM32",
+            "category": "hardcoded_secret",
+            "cwe": "CWE-259",
+            "address": null,
+            "sink": null,
+            "source": null,
+            "tainted_path": [],
+            "crash_state": {
+              "fault_address": null,
+              "registers": null,
+              "overflow_offset": null,
+              "stack_hash": null
+            },
+            "risk_rating": "medium",
+            "confidence": "probable",
+            "evidence_ref": "evidence:2c5d5765299b5428c60c70653322e5aafe2181b50a06641994d022d8817246e0",
+            "redacted": true,
+            "status": "new",
+            "detected_at": "2026-10-19T17:28:04.714825Z"
+          },
+          {
+            "vulnerability_id": "cee29b18-3f54-5587-b823-65d28f3de58c",
+            "firmware_id": "c88d7993-14d9-453b-a35d-1f2f160b8b09",
+            "binary": "/scanner.txt",
+            "architecture": "ARM32",
+            "category": "hardcoded_secret",
+            "cwe": "CWE-798",
+            "address": null,
+            "sink": null,
+            "source": null,
+            "tainted_path": [],
+            "crash_state": {
+              "fault_address": null,
+              "registers": null,
+              "overflow_offset": null,
+              "stack_hash": null
+            },
+            "risk_rating": "medium",
+            "confidence": "probable",
+            "evidence_ref": "evidence:f61a5fbf2315103d899174eba929f2e3a12b3234f4830f6e7cf4b83453634a86",
+            "redacted": true,
+            "status": "new",
+            "detected_at": "2026-10-19T17:28:04.715003Z"
+          },
+          {
+            "vulnerability_id": "8088d350-965d-512b-912b-02d861eaf421",
+            "firmware_id": "c88d7993-14d9-453b-a35d-1f2f160b8b09",
+            "binary": "/scanner.txt",
+            "architecture": "ARM32",
+            "category": "hardcoded_secret",
+            "cwe": "CWE-321",
+            "address": null,
+            "sink": null,
+            "source": null,
+            "tainted_path": [],
+            "crash_state": {
+              "fault_address": null,
+              "registers": null,
+              "overflow_offset": null,
+              "stack_hash": null
+            },
+            "risk_rating": "medium",
+            "confidence": "probable",
+            "evidence_ref": "evidence:7ddca771855f7b2f9b7ad1622d437046fe4c2cefcee67b9daf1fc273effa015f",
+            "redacted": true,
+            "status": "new",
+            "detected_at": "2026-10-19T17:28:04.715039Z"
+          },
+          {
+            "vulnerability_id": "cfcf4963-a010-5d35-8b81-3cb7f7558c81",
+            "firmware_id": "c88d7993-14d9-453b-a35d-1f2f160b8b09",
+            "binary": "/scanner.txt",
+            "architecture": "ARM32",
+            "category": "hardcoded_secret",
+            "cwe": "CWE-321",
+            "address": null,
+            "sink": null,
+            "source": null,
+            "tainted_path": [],
+            "crash_state": {
+              "fault_address": null,
+              "registers": null,
+              "overflow_offset": null,
+              "stack_hash": null
+            },
+            "risk_rating": "low",
+            "confidence": "heuristic",
+            "evidence_ref": "evidence:7e9666e7bbdb14600827e7958f4e85fbd1bddd192b1857a00cf1523b7c3b5ad4",
+            "redacted": true,
+            "status": "new",
+            "detected_at": "2026-10-19T17:28:04.715064Z"
+          },
+          {
+            "vulnerability_id": "9a2e0838-c2d6-59c0-a017-fcc4cf1d6ea4",
+            "firmware_id": "c88d7993-14d9-453b-a35d-1f2f160b8b09",
+            "binary": "/scanner.txt",
+            "architecture": "ARM32",
+            "category": "hardcoded_secret",
+            "cwe": "CWE-798",
+            "address": null,
+            "sink": null,
+            "source": null,
+            "tainted_path": [],
+            "crash_state": {
+              "fault_address": null,
+              "registers": null,
+              "overflow_offset": null,
+              "stack_hash": null
+            },
+            "risk_rating": "low",
+            "confidence": "heuristic",
+            "evidence_ref": "evidence:8d19c6daf75fcec8226fb9480478730c0ceee82addd208774946b79914aa9825",
+            "redacted": true,
+            "status": "new",
+            "detected_at": "2026-10-19T17:28:04.715085Z"
+          },
+          {
+            "vulnerability_id": "f48baa2c-d59c-5877-b18e-d6489610c812",
+            "firmware_id": "c88d7993-14d9-453b-a35d-1f2f160b8b09",
+            "binary": "/scanner.txt",
+            "architecture": "ARM32",
+            "category": "hardcoded_secret",
+            "cwe": "CWE-798",
+            "address": null,
+            "sink": null,
+            "source": null,
+            "tainted_path": [],
+            "crash_state": {
+              "fault_address": null,
+              "registers": null,
+              "overflow_offset": null,
+              "stack_hash": null
+            },
+            "risk_rating": "low",
+            "confidence": "heuristic",
+            "evidence_ref": "evidence:b266d3699f610a6ac737434ec45de81bb442d0da336b17969c1a72c3bdb29f1e",
+            "redacted": true,
+            "status": "new",
+            "detected_at": "2026-10-19T17:28:04.715104Z"
+          },
+          {
+            "vulnerability_id": "e80c2101-07d1-598c-8dcc-2c03eb19e8e9",
+            "firmware_id": "c88d7993-14d9-453b-a35d-1f2f160b8b09",
+            "binary": "/scanner.txt",
+            "architecture": "ARM32",
+            "category": "weak_crypto",
+            "cwe": "CWE-328",
+            "address": null,
+            "sink": null,
+            "source": null,
+            "tainted_path": [],
+            "crash_state": {
+              "fault_address": null,
+              "registers": null,
+              "overflow_offset": null,
+              "stack_hash": null
+            },
+            "risk_rating": "medium",
+            "confidence": "heuristic",
+            "evidence_ref": "evidence:ebccce9b6ac9617e2840edced8746e9fe44279f3fe593a53bfbdb07b778e5c7b",
+            "redacted": true,
+            "status": "new",
+            "detected_at": "2026-10-19T17:28:04.715123Z"
+          },
+          {
+            "vulnerability_id": "1079b5cb-cfaf-5dad-8f4b-80c9853d0fc6",
+            "firmware_id": "c88d7993-14d9-453b-a35d-1f2f160b8b09",
+            "binary": "/scanner.txt",
+            "architecture": "ARM32",
+            "category": "weak_crypto",
+            "cwe": "CWE-327",
+            "address": null,
+            "sink": null,
+            "source": null,
+            "tainted_path": [],
+            "crash_state": {
+              "fault_address": null,
+              "registers": null,
+              "overflow_offset": null,
+              "stack_hash": null
+            },
+            "risk_rating": "medium",
+            "confidence": "heuristic",
+            "evidence_ref": "evidence:a8d41b96dfbe2d70bda3d01e12d2b7db0b2270b6834fac66cc6c18e87ea10e3d",
+            "redacted": true,
+            "status": "new",
+            "detected_at": "2026-10-19T17:28:04.715142Z"
+          }
+        ],
+        "evidence": {
+          "evidence:2c5d5765299b5428c60c70653322e5aafe2181b50a06641994d022d8817246e0": {
+            "rule": "credential",
+            "byte_offset": 9,
+            "byte_length": 19,
+            "fingerprint": "bf56ff9005d5ae9f19fa9d51bbe047d286b7729bc34fb0595dacc4ab728f1cb7",
+            "redacted": true,
+            "heuristic": false
+          },
+          "evidence:f61a5fbf2315103d899174eba929f2e3a12b3234f4830f6e7cf4b83453634a86": {
+            "rule": "credential",
+            "byte_offset": 37,
+            "byte_length": 24,
+            "fingerprint": "5786f8988102e869f9075531ad4064231f5aa665f6bf22e1fcfef016753f80b3",
+            "redacted": true,
+            "heuristic": false
+          },
+          "evidence:7ddca771855f7b2f9b7ad1622d437046fe4c2cefcee67b9daf1fc273effa015f": {
+            "rule": "private_key",
+            "byte_offset": 62,
+            "byte_length": 78,
+            "fingerprint": "4c49654c37b6a9070b891a38189d17ed9963fc3144ebec37e4013a53c4ece850",
+            "redacted": true,
+            "heuristic": false
+          },
+          "evidence:7e9666e7bbdb14600827e7958f4e85fbd1bddd192b1857a00cf1523b7c3b5ad4": {
+            "rule": "certificate",
+            "byte_offset": 141,
+            "byte_length": 75,
+            "fingerprint": "9f49444c7255cd230d965ef2d440414fd7356b075350d4e4725e4363feac3b86",
+            "redacted": true,
+            "heuristic": true
+          },
+          "evidence:8d19c6daf75fcec8226fb9480478730c0ceee82addd208774946b79914aa9825": {
+            "rule": "high_entropy",
+            "byte_offset": 29,
+            "byte_length": 32,
+            "fingerprint": "61b914027f6cfb5131e5129f6caf26cb05ba120c41cd3be551fab22e534bd761",
+            "redacted": true,
+            "heuristic": true
+          },
+          "evidence:b266d3699f610a6ac737434ec45de81bb442d0da336b17969c1a72c3bdb29f1e": {
+            "rule": "high_entropy",
+            "byte_offset": 259,
+            "byte_length": 29,
+            "fingerprint": "55a51c151b542c8ea699100292879118a0241ecab8db63dafd7ddbe8d7a9c82d",
+            "redacted": true,
+            "heuristic": true
+          },
+          "evidence:ebccce9b6ac9617e2840edced8746e9fe44279f3fe593a53bfbdb07b778e5c7b": {
+            "rule": "security_weak_crypto",
+            "byte_offset": 237,
+            "byte_length": 3,
+            "fingerprint": "2657a32383fcf1db28567c2afdd73119fa923782c24fd5b7b27236e1315f61d1",
+            "redacted": true,
+            "heuristic": true
+          },
+          "evidence:a8d41b96dfbe2d70bda3d01e12d2b7db0b2270b6834fac66cc6c18e87ea10e3d": {
+            "rule": "security_weak_crypto",
+            "byte_offset": 255,
+            "byte_length": 3,
+            "fingerprint": "3ba7915c30a2bf344190f3941f706591a3c48392dbb17ec4b467770f21cf40ef",
+            "redacted": true,
+            "heuristic": true
+          }
+        },
+        "schema_version": 1
+      },
+      "sandbox": {
+        "network_mode": "none",
+        "read_only": true,
+        "reason": null,
+        "profile": {
+          "NetworkMode": "none",
+          "ReadonlyRootfs": true,
+          "CapDrop": [
+            "ALL"
+          ],
+          "SecurityOpt": [
+            "no-new-privileges:true"
+          ],
+          "Privileged": false,
+          "Memory": 805306368,
+          "MemorySwap": 805306368,
+          "NanoCpus": 1000000000,
+          "PidsLimit": 64
+        },
+        "image_id": "sha256:6d34d12e5660449ff97e3775c7eca593e3deaa2b2c5913caac715bd835e1c33d",
+        "user": "1000:1000",
+        "wall_seconds": 1.649,
+        "cpu_seconds": 1.474,
+        "exit_code": 0
+      }
+    },
+    {
+      "result": {
+        "status": "completed",
+        "findings": [
+          {
+            "vulnerability_id": "680f4c89-4e6e-5842-9082-722befbdd154",
+            "firmware_id": "c88d7993-14d9-453b-a35d-1f2f160b8b09",
+            "binary": "/scanner.txt",
+            "architecture": "ARM32",
+            "category": "hardcoded_secret",
+            "cwe": "CWE-259",
+            "address": null,
+            "sink": null,
+            "source": null,
+            "tainted_path": [],
+            "crash_state": {
+              "fault_address": null,
+              "registers": null,
+              "overflow_offset": null,
+              "stack_hash": null
+            },
+            "risk_rating": "medium",
+            "confidence": "probable",
+            "evidence_ref": "evidence:2c5d5765299b5428c60c70653322e5aafe2181b50a06641994d022d8817246e0",
+            "redacted": true,
+            "status": "new",
+            "detected_at": "2026-10-19T17:28:06.672681Z"
+          },
+          {
+            "vulnerability_id": "cee29b18-3f54-5587-b823-65d28f3de58c",
+            "firmware_id": "c88d7993-14d9-453b-a35d-1f2f160b8b09",
+            "binary": "/scanner.txt",
+            "architecture": "ARM32",
+            "category": "hardcoded_secret",
+            "cwe": "CWE-798",
+            "address": null,
+            "sink": null,
+            "source": null,
+            "tainted_path": [],
+            "crash_state": {
+              "fault_address": null,
+              "registers": null,
+              "overflow_offset": null,
+              "stack_hash": null
+            },
+            "risk_rating": "medium",
+            "confidence": "probable",
+            "evidence_ref": "evidence:f61a5fbf2315103d899174eba929f2e3a12b3234f4830f6e7cf4b83453634a86",
+            "redacted": true,
+            "status": "new",
+            "detected_at": "2026-10-19T17:28:06.672842Z"
+          },
+          {
+            "vulnerability_id": "8088d350-965d-512b-912b-02d861eaf421",
+            "firmware_id": "c88d7993-14d9-453b-a35d-1f2f160b8b09",
+            "binary": "/scanner.txt",
+            "architecture": "ARM32",
+            "category": "hardcoded_secret",
+            "cwe": "CWE-321",
+            "address": null,
+            "sink": null,
+            "source": null,
+            "tainted_path": [],
+            "crash_state": {
+              "fault_address": null,
+              "registers": null,
+              "overflow_offset": null,
+              "stack_hash": null
+            },
+            "risk_rating": "medium",
+            "confidence": "probable",
+            "evidence_ref": "evidence:7ddca771855f7b2f9b7ad1622d437046fe4c2cefcee67b9daf1fc273effa015f",
+            "redacted": true,
+            "status": "new",
+            "detected_at": "2026-10-19T17:28:06.672881Z"
+          },
+          {
+            "vulnerability_id": "cfcf4963-a010-5d35-8b81-3cb7f7558c81",
+            "firmware_id": "c88d7993-14d9-453b-a35d-1f2f160b8b09",
+            "binary": "/scanner.txt",
+            "architecture": "ARM32",
+            "category": "hardcoded_secret",
+            "cwe": "CWE-321",
+            "address": null,
+            "sink": null,
+            "source": null,
+            "tainted_path": [],
+            "crash_state": {
+              "fault_address": null,
+              "registers": null,
+              "overflow_offset": null,
+              "stack_hash": null
+            },
+            "risk_rating": "low",
+            "confidence": "heuristic",
+            "evidence_ref": "evidence:7e9666e7bbdb14600827e7958f4e85fbd1bddd192b1857a00cf1523b7c3b5ad4",
+            "redacted": true,
+            "status": "new",
+            "detected_at": "2026-10-19T17:28:06.672909Z"
+          },
+          {
+            "vulnerability_id": "9a2e0838-c2d6-59c0-a017-fcc4cf1d6ea4",
+            "firmware_id": "c88d7993-14d9-453b-a35d-1f2f160b8b09",
+            "binary": "/scanner.txt",
+            "architecture": "ARM32",
+            "category": "hardcoded_secret",
+            "cwe": "CWE-798",
+            "address": null,
+            "sink": null,
+            "source": null,
+            "tainted_path": [],
+            "crash_state": {
+              "fault_address": null,
+              "registers": null,
+              "overflow_offset": null,
+              "stack_hash": null
+            },
+            "risk_rating": "low",
+            "confidence": "heuristic",
+            "evidence_ref": "evidence:8d19c6daf75fcec8226fb9480478730c0ceee82addd208774946b79914aa9825",
+            "redacted": true,
+            "status": "new",
+            "detected_at": "2026-10-19T17:28:06.672933Z"
+          },
+          {
+            "vulnerability_id": "f48baa2c-d59c-5877-b18e-d6489610c812",
+            "firmware_id": "c88d7993-14d9-453b-a35d-1f2f160b8b09",
+            "binary": "/scanner.txt",
+            "architecture": "ARM32",
+            "category": "hardcoded_secret",
+            "cwe": "CWE-798",
+            "address": null,
+            "sink": null,
+            "source": null,
+            "tainted_path": [],
+            "crash_state": {
+              "fault_address": null,
+              "registers": null,
+              "overflow_offset": null,
+              "stack_hash": null
+            },
+            "risk_rating": "low",
+            "confidence": "heuristic",
+            "evidence_ref": "evidence:b266d3699f610a6ac737434ec45de81bb442d0da336b17969c1a72c3bdb29f1e",
+            "redacted": true,
+            "status": "new",
+            "detected_at": "2026-10-19T17:28:06.672954Z"
+          },
+          {
+            "vulnerability_id": "e80c2101-07d1-598c-8dcc-2c03eb19e8e9",
+            "firmware_id": "c88d7993-14d9-453b-a35d-1f2f160b8b09",
+            "binary": "/scanner.txt",
+            "architecture": "ARM32",
+            "category": "weak_crypto",
+            "cwe": "CWE-328",
+            "address": null,
+            "sink": null,
+            "source": null,
+            "tainted_path": [],
+            "crash_state": {
+              "fault_address": null,
+              "registers": null,
+              "overflow_offset": null,
+              "stack_hash": null
+            },
+            "risk_rating": "medium",
+            "confidence": "heuristic",
+            "evidence_ref": "evidence:ebccce9b6ac9617e2840edced8746e9fe44279f3fe593a53bfbdb07b778e5c7b",
+            "redacted": true,
+            "status": "new",
+            "detected_at": "2026-10-19T17:28:06.672972Z"
+          },
+          {
+            "vulnerability_id": "1079b5cb-cfaf-5dad-8f4b-80c9853d0fc6",
+            "firmware_id": "c88d7993-14d9-453b-a35d-1f2f160b8b09",
+            "binary": "/scanner.txt",
+            "architecture": "ARM32",
+            "category": "weak_crypto",
+            "cwe": "CWE-327",
+            "address": null,
+            "sink": null,
+            "source": null,
+            "tainted_path": [],
+            "crash_state": {
+              "fault_address": null,
+              "registers": null,
+              "overflow_offset": null,
+              "stack_hash": null
+            },
+            "risk_rating": "medium",
+            "confidence": "heuristic",
+            "evidence_ref": "evidence:a8d41b96dfbe2d70bda3d01e12d2b7db0b2270b6834fac66cc6c18e87ea10e3d",
+            "redacted": true,
+            "status": "new",
+            "detected_at": "2026-10-19T17:28:06.672991Z"
+          }
+        ],
+        "evidence": {
+          "evidence:2c5d5765299b5428c60c70653322e5aafe2181b50a06641994d022d8817246e0": {
+            "rule": "credential",
+            "byte_offset": 9,
+            "byte_length": 19,
+            "fingerprint": "bf56ff9005d5ae9f19fa9d51bbe047d286b7729bc34fb0595dacc4ab728f1cb7",
+            "redacted": true,
+            "heuristic": false
+          },
+          "evidence:f61a5fbf2315103d899174eba929f2e3a12b3234f4830f6e7cf4b83453634a86": {
+            "rule": "credential",
+            "byte_offset": 37,
+            "byte_length": 24,
+            "fingerprint": "5786f8988102e869f9075531ad4064231f5aa665f6bf22e1fcfef016753f80b3",
+            "redacted": true,
+            "heuristic": false
+          },
+          "evidence:7ddca771855f7b2f9b7ad1622d437046fe4c2cefcee67b9daf1fc273effa015f": {
+            "rule": "private_key",
+            "byte_offset": 62,
+            "byte_length": 78,
+            "fingerprint": "4c49654c37b6a9070b891a38189d17ed9963fc3144ebec37e4013a53c4ece850",
+            "redacted": true,
+            "heuristic": false
+          },
+          "evidence:7e9666e7bbdb14600827e7958f4e85fbd1bddd192b1857a00cf1523b7c3b5ad4": {
+            "rule": "certificate",
+            "byte_offset": 141,
+            "byte_length": 75,
+            "fingerprint": "9f49444c7255cd230d965ef2d440414fd7356b075350d4e4725e4363feac3b86",
+            "redacted": true,
+            "heuristic": true
+          },
+          "evidence:8d19c6daf75fcec8226fb9480478730c0ceee82addd208774946b79914aa9825": {
+            "rule": "high_entropy",
+            "byte_offset": 29,
+            "byte_length": 32,
+            "fingerprint": "61b914027f6cfb5131e5129f6caf26cb05ba120c41cd3be551fab22e534bd761",
+            "redacted": true,
+            "heuristic": true
+          },
+          "evidence:b266d3699f610a6ac737434ec45de81bb442d0da336b17969c1a72c3bdb29f1e": {
+            "rule": "high_entropy",
+            "byte_offset": 259,
+            "byte_length": 29,
+            "fingerprint": "55a51c151b542c8ea699100292879118a0241ecab8db63dafd7ddbe8d7a9c82d",
+            "redacted": true,
+            "heuristic": true
+          },
+          "evidence:ebccce9b6ac9617e2840edced8746e9fe44279f3fe593a53bfbdb07b778e5c7b": {
+            "rule": "security_weak_crypto",
+            "byte_offset": 237,
+            "byte_length": 3,
+            "fingerprint": "2657a32383fcf1db28567c2afdd73119fa923782c24fd5b7b27236e1315f61d1",
+            "redacted": true,
+            "heuristic": true
+          },
+          "evidence:a8d41b96dfbe2d70bda3d01e12d2b7db0b2270b6834fac66cc6c18e87ea10e3d": {
+            "rule": "security_weak_crypto",
+            "byte_offset": 255,
+            "byte_length": 3,
+            "fingerprint": "3ba7915c30a2bf344190f3941f706591a3c48392dbb17ec4b467770f21cf40ef",
+            "redacted": true,
+            "heuristic": true
+          }
+        },
+        "schema_version": 1
+      },
+      "sandbox": {
+        "network_mode": "none",
+        "read_only": true,
+        "reason": null,
+        "profile": {
+          "NetworkMode": "none",
+          "ReadonlyRootfs": true,
+          "CapDrop": [
+            "ALL"
+          ],
+          "SecurityOpt": [
+            "no-new-privileges:true"
+          ],
+          "Privileged": false,
+          "Memory": 805306368,
+          "MemorySwap": 805306368,
+          "NanoCpus": 1000000000,
+          "PidsLimit": 64
+        },
+        "image_id": "sha256:6d34d12e5660449ff97e3775c7eca593e3deaa2b2c5913caac715bd835e1c33d",
+        "user": "1000:1000",
+        "wall_seconds": 1.528,
+        "cpu_seconds": 1.267,
+        "exit_code": 0
+      }
+    }
+  ],
+  "database_findings": [
+    {
+      "vulnerability_id": "680f4c89-4e6e-5842-9082-722befbdd154",
+      "firmware_id": "c88d7993-14d9-453b-a35d-1f2f160b8b09",
+      "binary": "/scanner.txt",
+      "architecture": "ARM32",
+      "category": "hardcoded_secret",
+      "cwe": "CWE-259",
+      "address": null,
+      "sink": null,
+      "source": null,
+      "tainted_path": [],
+      "crash_state": {
+        "fault_address": null,
+        "registers": null,
+        "overflow_offset": null,
+        "stack_hash": null
+      },
+      "risk_rating": "medium",
+      "confidence": "probable",
+      "evidence_ref": "evidence:2c5d5765299b5428c60c70653322e5aafe2181b50a06641994d022d8817246e0",
+      "redacted": true,
+      "status": "new",
+      "detected_at": "2026-10-19T17:28:04.714825Z"
+    },
+    {
+      "vulnerability_id": "cee29b18-3f54-5587-b823-65d28f3de58c",
+      "firmware_id": "c88d7993-14d9-453b-a35d-1f2f160b8b09",
+      "binary": "/scanner.txt",
+      "architecture": "ARM32",
+      "category": "hardcoded_secret",
+      "cwe": "CWE-798",
+      "address": null,
+      "sink": null,
+      "source": null,
+      "tainted_path": [],
+      "crash_state": {
+        "fault_address": null,
+        "registers": null,
+        "overflow_offset": null,
+        "stack_hash": null
+      },
+      "risk_rating": "medium",
+      "confidence": "probable",
+      "evidence_ref": "evidence:f61a5fbf2315103d899174eba929f2e3a12b3234f4830f6e7cf4b83453634a86",
+      "redacted": true,
+      "status": "new",
+      "detected_at": "2026-10-19T17:28:04.715003Z"
+    },
+    {
+      "vulnerability_id": "8088d350-965d-512b-912b-02d861eaf421",
+      "firmware_id": "c88d7993-14d9-453b-a35d-1f2f160b8b09",
+      "binary": "/scanner.txt",
+      "architecture": "ARM32",
+      "category": "hardcoded_secret",
+      "cwe": "CWE-321",
+      "address": null,
+      "sink": null,
+      "source": null,
+      "tainted_path": [],
+      "crash_state": {
+        "fault_address": null,
+        "registers": null,
+        "overflow_offset": null,
+        "stack_hash": null
+      },
+      "risk_rating": "medium",
+      "confidence": "probable",
+      "evidence_ref": "evidence:7ddca771855f7b2f9b7ad1622d437046fe4c2cefcee67b9daf1fc273effa015f",
+      "redacted": true,
+      "status": "new",
+      "detected_at": "2026-10-19T17:28:04.715039Z"
+    },
+    {
+      "vulnerability_id": "cfcf4963-a010-5d35-8b81-3cb7f7558c81",
+      "firmware_id": "c88d7993-14d9-453b-a35d-1f2f160b8b09",
+      "binary": "/scanner.txt",
+      "architecture": "ARM32",
+      "category": "hardcoded_secret",
+      "cwe": "CWE-321",
+      "address": null,
+      "sink": null,
+      "source": null,
+      "tainted_path": [],
+      "crash_state": {
+        "fault_address": null,
+        "registers": null,
+        "overflow_offset": null,
+        "stack_hash": null
+      },
+      "risk_rating": "low",
+      "confidence": "heuristic",
+      "evidence_ref": "evidence:7e9666e7bbdb14600827e7958f4e85fbd1bddd192b1857a00cf1523b7c3b5ad4",
+      "redacted": true,
+      "status": "new",
+      "detected_at": "2026-10-19T17:28:04.715064Z"
+    },
+    {
+      "vulnerability_id": "9a2e0838-c2d6-59c0-a017-fcc4cf1d6ea4",
+      "firmware_id": "c88d7993-14d9-453b-a35d-1f2f160b8b09",
+      "binary": "/scanner.txt",
+      "architecture": "ARM32",
+      "category": "hardcoded_secret",
+      "cwe": "CWE-798",
+      "address": null,
+      "sink": null,
+      "source": null,
+      "tainted_path": [],
+      "crash_state": {
+        "fault_address": null,
+        "registers": null,
+        "overflow_offset": null,
+        "stack_hash": null
+      },
+      "risk_rating": "low",
+      "confidence": "heuristic",
+      "evidence_ref": "evidence:8d19c6daf75fcec8226fb9480478730c0ceee82addd208774946b79914aa9825",
+      "redacted": true,
+      "status": "new",
+      "detected_at": "2026-10-19T17:28:04.715085Z"
+    },
+    {
+      "vulnerability_id": "f48baa2c-d59c-5877-b18e-d6489610c812",
+      "firmware_id": "c88d7993-14d9-453b-a35d-1f2f160b8b09",
+      "binary": "/scanner.txt",
+      "architecture": "ARM32",
+      "category": "hardcoded_secret",
+      "cwe": "CWE-798",
+      "address": null,
+      "sink": null,
+      "source": null,
+      "tainted_path": [],
+      "crash_state": {
+        "fault_address": null,
+        "registers": null,
+        "overflow_offset": null,
+        "stack_hash": null
+      },
+      "risk_rating": "low",
+      "confidence": "heuristic",
+      "evidence_ref": "evidence:b266d3699f610a6ac737434ec45de81bb442d0da336b17969c1a72c3bdb29f1e",
+      "redacted": true,
+      "status": "new",
+      "detected_at": "2026-10-19T17:28:04.715104Z"
+    },
+    {
+      "vulnerability_id": "e80c2101-07d1-598c-8dcc-2c03eb19e8e9",
+      "firmware_id": "c88d7993-14d9-453b-a35d-1f2f160b8b09",
+      "binary": "/scanner.txt",
+      "architecture": "ARM32",
+      "category": "weak_crypto",
+      "cwe": "CWE-328",
+      "address": null,
+      "sink": null,
+      "source": null,
+      "tainted_path": [],
+      "crash_state": {
+        "fault_address": null,
+        "registers": null,
+        "overflow_offset": null,
+        "stack_hash": null
+      },
+      "risk_rating": "medium",
+      "confidence": "heuristic",
+      "evidence_ref": "evidence:ebccce9b6ac9617e2840edced8746e9fe44279f3fe593a53bfbdb07b778e5c7b",
+      "redacted": true,
+      "status": "new",
+      "detected_at": "2026-10-19T17:28:04.715123Z"
+    },
+    {
+      "vulnerability_id": "1079b5cb-cfaf-5dad-8f4b-80c9853d0fc6",
+      "firmware_id": "c88d7993-14d9-453b-a35d-1f2f160b8b09",
+      "binary": "/scanner.txt",
+      "architecture": "ARM32",
+      "category": "weak_crypto",
+      "cwe": "CWE-327",
+      "address": null,
+      "sink": null,
+      "source": null,
+      "tainted_path": [],
+      "crash_state": {
+        "fault_address": null,
+        "registers": null,
+        "overflow_offset": null,
+        "stack_hash": null
+      },
+      "risk_rating": "medium",
+      "confidence": "heuristic",
+      "evidence_ref": "evidence:a8d41b96dfbe2d70bda3d01e12d2b7db0b2270b6834fac66cc6c18e87ea10e3d",
+      "redacted": true,
+      "status": "new",
+      "detected_at": "2026-10-19T17:28:04.715142Z"
+    }
+  ],
+  "database_evidence": [
+    {
+      "rule": "credential",
+      "byte_offset": 9,
+      "byte_length": 19,
+      "fingerprint": "bf56ff9005d5ae9f19fa9d51bbe047d286b7729bc34fb0595dacc4ab728f1cb7",
+      "redacted": true,
+      "heuristic": false
+    },
+    {
+      "rule": "credential",
+      "byte_offset": 37,
+      "byte_length": 24,
+      "fingerprint": "5786f8988102e869f9075531ad4064231f5aa665f6bf22e1fcfef016753f80b3",
+      "redacted": true,
+      "heuristic": false
+    },
+    {
+      "rule": "private_key",
+      "byte_offset": 62,
+      "byte_length": 78,
+      "fingerprint": "4c49654c37b6a9070b891a38189d17ed9963fc3144ebec37e4013a53c4ece850",
+      "redacted": true,
+      "heuristic": false
+    },
+    {
+      "rule": "certificate",
+      "byte_offset": 141,
+      "byte_length": 75,
+      "fingerprint": "9f49444c7255cd230d965ef2d440414fd7356b075350d4e4725e4363feac3b86",
+      "redacted": true,
+      "heuristic": true
+    },
+    {
+      "rule": "high_entropy",
+      "byte_offset": 29,
+      "byte_length": 32,
+      "fingerprint": "61b914027f6cfb5131e5129f6caf26cb05ba120c41cd3be551fab22e534bd761",
+      "redacted": true,
+      "heuristic": true
+    },
+    {
+      "rule": "high_entropy",
+      "byte_offset": 259,
+      "byte_length": 29,
+      "fingerprint": "55a51c151b542c8ea699100292879118a0241ecab8db63dafd7ddbe8d7a9c82d",
+      "redacted": true,
+      "heuristic": true
+    },
+    {
+      "rule": "security_weak_crypto",
+      "byte_offset": 237,
+      "byte_length": 3,
+      "fingerprint": "2657a32383fcf1db28567c2afdd73119fa923782c24fd5b7b27236e1315f61d1",
+      "redacted": true,
+      "heuristic": true
+    },
+    {
+      "rule": "security_weak_crypto",
+      "byte_offset": 255,
+      "byte_length": 3,
+      "fingerprint": "3ba7915c30a2bf344190f3941f706591a3c48392dbb17ec4b467770f21cf40ef",
+      "redacted": true,
+      "heuristic": true
+    }
+  ],
+  "audit": [
+    {
+      "input_sha256": "65a8329b7126f67013c132cde9f03511a5abbda553670c0fbf80b60c274af234",
+      "mode": "scan",
+      "budgets": {}
+    },
+    {
+      "count": 8,
+      "finding_ids": [
+        "680f4c89-4e6e-5842-9082-722befbdd154",
+        "cee29b18-3f54-5587-b823-65d28f3de58c",
+        "8088d350-965d-512b-912b-02d861eaf421",
+        "cfcf4963-a010-5d35-8b81-3cb7f7558c81",
+        "9a2e0838-c2d6-59c0-a017-fcc4cf1d6ea4",
+        "f48baa2c-d59c-5877-b18e-d6489610c812",
+        "e80c2101-07d1-598c-8dcc-2c03eb19e8e9",
+        "1079b5cb-cfaf-5dad-8f4b-80c9853d0fc6"
+      ],
+      "redacted": true
+    },
+    {
+      "status": "completed",
+      "sandbox": {
+        "network_mode": "none",
+        "read_only": true,
+        "reason": null,
+        "profile": {
+          "NetworkMode": "none",
+          "ReadonlyRootfs": true,
+          "CapDrop": [
+            "ALL"
+          ],
+          "SecurityOpt": [
+            "no-new-privileges:true"
+          ],
+          "Privileged": false,
+          "Memory": 805306368,
+          "MemorySwap": 805306368,
+          "NanoCpus": 1000000000,
+          "PidsLimit": 64
+        },
+        "image_id": "sha256:6d34d12e5660449ff97e3775c7eca593e3deaa2b2c5913caac715bd835e1c33d",
+        "user": "1000:1000",
+        "wall_seconds": 1.649,
+        "cpu_seconds": 1.474,
+        "exit_code": 0
+      }
+    },
+    {
+      "input_sha256": "65a8329b7126f67013c132cde9f03511a5abbda553670c0fbf80b60c274af234",
+      "mode": "scan",
+      "budgets": {}
+    },
+    {
+      "count": 8,
+      "finding_ids": [
+        "680f4c89-4e6e-5842-9082-722befbdd154",
+        "cee29b18-3f54-5587-b823-65d28f3de58c",
+        "8088d350-965d-512b-912b-02d861eaf421",
+        "cfcf4963-a010-5d35-8b81-3cb7f7558c81",
+        "9a2e0838-c2d6-59c0-a017-fcc4cf1d6ea4",
+        "f48baa2c-d59c-5877-b18e-d6489610c812",
+        "e80c2101-07d1-598c-8dcc-2c03eb19e8e9",
+        "1079b5cb-cfaf-5dad-8f4b-80c9853d0fc6"
+      ],
+      "redacted": true
+    },
+    {
+      "status": "completed",
+      "sandbox": {
+        "network_mode": "none",
+        "read_only": true,
+        "reason": null,
+        "profile": {
+          "NetworkMode": "none",
+          "ReadonlyRootfs": true,
+          "CapDrop": [
+            "ALL"
+          ],
+          "SecurityOpt": [
+            "no-new-privileges:true"
+          ],
+          "Privileged": false,
+          "Memory": 805306368,
+          "MemorySwap": 805306368,
+          "NanoCpus": 1000000000,
+          "PidsLimit": 64
+        },
+        "image_id": "sha256:6d34d12e5660449ff97e3775c7eca593e3deaa2b2c5913caac715bd835e1c33d",
+        "user": "1000:1000",
+        "wall_seconds": 1.528,
+        "cpu_seconds": 1.267,
+        "exit_code": 0
+      }
+    }
+  ]
+}

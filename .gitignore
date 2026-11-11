@@ -1,0 +1,21 @@
+.env
+.runtime/
+work/
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.coverage
+htmlcov/
+*.egg-info/
+build/
+dist/
+
+# Private credentials, runtime state and local recordings
+.env.*
+!.env.example
+*.webm
+*.mp4
+*.sqlite
+*.sqlite3
+*.db

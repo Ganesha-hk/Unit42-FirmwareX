@@ -1,0 +1,58 @@
+ Image firmwarex-control:day1 Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 974B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 488B done
+#2 DONE 0.1s
+
+#3 [internal] load metadata for docker.io/library/python@sha256:34386ef0cb081344d7ec1c103ba398e6e9f64e9ab3a1509accc92a4e24a07258
+#3 DONE 0.1s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 117B done
+#4 DONE 0.1s
+
+#5 [internal] load build context
+#5 transferring context: 145.67kB done
+#5 DONE 0.1s
+
+#6 [1/7] FROM docker.io/library/python@sha256:34386ef0cb081344d7ec1c103ba398e6e9f64e9ab3a1509accc92a4e24a07258
+#6 resolve docker.io/library/python@sha256:34386ef0cb081344d7ec1c103ba398e6e9f64e9ab3a1509accc92a4e24a07258 0.1s done
+#6 DONE 0.2s
+
+#7 [2/7] WORKDIR /app
+#7 CACHED
+
+#8 [3/7] COPY locks/control.txt /app/locks/control.txt
+#8 CACHED
+
+#9 [4/7] RUN pip install --no-cache-dir --require-hashes -r locks/control.txt
+#9 CACHED
+
+#10 [5/7] COPY src /app/src
+#10 DONE 0.2s
+
+#11 [6/7] COPY pyproject.toml alembic.ini /app/
+#11 DONE 0.2s
+
+#12 [7/7] COPY migrations /app/migrations
+#12 DONE 0.3s
+
+#13 exporting to image
+#13 exporting layers
+#13 exporting layers 0.9s done
+#13 exporting manifest sha256:5a3a6f2dd9526a1a3e923ee623f5062f4de63d2894716d47252f7bc936109561 0.1s done
+#13 exporting config sha256:7c51b2424de484a5e8f5a6d6418ef97e34b8e8cfbb2c0fd2b67155fff18c5f5f 0.1s done
+#13 exporting attestation manifest sha256:1251dcaa7ebd430ce15d3ab944c48e1c093fd518bbf7ffd271bc78fa2dfb560e 0.1s done
+#13 exporting manifest list sha256:f9c6e70192676945b760c14014024e8e69d1b51d398640710519c6a37df36d9b
+#13 exporting manifest list sha256:f9c6e70192676945b760c14014024e8e69d1b51d398640710519c6a37df36d9b 0.1s done
+#13 naming to docker.io/library/firmwarex-control:day1 0.0s done
+#13 unpacking to docker.io/library/firmwarex-control:day1
+#13 unpacking to docker.io/library/firmwarex-control:day1 0.3s done
+#13 DONE 1.7s
+
+#14 resolving provenance for metadata file
+#14 DONE 0.0s
+ Image firmwarex-control:day1 Built 

@@ -1,0 +1,8 @@
+{
+  "firmware_id": "fe6b18df-e4d4-4b90-8cd4-103342728657",
+  "job_id": "7038ba91-bc46-4eea-a20e-ea37776bec48",
+  "sha256": "8c88c338afad0535ab295a62e9555dc91f3bf5c8f4fc3bc67008adb2619f60e6",
+  "status": "complete",
+  "scope": "Real OpenWrt upload, exact selected binary profiles, loopback HTTP response, and one completed multipart-header/empty-body symbolic path. Whole-firmware coverage remains limited.",
+  "video": "page@67b3806823e42a75fec6606f40c41588.webm"
+}

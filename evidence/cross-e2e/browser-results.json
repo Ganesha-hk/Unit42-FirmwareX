@@ -1,0 +1,85 @@
+{
+  "results": [
+    {
+      "architecture": "x86_64",
+      "firmware_id": "af1031a8-c855-47a8-915a-07fa527d8e38",
+      "findings": 17,
+      "passed": true,
+      "checks": [
+        "dashboard uploaded-image selection",
+        "architecture matrix",
+        "CFG",
+        "11 spans",
+        "application report finding count",
+        "HTML download",
+        "PDF print",
+        "redaction"
+      ]
+    },
+    {
+      "architecture": "ARM32",
+      "firmware_id": "16122d04-01f5-4376-a271-49d243b68d8f",
+      "findings": 16,
+      "passed": true,
+      "checks": [
+        "dashboard uploaded-image selection",
+        "architecture matrix",
+        "CFG",
+        "11 spans",
+        "application report finding count",
+        "HTML download",
+        "PDF print",
+        "redaction"
+      ]
+    },
+    {
+      "architecture": "ARM64",
+      "firmware_id": "9288256f-696f-4d2c-9a6c-7f2db7e82b2e",
+      "findings": 16,
+      "passed": true,
+      "checks": [
+        "dashboard uploaded-image selection",
+        "architecture matrix",
+        "CFG",
+        "11 spans",
+        "application report finding count",
+        "HTML download",
+        "PDF print",
+        "redaction"
+      ]
+    },
+    {
+      "architecture": "MIPS",
+      "firmware_id": "b29bf453-7cd5-4e24-9951-0700068a8872",
+      "findings": 16,
+      "passed": true,
+      "checks": [
+        "dashboard uploaded-image selection",
+        "architecture matrix",
+        "CFG",
+        "11 spans",
+        "application report finding count",
+        "HTML download",
+        "PDF print",
+        "redaction"
+      ]
+    },
+    {
+      "architecture": "MIPSEL",
+      "firmware_id": "97365141-2b8a-46b5-8104-e9ce5ac5cf0f",
+      "findings": 16,
+      "passed": true,
+      "checks": [
+        "dashboard uploaded-image selection",
+        "architecture matrix",
+        "CFG",
+        "11 spans",
+        "application report finding count",
+        "HTML download",
+        "PDF print",
+        "redaction"
+      ]
+    }
+  ],
+  "page_errors": []
+}

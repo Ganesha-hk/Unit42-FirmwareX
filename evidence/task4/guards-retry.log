@@ -1,0 +1,3 @@
+ Container firmwarex-dispatcher-run-e78cc1bff7b7 Creating 
+ Container firmwarex-dispatcher-run-e78cc1bff7b7 Created 
+{"passed": 9, "prelaunch_denials": ["unknown_binary", "traversal", "symlink", "extra_file", "unknown_budget", "text_budget", "unknown_field", "wrong_arch"], "raw_reveal": "denied_and_audited"}

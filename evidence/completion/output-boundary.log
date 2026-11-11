@@ -1,0 +1,4 @@
+ Container firmwarex-migrate-run-257772d24892 Creating 
+ Container firmwarex-migrate-run-257772d24892 Created 
+{"status": "complete", "database_records": 22208, "output_files": 47, "originals": "restricted controller-only quarantine", "immutable_audit": "unchanged"}
+{"passed": true, "legacy_fixture_job_id": "72fff5eb-0203-4b44-9994-a4436e63ba22", "api_surfaces": 4, "legacy_storage_sanitized": true, "raw_originals": "controller-only quarantine", "mentor_gate": "PENDING HUMAN REVIEW"}

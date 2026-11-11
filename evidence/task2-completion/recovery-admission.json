@@ -1,0 +1,15 @@
+{
+  "admission": {
+    "status": 429,
+    "health_status": 200,
+    "elapsed_seconds": 0.013,
+    "inflight_limit": 16
+  },
+  "recovery": {
+    "job_id": "1136a788-bd86-4456-81a2-1aa837f5202d",
+    "status": "failed",
+    "reason": "dispatcher_lost",
+    "orphan_removed": true,
+    "audit_recorded": true
+  }
+}

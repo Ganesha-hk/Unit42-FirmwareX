@@ -1,0 +1,18 @@
+{
+  "unit_tests_passed": 13,
+  "api_scenarios_passed": 3,
+  "extra_filesystem_formats_passed": 5,
+  "corpus_successes": 6,
+  "corpus_total": 6,
+  "quota_cases": [
+    "cpu",
+    "memory",
+    "wall"
+  ],
+  "orphan_recovery": "pass",
+  "admission_limit": "pass",
+  "clean_migration_roundtrip": "pass",
+  "requirement_ids_preserved": 112,
+  "human_review": "pending",
+  "external_github_actions": false
+}

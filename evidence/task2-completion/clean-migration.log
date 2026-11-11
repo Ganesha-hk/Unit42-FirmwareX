@@ -1,0 +1,23 @@
+ Network firmwarex-repro_control Creating 
+ Volume firmwarex-repro_database Creating 
+ Network firmwarex-repro_control Creating 
+ Volume firmwarex-repro_database Creating 
+ Volume firmwarex-repro_database Created 
+ Volume firmwarex-repro_database Created 
+ Network firmwarex-repro_control Created 
+ Network firmwarex-repro_control Created 
+ Container firmwarex-repro-postgres-1 Creating 
+ Container firmwarex-repro-postgres-1 Created 
+ Container firmwarex-repro-migrate-1 Creating 
+ Container firmwarex-repro-migrate-1 Created 
+Attaching to migrate-1
+ Container firmwarex-repro-postgres-1 Starting 
+ Container firmwarex-repro-postgres-1 Started 
+ Container firmwarex-repro-postgres-1 Waiting 
+ Container firmwarex-repro-postgres-1 Healthy 
+ Container firmwarex-repro-migrate-1 Starting 
+ Container firmwarex-repro-migrate-1 Started 
+[Kmigrate-1 exited with code 0
+ Compose Stopping Aborting on container exit...
+ Container firmwarex-repro-migrate-1 Stopping 
+ Container firmwarex-repro-migrate-1 Stopped 

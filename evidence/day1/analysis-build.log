@@ -1,0 +1,177 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from analysis.Dockerfile
+#1 transferring dockerfile: 256B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/python@sha256:34386ef0cb081344d7ec1c103ba398e6e9f64e9ab3a1509accc92a4e24a07258
+#2 DONE 0.1s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 117B done
+#3 DONE 0.0s
+
+#4 [internal] load build context
+#4 DONE 0.0s
+
+#5 [1/3] FROM docker.io/library/python@sha256:34386ef0cb081344d7ec1c103ba398e6e9f64e9ab3a1509accc92a4e24a07258
+#5 resolve docker.io/library/python@sha256:34386ef0cb081344d7ec1c103ba398e6e9f64e9ab3a1509accc92a4e24a07258 0.1s done
+#5 CACHED
+
+#4 [internal] load build context
+#4 transferring context: 4.45kB done
+#4 DONE 0.1s
+
+#6 [2/3] COPY locks/analysis-linux-x86_64.txt /requirements.txt
+#6 DONE 0.2s
+
+#7 [3/3] RUN pip install --no-cache-dir --require-hashes -r /requirements.txt
+#7 2.153 Collecting angr==10.0.4.post1 (from -r /requirements.txt (line 2))
+#7 2.285   Downloading angr-10.0.4.post1-cp312-abi3-manylinux_2_28_x86_64.whl (9.6 MB)
+#7 6.186      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.6/9.6 MB 2.4 MB/s eta 0:00:00
+#7 6.268 Collecting angr-data==0.2.0 (from -r /requirements.txt (line 3))
+#7 6.298   Downloading angr_data-0.2.0-py3-none-any.whl (14.3 MB)
+#7 14.44      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 14.3/14.3 MB 1.8 MB/s eta 0:00:00
+#7 14.55 Collecting archinfo==10.0.4 (from -r /requirements.txt (line 4))
+#7 14.58   Downloading archinfo-10.0.4-py3-none-any.whl (51 kB)
+#7 14.67 Collecting arpy==1.1.1 (from -r /requirements.txt (line 5))
+#7 14.70   Downloading arpy-1.1.1.tar.gz (6.8 kB)
+#7 14.71   Installing build dependencies: started
+#7 16.32   Installing build dependencies: finished with status 'done'
+#7 16.32   Getting requirements to build wheel: started
+#7 16.48   Getting requirements to build wheel: finished with status 'done'
+#7 16.48   Preparing metadata (pyproject.toml): started
+#7 16.62   Preparing metadata (pyproject.toml): finished with status 'done'
+#7 17.02 Collecting bitarray==3.12.3 (from -r /requirements.txt (line 6))
+#7 17.05   Downloading bitarray-3.12.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (404 kB)
+#7 17.71 Collecting bitstring==4.4.0 (from -r /requirements.txt (line 7))
+#7 17.74   Downloading bitstring-4.4.0-py3-none-any.whl (76 kB)
+#7 17.88 Collecting cachetools==7.2.3 (from -r /requirements.txt (line 8))
+#7 17.91   Downloading cachetools-7.2.3-py3-none-any.whl (18 kB)
+#7 18.30 Collecting capstone==5.0.9 (from -r /requirements.txt (line 9))
+#7 18.33   Downloading capstone-5.0.9-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (1.5 MB)
+#7 19.46      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.5/1.5 MB 1.4 MB/s eta 0:00:00
+#7 19.53 Collecting cart==1.2.3 (from -r /requirements.txt (line 10))
+#7 19.56   Downloading cart-1.2.3-py2.py3-none-any.whl (10 kB)
+#7 19.72 Collecting cffi==2.1.1 (from -r /requirements.txt (line 11))
+#7 19.75   Downloading cffi-2.1.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (221 kB)
+#7 19.97 Collecting cle==10.0.4 (from -r /requirements.txt (line 12))
+#7 20.00   Downloading cle-10.0.4-py3-none-any.whl (257 kB)
+#7 20.19 Collecting cxxheaderparser==2.2.0 (from -r /requirements.txt (line 13))
+#7 20.22   Downloading cxxheaderparser-2.2.0-py3-none-any.whl (67 kB)
+#7 20.32 Collecting future==1.0.0 (from -r /requirements.txt (line 14))
+#7 20.35   Downloading future-1.0.0-py3-none-any.whl (491 kB)
+#7 20.92 Collecting gitdb==4.0.12 (from -r /requirements.txt (line 15))
+#7 20.95   Downloading gitdb-4.0.12-py3-none-any.whl (62 kB)
+#7 21.17 Collecting GitPython==3.2.1 (from -r /requirements.txt (line 16))
+#7 21.20   Downloading gitpython-3.2.1-py3-none-any.whl (231 kB)
+#7 21.64 Collecting lmdb==3.0.0 (from -r /requirements.txt (line 17))
+#7 21.67   Downloading lmdb-3.0.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (569 kB)
+#7 22.19      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 569.8/569.8 kB 1.3 MB/s eta 0:00:00
+#7 22.26 Collecting markdown-it-py==4.2.0 (from -r /requirements.txt (line 18))
+#7 22.29   Downloading markdown_it_py-4.2.0-py3-none-any.whl (91 kB)
+#7 22.42 Collecting mdurl==0.1.2 (from -r /requirements.txt (line 19))
+#7 22.45   Downloading mdurl-0.1.2-py3-none-any.whl (10.0 kB)
+#7 22.52 Collecting minidump==0.0.24 (from -r /requirements.txt (line 20))
+#7 22.55   Downloading minidump-0.0.24-py3-none-any.whl (78 kB)
+#7 22.66 Collecting mpmath==1.3.0 (from -r /requirements.txt (line 21))
+#7 22.69   Downloading mpmath-1.3.0-py3-none-any.whl (536 kB)
+#7 23.03      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 536.2/536.2 kB 1.8 MB/s eta 0:00:00
+#7 23.15 Collecting msgspec==0.22.0 (from -r /requirements.txt (line 22))
+#7 23.18   Downloading msgspec-0.22.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (230 kB)
+#7 23.36 Collecting mulpyplexer==0.9 (from -r /requirements.txt (line 23))
+#7 23.39   Downloading mulpyplexer-0.09.tar.gz (2.8 kB)
+#7 23.40   Installing build dependencies: started
+#7 24.37   Installing build dependencies: finished with status 'done'
+#7 24.37   Getting requirements to build wheel: started
+#7 24.51   Getting requirements to build wheel: finished with status 'done'
+#7 24.51   Preparing metadata (pyproject.toml): started
+#7 24.64   Preparing metadata (pyproject.toml): finished with status 'done'
+#7 24.72 Collecting networkx==3.7 (from -r /requirements.txt (line 24))
+#7 24.75   Downloading networkx-3.7-py3-none-any.whl (2.1 MB)
+#7 26.12      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 1.5 MB/s eta 0:00:00
+#7 26.22 Collecting pefile==2024.8.26 (from -r /requirements.txt (line 25))
+#7 26.25   Downloading pefile-2024.8.26-py3-none-any.whl (74 kB)
+#7 26.38 Collecting platformdirs==4.13.5 (from -r /requirements.txt (line 26))
+#7 26.41   Downloading platformdirs-4.13.5-py3-none-any.whl (32 kB)
+#7 26.63 Collecting protobuf==7.36.2 (from -r /requirements.txt (line 27))
+#7 26.66   Downloading protobuf-7.36.2-cp310-abi3-manylinux2014_x86_64.whl (343 kB)
+#7 27.01 Collecting psutil==7.2.2 (from -r /requirements.txt (line 28))
+#7 27.04   Downloading psutil-7.2.2-cp36-abi3-manylinux2010_x86_64.manylinux_2_12_x86_64.manylinux_2_28_x86_64.whl (155 kB)
+#7 27.20 Collecting pycparser==3.11 (from -r /requirements.txt (line 29))
+#7 27.23   Downloading pycparser-3.11-py3-none-any.whl (51 kB)
+#7 27.39 Collecting pycryptodome==4.0.1 (from -r /requirements.txt (line 30))
+#7 27.42   Downloading pycryptodome-4.0.1-cp39-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (2.5 MB)
+#7 29.36      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.5/2.5 MB 1.3 MB/s eta 0:00:00
+#7 29.43 Collecting pydemumble==0.1.3 (from -r /requirements.txt (line 31))
+#7 29.46   Downloading pydemumble-0.1.3-cp312-abi3-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (201 kB)
+#7 29.67 Collecting pyelftools==0.33 (from -r /requirements.txt (line 32))
+#7 29.70   Downloading pyelftools-0.33-py3-none-any.whl (201 kB)
+#7 29.92 Collecting Pygments==2.21.0 (from -r /requirements.txt (line 33))
+#7 29.95   Downloading pygments-2.21.0-py3-none-any.whl (1.3 MB)
+#7 30.68      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 1.8 MB/s eta 0:00:00
+#7 30.78 Collecting pypcode==4.0.1 (from -r /requirements.txt (line 34))
+#7 30.80   Downloading pypcode-4.0.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (14.8 MB)
+#7 40.14      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 14.8/14.8 MB 1.6 MB/s eta 0:00:00
+#7 40.34 Collecting pyvex==10.0.4 (from -r /requirements.txt (line 35))
+#7 40.37   Downloading pyvex-10.0.4-cp312-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (2.4 MB)
+#7 42.78      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.4/2.4 MB 980.6 kB/s eta 0:00:00
+#7 42.84 Collecting pyxbe==1.0.4 (from -r /requirements.txt (line 36))
+#7 42.88   Downloading pyxbe-1.0.4-py3-none-any.whl (17 kB)
+#7 42.94 Collecting pyxdia==0.1.1 (from -r /requirements.txt (line 37))
+#7 42.97   Downloading pyxdia-0.1.1-py3-none-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (1.4 MB)
+#7 44.21      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.4/1.4 MB 1.1 MB/s eta 0:00:00
+#7 44.30 Collecting rich==15.0.0 (from -r /requirements.txt (line 38))
+#7 44.33   Downloading rich-15.0.0-py3-none-any.whl (310 kB)
+#7 44.76 Collecting smmap==5.0.3 (from -r /requirements.txt (line 39))
+#7 44.79   Downloading smmap-5.0.3-py3-none-any.whl (24 kB)
+#7 44.88 Collecting sortedcontainers==2.4.0 (from -r /requirements.txt (line 40))
+#7 44.91   Downloading sortedcontainers-2.4.0-py2.py3-none-any.whl (29 kB)
+#7 45.01 Collecting sympy==1.14.0 (from -r /requirements.txt (line 41))
+#7 45.04   Downloading sympy-1.14.0-py3-none-any.whl (6.3 MB)
+#7 47.66      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.3/6.3 MB 2.5 MB/s eta 0:00:00
+#7 48.03 Collecting tibs==0.5.7 (from -r /requirements.txt (line 42))
+#7 48.05   Downloading tibs-0.5.7-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (423 kB)
+#7 48.24 Collecting typing_extensions==4.16.0 (from -r /requirements.txt (line 43))
+#7 48.27   Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+#7 48.36 Collecting uefi_firmware==1.16 (from -r /requirements.txt (line 44))
+#7 48.39   Downloading uefi_firmware-1.16-cp310-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (362 kB)
+#7 48.55 Collecting unicorn==2.1.4 (from -r /requirements.txt (line 45))
+#7 48.58   Downloading unicorn-2.1.4-cp37-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (16.4 MB)
+#7 57.08      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.4/16.4 MB 1.9 MB/s eta 0:00:00
+#7 57.17 Collecting z3-solver==5.1.0.0 (from -r /requirements.txt (line 46))
+#7 57.20   Downloading z3_solver-5.1.0.0-py3-none-manylinux_2_27_x86_64.whl (33.1 MB)
+#7 74.15      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 33.1/33.1 MB 2.0 MB/s eta 0:00:00
+#7 74.31 Building wheels for collected packages: arpy, mulpyplexer
+#7 74.31   Building wheel for arpy (pyproject.toml): started
+#7 74.46   Building wheel for arpy (pyproject.toml): finished with status 'done'
+#7 74.46   Created wheel for arpy: filename=arpy-1.1.1-py3-none-any.whl size=5064 sha256=b5339d40e5174bce58b7d906f5f54db769bc6fae8a9287b8f0f639cea6f3a6f1
+#7 74.46   Stored in directory: /tmp/pip-ephem-wheel-cache-l7a9v93b/wheels/75/fa/2d/86992b88a0f08fc5859f6aeec2cb6a6a4292402f867352cc55
+#7 74.47   Building wheel for mulpyplexer (pyproject.toml): started
+#7 74.61   Building wheel for mulpyplexer (pyproject.toml): finished with status 'done'
+#7 74.61   Created wheel for mulpyplexer: filename=mulpyplexer-0.9-py3-none-any.whl size=3846 sha256=8840edae0228cef6c4116d79a3dadbfe202de006d72f9227b04b4da01298d8a1
+#7 74.61   Stored in directory: /tmp/pip-ephem-wheel-cache-l7a9v93b/wheels/76/f6/59/d8cf8137916b6e9632c3d4a211d4382523eb18c654d3317b9b
+#7 74.62 Successfully built arpy mulpyplexer
+#7 74.68 Installing collected packages: z3-solver, sortedcontainers, mulpyplexer, mpmath, arpy, unicorn, typing_extensions, tibs, sympy, smmap, pyxdia, pyxbe, pypcode, Pygments, pyelftools, pydemumble, pycryptodome, pycparser, psutil, protobuf, platformdirs, pefile, networkx, msgspec, minidump, mdurl, lmdb, future, cxxheaderparser, capstone, cachetools, bitarray, archinfo, angr-data, uefi_firmware, markdown-it-py, gitdb, cffi, cart, bitstring, rich, pyvex, GitPython, cle, angr
+#7 87.94 Successfully installed GitPython-3.2.1 Pygments-2.21.0 angr-10.0.4.post1 angr-data-0.2.0 archinfo-10.0.4 arpy-1.1.1 bitarray-3.12.3 bitstring-4.4.0 cachetools-7.2.3 capstone-5.0.9 cart-1.2.3 cffi-2.1.1 cle-10.0.4 cxxheaderparser-2.2.0 future-1.0.0 gitdb-4.0.12 lmdb-3.0.0 markdown-it-py-4.2.0 mdurl-0.1.2 minidump-0.0.24 mpmath-1.3.0 msgspec-0.22.0 mulpyplexer-0.9 networkx-3.7 pefile-2024.8.26 platformdirs-4.13.5 protobuf-7.36.2 psutil-7.2.2 pycparser-3.11 pycryptodome-4.0.1 pydemumble-0.1.3 pyelftools-0.33 pypcode-4.0.1 pyvex-10.0.4 pyxbe-1.0.4 pyxdia-0.1.1 rich-15.0.0 smmap-5.0.3 sortedcontainers-2.4.0 sympy-1.14.0 tibs-0.5.7 typing_extensions-4.16.0 uefi_firmware-1.16 unicorn-2.1.4 z3-solver-5.1.0.0
+#7 87.94 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+#7 88.15 
+#7 88.15 [notice] A new release of pip is available: 25.0.1 -> 26.2.1
+#7 88.15 [notice] To update, run: pip install --upgrade pip
+#7 DONE 88.7s
+
+#8 exporting to image
+#8 exporting layers
+#8 exporting layers 15.1s done
+#8 exporting manifest sha256:aac6b5bd2ff98d7553a33922450bf653e540fe54cfa5adf9aa8eafb9dbdcba30
+#8 exporting manifest sha256:aac6b5bd2ff98d7553a33922450bf653e540fe54cfa5adf9aa8eafb9dbdcba30 0.1s done
+#8 exporting config sha256:050e04cb4135c6436aff93b1c6f0c759418de7163d7ced5bd3e1e01aa6f9755b 0.1s done
+#8 exporting attestation manifest sha256:7f1523155882a5caf81c08f024c6b4291979ba91744de762ffd29f8fcf9cd67d
+#8 exporting attestation manifest sha256:7f1523155882a5caf81c08f024c6b4291979ba91744de762ffd29f8fcf9cd67d 0.1s done
+#8 exporting manifest list sha256:5a94cbe538c8862eaaff2742da27d06589f2b22edfcd2ad62173396751288460
+#8 exporting manifest list sha256:5a94cbe538c8862eaaff2742da27d06589f2b22edfcd2ad62173396751288460 0.2s done
+#8 naming to docker.io/library/firmwarex-analysis-runtime:day1
+#8 naming to docker.io/library/firmwarex-analysis-runtime:day1 0.0s done
+#8 unpacking to docker.io/library/firmwarex-analysis-runtime:day1
+#8 unpacking to docker.io/library/firmwarex-analysis-runtime:day1 3.2s done
+#8 DONE 19.7s

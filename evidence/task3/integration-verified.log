@@ -1,0 +1,8 @@
+ Container firmwarex-dispatcher-run-d8d9754e460b Creating 
+ Container firmwarex-dispatcher-run-d8d9754e460b Created 
+Traceback (most recent call last):
+  File "/scripts/verify-emulation.py", line 38, in <module>
+    out=run('arm','ARM32',mode='system',kernel=True);assert out['result'].get('console_sha256')==hashlib.sha256(b'FWX controlled boot\n').hexdigest(),out
+                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'result': {'status': 'incomplete', 'architecture': 'ARM32', 'mode': 'system', 'returncode': 1, 'stdout_sha256': 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855', 'stdout_bytes': 0, 'fallback': 'user_mode', 'schema_version': 1}, 'sandbox': {'network_mode': 'none', 'read_only': True, 'reason': None, 'wall_seconds': 0.417, 'cpu_seconds': 0.25, 'exit_code': 0}, 'authorization': {'authorization': 'controlled_fixture_registry', 'sha256': 'c4fd7b7a6d32a1ec7524d991bca37035156e19acb1c93b82e7033877491de711'}}
+

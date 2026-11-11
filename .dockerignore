@@ -1,0 +1,9 @@
+.git
+.env
+.runtime
+work
+evidence
+outputs
+__pycache__
+.pytest_cache
+.coverage

@@ -1,0 +1,16 @@
+[
+  {
+    "feature": "fuzz",
+    "firmware_id": "e071d4be-5e32-4632-8b10-0c10152ace72",
+    "job_id": "0592b92b-5ab2-42ee-905e-6bdea8b4389a",
+    "status": "complete",
+    "findings": 11
+  },
+  {
+    "feature": "snapshots",
+    "firmware_id": "c253e141-13d4-44ef-88c4-7e88e6e20a0e",
+    "job_id": "154430b2-55e0-4c31-984b-086df5a8dbba",
+    "status": "complete",
+    "findings": 8
+  }
+]

@@ -1,0 +1,1259 @@
+[
+  {
+    "case": "launcher_exception",
+    "job_id": "367f10d4-68ec-46b4-b525-f41cf62e13ae",
+    "error_code": "launcher_failed",
+    "trace": {
+      "spans": [
+        {
+          "name": "upload",
+          "trace_id": "31479f8b6abd044d77b609937646266d",
+          "span_id": "755b834df2b47c04",
+          "status": "UNSET",
+          "parent_span_id": null,
+          "start_ns": 1792472165223985582,
+          "end_ns": 1792472165223987234,
+          "attributes": {
+            "job.id": "367f10d4-68ec-46b4-b525-f41cf62e13ae",
+            "outcome": "completed"
+          }
+        },
+        {
+          "name": "queue_wait",
+          "trace_id": "31479f8b6abd044d77b609937646266d",
+          "span_id": "9da2c522843bc9de",
+          "status": "UNSET",
+          "parent_span_id": "755b834df2b47c04",
+          "start_ns": 1792472165336512000,
+          "end_ns": 1792472165354023003,
+          "attributes": {
+            "job.id": "367f10d4-68ec-46b4-b525-f41cf62e13ae",
+            "outcome": "completed"
+          }
+        },
+        {
+          "name": "sandbox_execution",
+          "trace_id": "31479f8b6abd044d77b609937646266d",
+          "span_id": "a1ad1bdb9b9ba367",
+          "status": "ERROR",
+          "parent_span_id": "755b834df2b47c04",
+          "start_ns": 1792472165364723573,
+          "end_ns": 1792472165365380675,
+          "attributes": {
+            "job.id": "367f10d4-68ec-46b4-b525-f41cf62e13ae",
+            "outcome": "failed"
+          }
+        },
+        {
+          "name": "persistence",
+          "trace_id": "31479f8b6abd044d77b609937646266d",
+          "span_id": "ce376a4075ec53c7",
+          "status": "UNSET",
+          "parent_span_id": "755b834df2b47c04",
+          "start_ns": 1792472165365475228,
+          "end_ns": 1792472165375258732,
+          "attributes": {
+            "job.id": "367f10d4-68ec-46b4-b525-f41cf62e13ae",
+            "outcome": "completed"
+          }
+        }
+      ],
+      "metrics": {
+        "resource_metrics": [
+          {
+            "resource": {
+              "attributes": {
+                "telemetry.sdk.language": "python",
+                "telemetry.sdk.name": "opentelemetry",
+                "telemetry.sdk.version": "1.45.1",
+                "service.instance.id": "12d3b5e7-a172-4326-a151-7250f69af0ff",
+                "service.name": "firmwarex-analysis"
+              },
+              "schema_url": ""
+            },
+            "scope_metrics": [
+              {
+                "scope": {
+                  "name": "firmwarex.pipeline",
+                  "version": null,
+                  "schema_url": "",
+                  "attributes": null
+                },
+                "metrics": [
+                  {
+                    "name": "firmwarex.stage.completed",
+                    "description": "",
+                    "unit": "",
+                    "data": {
+                      "data_points": [
+                        {
+                          "attributes": {
+                            "stage": "upload",
+                            "outcome": "completed"
+                          },
+                          "start_time_unix_nano": 1792472165224177851,
+                          "time_unix_nano": 1792472165224302294,
+                          "value": 1,
+                          "exemplars": []
+                        }
+                      ],
+                      "aggregation_temporality": 2,
+                      "is_monotonic": true
+                    }
+                  },
+                  {
+                    "name": "firmwarex.stage.duration",
+                    "description": "",
+                    "unit": "s",
+                    "data": {
+                      "data_points": [
+                        {
+                          "attributes": {
+                            "stage": "upload",
+                            "outcome": "completed"
+                          },
+                          "start_time_unix_nano": 1792472165224263796,
+                          "time_unix_nano": 1792472165224302294,
+                          "count": 1,
+                          "sum": 1.652e-06,
+                          "bucket_counts": [
+                            0,
+                            1,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                          ],
+                          "explicit_bounds": [
+                            0.0,
+                            5.0,
+                            10.0,
+                            25.0,
+                            50.0,
+                            75.0,
+                            100.0,
+                            250.0,
+                            500.0,
+                            750.0,
+                            1000.0,
+                            2500.0,
+                            5000.0,
+                            7500.0,
+                            10000.0
+                          ],
+                          "min": 1.652e-06,
+                          "max": 1.652e-06,
+                          "exemplars": []
+                        }
+                      ],
+                      "aggregation_temporality": 2
+                    }
+                  }
+                ],
+                "schema_url": ""
+              }
+            ],
+            "schema_url": ""
+          },
+          {
+            "resource": {
+              "attributes": {
+                "telemetry.sdk.language": "python",
+                "telemetry.sdk.name": "opentelemetry",
+                "telemetry.sdk.version": "1.45.1",
+                "service.instance.id": "12d3b5e7-a172-4326-a151-7250f69af0ff",
+                "service.name": "firmwarex-analysis"
+              },
+              "schema_url": ""
+            },
+            "scope_metrics": [
+              {
+                "scope": {
+                  "name": "firmwarex.pipeline",
+                  "version": null,
+                  "schema_url": "",
+                  "attributes": null
+                },
+                "metrics": [
+                  {
+                    "name": "firmwarex.stage.completed",
+                    "description": "",
+                    "unit": "",
+                    "data": {
+                      "data_points": [
+                        {
+                          "attributes": {
+                            "stage": "queue_wait",
+                            "outcome": "completed"
+                          },
+                          "start_time_unix_nano": 1792472165354251331,
+                          "time_unix_nano": 1792472165377616559,
+                          "value": 1,
+                          "exemplars": []
+                        },
+                        {
+                          "attributes": {
+                            "stage": "sandbox_execution"
+                          },
+                          "start_time_unix_nano": 1792472165365281582,
+                          "time_unix_nano": 1792472165377616559,
+                          "value": 1,
+                          "exemplars": [
+                            {
+                              "filtered_attributes": {},
+                              "value": 1,
+                              "time_unix_nano": 1792472165365241241,
+                              "span_id": 11649998441099797351,
+                              "trace_id": 65504060819292338971713604326961587821
+                            }
+                          ]
+                        },
+                        {
+                          "attributes": {
+                            "stage": "persistence"
+                          },
+                          "start_time_unix_nano": 1792472165375167407,
+                          "time_unix_nano": 1792472165377616559,
+                          "value": 1,
+                          "exemplars": [
+                            {
+                              "filtered_attributes": {},
+                              "value": 1,
+                              "time_unix_nano": 1792472165375122034,
+                              "span_id": 14859462320621114311,
+                              "trace_id": 65504060819292338971713604326961587821
+                            }
+                          ]
+                        }
+                      ],
+                      "aggregation_temporality": 2,
+                      "is_monotonic": true
+                    }
+                  },
+                  {
+                    "name": "firmwarex.stage.duration",
+                    "description": "",
+                    "unit": "s",
+                    "data": {
+                      "data_points": [
+                        {
+                          "attributes": {
+                            "stage": "queue_wait",
+                            "outcome": "completed"
+                          },
+                          "start_time_unix_nano": 1792472165354308479,
+                          "time_unix_nano": 1792472165377616559,
+                          "count": 1,
+                          "sum": 0.017511003,
+                          "bucket_counts": [
+                            0,
+                            1,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                          ],
+                          "explicit_bounds": [
+                            0.0,
+                            5.0,
+                            10.0,
+                            25.0,
+                            50.0,
+                            75.0,
+                            100.0,
+                            250.0,
+                            500.0,
+                            750.0,
+                            1000.0,
+                            2500.0,
+                            5000.0,
+                            7500.0,
+                            10000.0
+                          ],
+                          "min": 0.017511003,
+                          "max": 0.017511003,
+                          "exemplars": []
+                        },
+                        {
+                          "attributes": {
+                            "stage": "sandbox_execution"
+                          },
+                          "start_time_unix_nano": 1792472165365329592,
+                          "time_unix_nano": 1792472165377616559,
+                          "count": 1,
+                          "sum": 0.0007026170001154242,
+                          "bucket_counts": [
+                            0,
+                            1,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                          ],
+                          "explicit_bounds": [
+                            0.0,
+                            5.0,
+                            10.0,
+                            25.0,
+                            50.0,
+                            75.0,
+                            100.0,
+                            250.0,
+                            500.0,
+                            750.0,
+                            1000.0,
+                            2500.0,
+                            5000.0,
+                            7500.0,
+                            10000.0
+                          ],
+                          "min": 0.0007026170001154242,
+                          "max": 0.0007026170001154242,
+                          "exemplars": [
+                            {
+                              "filtered_attributes": {},
+                              "value": 0.0007026170001154242,
+                              "time_unix_nano": 1792472165365317779,
+                              "span_id": 11649998441099797351,
+                              "trace_id": 65504060819292338971713604326961587821
+                            }
+                          ]
+                        },
+                        {
+                          "attributes": {
+                            "stage": "persistence"
+                          },
+                          "start_time_unix_nano": 1792472165375213799,
+                          "time_unix_nano": 1792472165377616559,
+                          "count": 1,
+                          "sum": 0.009771690999968996,
+                          "bucket_counts": [
+                            0,
+                            1,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                          ],
+                          "explicit_bounds": [
+                            0.0,
+                            5.0,
+                            10.0,
+                            25.0,
+                            50.0,
+                            75.0,
+                            100.0,
+                            250.0,
+                            500.0,
+                            750.0,
+                            1000.0,
+                            2500.0,
+                            5000.0,
+                            7500.0,
+                            10000.0
+                          ],
+                          "min": 0.009771690999968996,
+                          "max": 0.009771690999968996,
+                          "exemplars": [
+                            {
+                              "filtered_attributes": {},
+                              "value": 0.009771690999968996,
+                              "time_unix_nano": 1792472165375202539,
+                              "span_id": 14859462320621114311,
+                              "trace_id": 65504060819292338971713604326961587821
+                            }
+                          ]
+                        }
+                      ],
+                      "aggregation_temporality": 2
+                    }
+                  }
+                ],
+                "schema_url": ""
+              }
+            ],
+            "schema_url": ""
+          }
+        ]
+      }
+    }
+  },
+  {
+    "case": "quota",
+    "job_id": "a8b908ef-a7e4-496b-acf4-fd42773949c0",
+    "error_code": "wall_quota",
+    "trace": {
+      "spans": [
+        {
+          "name": "upload",
+          "trace_id": "4fd051943357436cbf6f90a6ad6fcac2",
+          "span_id": "a44f540ceb844911",
+          "status": "UNSET",
+          "parent_span_id": null,
+          "start_ns": 1792472165392626758,
+          "end_ns": 1792472165392628684,
+          "attributes": {
+            "job.id": "a8b908ef-a7e4-496b-acf4-fd42773949c0",
+            "outcome": "completed"
+          }
+        },
+        {
+          "name": "queue_wait",
+          "trace_id": "4fd051943357436cbf6f90a6ad6fcac2",
+          "span_id": "61afcf5629a34f42",
+          "status": "UNSET",
+          "parent_span_id": "a44f540ceb844911",
+          "start_ns": 1792472165395965184,
+          "end_ns": 1792472165404519397,
+          "attributes": {
+            "job.id": "a8b908ef-a7e4-496b-acf4-fd42773949c0",
+            "outcome": "completed"
+          }
+        },
+        {
+          "name": "sandbox_execution",
+          "trace_id": "4fd051943357436cbf6f90a6ad6fcac2",
+          "span_id": "d1b26236e3b2e76b",
+          "status": "ERROR",
+          "parent_span_id": "a44f540ceb844911",
+          "start_ns": 1792472165411701034,
+          "end_ns": 1792472165412606493,
+          "attributes": {
+            "job.id": "a8b908ef-a7e4-496b-acf4-fd42773949c0",
+            "outcome": "failed"
+          }
+        },
+        {
+          "name": "persistence",
+          "trace_id": "4fd051943357436cbf6f90a6ad6fcac2",
+          "span_id": "256a0ef72c0ed67a",
+          "status": "UNSET",
+          "parent_span_id": "a44f540ceb844911",
+          "start_ns": 1792472165412695775,
+          "end_ns": 1792472165421357663,
+          "attributes": {
+            "job.id": "a8b908ef-a7e4-496b-acf4-fd42773949c0",
+            "outcome": "completed"
+          }
+        }
+      ],
+      "metrics": {
+        "resource_metrics": [
+          {
+            "resource": {
+              "attributes": {
+                "telemetry.sdk.language": "python",
+                "telemetry.sdk.name": "opentelemetry",
+                "telemetry.sdk.version": "1.45.1",
+                "service.instance.id": "12d3b5e7-a172-4326-a151-7250f69af0ff",
+                "service.name": "firmwarex-analysis"
+              },
+              "schema_url": ""
+            },
+            "scope_metrics": [
+              {
+                "scope": {
+                  "name": "firmwarex.pipeline",
+                  "version": null,
+                  "schema_url": "",
+                  "attributes": null
+                },
+                "metrics": [
+                  {
+                    "name": "firmwarex.stage.completed",
+                    "description": "",
+                    "unit": "",
+                    "data": {
+                      "data_points": [
+                        {
+                          "attributes": {
+                            "stage": "upload",
+                            "outcome": "completed"
+                          },
+                          "start_time_unix_nano": 1792472165392783883,
+                          "time_unix_nano": 1792472165392861848,
+                          "value": 1,
+                          "exemplars": []
+                        }
+                      ],
+                      "aggregation_temporality": 2,
+                      "is_monotonic": true
+                    }
+                  },
+                  {
+                    "name": "firmwarex.stage.duration",
+                    "description": "",
+                    "unit": "s",
+                    "data": {
+                      "data_points": [
+                        {
+                          "attributes": {
+                            "stage": "upload",
+                            "outcome": "completed"
+                          },
+                          "start_time_unix_nano": 1792472165392828401,
+                          "time_unix_nano": 1792472165392861848,
+                          "count": 1,
+                          "sum": 1.926e-06,
+                          "bucket_counts": [
+                            0,
+                            1,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                          ],
+                          "explicit_bounds": [
+                            0.0,
+                            5.0,
+                            10.0,
+                            25.0,
+                            50.0,
+                            75.0,
+                            100.0,
+                            250.0,
+                            500.0,
+                            750.0,
+                            1000.0,
+                            2500.0,
+                            5000.0,
+                            7500.0,
+                            10000.0
+                          ],
+                          "min": 1.926e-06,
+                          "max": 1.926e-06,
+                          "exemplars": []
+                        }
+                      ],
+                      "aggregation_temporality": 2
+                    }
+                  }
+                ],
+                "schema_url": ""
+              }
+            ],
+            "schema_url": ""
+          },
+          {
+            "resource": {
+              "attributes": {
+                "telemetry.sdk.language": "python",
+                "telemetry.sdk.name": "opentelemetry",
+                "telemetry.sdk.version": "1.45.1",
+                "service.instance.id": "12d3b5e7-a172-4326-a151-7250f69af0ff",
+                "service.name": "firmwarex-analysis"
+              },
+              "schema_url": ""
+            },
+            "scope_metrics": [
+              {
+                "scope": {
+                  "name": "firmwarex.pipeline",
+                  "version": null,
+                  "schema_url": "",
+                  "attributes": null
+                },
+                "metrics": [
+                  {
+                    "name": "firmwarex.stage.completed",
+                    "description": "",
+                    "unit": "",
+                    "data": {
+                      "data_points": [
+                        {
+                          "attributes": {
+                            "stage": "queue_wait",
+                            "outcome": "completed"
+                          },
+                          "start_time_unix_nano": 1792472165404660017,
+                          "time_unix_nano": 1792472165422987655,
+                          "value": 1,
+                          "exemplars": []
+                        },
+                        {
+                          "attributes": {
+                            "stage": "sandbox_execution"
+                          },
+                          "start_time_unix_nano": 1792472165412507698,
+                          "time_unix_nano": 1792472165422987655,
+                          "value": 1,
+                          "exemplars": [
+                            {
+                              "filtered_attributes": {},
+                              "value": 1,
+                              "time_unix_nano": 1792472165412465313,
+                              "span_id": 15110247687669344107,
+                              "trace_id": 106090664030418776454353591269715856066
+                            }
+                          ]
+                        },
+                        {
+                          "attributes": {
+                            "stage": "persistence"
+                          },
+                          "start_time_unix_nano": 1792472165421244971,
+                          "time_unix_nano": 1792472165422987655,
+                          "value": 1,
+                          "exemplars": [
+                            {
+                              "filtered_attributes": {},
+                              "value": 1,
+                              "time_unix_nano": 1792472165421185189,
+                              "span_id": 2695983781693544058,
+                              "trace_id": 106090664030418776454353591269715856066
+                            }
+                          ]
+                        }
+                      ],
+                      "aggregation_temporality": 2,
+                      "is_monotonic": true
+                    }
+                  },
+                  {
+                    "name": "firmwarex.stage.duration",
+                    "description": "",
+                    "unit": "s",
+                    "data": {
+                      "data_points": [
+                        {
+                          "attributes": {
+                            "stage": "queue_wait",
+                            "outcome": "completed"
+                          },
+                          "start_time_unix_nano": 1792472165404708305,
+                          "time_unix_nano": 1792472165422987655,
+                          "count": 1,
+                          "sum": 0.008554213,
+                          "bucket_counts": [
+                            0,
+                            1,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                          ],
+                          "explicit_bounds": [
+                            0.0,
+                            5.0,
+                            10.0,
+                            25.0,
+                            50.0,
+                            75.0,
+                            100.0,
+                            250.0,
+                            500.0,
+                            750.0,
+                            1000.0,
+                            2500.0,
+                            5000.0,
+                            7500.0,
+                            10000.0
+                          ],
+                          "min": 0.008554213,
+                          "max": 0.008554213,
+                          "exemplars": []
+                        },
+                        {
+                          "attributes": {
+                            "stage": "sandbox_execution"
+                          },
+                          "start_time_unix_nano": 1792472165412555914,
+                          "time_unix_nano": 1792472165422987655,
+                          "count": 1,
+                          "sum": 0.0009414809999270801,
+                          "bucket_counts": [
+                            0,
+                            1,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                          ],
+                          "explicit_bounds": [
+                            0.0,
+                            5.0,
+                            10.0,
+                            25.0,
+                            50.0,
+                            75.0,
+                            100.0,
+                            250.0,
+                            500.0,
+                            750.0,
+                            1000.0,
+                            2500.0,
+                            5000.0,
+                            7500.0,
+                            10000.0
+                          ],
+                          "min": 0.0009414809999270801,
+                          "max": 0.0009414809999270801,
+                          "exemplars": [
+                            {
+                              "filtered_attributes": {},
+                              "value": 0.0009414809999270801,
+                              "time_unix_nano": 1792472165412542450,
+                              "span_id": 15110247687669344107,
+                              "trace_id": 106090664030418776454353591269715856066
+                            }
+                          ]
+                        },
+                        {
+                          "attributes": {
+                            "stage": "persistence"
+                          },
+                          "start_time_unix_nano": 1792472165421300158,
+                          "time_unix_nano": 1792472165422987655,
+                          "count": 1,
+                          "sum": 0.008634441999902265,
+                          "bucket_counts": [
+                            0,
+                            1,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                          ],
+                          "explicit_bounds": [
+                            0.0,
+                            5.0,
+                            10.0,
+                            25.0,
+                            50.0,
+                            75.0,
+                            100.0,
+                            250.0,
+                            500.0,
+                            750.0,
+                            1000.0,
+                            2500.0,
+                            5000.0,
+                            7500.0,
+                            10000.0
+                          ],
+                          "min": 0.008634441999902265,
+                          "max": 0.008634441999902265,
+                          "exemplars": [
+                            {
+                              "filtered_attributes": {},
+                              "value": 0.008634441999902265,
+                              "time_unix_nano": 1792472165421285910,
+                              "span_id": 2695983781693544058,
+                              "trace_id": 106090664030418776454353591269715856066
+                            }
+                          ]
+                        }
+                      ],
+                      "aggregation_temporality": 2
+                    }
+                  }
+                ],
+                "schema_url": ""
+              }
+            ],
+            "schema_url": ""
+          }
+        ]
+      }
+    }
+  },
+  {
+    "case": "invalid_result",
+    "job_id": "0a838bb0-a54f-43a2-a054-95d7aad3227f",
+    "error_code": "result_persistence_failed",
+    "trace": {
+      "spans": [
+        {
+          "name": "upload",
+          "trace_id": "e5ea66f5d23925cad860afa73d4da0ad",
+          "span_id": "b4b486e72436d971",
+          "status": "UNSET",
+          "parent_span_id": null,
+          "start_ns": 1792472165435124288,
+          "end_ns": 1792472165435125969,
+          "attributes": {
+            "job.id": "0a838bb0-a54f-43a2-a054-95d7aad3227f",
+            "outcome": "completed"
+          }
+        },
+        {
+          "name": "queue_wait",
+          "trace_id": "e5ea66f5d23925cad860afa73d4da0ad",
+          "span_id": "4df97d47321903d4",
+          "status": "UNSET",
+          "parent_span_id": "b4b486e72436d971",
+          "start_ns": 1792472165437321984,
+          "end_ns": 1792472165446302059,
+          "attributes": {
+            "job.id": "0a838bb0-a54f-43a2-a054-95d7aad3227f",
+            "outcome": "completed"
+          }
+        },
+        {
+          "name": "sandbox_execution",
+          "trace_id": "e5ea66f5d23925cad860afa73d4da0ad",
+          "span_id": "67e744aef08f42c1",
+          "status": "UNSET",
+          "parent_span_id": "b4b486e72436d971",
+          "start_ns": 1792472165454030405,
+          "end_ns": 1792472165455110495,
+          "attributes": {
+            "job.id": "0a838bb0-a54f-43a2-a054-95d7aad3227f",
+            "outcome": "completed"
+          }
+        },
+        {
+          "name": "persistence",
+          "trace_id": "e5ea66f5d23925cad860afa73d4da0ad",
+          "span_id": "e60c76d0548a80d6",
+          "status": "ERROR",
+          "parent_span_id": "b4b486e72436d971",
+          "start_ns": 1792472165455190650,
+          "end_ns": 1792472165457397000,
+          "attributes": {
+            "job.id": "0a838bb0-a54f-43a2-a054-95d7aad3227f",
+            "outcome": "failed"
+          }
+        }
+      ],
+      "metrics": {
+        "resource_metrics": [
+          {
+            "resource": {
+              "attributes": {
+                "telemetry.sdk.language": "python",
+                "telemetry.sdk.name": "opentelemetry",
+                "telemetry.sdk.version": "1.45.1",
+                "service.instance.id": "12d3b5e7-a172-4326-a151-7250f69af0ff",
+                "service.name": "firmwarex-analysis"
+              },
+              "schema_url": ""
+            },
+            "scope_metrics": [
+              {
+                "scope": {
+                  "name": "firmwarex.pipeline",
+                  "version": null,
+                  "schema_url": "",
+                  "attributes": null
+                },
+                "metrics": [
+                  {
+                    "name": "firmwarex.stage.completed",
+                    "description": "",
+                    "unit": "",
+                    "data": {
+                      "data_points": [
+                        {
+                          "attributes": {
+                            "stage": "upload",
+                            "outcome": "completed"
+                          },
+                          "start_time_unix_nano": 1792472165435242934,
+                          "time_unix_nano": 1792472165435304482,
+                          "value": 1,
+                          "exemplars": []
+                        }
+                      ],
+                      "aggregation_temporality": 2,
+                      "is_monotonic": true
+                    }
+                  },
+                  {
+                    "name": "firmwarex.stage.duration",
+                    "description": "",
+                    "unit": "s",
+                    "data": {
+                      "data_points": [
+                        {
+                          "attributes": {
+                            "stage": "upload",
+                            "outcome": "completed"
+                          },
+                          "start_time_unix_nano": 1792472165435278780,
+                          "time_unix_nano": 1792472165435304482,
+                          "count": 1,
+                          "sum": 1.681e-06,
+                          "bucket_counts": [
+                            0,
+                            1,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                          ],
+                          "explicit_bounds": [
+                            0.0,
+                            5.0,
+                            10.0,
+                            25.0,
+                            50.0,
+                            75.0,
+                            100.0,
+                            250.0,
+                            500.0,
+                            750.0,
+                            1000.0,
+                            2500.0,
+                            5000.0,
+                            7500.0,
+                            10000.0
+                          ],
+                          "min": 1.681e-06,
+                          "max": 1.681e-06,
+                          "exemplars": []
+                        }
+                      ],
+                      "aggregation_temporality": 2
+                    }
+                  }
+                ],
+                "schema_url": ""
+              }
+            ],
+            "schema_url": ""
+          },
+          {
+            "resource": {
+              "attributes": {
+                "telemetry.sdk.language": "python",
+                "telemetry.sdk.name": "opentelemetry",
+                "telemetry.sdk.version": "1.45.1",
+                "service.instance.id": "12d3b5e7-a172-4326-a151-7250f69af0ff",
+                "service.name": "firmwarex-analysis"
+              },
+              "schema_url": ""
+            },
+            "scope_metrics": [
+              {
+                "scope": {
+                  "name": "firmwarex.pipeline",
+                  "version": null,
+                  "schema_url": "",
+                  "attributes": null
+                },
+                "metrics": [
+                  {
+                    "name": "firmwarex.stage.completed",
+                    "description": "",
+                    "unit": "",
+                    "data": {
+                      "data_points": [
+                        {
+                          "attributes": {
+                            "stage": "queue_wait",
+                            "outcome": "completed"
+                          },
+                          "start_time_unix_nano": 1792472165446428187,
+                          "time_unix_nano": 1792472165467195785,
+                          "value": 1,
+                          "exemplars": []
+                        },
+                        {
+                          "attributes": {
+                            "stage": "sandbox_execution"
+                          },
+                          "start_time_unix_nano": 1792472165455042410,
+                          "time_unix_nano": 1792472165467195785,
+                          "value": 1,
+                          "exemplars": [
+                            {
+                              "filtered_attributes": {},
+                              "value": 1,
+                              "time_unix_nano": 1792472165455009928,
+                              "span_id": 7487028423677657793,
+                              "trace_id": 305610296781383212328788228387279577261
+                            }
+                          ]
+                        },
+                        {
+                          "attributes": {
+                            "stage": "persistence"
+                          },
+                          "start_time_unix_nano": 1792472165457327643,
+                          "time_unix_nano": 1792472165467195785,
+                          "value": 1,
+                          "exemplars": [
+                            {
+                              "filtered_attributes": {},
+                              "value": 1,
+                              "time_unix_nano": 1792472165457297044,
+                              "span_id": 16576754965587591382,
+                              "trace_id": 305610296781383212328788228387279577261
+                            }
+                          ]
+                        }
+                      ],
+                      "aggregation_temporality": 2,
+                      "is_monotonic": true
+                    }
+                  },
+                  {
+                    "name": "firmwarex.stage.duration",
+                    "description": "",
+                    "unit": "s",
+                    "data": {
+                      "data_points": [
+                        {
+                          "attributes": {
+                            "stage": "queue_wait",
+                            "outcome": "completed"
+                          },
+                          "start_time_unix_nano": 1792472165446463611,
+                          "time_unix_nano": 1792472165467195785,
+                          "count": 1,
+                          "sum": 0.008980075,
+                          "bucket_counts": [
+                            0,
+                            1,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                          ],
+                          "explicit_bounds": [
+                            0.0,
+                            5.0,
+                            10.0,
+                            25.0,
+                            50.0,
+                            75.0,
+                            100.0,
+                            250.0,
+                            500.0,
+                            750.0,
+                            1000.0,
+                            2500.0,
+                            5000.0,
+                            7500.0,
+                            10000.0
+                          ],
+                          "min": 0.008980075,
+                          "max": 0.008980075,
+                          "exemplars": []
+                        },
+                        {
+                          "attributes": {
+                            "stage": "sandbox_execution"
+                          },
+                          "start_time_unix_nano": 1792472165455079849,
+                          "time_unix_nano": 1792472165467195785,
+                          "count": 1,
+                          "sum": 0.001224605000061274,
+                          "bucket_counts": [
+                            0,
+                            1,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                          ],
+                          "explicit_bounds": [
+                            0.0,
+                            5.0,
+                            10.0,
+                            25.0,
+                            50.0,
+                            75.0,
+                            100.0,
+                            250.0,
+                            500.0,
+                            750.0,
+                            1000.0,
+                            2500.0,
+                            5000.0,
+                            7500.0,
+                            10000.0
+                          ],
+                          "min": 0.001224605000061274,
+                          "max": 0.001224605000061274,
+                          "exemplars": [
+                            {
+                              "filtered_attributes": {},
+                              "value": 0.001224605000061274,
+                              "time_unix_nano": 1792472165455069051,
+                              "span_id": 7487028423677657793,
+                              "trace_id": 305610296781383212328788228387279577261
+                            }
+                          ]
+                        },
+                        {
+                          "attributes": {
+                            "stage": "persistence"
+                          },
+                          "start_time_unix_nano": 1792472165457364070,
+                          "time_unix_nano": 1792472165467195785,
+                          "count": 1,
+                          "sum": 0.002204519000088112,
+                          "bucket_counts": [
+                            0,
+                            1,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                          ],
+                          "explicit_bounds": [
+                            0.0,
+                            5.0,
+                            10.0,
+                            25.0,
+                            50.0,
+                            75.0,
+                            100.0,
+                            250.0,
+                            500.0,
+                            750.0,
+                            1000.0,
+                            2500.0,
+                            5000.0,
+                            7500.0,
+                            10000.0
+                          ],
+                          "min": 0.002204519000088112,
+                          "max": 0.002204519000088112,
+                          "exemplars": [
+                            {
+                              "filtered_attributes": {},
+                              "value": 0.002204519000088112,
+                              "time_unix_nano": 1792472165457354140,
+                              "span_id": 16576754965587591382,
+                              "trace_id": 305610296781383212328788228387279577261
+                            }
+                          ]
+                        }
+                      ],
+                      "aggregation_temporality": 2
+                    }
+                  }
+                ],
+                "schema_url": ""
+              }
+            ],
+            "schema_url": ""
+          }
+        ]
+      }
+    }
+  }
+]
