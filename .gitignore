@@ -20,12 +20,6 @@ dist/
 *.sqlite3
 *.db
 
-# Local development-assistant configuration
-AGENTS.md
-**/AGENTS.md
-.codex/
-.agents/
-
 # Generated assessments, recordings and submission documents
 evidence/
 output/
