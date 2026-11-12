@@ -150,6 +150,13 @@ Ghidra is not integrated into the current automated pipeline. The project does n
 
 The selected OpenWrt profile checks the BusyBox `true` applet, a uhttpd HTTP response and one cgi-io multipart-header/empty-body symbolic path. The recorded real image contained 1,571 filesystem entries and 171 ELF binaries. Three programs were selected; only one had a symbolic profile. Its completed analysis does not cover complete request bodies or every binary.
 
+FirmwareX also contains a separate checksum-bound runtime profile for the
+official OpenWrt 18.06.5 x86/64 rootfs image. It records a probable finding
+associated with CVE-2019-19945 when a normal private-loopback HTTP control
+succeeds and the emulator process aborts after the documented test input.
+Independent review is needed to establish the guest cause. Its symbolic status is
+kept independent. See [the exact scope, checksums and recording steps](docs/openwrt-18.06.5-cve-2019-19945.md).
+
 - Other firmware may lack the required libraries, startup model or service harness and return partial/incomplete results.
 - Static function names and credential/crypto patterns are candidates, not confirmed vulnerabilities.
 - Unknown extracted names can be pseudonymized; raw secret reveal is disabled.

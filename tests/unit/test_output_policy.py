@@ -31,6 +31,11 @@ def test_paths_and_taint_source_preserve_structure():
  value={'binary':'/bin/taint-demo','source':'fwx_cgi_stdin_0','tainted_path':['0x401000'],'evidence_ref':'evidence:'+'a'*64}
  assert sanitize_output(value,SALT)==value
 
+def test_runtime_normal_control_field_is_preserved_for_saved_evidence():
+ from firmwarex.output_policy import sanitize_output
+ value={'normal_request':'http_200_marker_verified','cve':'CVE-2019-19945','sink':'client_poll_post_data'}
+ assert sanitize_output(value,SALT)==value
+
 def test_guest_report_is_sanitized_at_the_trusted_boundary(tmp_path):
  """A worker that forgets to sanitize cannot persist plaintext output."""
  from firmwarex.sandbox import sanitize_sandbox_result

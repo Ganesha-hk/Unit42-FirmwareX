@@ -27,7 +27,7 @@ def persist(db,job_id,result):
     records=result.get('findings',[]);artifacts=result.get('evidence',{})
     for finding in records:
         validate(finding)
-        if finding['sink'] not in {None,'strcpy','strcat','gets','memcpy','sprintf','system','popen'}:raise ValueError('unknown sink')
+        if finding['sink'] not in {None,'strcpy','strcat','gets','memcpy','sprintf','system','popen','client_poll_post_data'}:raise ValueError('unknown sink')
         if finding['source'] and not re.fullmatch(r'fwx_(?:cgi_stdin|cgi_query|environment|network)_[0-9]+(?:,fwx_(?:cgi_stdin|cgi_query|environment|network)_[0-9]+)*',finding['source']):raise ValueError('unknown source')
         for value in (finding['crash_state']['registers'] or {}).values():safe_evidence(value)
         detail=artifacts[finding['evidence_ref']];safe_evidence(detail)

@@ -5,3 +5,15 @@ WORDS.update({'controlled_protocol_null_write', 'http', 'upnp', 'mqtt'})
 WORDS.add('symbolic_null_write')
 KEYS.update({'protocol', 'seed', 'seed_index', 'retained_indices', 'original_length',
              'minimization_attempts', 'replay_verified', 'replays'})
+WORDS.update({'cve_2019_19945_runtime_reproduction', 'CVE-2019-19945',
+              'openwrt_18_06_5_cve_2019_19945', 'openwrt_18_06_6_patched_control',
+              'http_200_marker_verified', 'crash_reproduced', 'crash_not_reproduced',
+              'patched_control_survived', 'private_loopback_cgi_synthetic_handler',
+              'SIGABRT', 'process_reaped', 'runtime_profile_only',
+              '2018-11-28-cdfc902a-3', '2020-03-13-5e9c23c6',
+              '5f9ae5738372aaa3a6be2f0a278933563d3f191a'})
+KEYS.update({'cve', 'firmware_sha256', 'binary_sha256', 'input_sha256', 'input_bytes',
+             'normal_request', 'service_exit_code', 'service_signal', 'cleanup',
+             'service_configuration', 'package_version', 'fixed_release',
+             'upstream_fix', 'started_time_unix_nano', 'finished_time_unix_nano',
+             'outcome', 'expected_outcome'})

@@ -38,12 +38,23 @@ SAFE_TEXT.update({'crash', 'fuzz', 'snapshots', 'snapshot_error', 'fuzz_budget',
 SAFE_KEYS.update({'observations','entropy_candidates','certificates','candidate_count','selected_count','target_limit','vendor_analysis'})
 SAFE_KEYS.update({'coverage','profile_status','engine_status','engine_reasons','entry_evidence','input_calls','sink_calls','start_context','argc','argv0','environment','working_directory','stdin_eof','symbolic_environment_prefixes','input_scope','objective','source_prefix','matched_finding_ids','binary_sha256','proven_safe_copies','terminal_returns'})
 SAFE_KEYS.update({'startup','request','response','cleanup'})
+SAFE_KEYS.update({'cve','firmware_sha256','input_sha256','input_bytes','normal_request','service_exit_code',
+                  'service_signal','service_configuration','package_version','fixed_release',
+                  'upstream_fix','started_time_unix_nano','finished_time_unix_nano','outcome',
+                  'expected_outcome'})
 SAFE_KEYS.add('symbolic_environment')
 SAFE_TEXT.update({'named_environment','CONTENT_TYPE','/','multipart_header_empty_body','profiled_input','symbolic','unsupported'})
 SAFE_TEXT.add('profile_memory_fault_requires_validation')
 SAFE_TEXT.update({'sampled_profiles','http_harness_verified','applet_verified','selected_profiles_only','selected_profiles_complete','profile_binary_mismatch','profile_objective_only','selected_profile_objective_reached','not_applicable','symbolic_profile_only','no_symbolic_profile','modeled_getenv_any_key','not_modeled','sandboxed_execution','/usr/libexec/cgi-upload','pending','not_sent','not_checked','exited','listening','sent','http_200_marker_verified','unexpected','process_reaped'})
 SAFE_TEXT.add('symbolic_null_write')
 SAFE_TEXT.update({'mentor_authorized','sampled_help_mode','bounded_sample','startup_exit','help_mode_only','execution_root_budget','program_entry_limited_models','engine_error_SimSegfaultException','vendor_analysis','analysis_error','symbolic_allocation_truncated','symbolic_allocation_budget'})
+SAFE_TEXT.update({'cve_2019_19945_runtime_reproduction','CVE-2019-19945',
+                  'openwrt_18_06_5_cve_2019_19945','openwrt_18_06_6_patched_control',
+                  'crash_reproduced','crash_not_reproduced','patched_control_survived',
+                  'private_loopback_cgi_synthetic_handler','SIGABRT','runtime_profile_only',
+                  '2018-11-28-cdfc902a-3','2020-03-13-5e9c23c6',
+                  '5f9ae5738372aaa3a6be2f0a278933563d3f191a','unexpected_service_exit'})
+SAFE_TEXT.add('client_poll_post_data')
 
 def sanitize_output(value,salt,field=None):
     """Idempotent, fail-closed text boundary for current and historical diagnostics.
@@ -76,7 +87,7 @@ def sanitize_output(value,salt,field=None):
       'version':r'[0-9]+(?:\.[0-9]+){1,3}', 'schema_version':r'[0-9]+(?:\.[0-9]+){1,3}',
       'telemetry.sdk.version':r'[0-9]+(?:\.[0-9]+){1,3}', 'user':r'[0-9]+:[0-9]+'}
     for key in ['firmware_id','job_id','job.id','vulnerability_id','service.instance.id','matched_finding_ids']:patterns[key]=r'[a-f0-9]{8}-(?:[a-f0-9]{4}-){3}[a-f0-9]{12}'
-    for key in ['sha256','binary_sha256','hash','fingerprint','stdout_sha256','console_sha256','response_sha256','stack_hash','state_sha256']:patterns[key]=r'[a-f0-9]{64}'
+    for key in ['sha256','binary_sha256','firmware_sha256','input_sha256','hash','fingerprint','stdout_sha256','console_sha256','response_sha256','stack_hash','state_sha256']:patterns[key]=r'[a-f0-9]{64}'
     patterns['source_prefix']=r'fwx_(?:cgi_stdin|cgi_query|environment|network)_'
     for key in ['trace_id']:patterns[key]=r'[a-f0-9]{32}'
     for key in ['span_id','parent_span_id']:patterns[key]=r'[a-f0-9]{16}'

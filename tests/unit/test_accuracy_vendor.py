@@ -91,6 +91,30 @@ def test_openwrt_profile_rejects_changed_binary(tmp_path):
     selected,total=openwrt_targets(tmp_path,[{'path':'/bin/busybox','architecture':'x86_64'}])
     assert selected==[] and total==1
 
+def test_openwrt_18065_profile_is_separate_and_checksum_bound(tmp_path):
+    from firmwarex.vendor_analysis import OPENWRT_18065_PROFILE, openwrt_targets
+    target=tmp_path/'usr'/'sbin'/'uhttpd';target.parent.mkdir(parents=True)
+    target.write_bytes(b'changed')
+    selected,total=openwrt_targets(tmp_path,[{'path':'/usr/sbin/uhttpd','architecture':'x86_64'}],OPENWRT_18065_PROFILE['binaries'],OPENWRT_18065_PROFILE['binaries'])
+    assert total==1 and selected==[]
+
+def test_runtime_profile_leaves_symbolic_incomplete(monkeypatch,tmp_path):
+    import firmwarex.vendor_analysis as vendor
+    root=tmp_path/'root';(root/'usr/sbin').mkdir(parents=True)
+    binary=root/'usr/sbin/uhttpd'; binary.write_bytes(b'x')
+    profile={'name':'openwrt_18_06_5_cve_2019_19945','binaries':{'/usr/sbin/uhttpd':__import__('hashlib').sha256(b'x').hexdigest()},'package_version':'2018-11-28-cdfc902a-3','expected_outcome':'crash_reproduced'}
+    monkeypatch.setattr(vendor,'IMAGE_PROFILES',{'image':('openwrt_18_06_5',profile)})
+    monkeypatch.setattr(vendor,'stage_root',lambda root,dest:root)
+    monkeypatch.setattr(vendor,'cve_2019_19945_probe',lambda *args,**kwargs:{'status':'completed','outcome':'crash_not_reproduced','reason':'crash_not_reproduced','cleanup':'process_reaped'})
+    monkeypatch.setattr(vendor,'bounded',lambda *args,**kwargs:{'status':'incomplete','reason':'graph_error'} if len(args)>2 else {'status':'incomplete','reason':'graph_error'})
+    scratch=tmp_path/'scratch';scratch.mkdir()
+    original=vendor.Path
+    monkeypatch.setattr(vendor,'Path',lambda value: {'/app/openwrt-corpus.json':tmp_path/'missing','/scratch':scratch}.get(str(value),original(value)))
+    result=vendor.run(root,[{'path':'/usr/sbin/uhttpd','architecture':'x86_64','elf_type':'ET_EXEC','pie':False}],str(uuid4()),b'synthetic-environment-test-salt-32-bytes',image_sha256='image')
+    assert result['emulation']['executions'][0]['outcome']=='crash_not_reproduced'
+    assert result['symbolic']['status']=='incomplete'
+
+
 def test_generic_firmware_keeps_startup_probe(tmp_path,monkeypatch):
     import firmwarex.vendor_analysis as vendor
     root=tmp_path/'root';root.mkdir();(root/'program').write_bytes(b'controlled mock ELF')
