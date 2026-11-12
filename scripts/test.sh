@@ -3,7 +3,7 @@
 set -eu
 cd "$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)"
 docker build -f infra/images/fixtures.Dockerfile -t firmwarex-fixtures:local .
-docker compose build api
+docker build -f infra/images/control/Dockerfile -t firmwarex-control:day1 .
 mkdir -p work/fixtures
 docker run --rm --network none --user "$(id -u):$(id -g)" \
     -e PYTHONDONTWRITEBYTECODE=1 -v "$PWD:/project:ro" \
