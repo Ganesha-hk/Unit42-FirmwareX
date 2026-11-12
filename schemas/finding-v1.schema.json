@@ -1,0 +1,163 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:firmwarex:finding:1.0.0",
+  "title": "FirmwareX PRD Appendix A Finding v1.0.0",
+  "type": "object",
+  "required": [
+    "vulnerability_id",
+    "firmware_id",
+    "binary",
+    "architecture",
+    "category",
+    "cwe",
+    "address",
+    "sink",
+    "source",
+    "tainted_path",
+    "crash_state",
+    "risk_rating",
+    "confidence",
+    "evidence_ref",
+    "redacted",
+    "status",
+    "detected_at"
+  ],
+  "properties": {
+    "vulnerability_id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "firmware_id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "binary": {
+      "type": "string",
+      "pattern": "^/"
+    },
+    "architecture": {
+      "enum": [
+        "ARM32",
+        "ARM64",
+        "MIPS",
+        "MIPSEL",
+        "x86_64"
+      ]
+    },
+    "category": {
+      "enum": [
+        "memory_corruption",
+        "hardcoded_secret",
+        "weak_crypto",
+        "missing_mitigation",
+        "command_injection"
+      ]
+    },
+    "cwe": {
+      "type": "string",
+      "pattern": "^CWE-[0-9]+$"
+    },
+    "address": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^0x[0-9a-f]+$"
+    },
+    "sink": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "source": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "tainted_path": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^0x[0-9a-f]+$"
+      }
+    },
+    "crash_state": {
+      "type": "object",
+      "required": [
+        "fault_address",
+        "registers",
+        "overflow_offset",
+        "stack_hash"
+      ],
+      "properties": {
+        "fault_address": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^0x[0-9a-f]+$"
+        },
+        "registers": {
+          "type": [
+            "object",
+            "null"
+          ]
+        },
+        "overflow_offset": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "stack_hash": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      },
+      "additionalProperties": false
+    },
+    "risk_rating": {
+      "enum": [
+        "critical",
+        "high",
+        "medium",
+        "low",
+        "info"
+      ]
+    },
+    "confidence": {
+      "enum": [
+        "confirmed",
+        "probable",
+        "heuristic"
+      ]
+    },
+    "evidence_ref": {
+      "type": "string",
+      "pattern": "^evidence:[a-f0-9]{64}$"
+    },
+    "redacted": {
+      "type": "boolean"
+    },
+    "status": {
+      "enum": [
+        "new",
+        "triaged",
+        "validated",
+        "false_positive"
+      ]
+    },
+    "detected_at": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": "Z$"
+    }
+  },
+  "additionalProperties": false
+}
